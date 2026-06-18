@@ -40,3 +40,6 @@ config.local.*
 *.tmp
 dist/
 build/
+
+# Licensed commercial fonts — never redistribute (keep local-only)
+brands/*/fonts/

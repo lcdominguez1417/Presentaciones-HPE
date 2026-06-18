@@ -13,6 +13,24 @@ Your job: compose **HTML decks** that satisfy both.
 
 ---
 
+## Starting a new presentation project
+
+Whenever the user asks to start/iniciar a new presentation project (not just "regenerate this deck"), scaffold it first:
+
+```bash
+lib/create-new-presentation.sh "Topic or working title" [brand-slug]
+```
+
+This creates `presentations/<slug>/` with `content.md` (the brief) and `assets/` (Kie.ai-generated images for this deck only). It prints the new folder's absolute path — capture it and use it as the root for everything else in this section:
+
+- The output HTML goes to `presentations/<slug>/slides.html` (overrides the `~/Desktop/...` default below).
+- Any illustration generated via `lib/generate-illustration.sh` is saved to `presentations/<slug>/assets/`.
+- The brief (headline, audience, key points from Q2 below) is written into `presentations/<slug>/content.md` instead of staying only in chat.
+
+Keeping each presentation in its own folder means it can be deployed independently later, without dragging in other decks.
+
+---
+
 ## The flow — two questions, then go
 
 When invoked, follow this conversation pattern:
@@ -61,7 +79,7 @@ If integration logos extracted from the site are SVGs with `fill="#FFFFFF"` (des
 
 ### Output contract
 
-Emit a **single self-contained HTML file** at the path the user specifies (or `~/Desktop/<topic>-slides.html` by default). It must:
+Emit a **single self-contained HTML file** at the path the user specifies, or `presentations/<slug>/slides.html` if this is a scaffolded project (see "Starting a new presentation project" above), or `~/Desktop/<topic>-slides.html` as a last-resort default. It must:
 
 - Be valid HTML5, no external JS dependencies (Google Fonts + simpleicons CDN images are OK)
 - Use the brand's actual colors, type, accent — pulled from `brand-style.md`

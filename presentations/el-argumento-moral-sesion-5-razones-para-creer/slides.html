@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>El Argumento Moral · Sesión 5 · Razones para Creer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt12{margin-top:var(--s12);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
+
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;
+  display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-brand{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.3px;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;
+  font-size:12px;font-weight:500;letter-spacing:0.2px;}
+@media(max-width:560px){.nav-tag{display:none;}}
+
+/* TYPE ROLES */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.02;
+  letter-spacing:-2px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:18px;font-weight:300;line-height:1.55;color:var(--body);}
+.body{font-size:16px;font-weight:300;line-height:1.6;color:var(--body);}
+.body-sm{font-size:14px;font-weight:300;line-height:1.55;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}
+.strong{font-weight:500;}
+.purple{color:var(--purple);}
+
+/* SCENES */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
+
+/* HERO */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero.png) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.90) 0%,rgba(28,30,84,0.78) 55%,rgba(46,43,140,0.68) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:16ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.6);max-width:52ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+
+/* SCROLL INDICATOR */
+.scroll-cta{position:absolute;bottom:var(--s48);left:50%;transform:translateX(-50%);
+  z-index:3;display:flex;flex-direction:column;align-items:center;gap:var(--s8);}
+.scroll-cta-line{width:1px;height:40px;
+  background:linear-gradient(to bottom,var(--purple-light),transparent);
+  animation:scrollDown 1.8s ease-in-out infinite;}
+.scroll-cta-lbl{font-family:var(--fm);font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(185,185,249,0.5);}
+@keyframes scrollDown{
+  0%{transform:scaleY(0);transform-origin:top;}
+  50%{transform:scaleY(1);transform-origin:top;}
+  51%{transform:scaleY(1);transform-origin:bottom;}
+  100%{transform:scaleY(0);transform-origin:bottom;}
+}
+
+/* ACCENT LINE */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
+
+/* SECTION NUMBER watermark */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;
+  font-feature-settings:"tnum";}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s32);}
+
+/* QUOTE */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;
+  color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
+.quote-src{font-size:12px;color:var(--body);margin-top:4px;font-style:italic;}
+.on-dark .quote-src{color:rgba(255,255,255,0.3);}
+
+/* PORTRAITS GRID */
+.portraits{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--s24);margin-top:var(--s48);align-items:start;}
+.portrait{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:rgba(23,23,23,0.08) 0 15px 35px;
+  transition:transform 220ms,box-shadow 220ms;}
+.portrait:hover{transform:translateY(-4px);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.portrait-vis{width:100%;aspect-ratio:1/1;overflow:hidden;
+  background:linear-gradient(160deg,var(--brand-dark) 0%,var(--dark-navy) 100%);
+  position:relative;}
+.portrait-vis::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(83,58,253,0.35) 0%,transparent 65%);
+  pointer-events:none;}
+.portrait-img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(25%) contrast(1.05);}
+.portrait-body{padding:var(--s16) var(--s16) var(--s24);}
+.portrait-name{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.2px;line-height:1.2;}
+.portrait-role{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;line-height:1.4;}
+.portrait-faith{display:inline-block;margin-top:var(--s8);
+  background:rgba(21,190,83,0.10);color:#108c3d;
+  border:1px solid rgba(21,190,83,0.3);padding:2px 8px;border-radius:4px;
+  font-size:11px;font-weight:500;}
+.portrait-secular{background:rgba(234,34,97,0.08);color:var(--ruby);
+  border:1px solid rgba(234,34,97,0.25);}
+.portrait-neutral{background:rgba(83,58,253,0.08);color:var(--purple);
+  border:1px solid rgba(83,58,253,0.2);}
+.portrait-contrib{list-style:none;margin-top:var(--s12);display:flex;flex-direction:column;gap:4px;}
+.portrait-contrib li{font-size:11px;color:var(--body);line-height:1.4;padding-left:12px;position:relative;}
+.portrait-contrib li::before{content:'→';position:absolute;left:0;color:var(--purple);font-size:10px;line-height:1.5;}
+
+/* PROBLEM CARDS */
+.problems{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--s24);margin-top:var(--s48);}
+.problem{border-left:3px solid var(--ruby);padding:var(--s24);
+  background:rgba(234,34,97,0.04);border-radius:0 8px 8px 0;}
+.on-dark .problem{background:rgba(234,34,97,0.08);}
+.problem-n{font-family:var(--fm);font-size:10px;color:var(--ruby);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.problem-title{font-size:17px;font-weight:500;color:var(--navy);margin-bottom:var(--s8);line-height:1.3;}
+.on-dark .problem-title{color:#fff;}
+.problem-body{font-size:14px;font-weight:300;color:var(--body);line-height:1.55;}
+.on-dark .problem-body{color:rgba(255,255,255,0.55);}
+
+/* COMPARE */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--s32);margin-top:var(--s48);}
+@media(max-width:640px){.compare{grid-template-columns:1fr;}}
+.compare-head{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;padding-bottom:var(--s12);border-bottom:2px solid;margin-bottom:var(--s16);}
+.compare-head.yes{color:var(--green);border-color:var(--green);}
+.compare-head.no{color:var(--ruby);border-color:var(--ruby);}
+.compare-list{list-style:none;}
+.compare-list li{font-size:15px;font-weight:300;color:var(--body);
+  padding:var(--s8) 0;border-bottom:1px solid var(--border);
+  display:flex;gap:var(--s8);line-height:1.4;}
+.compare-list li::before{content:'—';color:var(--purple);flex-shrink:0;}
+
+/* OBJECTIONS */
+.objections{display:flex;flex-direction:column;gap:var(--s32);margin-top:var(--s48);}
+.obj{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.obj-q{background:var(--brand-dark);padding:var(--s24) var(--s32);
+  display:flex;gap:var(--s16);align-items:flex-start;}
+.obj-q-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.obj-q p{font-size:18px;font-weight:300;color:rgba(255,255,255,0.9);
+  font-style:italic;line-height:1.45;}
+.obj-a{padding:var(--s24) var(--s32);background:#fff;}
+.obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
+.obj-a p{font-size:16px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* SYLLOGISM */
+.syllogism{border:1px solid rgba(83,58,253,0.2);border-radius:8px;
+  background:rgba(83,58,253,0.04);overflow:hidden;margin-top:var(--s48);}
+.syl-line{display:flex;gap:var(--s16);padding:var(--s24) var(--s32);
+  border-bottom:1px solid rgba(83,58,253,0.1);align-items:flex-start;}
+.syl-line:last-child{border-bottom:none;background:rgba(83,58,253,0.08);}
+.syl-tag{font-family:var(--fm);font-size:14px;color:var(--purple);
+  font-weight:500;min-width:40px;flex-shrink:0;padding-top:2px;}
+.syl-txt{font-size:clamp(16px,2.2vw,20px);font-weight:300;line-height:1.45;color:var(--navy);}
+.syl-concl .syl-txt{font-weight:500;color:var(--purple);}
+.on-dark .syl-txt{color:rgba(255,255,255,0.9);}
+.on-dark .syl-concl .syl-txt{color:var(--purple-light);}
+
+/* SUMMARY TABLE */
+.summary{width:100%;border-collapse:collapse;margin-top:var(--s48);}
+.summary th{text-align:left;font-family:var(--fm);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 var(--s16) var(--s16) 0;color:var(--body);
+  border-bottom:2px solid var(--border);}
+.summary td{font-size:15px;font-weight:300;line-height:1.5;
+  padding:var(--s16) var(--s16) var(--s16) 0;
+  border-bottom:1px solid var(--border);color:var(--body);vertical-align:top;}
+.summary td.lbl{font-weight:500;color:var(--navy);font-style:italic;}
+.summary td.resp{color:var(--purple);}
+
+/* HOMEWORK */
+.hw{list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s32);}
+.hw li{display:flex;gap:var(--s16);align-items:flex-start;}
+.hw-num{flex-shrink:0;width:32px;height:32px;border-radius:4px;
+  background:var(--purple);color:#fff;
+  font-family:var(--fm);font-size:13px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;}
+.hw li p{font-size:16px;font-weight:300;color:var(--body);line-height:1.55;padding-top:4px;}
+
+/* VERSE */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.9);line-height:1.5;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);
+  letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
+
+/* INFO STRIP */
+.info-strip{display:flex;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s48);}
+.info-item{flex:1;min-width:200px;}
+.info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.info-item-val{font-size:16px;font-weight:300;color:var(--navy);line-height:1.4;}
+
+/* DIVIDERS */
+.divider{height:1px;background:var(--border);}
+.divider-dark{height:1px;background:rgba(255,255,255,0.1);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* PILL TAG */
+.pill{display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);
+  color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* IMMERSIVE IMAGE */
+.immersive{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 45px -30px;margin:var(--s48) 0;}
+.immersive img{width:100%;display:block;}
+.immersive-cap{font-family:var(--fm);font-size:11px;color:var(--body);
+  text-align:center;margin-top:var(--s12);font-style:italic;letter-spacing:0.5px;}
+.on-dark .immersive-cap{color:rgba(255,255,255,0.35);}
+
+/* CHAPTER ANCHOR */
+[id]{scroll-margin-top:80px;}
+
+/* DISCUSSION BOX */
+.discussion{background:rgba(83,58,253,0.06);border:1px solid rgba(83,58,253,0.18);
+  border-radius:8px;padding:var(--s32);margin-top:var(--s48);}
+.discussion p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand">
+      <img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:40px;width:auto;display:block;">
+    </div>
+    <div class="nav-tag">El Argumento Moral · Sesión 5</div>
+    <div class="nav-pill">Apologética</div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Sesión 5 · Razones para Creer · Apologética Cristiana</div>
+    <h1 class="display r rd1">El argumento<br>moral</h1>
+    <p class="body-lg r rd2">¿De dónde viene nuestra conciencia del bien y del mal? Un argumento lógico que nos lleva desde la protesta moral hasta la existencia de Dios.</p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">📖 Romanos 2:14–15</span>
+      <span class="hero-badge">👥 15–45 años</span>
+      <span class="hero-badge">🎯 Lewis · Craig · Conciencia</span>
+    </div>
+  </div>
+  <div class="scroll-cta">
+    <span class="scroll-cta-lbl">Scroll</span>
+    <div class="scroll-cta-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ APERTURA ═══════════════════════════ -->
+<section class="scene" id="apertura">
+  <div class="wrap">
+    <div class="r">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">La tensión de partida</span>
+    </div>
+    <h2 class="h1 mt16 r rd1" style="max-width:18ch;">"No me impongas<br>tu moral."</h2>
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">Es la frase favorita del relativismo. Pero las mismas personas que la pronuncian se indignan cuando alguien les miente, les roba o las trata injustamente.</p>
+        <p class="body mt24" style="max-width:48ch;">Cuando alguien dice <strong class="strong">"¡eso estuvo mal!"</strong> —no "a mí no me gusta", sino "eso <em>estuvo mal</em>"— está afirmando algo más que una preferencia personal: está apelando a un estándar que va más allá de cualquier opinión.</p>
+        <p class="body mt16" style="max-width:48ch;">Eso es exactamente lo que esta sesión explora.</p>
+      </div>
+      <div class="r rd2">
+        <div class="card">
+          <span class="eyebrow">El objetivo de hoy</span>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s24);">
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">01</span>
+              <span class="body">Mostrar que la moralidad objetiva existe y que el relativismo se autodestruye.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">02</span>
+              <span class="body">Presentar el silogismo de Lewis-Craig y defender sus dos premisas.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">03</span>
+              <span class="body">Demostrar que la conciencia moral apunta a un Legislador personal y trascendente.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ BLOQUE 1: MORALIDAD OBJETIVA ═══════════════════════════ -->
+<section class="scene dark on-dark" id="moralidad-objetiva">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <span class="eyebrow">Bloque 1</span>
+      <h2 class="h1 mt16">¿Existe la<br>moralidad objetiva?</h2>
+      <p class="body-lg mt24" style="max-width:54ch;">El relativismo moral dice que lo correcto y lo incorrecto son solo opinión personal o cultural. Pero esta posición se destruye a sí misma en cuanto alguien protesta.</p>
+    </div>
+
+    <!-- Lewis on relativism -->
+    <div class="card-dark r rd1" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">La trampa del relativismo</span>
+      <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">C.S. Lewis lo notó con agudeza: cuando dos personas discuten por algo injusto, no dicen "a mí me parece mal". Dicen <strong class="strong" style="color:#fff;">"¡eso fue injusto!"</strong> — apelando a un estándar que ambos reconocen, aunque ninguno lo inventó.</p>
+      <div class="compare mt32" style="gap:var(--s24);">
+        <div class="card-dark" style="border:1px solid rgba(234,34,97,0.3);">
+          <div class="compare-head no" style="border-color:var(--ruby);color:var(--ruby);">El relativismo dice…</div>
+          <ul class="compare-list" style="border-color:rgba(255,255,255,0.08);">
+            <li style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);">"Torturar es culturalmente relativo."</li>
+            <li style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);">"El Holocausto fue la moral de los nazis."</li>
+            <li style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);">"La esclavitud era normal en su tiempo."</li>
+            <li style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);">"El heroísmo es solo una preferencia."</li>
+          </ul>
+        </div>
+        <div class="card-dark" style="border:1px solid rgba(21,190,83,0.3);">
+          <div class="compare-head yes">…pero todos reconocen</div>
+          <ul class="compare-list" style="border-color:rgba(255,255,255,0.08);">
+            <li style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);"><strong class="strong">Torturar a un niño inocente es objetivamente malo</strong> — siempre y en todo lugar.</li>
+            <li style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);"><strong class="strong">El Holocausto fue un crimen objetivo</strong>, no una diferencia de opinión.</li>
+            <li style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);"><strong class="strong">La esclavitud fue siempre un mal</strong>, aunque muchos no lo reconocieran.</li>
+            <li style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);"><strong class="strong">Dar la vida por un extraño es objetivamente noble.</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key distinction -->
+    <div class="card-dark mt48 r rd2" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Distinción clave</span>
+      <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">"Moralidad objetiva no significa que todos estemos de acuerdo. Significa que existe un estándar independiente de nuestras preferencias — igual que las matemáticas son objetivas aunque alguien se equivoque al sumar."</p>
+      <p class="body mt16">El desacuerdo no anula el estándar; lo <em class="italic">presupone</em>. Para protestar contra algo injusto, ya estás presuponiendo que existe la justicia.</p>
+    </div>
+
+    <!-- Objection inline -->
+    <div class="quote r rd3">
+      <p><strong class="strong" style="color:rgba(255,255,255,0.9);">Objeción: "¿Y quién dice que eso es objetivamente malo?"</strong><br><br>
+      Esa es justamente la pregunta clave. Cuando protestas por una injusticia, <em>lo estás diciendo tú</em> — y todos te entendemos sin que lo expliques. La verdadera pregunta no es "¿existe el estándar?", sino "¿de dónde viene?"</p>
+      <div class="quote-attr">Correcaminos — La pregunta que cambia la conversación</div>
+    </div>
+
+    <!-- Correcaminos TIP -->
+    <div class="card-dark mt32 r rd4" style="border-top:3px solid var(--purple-light);">
+      <span class="eyebrow">Táctica · El Correcaminos</span>
+      <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">Cuando alguien diga "la moral es relativa", pregunta:</p>
+      <p class="body-lg mt8 italic" style="color:#fff;">"¿Eso que acabas de decir vale para todos, o solo para ti?"</p>
+      <p class="body mt12">Si el relativismo es verdad <em>para todos</em>, deja de ser relativo — es objetivo. El relativismo se autodestruye en su primera afirmación.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 2: SILOGISMO MORAL ═══════════════════════════ -->
+<section class="scene" id="silogismo">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">02</div>
+      <span class="eyebrow">Bloque 2</span>
+      <h2 class="h1 mt16">El silogismo<br>moral</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">C.S. Lewis descubrió el argumento en <em>Mero Cristianismo</em>. William Lane Craig lo formalizó en un silogismo que cualquier persona puede evaluar.</p>
+    </div>
+
+    <!-- THE SYLLOGISM -->
+    <div class="r rd1">
+      <div class="syllogism">
+        <div class="syl-line">
+          <span class="syl-tag">P1.</span>
+          <span class="syl-txt">Si Dios no existe, <strong class="strong">no existen valores morales objetivos.</strong></span>
+        </div>
+        <div class="syl-line">
+          <span class="syl-tag">P2.</span>
+          <span class="syl-txt">Los <strong class="strong">valores morales objetivos existen.</strong></span>
+        </div>
+        <div class="syl-line syl-concl">
+          <span class="syl-tag">∴</span>
+          <span class="syl-txt">Por lo tanto, <strong class="strong">Dios existe.</strong></span>
+        </div>
+      </div>
+      <p class="body mt24">Es lógicamente válido: si las dos premisas son verdaderas, la conclusión es inevitable. El debate completo se reduce a defender esas dos premisas. (Craig también presenta una versión equivalente hablando de "obligaciones morales" — el corazón es el mismo.)</p>
+    </div>
+
+    <!-- Lewis + Craig portraits -->
+    <div class="portraits r rd2" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+      <div class="portrait">
+        <div class="portrait-vis">
+          <img src="assets/portrait-lewis.png" alt="C.S. Lewis" class="portrait-img">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">C.S. Lewis</div>
+          <div class="portrait-role">Apologista · Oxford &amp; Cambridge · 1898–1963</div>
+          <span class="portrait-faith">Creyente</span>
+          <ul class="portrait-contrib">
+            <li>Desarrolló el argumento moral en <em>Mero Cristianismo</em></li>
+            <li>Observó la "tercera cosa" que juzga entre instintos</li>
+            <li>Documentó el núcleo moral universal de todas las culturas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="portrait-vis">
+          <img src="assets/portrait-craig.png" alt="William Lane Craig" class="portrait-img">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">William Lane Craig</div>
+          <div class="portrait-role">Filósofo · Talbot School of Theology</div>
+          <span class="portrait-faith">Creyente</span>
+          <ul class="portrait-contrib">
+            <li>Formalizó el argumento como silogismo moderno</li>
+            <li>Versión alternativa: "obligaciones morales objetivas"</li>
+            <li>Debatido con los principales ateos del mundo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Immersive image: foundation -->
+    <div class="immersive r rd3">
+      <img src="assets/concept-foundation.png" alt="El fundamento moral">
+      <div class="immersive-cap">La protesta moral universal apunta a un estándar que ninguna cultura inventó.</div>
+    </div>
+
+    <!-- P1: Why no God = no objective morality -->
+    <div class="r mt64">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">Premisa 1</span>
+      <h3 class="h2 mt16">¿Por qué sin Dios<br>no hay moral objetiva?</h3>
+      <p class="body-lg mt24" style="max-width:56ch;">Sin una referencia que nos trascienda, la moral se reduce a evolución, cultura o gusto personal. Los ateos más lúcidos lo han visto con claridad.</p>
+    </div>
+
+    <!-- Nietzsche -->
+    <div class="two-col mt64 r rd1">
+      <div>
+        <div class="portrait" style="max-width:300px;">
+          <div class="portrait-vis">
+            <img src="assets/portrait-nietzsche.png" alt="Friedrich Nietzsche" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Friedrich Nietzsche</div>
+            <div class="portrait-role">Filósofo ateo · 1844–1900</div>
+            <span class="portrait-secular">Ateo</span>
+            <p class="body-sm mt8">Entendió que "la muerte de Dios" traía consigo la muerte del valor objetivo. Fue honesto con las implicaciones de su propio ateísmo.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="quote" style="margin-top:0;">
+          <p>"Dios ha muerto. Dios permanece muerto. Y nosotros lo hemos matado. ¿Cómo nos consolaremos, los asesinos de todos los asesinos?"</p>
+          <div class="quote-attr">Friedrich Nietzsche</div>
+          <div class="quote-src">La Gaya Ciencia (1882) — Nietzsche no rechazó la moral objetiva con alegría; lo hizo con espanto ante lo que significaba para la humanidad.</div>
+        </div>
+        <div class="card mt24" style="border-left:3px solid var(--ruby);">
+          <span class="eyebrow" style="color:var(--ruby);">Implicación honesta</span>
+          <p class="body mt16">Nietzsche fue uno de los pocos ateos lo suficientemente coherente para ver hacia dónde llevaba su propia lógica: sin Dios, no hay "bien" ni "mal" objetivos — solo voluntad de poder.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Russell -->
+    <div class="two-col mt64 r rd2">
+      <div>
+        <div class="quote" style="margin-top:0;">
+          <p>"El hombre es producto de causas que no preveían el fin que alcanzaban… no es más que el resultado de colocaciones accidentales de átomos."</p>
+          <div class="quote-attr">Bertrand Russell · Filósofo ateo</div>
+          <div class="quote-src">"La adoración de un hombre libre" · citado en Groothuis, <em>Apologética Cristiana</em></div>
+        </div>
+        <div class="card mt24" style="border-left:3px solid var(--ruby);">
+          <span class="eyebrow" style="color:var(--ruby);">La pregunta que sigue</span>
+          <p class="body mt16">Si somos solo "átomos accidentales", ¿de dónde saldría un deber moral real? El ateísmo llevado hasta el final se queda sin fundamento para el bien y el mal.</p>
+        </div>
+      </div>
+      <div>
+        <div class="portrait" style="max-width:300px;">
+          <div class="portrait-vis">
+            <img src="assets/portrait-russell.png" alt="Bertrand Russell" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Bertrand Russell</div>
+            <div class="portrait-role">Filósofo ateo · 1872–1970</div>
+            <span class="portrait-secular">Ateo</span>
+            <p class="body-sm mt8">Siguiendo su propia lógica atea, describió al ser humano como el resultado accidental de átomos sin propósito.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Atoms immersive -->
+    <div class="immersive mt64 r rd3">
+      <img src="assets/concept-atoms.png" alt="El universo materialista">
+      <div class="immersive-cap">Russell: "…el resultado de colocaciones accidentales de átomos." Si esto es todo lo que somos, el deber moral no existe.</div>
+    </div>
+
+    <!-- P2: How we know objective values exist -->
+    <div class="r mt64">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">Premisa 2</span>
+      <h3 class="h2 mt16">¿Cómo sabemos que los<br>valores objetivos existen?</h3>
+      <p class="body-lg mt24" style="max-width:56ch;">La reacción universal ante la injusticia. No decimos "eso no me gusta"; decimos <strong class="strong purple">"eso estuvo MAL"</strong>. C.S. Lewis añadió algo brillante sobre la conciencia:</p>
+    </div>
+
+    <div class="quote r rd1">
+      <p>"Encontrarás dentro de ti, además de esos dos impulsos, una tercera cosa que te dice que debes seguir el impulso de ayudar… y esa cosa que juzga entre los dos no puede ser ninguno de ellos."</p>
+      <div class="quote-attr">C.S. Lewis</div>
+      <div class="quote-src">Mero Cristianismo · citado en Geisler-Turek — Cuando oyes a alguien pedir auxilio, sientes el impulso de ayudar y el de ponerte a salvo. Ese "juez" no es un instinto más: es la ley moral que <em>descubrimos</em>, no que inventamos.</div>
+    </div>
+
+    <!-- Evolution objection -->
+    <div class="obj mt48 r rd2">
+      <div class="obj-q">
+        <span class="obj-q-icon">💬</span>
+        <p>"¿No puede la moral ser solo producto de la evolución?"</p>
+      </div>
+      <div class="obj-a">
+        <span class="obj-a-label">Respuesta</span>
+        <p>La evolución podría explicar por qué <em>sentimos</em> ciertas cosas (empatía, reciprocidad), pero no por qué esas cosas son <em>verdaderamente buenas u obligatorias</em>. Como respondió Craig: eso mostraría cómo <strong class="strong">descubrimos</strong> los valores, no que los inventamos. Es como heredar talento para las matemáticas: las leyes matemáticas existen aparte de cómo llegaste a conocerlas. La evolución explica el origen de nuestros sentimientos morales, no su <strong class="strong">autoridad</strong>.</p>
+      </div>
+    </div>
+
+    <!-- Syllogism immersive -->
+    <div class="immersive mt64 r rd3">
+      <img src="assets/concept-syllogism.png" alt="El silogismo moral">
+      <div class="immersive-cap">Si P1 y P2 son verdaderas, la conclusión es inevitable — aunque no te guste.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 3: NATURALISMO MORAL ═══════════════════════════ -->
+<section class="scene dark on-dark" id="naturalismo">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">03</div>
+      <span class="eyebrow">Bloque 3</span>
+      <h2 class="h1 mt16">Respondiendo al<br>naturalismo moral</h2>
+      <p class="body-lg mt24" style="max-width:54ch;">Algunos pensadores —el biólogo Edward O. Wilson es un ejemplo honesto— intentan explicar la moralidad como puro resultado de la selección natural. Es un intento serio, pero choca con tres problemas de fondo.</p>
+    </div>
+
+    <!-- 3 problems -->
+    <div class="problems r rd1">
+      <div class="problem">
+        <div class="problem-n">Problema 1</div>
+        <div class="problem-title">Confunde describir con mandar</div>
+        <div class="problem-body">Decir que evolucionamos para sentirnos bien cooperando no explica por qué <em>debemos</em> cooperar. Del "esto es así" no se sigue el "esto debe ser así". La ciencia describe hechos; no produce deberes.</div>
+      </div>
+      <div class="problem">
+        <div class="problem-n">Problema 2</div>
+        <div class="problem-title">Juzgamos la evolución desde fuera</div>
+        <div class="problem-body">Si la evolución nos hubiera llevado a disfrutar la crueldad, ¿sería "buena"? Todos sabemos que no. Al decirlo, medimos la evolución con un estándar externo a ella — uno que la evolución no nos pudo dar.</div>
+      </div>
+      <div class="problem">
+        <div class="problem-n">Problema 3</div>
+        <div class="problem-title">No puede indignarse con coherencia</div>
+        <div class="problem-body">Si el universo es solo materia y azar sin propósito, ¿con qué autoridad llamamos "malo" al abuso? Para condenar el mal de verdad hace falta un estándar real — y eso es justo lo que el naturalismo no puede ofrecer.</div>
+      </div>
+    </div>
+
+    <!-- Evolution immersive -->
+    <div class="immersive mt48 r rd2">
+      <img src="assets/concept-evolution.png" alt="Evolución y moralidad">
+      <div class="immersive-cap on-dark">La biología describe cómo emergieron nuestros instintos morales — no por qué son <em>obligatorios</em>.</div>
+    </div>
+
+    <!-- Mackie -->
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis">
+            <img src="assets/portrait-mackie.png" alt="J.L. Mackie" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">J.L. Mackie</div>
+            <div class="portrait-role">Filósofo ateo · 1917–1981</div>
+            <span class="portrait-secular">Ateo</span>
+            <p class="body-sm mt8">Reconoció honestamente que los valores morales objetivos no encajarían en un universo puramente material — y concluyó que no existían.</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="quote" style="margin-top:0;">
+          <p>"Los valores morales objetivos serían entidades extrañísimas, distintas de todo lo demás en el universo."</p>
+          <div class="quote-attr">J.L. Mackie</div>
+          <div class="quote-src">citado en Groothuis, <em>Apologética Cristiana</em></div>
+        </div>
+        <div class="card-dark mt24" style="border-left:3px solid var(--purple-light);">
+          <span class="eyebrow">La respuesta teísta</span>
+          <p class="body mt16">Exacto — los valores morales objetivos son "extrañísimos" para el materialismo. Y precisamente por eso apuntan a algo más allá de la materia.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Richard Taylor -->
+    <div class="quote mt48 r rd3">
+      <p>"Un deber es algo que se debe… a alguna persona. No puede existir tal cosa como un deber en forma aislada."</p>
+      <div class="quote-attr">Richard Taylor · Filósofo no teísta</div>
+      <div class="quote-src">citado en Groothuis, <em>Apologética Cristiana</em> — Una obligación moral "flotando sola", sin nadie ante quien seas responsable, es incomprensible. La ley moral implica un Legislador personal.</div>
+    </div>
+
+    <!-- Capital robado -->
+    <div class="card-dark mt48 r rd4" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">El "capital robado" al teísmo</span>
+      <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">Muchos sistemas morales seculares que defienden la igualdad y los derechos humanos viven del capital robado al teísmo: disfrutan el fruto (la dignidad de toda persona) mientras niegan la raíz (que fuimos creados a imagen de Dios).</p>
+      <p class="body mt16">Por eso el teísta tiene coherencia: hay un Legislador que trasciende cultura y biología. Por eso podemos decir que la esclavitud siempre estuvo mal — aunque los que la practicaban tuvieran el poder del Estado.</p>
+    </div>
+
+    <!-- Arrogance objection -->
+    <div class="obj mt32 r rd5">
+      <div class="obj-q">
+        <span class="obj-q-icon">💬</span>
+        <p>"¿No es arrogante decir que tu moral es la correcta?"</p>
+      </div>
+      <div class="obj-a">
+        <span class="obj-a-label">Respuesta</span>
+        <p>No es arrogancia reconocer lo que todos ya sabemos: que torturar a un niño inocente está mal. El argumento no dice "los cristianos son más morales". Dice que la moralidad objetiva —que todos reconocemos en la práctica— necesita un fundamento que la trascienda. Puedes rechazar ese fundamento, pero no puedes rechazar la moralidad objetiva sin contradecirte en el momento siguiente.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 4: LA CONCIENCIA ═══════════════════════════ -->
+<section class="scene" id="conciencia">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <span class="eyebrow">Bloque 4</span>
+      <h2 class="h1 mt16">La conciencia:<br>la firma de Dios</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Cada vez que alguien dice "eso estuvo mal", está firmando en la práctica lo que queremos demostrar en teoría: que existe una moralidad objetiva que no inventamos nosotros.</p>
+    </div>
+
+    <!-- Conscience immersive -->
+    <div class="immersive r rd1">
+      <img src="assets/concept-conscience.png" alt="La conciencia moral" style="max-height:70vh;object-fit:cover;width:100%;">
+      <div class="immersive-cap">La conciencia moral: esa voz interior que no inventamos — que descubrimos.</div>
+    </div>
+
+    <div class="two-col mt64">
+      <div class="r rd1">
+        <p class="body-lg">La Biblia no enseña que la conciencia sea un truco psicológico para sentir culpa. Enseña que la conciencia es la <strong class="strong purple">firma de Dios grabada en el ser humano</strong> — la prueba de que fuimos creados a su imagen moral.</p>
+        <p class="body mt24">El argumento filosófico y el texto bíblico dicen exactamente lo mismo: hay una ley escrita en el corazón, y esa ley apunta a un Legislador.</p>
+
+        <!-- Connection to series -->
+        <div class="card mt32" style="border-top:3px solid var(--purple);">
+          <span class="eyebrow">Lo que ya hemos visto juntos</span>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--s12);margin-top:var(--s24);">
+            <li style="display:flex;gap:var(--s12);font-size:15px;color:var(--body);">
+              <span class="purple" style="font-weight:500;flex-shrink:0;">1</span>
+              <span>El universo tuvo una <strong class="strong" style="color:var(--navy);">Causa</strong> — argumento cosmológico.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);font-size:15px;color:var(--body);">
+              <span class="purple" style="font-weight:500;flex-shrink:0;">2</span>
+              <span>El universo muestra un <strong class="strong" style="color:var(--navy);">Diseño</strong> — argumento teleológico.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);font-size:15px;color:var(--body);">
+              <span class="purple" style="font-weight:500;flex-shrink:0;">3</span>
+              <span>La vida exige <strong class="strong" style="color:var(--navy);">Información</strong> — no venimos de la evolución al azar, sino que tenemos un diseño.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);font-size:15px;color:var(--body);">
+              <span class="purple" style="font-weight:500;flex-shrink:0;">4</span>
+              <span>La conciencia apunta a un <strong class="strong" style="color:var(--navy);">Dios moral</strong> — este argumento, lo que acabamos de ver.</span>
+            </li>
+          </ul>
+          <p class="body-sm mt24">Cada argumento es un testigo distinto que señala al mismo Dios. Las siguientes sesiones mostrarán por qué esa Mente tiene nombre, rostro y una tumba vacía.</p>
+        </div>
+      </div>
+      <div class="r rd2">
+        <!-- Law immersive -->
+        <div class="immersive" style="margin:0;">
+          <img src="assets/concept-law.png" alt="La ley escrita en el corazón">
+          <div class="immersive-cap">"La ley escrita en sus corazones" — toda ley apunta a un Legislador.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Romans verse -->
+    <div class="card mt64 r rd3" style="background:rgba(83,58,253,0.04);border:1px solid rgba(83,58,253,0.2);text-align:center;padding:var(--s48);">
+      <span class="eyebrow">Texto base · Romanos 2:14–15 · RVR1960</span>
+      <p class="h2 mt24 italic" style="font-style:italic;letter-spacing:-0.5px;">"Porque cuando los gentiles que no tienen ley, hacen por naturaleza lo que es de la ley… mostrando la obra de la ley escrita en sus corazones, dando testimonio su conciencia."</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 5: OBJECIONES ═══════════════════════════ -->
+<section class="scene dark on-dark" id="objeciones">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <span class="eyebrow">Bloque 5</span>
+      <h2 class="h1 mt16">Objeciones difíciles</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Las preguntas más comunes — con respuestas honestas. Cada objeción bien respondida es una puerta que se abre, no que se cierra.</p>
+    </div>
+
+    <div class="objections r rd1">
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Diferentes culturas tienen diferentes morales. Eso prueba que es relativa."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>El desacuerdo sobre lo correcto no prueba que lo correcto no exista — igual que discutir sobre historia no prueba que el pasado no ocurrió. Además, los códigos de todas las culturas comparten un núcleo sorprendentemente común: el asesinato injusto está mal, la traición está mal, honrar a los padres es bueno. C.S. Lewis lo documentó en el apéndice de <em>La abolición del hombre</em>. El desacuerdo está en los detalles; el acuerdo, en lo fundamental.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"La gente hace cosas terribles en nombre de Dios. ¿Cómo puede Dios ser el fundamento de la moral?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Que alguien cometa atrocidades invocando a Dios no refuta el argumento: lo confirma. Podemos juzgar esas acciones como objetivamente malas precisamente porque existe un estándar que trasciende a quien las comete. Las atrocidades "en nombre de la religión" fueron malas porque <em>contradijeron la ley moral que el propio Dios estableció</em>. Eso no prueba que Dios no exista — prueba que los humanos distorsionan cualquier cosa, incluida la religión.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"¿Y Dios no podría simplemente decir que el mal es bueno, y todo cambiaría? (El dilema de Eutifrón)"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta — El Tercer Camino</span>
+          <p>Esta es la objeción clásica de Platón en el <em>Eutifrón</em>. No es que algo sea bueno porque Dios lo manda por capricho (sería arbitrario), ni que la bondad esté por encima de Dios (le quitaría su supremacía). La respuesta cristiana: Dios mismo <strong class="strong">ES</strong> la bondad — su carácter eterno e inmutable es la medida del bien. No la inventa ni la obedece desde afuera. Por eso a Dios le es imposible mandar la crueldad: contradiría su propio ser.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"¿No basta con que algo 'lastime a alguien' para saber que está mal, sin meter a Dios?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Es una buena intuición… pero pregúntate por qué lastimar a alguien "está mal". Si solo somos átomos en movimiento, ¿de dónde sale que el dolor de otro me <em>obligue</em> a algo? Que sintamos que está mal es real; lo que no puede explicar el naturalismo es por qué esa sensación corresponde a un deber verdadero. El teísmo sí lo explica: la persona vale porque lleva la imagen de Dios.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Soy ateo y soy buena persona. Eso refuta tu argumento."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>¡Para nada, y me alegra que lo seas! El argumento jamás dijo que los ateos no puedan ser buenos. Dijo que la moralidad objetiva necesita un fundamento. Tú reconoces el bien y el mal reales — eso es exactamente la Premisa 2. La pregunta no es si vives moralmente, sino qué hace que esa moral sea más que tu preferencia. Estás de pie sobre un suelo (la ley moral) cuyo dueño es Dios, aunque no lo reconozcas todavía.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Aunque todo esto fuera cierto, solo prueba que hay un Legislador moral… no que sea el Dios cristiano."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta honesta</span>
+          <p>Y tienes toda la razón — lo decimos con honestidad. El argumento moral nos lleva hasta una Mente moral, personal y trascendente. Eso, por sí solo, no nos lleva todavía hasta Jesús. Pero es un puente enorme: nos saca del "todo es relativo y nada importa" y nos deja frente a un Dios que es la bondad misma, ante quien somos responsables. En las Sesiones 7–12 mostraremos por qué esa Mente tiene nombre, rostro y una tumba vacía. Hoy abrimos la puerta; más adelante entramos a la casa.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Plato + Euthyphro -->
+    <div class="two-col mt64">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis">
+            <img src="assets/portrait-plato.png" alt="Platón" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Platón</div>
+            <div class="portrait-role">Filósofo griego · 428–348 a.C.</div>
+            <span class="portrait-neutral">Filósofo Clásico</span>
+            <p class="body-sm mt8">Planteó el dilema de Eutifrón — la pregunta que pone a prueba cualquier fundamento divino de la moral.</p>
+            <ul class="portrait-contrib">
+              <li>Diálogo <em>Eutifrón</em>: ¿lo bueno lo manda Dios o Dios manda lo bueno?</li>
+              <li>La respuesta cristiana abre el "tercer camino"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="card-dark" style="border-left:3px solid var(--purple-light);">
+          <span class="eyebrow">El Tercer Camino</span>
+          <h3 class="h3 mt16" style="color:#fff;letter-spacing:-0.3px;">Dios no manda el bien.<br>Dios <em>es</em> el bien.</h3>
+          <p class="body mt24">Platón planteó: ¿algo es bueno porque Dios lo manda (arbitrario), o Dios lo manda porque es bueno (el bien está por encima de Dios)?</p>
+          <p class="body mt16">La respuesta cristiana: ninguna de las dos. La naturaleza eterna e inmutable de Dios <em>es</em> la medida del bien — por eso le es imposible mandar la crueldad. No sería arbitrario ni estaría limitado por algo externo.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CIERRE ═══════════════════════════ -->
+<section class="scene" id="cierre">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">06</div>
+      <span class="eyebrow">Bloque 6 · Cierre</span>
+      <h2 class="h1 mt16">Resumen<br>de bolsillo</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Para tener a mano en cualquier conversación.</p>
+    </div>
+
+    <!-- Discussion -->
+    <div class="discussion r rd1">
+      <span class="eyebrow">Pregunta para discutir en clase</span>
+      <p class="mt16">"Piensa en la última vez que sentiste indignación moral — cuando dijiste 'eso estuvo MUY MAL'. ¿Estabas expresando solo una preferencia personal, o apelando a algo más profundo que tú mismo? ¿Qué cambia eso?"</p>
+    </div>
+
+    <!-- Summary table -->
+    <div class="r rd2" style="overflow-x:auto;margin-top:var(--s64);">
+      <div class="accent-bar"></div>
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:35%;">Si te dicen…</th>
+            <th>Tú respondes…</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl">"No me impongas tu moral."</td>
+            <td class="resp">"¿Eso que acabas de decir es objetivamente correcto, o solo tu preferencia?" (Correcaminos).</td>
+          </tr>
+          <tr>
+            <td class="lbl">"La moral es relativa."</td>
+            <td class="resp">Entonces no puedes condenar el Holocausto ni la esclavitud. Pero todos lo hacemos — hay un estándar objetivo.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"La moral viene de la evolución."</td>
+            <td class="resp">Eso explicaría cómo descubrimos la moral, no por qué es obligatoria. El "es" no implica el "debe".</td>
+          </tr>
+          <tr>
+            <td class="lbl">"¿Y quién dice que eso es malo?"</td>
+            <td class="resp">Lo dices tú al protestar, y todos te entendemos. La pregunta es de dónde viene ese estándar: de un Legislador.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Homework -->
+    <h3 class="h3 mt64 r rd3">Tarea de la semana</h3>
+    <ul class="hw mt24 r rd4">
+      <li>
+        <div class="hw-num">01</div>
+        <p>Memoriza el versículo: <em>"…mostrando la obra de la ley escrita en sus corazones, dando testimonio su conciencia…"</em> — Romanos 2:15 (RVR1960).</p>
+      </li>
+      <li>
+        <div class="hw-num">02</div>
+        <p>Observa el mundo: cada vez que sientas indignación esta semana, pregúntate: "¿Estoy reaccionando a una preferencia, o a una ley que reconozco?"</p>
+      </li>
+      <li>
+        <div class="hw-num">03</div>
+        <p>Úsalo en una conversación real: cuando alguien diga "la moral es relativa", practica el <strong class="strong purple">Correcaminos</strong>: "¿Eso que dices vale para todos, o solo para ti?"</p>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER — ORACIÓN ═══════════════════════════ -->
+<footer class="scene deeper on-dark" id="oracion">
+  <div class="wrap">
+
+    <div class="r">
+      <span class="eyebrow">Cierre en oración</span>
+      <div class="verse-block mt24">
+        <p>"Señor, gracias porque escribiste tu ley en nuestro corazón. Gracias porque el bien y el mal no son un invento nuestro, sino el eco de quién eres Tú. Reconocemos que muchas veces hemos quebrantado esa ley, y que necesitamos tu perdón. Haz que esta conciencia que nos diste nos lleve siempre de regreso a Ti. Amén."</p>
+        <span class="verse-ref">Oración de cierre · Sesión 5</span>
+      </div>
+    </div>
+
+    <div class="verse-block mt32 r rd1" style="background:rgba(83,58,253,0.15);border-color:rgba(185,185,249,0.2);">
+      <p>"Porque… mostrando la obra de la ley escrita en sus corazones, dando testimonio su conciencia."</p>
+      <span class="verse-ref">Romanos 2:14–15 · RVR1960</span>
+    </div>
+
+    <div class="info-strip mt64 r rd2">
+      <div class="info-item">
+        <div class="info-item-label">Texto base</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Romanos 2:14–15 · RVR1960</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Autores citados</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">C.S. Lewis · W.L. Craig · Nietzsche · Russell · Mackie · Taylor · Platón</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Serie</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Razones para Creer · Apologética Cristiana</div>
+      </div>
+    </div>
+
+    <!-- HPE logo footer -->
+    <div class="divider-dark mt64"></div>
+    <div class="mt48 r rd3" style="display:flex;align-items:center;justify-content:center;">
+      <img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:36px;width:auto;opacity:0.6;">
+    </div>
+
+  </div>
+</footer>
+
+<script>
+// Progress bar
+function onScroll(){
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('bar').style.width=Math.min(pct,100)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// Ensure above-fold items get revealed
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.r:not(.in)').forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight)
+      el.classList.add('in');
+  });
+});
+</script>
+</body>
+</html>

@@ -6,6 +6,7 @@ on:
     paths:
       - "presentations/**/slides.html"
       - "presentations/**/content.md"
+  workflow_dispatch:
 
 jobs:
   sync:

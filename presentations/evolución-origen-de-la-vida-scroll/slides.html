@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>El Origen de la Vida · Sesión 4 · Razones para Creer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
+
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;
+  display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-brand{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.3px;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;
+  font-size:12px;font-weight:500;letter-spacing:0.2px;}
+@media(max-width:560px){.nav-tag{display:none;}}
+
+/* TYPE ROLES */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.02;
+  letter-spacing:-2px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:18px;font-weight:300;line-height:1.55;color:var(--body);}
+.body{font-size:16px;font-weight:300;line-height:1.6;color:var(--body);}
+.body-sm{font-size:14px;font-weight:300;line-height:1.55;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}
+.strong{font-weight:500;}
+.purple{color:var(--purple);}
+
+/* SCENES */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
+
+/* HERO */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero.png) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.85) 0%,rgba(28,30,84,0.75) 55%,rgba(46,43,140,0.65) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:14ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.6);max-width:52ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+.hero-dna{position:absolute;right:-5%;top:50%;transform:translateY(-50%);
+  width:min(55vw,700px);opacity:0.18;pointer-events:none;z-index:1;}
+@media(min-width:1024px){.hero-dna{opacity:0.3;}}
+
+/* ACCENT LINE */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
+
+/* SECTION NUMBER watermark */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;
+  font-feature-settings:"tnum";}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s32);}
+
+/* QUOTE */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;
+  color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
+.quote-src{font-size:12px;color:var(--body);margin-top:4px;font-style:italic;}
+.on-dark .quote-src{color:rgba(255,255,255,0.3);}
+
+/* PORTRAITS GRID */
+.portraits{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--s24);margin-top:var(--s48);align-items:start;}
+.portrait{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:rgba(23,23,23,0.08) 0 15px 35px;
+  transition:transform 220ms,box-shadow 220ms;}
+.portrait:hover{transform:translateY(-4px);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.portrait-vis{width:100%;aspect-ratio:3/4;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--s8);
+  background:linear-gradient(160deg,var(--brand-dark) 0%,var(--dark-navy) 100%);
+  position:relative;overflow:hidden;}
+.portrait-vis::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(83,58,253,0.35) 0%,transparent 65%);
+  pointer-events:none;}
+.portrait-initial{font-size:72px;font-weight:300;color:rgba(185,185,249,0.5);
+  line-height:1;letter-spacing:-4px;position:relative;z-index:1;}
+.portrait-years{font-family:var(--fm);font-size:10px;color:rgba(185,185,249,0.3);
+  letter-spacing:1px;position:relative;z-index:1;}
+.portrait-img{width:100%;height:100%;object-fit:cover;display:block;}
+.portrait-body{padding:var(--s16) var(--s16) var(--s24);}
+.portrait-name{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.2px;line-height:1.2;}
+.portrait-role{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;line-height:1.4;}
+.portrait-faith{display:inline-block;margin-top:var(--s8);
+  background:rgba(21,190,83,0.1);color:#108c3d;
+  border:1px solid rgba(21,190,83,0.3);padding:2px 8px;border-radius:4px;
+  font-size:11px;font-weight:500;}
+.portrait-secular{background:rgba(234,34,97,0.08);color:var(--ruby);
+  border:1px solid rgba(234,34,97,0.25);}
+.portrait-contrib{list-style:none;margin-top:var(--s12);display:flex;flex-direction:column;gap:4px;}
+.portrait-contrib li{font-size:11px;color:var(--body);line-height:1.4;padding-left:12px;position:relative;}
+.portrait-contrib li::before{content:'→';position:absolute;left:0;color:var(--purple);font-size:10px;line-height:1.5;}
+
+/* PROBLEM CARDS */
+.problems{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--s24);margin-top:var(--s48);}
+.problem{border-left:3px solid var(--ruby);padding:var(--s24);
+  background:rgba(234,34,97,0.04);border-radius:0 8px 8px 0;}
+.on-dark .problem{background:rgba(234,34,97,0.08);}
+.problem-n{font-family:var(--fm);font-size:10px;color:var(--ruby);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.problem-title{font-size:17px;font-weight:500;color:var(--navy);margin-bottom:var(--s8);line-height:1.3;}
+.on-dark .problem-title{color:#fff;}
+.problem-body{font-size:14px;font-weight:300;color:var(--body);line-height:1.55;}
+.on-dark .problem-body{color:rgba(255,255,255,0.55);}
+
+/* COMPARE */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--s32);margin-top:var(--s48);}
+@media(max-width:640px){.compare{grid-template-columns:1fr;}}
+.compare-head{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;padding-bottom:var(--s12);border-bottom:2px solid;margin-bottom:var(--s16);}
+.compare-head.yes{color:var(--green);border-color:var(--green);}
+.compare-head.no{color:var(--ruby);border-color:var(--ruby);}
+.compare-list{list-style:none;}
+.compare-list li{font-size:15px;font-weight:300;color:var(--body);
+  padding:var(--s8) 0;border-bottom:1px solid var(--border);
+  display:flex;gap:var(--s8);line-height:1.4;}
+.compare-list li::before{content:'—';color:var(--purple);flex-shrink:0;}
+
+/* OBJECTIONS */
+.objections{display:flex;flex-direction:column;gap:var(--s32);margin-top:var(--s48);}
+.obj{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.obj-q{background:var(--brand-dark);padding:var(--s24) var(--s32);
+  display:flex;gap:var(--s16);align-items:flex-start;}
+.obj-q-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.obj-q p{font-size:18px;font-weight:300;color:rgba(255,255,255,0.9);
+  font-style:italic;line-height:1.45;}
+.obj-a{padding:var(--s24) var(--s32);background:#fff;}
+.obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
+.obj-a p{font-size:16px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* SUMMARY TABLE */
+.summary{width:100%;border-collapse:collapse;margin-top:var(--s48);}
+.summary th{text-align:left;font-family:var(--fm);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 var(--s16) var(--s16) 0;color:var(--body);
+  border-bottom:2px solid var(--border);}
+.summary td{font-size:15px;font-weight:300;line-height:1.5;
+  padding:var(--s16) var(--s16) var(--s16) 0;
+  border-bottom:1px solid var(--border);color:var(--body);vertical-align:top;}
+.summary td.lbl{font-weight:500;color:var(--navy);}
+.summary td.resp{color:var(--purple);}
+
+/* HOMEWORK */
+.hw{list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s32);}
+.hw li{display:flex;gap:var(--s16);align-items:flex-start;}
+.hw-num{flex-shrink:0;width:32px;height:32px;border-radius:4px;
+  background:var(--purple);color:#fff;
+  font-family:var(--fm);font-size:13px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;}
+.hw li p{font-size:16px;font-weight:300;color:var(--body);line-height:1.55;padding-top:4px;}
+
+/* VERSE */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.9);line-height:1.5;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);
+  letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
+
+/* INFO STRIP */
+.info-strip{display:flex;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s48);}
+.info-item{flex:1;min-width:200px;}
+.info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.info-item-val{font-size:16px;font-weight:300;color:var(--navy);line-height:1.4;}
+
+/* DIVIDERS */
+.divider{height:1px;background:var(--border);}
+.divider-dark{height:1px;background:rgba(255,255,255,0.1);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* PILL TAG */
+.pill{display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);
+  color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* IMMERSIVE IMAGE */
+.immersive{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 45px -30px;margin:var(--s48) 0;}
+.immersive img{width:100%;display:block;}
+.immersive-svg{padding:var(--s48);background:var(--dark-navy);}
+
+/* CHAPTER ANCHOR */
+[id]{scroll-margin-top:80px;}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand"><img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:40px;width:auto;display:block;"></div>
+    <div class="nav-tag">El Origen de la Vida</div>
+    <div class="nav-pill">Apologética</div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="inicio">
+  <!-- DNA helix SVG background -->
+  <svg class="hero-dna" viewBox="0 0 500 900" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#533afd" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#f96bee" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    <!-- Strand A (sinusoidal) -->
+    <path d="M80,0 C250,90 250,90 420,180 C250,270 250,270 80,360 C250,450 250,450 420,540 C250,630 250,630 80,720 C250,810 250,810 420,900"
+      stroke="url(#g1)" fill="none" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Strand B (opposite phase) -->
+    <path d="M420,0 C250,90 250,90 80,180 C250,270 250,270 420,360 C250,450 250,450 80,540 C250,630 250,630 420,720 C250,810 250,810 80,900"
+      stroke="#b9b9f9" fill="none" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+    <!-- Base pairs -->
+    <g stroke="#f96bee" stroke-width="2" opacity="0.7" stroke-linecap="round">
+      <line x1="250" y1="90" x2="250" y2="90"/><circle cx="250" cy="90" r="5" fill="#f96bee"/>
+      <line x1="250" y1="270" x2="250" y2="270"/><circle cx="250" cy="270" r="5" fill="#533afd"/>
+      <line x1="250" y1="450" x2="250" y2="450"/><circle cx="250" cy="450" r="5" fill="#f96bee"/>
+      <line x1="250" y1="630" x2="250" y2="630"/><circle cx="250" cy="630" r="5" fill="#533afd"/>
+      <line x1="250" y1="810" x2="250" y2="810"/><circle cx="250" cy="810" r="5" fill="#f96bee"/>
+      <!-- mid-pairs -->
+      <line x1="155" y1="45" x2="345" y2="45" opacity="0.4"/>
+      <line x1="155" y1="135" x2="345" y2="135" opacity="0.4"/>
+      <line x1="155" y1="225" x2="345" y2="225" opacity="0.4"/>
+      <line x1="155" y1="315" x2="345" y2="315" opacity="0.4"/>
+      <line x1="155" y1="405" x2="345" y2="405" opacity="0.4"/>
+      <line x1="155" y1="495" x2="345" y2="495" opacity="0.4"/>
+      <line x1="155" y1="585" x2="345" y2="585" opacity="0.4"/>
+      <line x1="155" y1="675" x2="345" y2="675" opacity="0.4"/>
+      <line x1="155" y1="765" x2="345" y2="765" opacity="0.4"/>
+      <line x1="155" y1="855" x2="345" y2="855" opacity="0.4"/>
+    </g>
+    <!-- Floating base-pair labels ATCG -->
+    <text x="258" y="88" fill="#f96bee" font-size="11" font-family="monospace" opacity="0.8">A</text>
+    <text x="232" y="88" fill="#533afd" font-size="11" font-family="monospace" opacity="0.8">T</text>
+    <text x="258" y="268" fill="#533afd" font-size="11" font-family="monospace" opacity="0.8">C</text>
+    <text x="232" y="268" fill="#f96bee" font-size="11" font-family="monospace" opacity="0.8">G</text>
+    <text x="258" y="448" fill="#f96bee" font-size="11" font-family="monospace" opacity="0.8">A</text>
+    <text x="232" y="448" fill="#533afd" font-size="11" font-family="monospace" opacity="0.8">T</text>
+  </svg>
+
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Sesión 4 · Razones para Creer · Apologética Cristiana</div>
+    <h1 class="display r rd1">El origen<br>de la vida<br>y la evolución</h1>
+    <p class="body-lg r rd2">¿Puede el azar crear vida? Ciencia honesta, fe sin miedo, y la pregunta que la evolución no responde.</p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">📖 Génesis 1:11–12, 21, 24</span>
+      <span class="hero-badge">👥 15–45 años</span>
+      <span class="hero-badge">🎯 Micro vs. Macro · Abiogénesis · ADN</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ APERTURA ═══════════════════════════ -->
+<section class="scene" id="apertura">
+  <div class="wrap">
+    <div class="r">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">La tensión de partida</span>
+    </div>
+    <h2 class="h1 mt16 r rd1" style="max-width:18ch;">La ciencia<br>o la fe.<br>¿Hay que elegir?</h2>
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">Muchas personas sienten que deben elegir entre la ciencia y la fe en Dios, como si creer en la Biblia y creer en la ciencia fueran incompatibles — especialmente frente al origen de la vida y la evolución.</p>
+        <p class="body mt24" style="max-width:48ch;">Esta sesión responde a esa tensión con honestidad intelectual: <strong class="strong">los creyentes no le temen a la ciencia</strong>, le temen a la deshonestidad, venga de quien venga.</p>
+      </div>
+      <div class="r rd2">
+        <div class="card">
+          <span class="eyebrow">El objetivo de hoy</span>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s24);">
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">01</span>
+              <span class="body">Distinguir microevolución de macroevolución.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">02</span>
+              <span class="body">Entender por qué la evolución no explica el origen de la vida.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">03</span>
+              <span class="body">Mostrar que el origen de la vida exige una mente — no el azar.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ BLOQUE 1: FE Y CIENCIA ═══════════════════════════ -->
+<section class="scene dark on-dark" id="fe-ciencia">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <span class="eyebrow">Bloque 1</span>
+      <h2 class="h1 mt16">Fe y ciencia:<br>¿realmente en guerra?</h2>
+      <p class="body-lg mt24" style="max-width:54ch;">Existe un mito muy extendido: que la ciencia y la fe cristiana son enemigas naturales. Históricamente, eso es <em class="italic">falso</em>.</p>
+    </div>
+
+    <!-- KEY DISTINCTION -->
+    <div class="card-dark r rd1" style="margin-top:var(--s48);border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Distinción clave</span>
+      <div class="compare mt24" style="gap:var(--s32);">
+        <div>
+          <div class="compare-head" style="color:var(--purple-light);border-color:var(--purple-light);">La ciencia pregunta</div>
+          <p class="body-lg" style="color:rgba(255,255,255,0.85);font-style:italic;">¿Cómo?</p>
+          <p class="body mt8">Describe mecanismos, procesos, leyes naturales.</p>
+        </div>
+        <div>
+          <div class="compare-head" style="color:var(--purple-light);border-color:var(--purple-light);">La fe pregunta</div>
+          <p class="body-lg" style="color:rgba(255,255,255,0.85);font-style:italic;">¿Quién? ¿Por qué?</p>
+          <p class="body mt8">Explica origen, propósito y significado. Son preguntas distintas — no se contradicen.</p>
+        </div>
+      </div>
+      <p class="body mt24" style="color:rgba(255,255,255,0.55);">El verdadero conflicto no es entre fe y ciencia, sino entre el <strong class="strong" style="color:rgba(255,255,255,0.8);">naturalismo filosófico</strong> (solo la materia y el azar lo explican todo) y el <strong class="strong" style="color:rgba(255,255,255,0.8);">teísmo</strong>. Esa es una disputa de <em>filosofía</em>, no de ciencia.</p>
+    </div>
+
+    <!-- RODNEY STARK QUOTE -->
+    <div class="quote r rd2">
+      <p>"La verdadera ciencia surgió una sola vez: en Europa. La alquimia se volvió química y la astrología se volvió astronomía solo en el Occidente cristiano, porque allí se creía que la naturaleza es racionalmente cognoscible — obra de un Creador racional."</p>
+      <div class="quote-attr">Rodney Stark · Sociólogo · Princeton</div>
+      <div class="quote-src">For the Glory of God (2003)</div>
+    </div>
+
+    <!-- SCIENTISTS GALLERY -->
+    <h3 class="h3 mt48 r" style="color:#fff;">Científicos con cosmovisión bíblica</h3>
+    <p class="body mt16 r rd1">No son excepciones curiosas — son los fundadores de la ciencia moderna.</p>
+
+    <div class="portraits r rd2">
+      <!-- Copernicus -->
+      <div class="portrait">
+        <div class="portrait-vis" style="padding:0;">
+          <img src="assets/portrait-copernico.png" alt="Nicolás Copérnico" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Nicolás Copérnico</div>
+          <div class="portrait-role">Astrónomo · Canónigo de la Iglesia</div>
+          <span class="portrait-faith">Creyente</span>
+          <p class="body-sm" style="margin-top:var(--s8);">Propuso el heliocentrismo siendo canónigo de la Iglesia Católica.</p>
+          <ul class="portrait-contrib">
+            <li>Modelo heliocéntrico del sistema solar</li>
+            <li>Revolucionó la astronomía occidental</li>
+            <li><em>De revolutionibus orbium coelestium</em> (1543)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Kepler -->
+      <div class="portrait">
+        <div class="portrait-vis" style="padding:0;">
+          <img src="assets/portrait-kepler.png" alt="Johannes Kepler" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Johannes Kepler</div>
+          <div class="portrait-role">Astrónomo · Matemático</div>
+          <span class="portrait-faith">Creyente</span>
+          <p class="body-sm" style="margin-top:var(--s8);">Decía que al estudiar el cosmos "pensaba los pensamientos de Dios después de Él".</p>
+          <ul class="portrait-contrib">
+            <li>3 leyes del movimiento planetario</li>
+            <li>Órbitas elípticas de los planetas</li>
+            <li>Fundamentos de la mecánica celeste</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Newton -->
+      <div class="portrait">
+        <div class="portrait-vis" style="padding:0;">
+          <img src="assets/portrait-newton.png" alt="Isaac Newton" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Isaac Newton</div>
+          <div class="portrait-role">Física · Gravitación universal</div>
+          <span class="portrait-faith">Creyente</span>
+          <p class="body-sm" style="margin-top:var(--s8);">Dedicó enormes esfuerzos al estudio de la Biblia junto a sus investigaciones científicas.</p>
+          <ul class="portrait-contrib">
+            <li>Ley de gravitación universal</li>
+            <li>3 leyes del movimiento (Principia, 1687)</li>
+            <li>Cálculo diferencial e integral</li>
+            <li>Descomposición de la luz en espectro</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Pasteur -->
+      <div class="portrait">
+        <div class="portrait-vis" style="padding:0;">
+          <img src="assets/portrait-pasteur.png" alt="Louis Pasteur" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Louis Pasteur</div>
+          <div class="portrait-role">Microbiólogo · Vacunas</div>
+          <span class="portrait-faith">Creyente</span>
+          <p class="body-sm" style="margin-top:var(--s8);">Creyente confeso. Refutó científicamente la generación espontánea.</p>
+          <ul class="portrait-contrib">
+            <li>Refutó la generación espontánea</li>
+            <li>Vacunas contra la rabia y el ántrax</li>
+            <li>Pasteurización (proceso que lleva su nombre)</li>
+            <li>Teoría microbiana de enfermedades</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Lemaître -->
+      <div class="portrait">
+        <div class="portrait-vis" style="padding:0;">
+          <img src="assets/portrait-lemaitre.png" alt="Georges Lemaître" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Georges Lemaître</div>
+          <div class="portrait-role">Sacerdote · Padre del Big Bang</div>
+          <span class="portrait-faith">Creyente</span>
+          <p class="body-sm" style="margin-top:var(--s8);">Sacerdote católico belga y astrofísico — propuso la teoría del Big Bang.</p>
+          <ul class="portrait-contrib">
+            <li>Propuso la teoría del Big Bang (1927)</li>
+            <li>Calculó la expansión del universo</li>
+            <li>Precedió a Hubble en el descubrimiento</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Galileo -->
+    <div class="card-dark mt48 r rd3">
+      <span class="eyebrow">El caso Galileo — bien contado</span>
+      <p class="body-lg mt16" style="color:rgba(255,255,255,0.8);">"La Escritura nos enseña cómo ir al cielo, no cómo van los cielos."</p>
+      <p class="body mt16">El choque entre Galileo y la Iglesia se cita siempre como prueba de la guerra fe-ciencia. Pero Galileo fue un <strong class="strong" style="color:rgba(255,255,255,0.75);">cristiano confeso</strong>. El conflicto fue más por la filosofía aristotélica de la época — y por el carácter combativo de Galileo — que por la Biblia misma.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 2: MICRO vs MACRO ═══════════════════════════ -->
+<section class="scene" id="micro-macro">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">02</div>
+      <span class="eyebrow">Bloque 2</span>
+      <h2 class="h1 mt16">Micro vs.<br>macroevolución</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">La distinción que lo cambia todo. Cuando alguien dice "creo en la evolución", la primera pregunta es: <strong class="strong purple">¿a qué te refieres exactamente?</strong></p>
+      <span class="pill mt16">Táctica del Correcaminos · Sesión 1</span>
+    </div>
+
+    <!-- Comparison visual -->
+    <div class="immersive r rd1">
+      <img src="assets/concept-micro-macro.png" alt="Microevolución vs Macroevolución" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <!-- Compare cards -->
+    <div class="compare r rd2">
+      <div>
+        <div class="compare-head yes">✓ Microevolución — probada</div>
+        <ul class="compare-list">
+          <li>Cambios y adaptaciones <em>dentro</em> de una misma especie.</li>
+          <li>Evidencia abundante y observada directamente.</li>
+          <li>Los picos de los pinzones cambian según el ambiente.</li>
+          <li>Las bacterias desarrollan resistencia a antibióticos.</li>
+          <li>Los perros tienen razas muy distintas… pero siguen siendo perros.</li>
+          <li style="color:var(--green);font-style:italic;">Posición cristiana: sin problema. Dios creó seres con capacidad de adaptarse.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="compare-head no">✗ Macroevolución — no observada</div>
+        <ul class="compare-list">
+          <li>Una especie convirtiéndose en un tipo de ser <em>completamente diferente</em>.</li>
+          <li>Ausente en el registro fósil. No se ha observado jamás en tiempo real.</li>
+          <li>Ejemplo afirmado: que los reptiles se convirtieron en aves.</li>
+          <li>Ejemplo afirmado: que los peces se convirtieron en anfibios.</li>
+          <li>El registro fósil muestra aparición súbita de categorías — no transiciones graduales.</li>
+          <li style="color:var(--ruby);font-style:italic;">Darwin mismo predijo que deberían hallarse "innumerables variedades de transición". No se han hallado.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cambrian Explosion -->
+    <h3 class="h3 mt64 r">La Explosión Cámbrica</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">Hace entre 500 y 600 millones de años, los fósiles muestran la aparición <strong class="strong">repentina</strong> de casi todos los grandes grupos animales conocidos — sin antepasados graduales en el registro anterior. Algunos lo llaman "el big bang de la biología".</p>
+
+    <!-- Cambrian SVG -->
+    <div class="immersive r rd2">
+      <img src="assets/concept-cambrian.png" alt="La Explosión Cámbrica" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="two-col r rd3" style="align-items:center;">
+      <div>
+        <div class="quote" style="margin:0;">
+          <p>"La extrema rareza de las formas de transición en el registro fósil persiste como el secreto comercial de la paleontología."</p>
+          <div class="quote-attr">Stephen Jay Gould · Paleontólogo · Harvard (evolucionista, no creyente)</div>
+          <div class="quote-src">Evolution's Erratic Pace (1977). Junto con Niles Eldredge propuso el "equilibrio puntuado" precisamente porque el registro fósil no mostraba las transiciones que Darwin predijo.</div>
+        </div>
+      </div>
+      <div>
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-gould.png" alt="Stephen Jay Gould" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Stephen Jay Gould</div>
+            <div class="portrait-role">Paleontólogo · Harvard</div>
+            <span class="portrait-faith portrait-secular">Ateo / Agnóstico</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Su propia honestidad científica documentó que el registro fósil no respalda la macroevolución gradual.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Piltdown + Ida + Denton -->
+    <div class="card mt48 r rd4" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Sobre los "eslabones perdidos"</span>
+      <p class="body mt16">Según Jonathan Wells, el registro fósil se parece más a un <strong class="strong purple">césped</strong> que a un árbol: grupos separados que aparecen simultáneamente, sin tronco común. No es evolución gradual — es lo que esperarías si hubiera habido creación.</p>
+      <p class="body mt16">Se han presentado numerosos candidatos como el eslabón perdido. Algunos resultaron ser fraudes: el <strong class="strong">Hombre de Piltdown</strong> engañó a la comunidad científica durante décadas. El fósil <strong class="strong">«Ida»</strong> fue anunciado con grandes titulares en 2009 — investigaciones posteriores mostraron que no aportaba evidencia real.</p>
+      <div class="quote mt32" style="border-left-color:var(--purple-light);">
+        <p>"Ningún fósil se entierra con su acta de nacimiento."</p>
+        <div class="quote-attr">Michael Denton · Biólogo Molecular (Ateo)</div>
+        <div class="quote-src">Sin esa acta, la relación ancestro-descendiente no puede establecerse — solo asumirse.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 3: ABIOGÉNESIS ═══════════════════════════ -->
+<section class="scene dark on-dark" id="abiogenesis">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">03</div>
+      <span class="eyebrow">Bloque 3</span>
+      <h2 class="h1 mt16">El problema<br>del origen</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Aunque la macroevolución fuera completamente cierta, quedaría sin responder la pregunta más básica de todas: <strong class="strong" style="color:#fff;">¿cómo apareció la primera célula viva?</strong></p>
+    </div>
+
+    <!-- Error de categoría -->
+    <div class="card-dark r rd1" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Un error de categoría — Bertalanffy</span>
+      <h3 class="h3 mt16">La evolución presupone vida.<br>No explica su origen.</h3>
+      <p class="body mt24">La selección natural no puede explicar el origen de la vida, porque la selección <strong class="strong" style="color:rgba(255,255,255,0.8);">ya requiere organismos que se reproduzcan</strong>. No existe "selección prebiótica". Suponer lo contrario es confundir dos cosas distintas:</p>
+      <div class="compare mt32" style="gap:var(--s24);">
+        <div class="card-dark" style="border:1px solid rgba(21,190,83,0.3);">
+          <span class="eyebrow" style="color:#15be53;">Lo que la evolución explica</span>
+          <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">Cómo <em>cambia</em> la vida que ya existe.</p>
+        </div>
+        <div class="card-dark" style="border:1px solid rgba(234,34,97,0.3);">
+          <span class="eyebrow" style="color:var(--ruby);">Lo que la evolución no explica</span>
+          <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">De dónde <em>salió</em> la vida.</p>
+          <p class="body mt8">A esa pregunta sin respuesta se le llama <strong class="strong" style="color:#fff;">abiogénesis</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Definición: Abiogénesis — alerta conceptual -->
+    <div class="r rd2" style="
+      border:1px solid rgba(251,146,60,0.4);
+      border-left:4px solid #fb923c;
+      background:rgba(251,146,60,0.07);
+      border-radius:8px;
+      padding:var(--s24) var(--s32);
+      margin-top:var(--s32);
+    ">
+      <div style="display:flex;align-items:center;gap:var(--s12);margin-bottom:var(--s16);">
+        <span style="
+          font-family:var(--fm);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+          background:rgba(251,146,60,0.15);color:#fb923c;
+          border:1px solid rgba(251,146,60,0.35);
+          padding:3px 10px;border-radius:4px;
+        ">⚠ Término que debes conocer</span>
+      </div>
+      <h4 style="font-size:18px;font-weight:600;color:#fff;letter-spacing:-0.3px;">¿Qué es la abiogénesis?</h4>
+      <p class="body mt12" style="color:rgba(255,255,255,0.75);">
+        Es la <strong style="color:#fb923c;">hipótesis naturalista</strong> que propone que la vida surgió espontáneamente a partir de materia no viva, sin intervención de ninguna inteligencia. No es un hecho comprobado ni una teoría con evidencia sólida — es una suposición filosófica que el azar pueda producir vida.
+      </p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s16);margin-top:var(--s24);">
+        <div style="background:rgba(234,34,97,0.1);border:1px solid rgba(234,34,97,0.25);border-radius:6px;padding:var(--s16);">
+          <div style="font-family:var(--fm);font-size:10px;color:var(--ruby);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Lo que afirma</div>
+          <p class="body-sm" style="color:rgba(255,255,255,0.7);">La vida pudo organizarse sola desde moléculas simples, sin diseño ni propósito — solo química y tiempo.</p>
+        </div>
+        <div style="background:rgba(21,190,83,0.08);border:1px solid rgba(21,190,83,0.25);border-radius:6px;padding:var(--s16);">
+          <div style="font-family:var(--fm);font-size:10px;color:#15be53;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Posición cristiana</div>
+          <p class="body-sm" style="color:rgba(255,255,255,0.7);">La vida requiere información, y la información requiere una mente. No apoyamos la abiogénesis — señalamos que la ciencia misma no puede explicarla sin un Diseñador.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Miller-Urey -->
+    <h3 class="h3 mt64 r">El experimento Miller-Urey</h3>
+    <p class="body mt16 r rd1" style="max-width:56ch;">En 1953, Stanley Miller y Harold Urey pasaron electricidad por gases (simulando rayos) y produjeron unos pocos aminoácidos. Por décadas se presentó como prueba de que la vida pudo surgir sola. Pero tiene problemas de fondo.</p>
+
+    <!-- Miller-Urey SVG diagram -->
+    <div class="immersive r rd2">
+      <img src="assets/concept-miller-urey.png" alt="Experimento Miller-Urey y sus problemas" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <!-- 4 Problems -->
+    <div class="problems r rd3">
+      <div class="problem">
+        <div class="problem-n">Problema 1</div>
+        <div class="problem-title">La atmósfera era incorrecta</div>
+        <div class="problem-body">La mezcla de gases que usó Miller no corresponde a lo que los geólogos modernos creen que era la atmósfera primitiva. Con la mezcla correcta, no se forman aminoácidos.</div>
+      </div>
+      <div class="problem">
+        <div class="problem-n">Problema 2</div>
+        <div class="problem-title">Aminoácidos ≠ vida</div>
+        <div class="problem-body">Producir algunos aminoácidos es como producir algunas letras del alfabeto. Pasar de letras sueltas a una enciclopedia con significado coherente requiere algo infinitamente mayor: información organizada.</div>
+      </div>
+      <div class="problem">
+        <div class="problem-n">Problema 3</div>
+        <div class="problem-title">La trampa del agua</div>
+        <div class="problem-body">Las proteínas se descomponen en agua. Pero el origen de la vida se supone que ocurrió en el mar. El mismo ambiente que "juntaría" los componentes los destruiría.</div>
+      </div>
+      <div class="problem">
+        <div class="problem-n">Problema 4</div>
+        <div class="problem-title">La homoquiralidad</div>
+        <div class="problem-body">Los aminoácidos existen en dos formas espejo (izquierda y derecha). Los procesos químicos producen mezclas al 50%. Pero toda proteína viva usa solo la forma izquierda. Que esto ocurra por azar es asombrosamente improbable.</div>
+      </div>
+    </div>
+
+    <!-- Dose + Denton quotes -->
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <div class="quote" style="border-left-color:var(--ruby);">
+          <p>"Más de treinta años de investigación sobre el origen de la vida han conducido a una mejor percepción de la inmensidad del problema… todas las discusiones terminan en un punto muerto o en una confesión de ignorancia."</p>
+          <div class="quote-attr">Klaus Dose · Bioquímico, especialista en origen de la vida</div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-dose.png" alt="Klaus Dose" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Klaus Dose</div>
+            <div class="portrait-role">Bioquímico · Especialista en abiogénesis</div>
+            <span class="portrait-faith portrait-secular">Secular</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Décadas de investigación en origen de vida lo llevaron a admitir que el problema sigue sin respuesta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-dark mt32 r rd3" style="border-left:3px solid rgba(234,34,97,0.5);">
+      <p class="body-lg" style="color:rgba(255,255,255,0.85);">"La complejidad del tipo de célula más simple que se conoce es tan grande que es imposible aceptar que un objeto de este tipo pudiera haber surgido repentinamente por algún tipo de evento improbable. Tal ocurrencia sería indistinguible de un milagro."</p>
+      <div class="quote-attr" style="margin-top:var(--s16);color:rgba(185,185,249,0.8);">Michael Denton · Biólogo Molecular (Ateo)</div>
+    </div>
+
+    <!-- El tiempo -->
+    <div class="card-dark mt48 r rd4" style="border-left:3px solid rgba(185,185,249,0.4);">
+      <span class="eyebrow">La objeción del tiempo</span>
+      <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);font-style:italic;">"Con millones de años, todo es posible."</p>
+      <p class="body mt16">El tiempo <strong class="strong" style="color:#fff;">no</strong> resuelve la improbabilidad: la empeora. Las leyes naturales tienden al desorden, no al orden con información.</p>
+
+      <!-- AVIÓN INTERACTIVO -->
+      <div style="display:flex;align-items:flex-start;gap:var(--s32);margin-top:var(--s32);flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <p class="body" style="color:rgba(255,255,255,0.7);">Piensa en tirar confeti rojo, blanco y azul desde un avión: más altura (más tiempo) no hace más probable que caiga formando una bandera — lo hace <em>menos probable</em>. Más tiempo no produce información. La información requiere una mente.</p>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:var(--s8);">
+          <button id="avion-btn" onclick="lanzarConfeti()" aria-label="Lanzar confeti" style="
+            background:none;border:none;cursor:pointer;padding:var(--s8);
+            border-radius:12px;transition:transform 180ms, filter 180ms;
+            filter:drop-shadow(0 0 12px rgba(83,58,253,0.4));
+          " title="¡Haz clic para lanzar el confeti!">
+            <img src="assets/doodle-avion.png" alt="Avión con confeti" width="130" height="130" style="display:block;object-fit:contain;pointer-events:none;">
+          </button>
+          <span style="font-family:var(--fm);font-size:10px;color:rgba(185,185,249,0.5);letter-spacing:1px;text-transform:uppercase;">¡Haz clic!</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 4: INFORMACIÓN ═══════════════════════════ -->
+<section class="scene" id="informacion">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <span class="eyebrow">Bloque 4 · El corazón del argumento</span>
+      <h2 class="h1 mt16">La vida no<br>es solo química:<br>es un mensaje</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Una célula viva no es solo materia ordenada: contiene información codificada, como un texto escrito. El ADN funciona con un "alfabeto" de cuatro letras (A, T, C, G) que deletrean instrucciones precisas.</p>
+    </div>
+
+    <!-- DNA → Information visual -->
+    <div class="immersive r rd1">
+      <img src="assets/concept-dna-info.png" alt="ADN como información — cascada del mensaje" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <!-- Polanyi quote + portrait -->
+    <div class="two-col mt64">
+      <div class="r rd1">
+        <div class="quote">
+          <p>"La información del ADN no puede explicarse por las leyes químicas, igual que el titular de un periódico no se explica por las propiedades químicas de la tinta."</p>
+          <div class="quote-attr">Michael Polanyi · Químico y Filósofo de la Ciencia</div>
+          <div class="quote-src">Personal Knowledge (1958). Donde hay un mensaje ("Doug ama a Rebecca"), inferimos naturalmente una mente que lo escribió. La materia sin vida no contiene información; la vida, sí.</div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-polanyi.png" alt="Michael Polanyi" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Michael Polanyi</div>
+            <div class="portrait-role">Químico · Filósofo de la Ciencia</div>
+            <span class="portrait-faith">Cristiano</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Demostró que la información no puede reducirse a sus sustratos físicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Boeing 747 -->
+    <div class="immersive r rd3" style="margin-top:var(--s64);">
+      <img src="assets/concept-boeing747.png" alt="Analogía del Boeing 747 — Fred Hoyle" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <!-- Hoyle quote + portrait -->
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-hoyle.png" alt="Fred Hoyle" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Fred Hoyle</div>
+            <div class="portrait-role">Astrónomo · Cosmólogo</div>
+            <span class="portrait-faith portrait-secular">Ateo</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Acuñó el término "Big Bang" en tono burlón. Ateo que admitió la imposibilidad estadística del origen espontáneo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="quote">
+          <p>La vida surgiera por azar es tan probable como que un tornado pase por un depósito de chatarra y ensamble un Boeing 747 completamente funcional.</p>
+          <div class="quote-attr">Fred Hoyle · Astrónomo (Ateo)</div>
+          <div class="quote-src">Chandra Wickramasinghe, astrobiólogo también ateo, usó la misma imagen. Ambos reconocían que el azar no alcanza.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Crick quote + portrait -->
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <div class="quote">
+          <p>"El origen de la vida parece ser casi un milagro, tantas son las condiciones que tendrían que cumplirse para ponerla en marcha."</p>
+          <div class="quote-attr">Francis Crick · Co-descubridor del ADN · Nobel 1962 (Ateo)</div>
+          <div class="quote-src">Crick estaba tan convencido de que la vida no pudo surgir por azar en la Tierra que propuso la "panspermia dirigida": seres inteligentes de otro planeta la sembraron aquí. Prefirió un "milagro extraterrestre" antes que aceptar un Diseñador.</div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-crick.png" alt="Francis Crick" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Francis Crick</div>
+            <div class="portrait-role">Biólogo Molecular · Nobel 1962</div>
+            <span class="portrait-faith portrait-secular">Ateo</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Co-descubridor de la estructura del ADN. Su propia conclusión: el origen espontáneo es "casi un milagro".</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Closing thought -->
+    <div class="card mt64 r rd4" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">La conclusión</span>
+      <p class="body-lg mt16">Incluso los ateos más brillantes admiten que el azar no alcanza. La diferencia no está en la evidencia, sino en <strong class="strong">a dónde se está dispuesto a seguirla</strong>.</p>
+      <div style="margin-top:var(--s32);padding-top:var(--s32);border-top:1px solid var(--border);">
+        <span class="eyebrow">Génesis 1:21 · RVR1960</span>
+        <p class="body-lg mt12 italic" style="color:var(--navy);">"Y creó Dios… toda ave alada según su especie. Y vio Dios que era bueno."</p>
+        <p class="body mt8">La Biblia lo dijo mucho antes que cualquier laboratorio.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 4B: ¿SOMOS SIMIOS? + IMAGO DEI ═══════════════════════════ -->
+<section class="scene dark on-dark" id="imago-dei">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <span class="eyebrow">Bloque 5 · La pregunta más importante</span>
+      <h2 class="h1 mt16">¿Somos simios<br>evolucionados<br>o imagen de Dios?</h2>
+      <p class="body-lg mt24" style="max-width:56ch;color:rgba(255,255,255,0.8);">La respuesta no es solo teológica. Tiene implicaciones científicas — y cambia todo lo que piensas sobre tu identidad y tu dignidad.</p>
+    </div>
+
+    <!-- Hero visual -->
+    <div class="immersive r rd1">
+      <img src="assets/concept-imago-dei.png" alt="Imago Dei — imagen de Dios" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <!-- ADN reencuadrado -->
+    <h3 class="h3 mt64 r">El argumento del ADN reencuadrado</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;color:rgba(255,255,255,0.75);">El argumento más popular dice: «Compartimos el 95-98% de ADN con el chimpancé, luego tenemos un ancestro común.» Pero eso es una <strong style="color:#fff;">falacia de interpretación</strong>.</p>
+
+    <!-- GOD / DOG illustration -->
+    <div class="card-dark mt32 r rd2" style="border:1px solid rgba(185,185,249,0.2);">
+      <span class="eyebrow">Ilustración — Mismas letras, significados opuestos</span>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s24);margin-top:var(--s32);">
+        <div style="background:rgba(83,58,253,0.15);border:1px solid rgba(83,58,253,0.3);border-radius:8px;padding:var(--s24);text-align:center;">
+          <p style="font-size:64px;font-weight:800;color:#b9b9f9;letter-spacing:6px;line-height:1;font-family:var(--fm);">GOD</p>
+          <p class="body mt12" style="color:rgba(255,255,255,0.5);">Dios</p>
+        </div>
+        <div style="background:rgba(234,34,97,0.1);border:1px solid rgba(234,34,97,0.25);border-radius:8px;padding:var(--s24);text-align:center;">
+          <p style="font-size:64px;font-weight:800;color:var(--ruby);letter-spacing:6px;line-height:1;font-family:var(--fm);">DOG</p>
+          <p class="body mt12" style="color:rgba(255,255,255,0.5);">Perro</p>
+        </div>
+      </div>
+      <p class="body mt24" style="color:rgba(255,255,255,0.6);">Las mismas 3 letras — G, O, D — en distinto orden producen significados completamente opuestos. De la misma manera, una diferencia pequeña en el orden de A, T, C y G produce criaturas radicalmente distintas.</p>
+      <p class="body mt12" style="color:rgba(255,255,255,0.7);"><strong style="color:#fff;">La similitud no implica el mismo origen</strong> — implica el mismo Autor.</p>
+      <div class="card-dark mt24" style="border:1px solid rgba(21,190,83,0.25);border-radius:6px;padding:var(--s16);">
+        <p class="body-sm" style="color:rgba(255,255,255,0.8);">La similitud genética no prueba ascendencia — prueba un <strong style="color:#15be53;">Diseñador que usó plataformas bioquímicas similares</strong> para criaturas que viven en la misma biosfera. Estudios muestran que la similitud genética humano-ratón también ronda el 90%. Si eso no nos hace parientes de los ratones, el argumento del ADN es mucho más débil de lo que parece.</p>
+      </div>
+      <p class="body mt24" style="color:rgba(185,185,249,0.8);font-style:italic;">La pregunta correcta no es «¿por qué nos parecemos?» sino <strong style="color:#b9b9f9;font-style:normal;">«¿la similitud explica mejor un ancestro común o un Creador común?»</strong></p>
+    </div>
+
+    <!-- Schutzenberger -->
+    <h3 class="h3 mt64 r">Lo que el darwinismo no puede explicar</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;color:rgba(255,255,255,0.75);">Marcel-Paul Schutzenberger señaló que los darwinistas son <em>«completamente incapaces»</em> de explicar la aparición casi simultánea de los rasgos que nos distinguen de los primates.</p>
+
+    <div class="problems mt32 r rd2">
+      <div class="problem">
+        <div class="problem-n">Rasgo 1</div>
+        <div class="problem-title">Bipedalismo completo</div>
+        <div class="problem-body">Requiere modificar simultáneamente la pelvis y el cerebelo. La selección natural ciega no puede coordinar cambios en sistemas distintos del cuerpo.</div>
+      </div>
+      <div class="problem">
+        <div class="problem-n">Rasgo 2</div>
+        <div class="problem-title">Mano con tacto fino</div>
+        <div class="problem-body">Distinta en tipo, no solo en grado, de cualquier primate. No hay forma evolutiva gradual que explique esa diferencia cualitativa.</div>
+      </div>
+      <div class="problem">
+        <div class="problem-n">Rasgo 3</div>
+        <div class="problem-title">Faringe para el habla</div>
+        <div class="problem-body">Modificación única de la faringe para el habla articulada. Ningún primate comparte esta estructura. Ningún proceso gradual la explica.</div>
+      </div>
+      <div class="problem">
+        <div class="problem-n">Rasgo 4</div>
+        <div class="problem-title">Sistema nervioso para el lenguaje</div>
+        <div class="problem-body">Modificación específica del sistema nervioso central, especialmente los lóbulos temporales. Para lograr esto coordinado se necesita inteligencia.</div>
+      </div>
+    </div>
+
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-schutzenberger.png" alt="Marcel-Paul Schutzenberger" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Marcel-Paul Schutzenberger</div>
+            <div class="portrait-role">Matemático · Universidad de París</div>
+            <span class="portrait-faith portrait-secular">Secular</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Demostró matemáticamente que la selección natural no puede generar los cambios coordinados que requiere la singularidad humana.</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="quote" style="margin:0;">
+          <p>Los darwinistas son «completamente incapaces de proporcionar una explicación convincente de la aparición casi simultánea» de los rasgos que hacen humano al humano.</p>
+          <div class="quote-attr">Marcel-Paul Schutzenberger · Matemático · Universidad de París</div>
+          <div class="quote-src">Argumentó que la coordinación requerida supera por órdenes de magnitud lo que el azar puede lograr.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Imago Dei -->
+    <div class="card-dark mt64 r rd3" style="border:1px solid rgba(255,237,0,0.2);border-top:3px solid #ffed00;">
+      <span class="eyebrow" style="color:#ffed00;">La respuesta bíblica</span>
+      <h3 class="h3 mt16" style="color:#fff;">El Imago Dei — imagen de Dios</h3>
+      <p class="body mt16" style="color:rgba(255,255,255,0.75);">Los seres humanos son más como Dios que cualquier otra cosa en el universo. No porque seamos divinos — sino porque compartimos con Él atributos de personalidad: <strong style="color:#fff;">agencia, inteligencia, creatividad, racionalidad, emoción y relacionalidad.</strong> Siempre en forma finita y contingente — pero reales.</p>
+      <p class="body mt16" style="color:rgba(255,255,255,0.7);">Jesús mismo, al hablar del matrimonio, se refirió a la creación de Adán y Eva como una realidad literal (Mateo 19:4-6). Pablo fundamenta toda la doctrina del pecado y la redención en la realidad de Adán (Romanos 5:12-21). Si el ser humano es solo un primate que evolucionó, esa teología se derrumba.</p>
+      <div style="margin-top:var(--s32);padding-top:var(--s32);border-top:1px solid rgba(255,255,255,0.1);">
+        <span class="eyebrow" style="color:rgba(255,237,0,0.7);">Génesis 1:26-27 · RVR1960</span>
+        <p class="body-lg mt12 italic" style="color:rgba(255,255,255,0.9);">"Entonces dijo Dios: Hagamos al hombre a nuestra imagen, conforme a nuestra semejanza… Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó."</p>
+        <p class="body mt12" style="color:rgba(255,255,255,0.6);">«Hagamos» — hay deliberación, hay intención, hay propósito. Tres veces en dos versículos repite «imagen de Dios». No es poético — es una declaración sobre tu naturaleza.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 5: OBJECIONES ═══════════════════════════ -->
+<section class="scene dark on-dark" id="objeciones">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <span class="eyebrow">Bloque 5</span>
+      <h2 class="h1 mt16">Objeciones difíciles</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Las preguntas más comunes — con respuestas honestas y sin miedo.</p>
+    </div>
+
+    <div class="objections r rd1">
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"¿Acaso no creen en la ciencia? La evolución está probada."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Creemos en la microevolución: eso sí está probado y observado. Lo que está en debate es si la macroevolución —que un tipo de ser se convierta en otro completamente distinto— tiene suficiente evidencia. Muchos científicos seculares reconocen que el registro fósil no la respalda. No es fe vs. ciencia, sino qué dice realmente la evidencia.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Pero los científicos dicen que la vida pudo surgir sola."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Algunos lo afirman, pero la honestidad los obliga a admitir que no saben cómo. Que algo sea posible en teoría no significa que haya ocurrido. Cuando un experto dice "pudo haber pasado" pero no puede mostrar el mecanismo, eso no es ciencia comprobada: es una expectativa. Y creer en el azar, en este punto, exige más fe que creer en un Creador.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Con millones de años, todo es posible."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>El tiempo no resuelve la improbabilidad: la empeora. Las leyes naturales tienden al desorden, no al orden con información. Más tiempo no produce información — la información requiere una mente.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"La microevolución demuestra que con el tiempo se llega a la macro."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>No necesariamente. Que un perro varíe de chihuahua a gran danés no demuestra que un perro pueda convertirse en algo que no sea perro. Las variaciones observadas ocurren dentro de límites; nunca se ha observado que crucen la frontera entre tipos de seres. Sumar muchos cambios pequeños no garantiza un cambio de categoría.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Decir 'Dios lo hizo' es rendirse y dejar de investigar."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Al contrario. Los fundadores de la ciencia investigaban con más empeño porque creían en un Creador racional. Inferir diseño no apaga la curiosidad: cuando vemos el Monte Rushmore no decimos "la erosión lo hizo", inferimos un escultor… y eso no frena la geología. Reconocer una mente detrás de la información es seguir la evidencia, no abandonarla.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Si Dios diseñó la vida, ¿por qué hay tanto sufrimiento y cosas mal hechas en la naturaleza?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Es una pregunta honesta y dolorosa, y la tomamos en serio. La Biblia enseña que la creación fue buena, pero entró en quebranto (Génesis 3; Romanos 8). Que algo esté dañado no borra que fue diseñado: un auto chocado sigue siendo diseñado. Esto lo profundizaremos en la Sesión 11, cuando hablemos del problema del mal.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Aunque todo esto fuera cierto, solo prueba que hay un Diseñador… no que sea el Dios cristiano."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Y tienes toda la razón — lo decimos con honestidad. Los argumentos de esta sesión muestran que detrás del universo y de la vida hay una Causa poderosa e inteligente. Eso, por sí solo, no nos lleva todavía hasta Jesús. Pero es un puente enorme: nos saca del "no hay nada ni nadie" y nos deja en "hay una Mente". Desde ahí, en las Sesiones 7 a 12, mostraremos por qué esa Mente tiene nombre, rostro y una tumba vacía.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CIERRE ═══════════════════════════ -->
+<section class="scene" id="cierre">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">06</div>
+      <span class="eyebrow">Bloque 6 · Cierre</span>
+      <h2 class="h1 mt16">Resumen<br>de bolsillo</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Para tener a mano en cualquier conversación.</p>
+    </div>
+
+    <!-- Summary table -->
+    <div class="r rd1" style="overflow-x:auto;">
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:28%;">Si te dicen…</th>
+            <th>Tú respondes…</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl">"Soy científico, no puedo creer en Dios."</td>
+            <td class="resp">Copérnico, Kepler, Pasteur y Lemaître fueron científicos creyentes. La guerra no es ciencia vs. fe, sino naturalismo vs. teísmo.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Creo en la evolución."</td>
+            <td class="resp">"¿A qué te refieres exactamente?" — Táctica del Correcaminos. ¿Micro (probada) o macro (no observada)?</td>
+          </tr>
+          <tr>
+            <td class="lbl">"La ciencia explicó el origen de la vida."</td>
+            <td class="resp">"¿De dónde vino la primera célula?" La evolución presupone vida; no explica su origen. Eso es abiogénesis — y sigue sin respuesta.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Con millones de años, todo es posible."</td>
+            <td class="resp">El tiempo no produce información; la empeora. La información requiere inteligencia. Confeti + tiempo ≠ bandera.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"El experimento Miller-Urey lo demuestra."</td>
+            <td class="resp">Tiene 4 problemas de fondo: atmósfera incorrecta, aminoácidos ≠ vida, trampa del agua, homoquiralidad. Incluso Francis Crick lo llamó "casi un milagro".</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Compartimos el 98% de ADN con los chimpancés."</td>
+            <td class="resp">La similitud no prueba ancestro común — prueba un Creador común. DIOS y PERRO comparten casi todas las mismas letras y significan lo opuesto. Y humanos y ratones comparten ~90% de ADN.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Somos primates evolucionados."</td>
+            <td class="resp">Bipedalismo, mano con tacto fino, faringe para el habla y lenguaje aparecieron simultáneamente — algo que la selección ciega no puede coordinar. Y el Imago Dei explica por qué sientes que tienes valor.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Imago Dei closing -->
+    <div class="card mt48 r rd2" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Reflexión de cierre</span>
+      <p class="body-lg mt16">"El darwinismo no solo tiene problemas científicos. Tiene consecuencias. Si somos simplemente el resultado de un proceso ciego sin propósito, no hay razón objetiva para tratar a otra persona con dignidad. No hay base para los derechos humanos."</p>
+      <p class="body mt16">"Pero el <strong class="strong purple">Imago Dei</strong> — la imagen de Dios en ti — cambia todo. Explica por qué sientes que tienes valor, por qué el amor es real, por qué la injusticia importa. No porque la evolución te lo programó así — sino porque fuiste creado por un Dios personal que deliberadamente te hizo a su imagen."</p>
+      <div style="margin-top:var(--s32);padding-top:var(--s32);border-top:1px solid var(--border);">
+        <span class="eyebrow">Salmo 139:14 · RVR1960</span>
+        <p class="body-lg mt12 italic" style="color:var(--navy);">"Te alabaré; porque formidables, maravillosas son tus obras; estoy maravillado, y mi alma lo sabe muy bien."</p>
+      </div>
+    </div>
+
+    <!-- Discusión -->
+    <div class="card mt48 r rd3">
+      <span class="eyebrow">Preguntas para discutir en clase</span>
+      <ul style="list-style:none;margin-top:var(--s24);display:flex;flex-direction:column;gap:var(--s20);">
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">01</span>
+          <p class="body italic">"¿Cuál es la diferencia entre microevolución y macroevolución? ¿Por qué es importante hacer esa distinción cuando alguien dice «creo en la evolución»?"</p>
+        </li>
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">02</span>
+          <p class="body italic">"Si compartimos mucho ADN con otros animales, ¿eso prueba un ancestro común, o también podría explicarlo un Creador común? ¿Cuál te parece más coherente?"</p>
+        </li>
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">03</span>
+          <p class="body italic">"¿Qué diferencia concreta hace para tu vida creer que fuiste creado a imagen de Dios, en lugar de ser el producto de un proceso sin propósito?"</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Summary table — add new row -->
+    <!-- Homework -->
+    <h3 class="h3 mt64 r rd4">Tarea de la semana</h3>
+    <ul class="hw mt24 r rd5">
+      <li>
+        <div class="hw-num">01</div>
+        <p>Memoriza: <em>"Te alabaré; porque formidables, maravillosas son tus obras; estoy maravillado, y mi alma lo sabe muy bien."</em> — Salmo 139:14 (RVR1960).</p>
+      </li>
+      <li>
+        <div class="hw-num">02</div>
+        <p>Lee Génesis 1:26-27 y Salmo 8. Anota qué palabras usa el texto para describir la posición del ser humano en la creación.</p>
+      </li>
+      <li>
+        <div class="hw-num">03</div>
+        <p>Cuando escuches afirmaciones sobre la evolución en medios o redes, practica la táctica del Correcaminos: "¿A qué tipo de evolución te refieres — micro o macro?" Anota la reacción.</p>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="scene deeper on-dark" id="oracion">
+  <div class="wrap">
+
+    <div class="r">
+      <span class="eyebrow">Cierre en oración</span>
+      <div class="verse-block mt24">
+        <p>"Señor, gracias porque la creación misma proclama que eres real. Gracias porque no necesitamos ignorar la ciencia para creer en Ti; al contrario, la ciencia bien entendida nos lleva a Tus pies. Ayúdanos a explicar esto con claridad y con amor. Amén."</p>
+        <span class="verse-ref">Oración de cierre · Sesión 4</span>
+      </div>
+    </div>
+
+    <div class="verse-block mt32 r rd1" style="background:rgba(83,58,253,0.15);border-color:rgba(185,185,249,0.2);">
+      <p>"Con sabiduría fundó Jehová la tierra; afirmó los cielos con inteligencia."</p>
+      <span class="verse-ref">Proverbios 3:19 · RVR1960</span>
+    </div>
+
+    <div class="info-strip mt64 r rd2">
+      <div class="info-item">
+        <div class="info-item-label">Texto base</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Génesis 1:11–12, 21, 24 · RVR1960</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Serie</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Razones para Creer · Apologética Cristiana</div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+/* ── CONFETI ── */
+@keyframes confeti-volar {
+  0%   { opacity:1; transform:translate(0,0) rotate(0deg) scale(1); }
+  80%  { opacity:0.8; }
+  100% { opacity:0; transform:translate(var(--cx),var(--cy)) rotate(var(--cr)) scale(0.6); }
+}
+.confeti-p {
+  position:fixed; pointer-events:none; z-index:9999;
+  border-radius:var(--cbr,2px);
+  animation:confeti-volar var(--cd) cubic-bezier(0.22,0.61,0.36,1) forwards;
+}
+/* Avión hover */
+#avion-btn:hover { transform:scale(1.08) rotate(-3deg); filter:drop-shadow(0 0 20px rgba(83,58,253,0.7))!important; }
+#avion-btn:active { transform:scale(0.95); }
+</style>
+
+<script>
+// Progress bar
+function onScroll(){
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('bar').style.width=Math.min(pct,100)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// ── CONFETI ──
+function lanzarConfeti(){
+  const btn = document.getElementById('avion-btn');
+  const rect = btn.getBoundingClientRect();
+  const ox = rect.left + rect.width * 0.72;   // punta del avión
+  const oy = rect.top  + rect.height * 0.48;
+
+  // sacudir el avión
+  btn.style.transition='transform 80ms';
+  btn.style.transform='scale(0.88) rotate(-8deg)';
+  setTimeout(()=>{ btn.style.transform='scale(1.12) rotate(3deg)'; },80);
+  setTimeout(()=>{ btn.style.transform=''; btn.style.transition='transform 180ms, filter 180ms'; },200);
+
+  const colores = [
+    '#ea2261','#ea2261',   // rojo (más frecuente)
+    '#ffffff','#ffffff',   // blanco
+    '#1a6bd4','#1a6bd4',   // azul
+    '#533afd','#f96bee',   // púrpura / magenta (bonus)
+    '#ffed00',             // amarillo
+  ];
+  const total = 90;
+
+  for(let i=0;i<total;i++){
+    const p = document.createElement('div');
+    p.className = 'confeti-p';
+
+    // Ángulo radial + algo de aleatoriedad → cae principalmente hacia abajo
+    const angle = (Math.PI * 2 * i / total) + (Math.random() - 0.5) * 0.6;
+    const speed = 120 + Math.random() * 260;
+    const gravity = 80 + Math.random() * 180; // extra caída
+
+    const dx = Math.cos(angle) * speed;
+    const dy = Math.sin(angle) * speed + gravity;   // gravedad hacia abajo
+
+    const rot = (Math.random() - 0.5) * 900;
+    const dur = (0.7 + Math.random() * 0.9).toFixed(2) + 's';
+    const w   = 4  + Math.random() * 8;
+    const h2  = 6  + Math.random() * 12;
+    const color = colores[Math.floor(Math.random() * colores.length)];
+    const isCircle = Math.random() > 0.65;
+
+    p.style.cssText=`
+      left:${ox}px; top:${oy}px;
+      width:${w}px; height:${isCircle?w:h2}px;
+      background:${color};
+      --cx:${dx}px; --cy:${dy}px; --cr:${rot}deg; --cd:${dur};
+      --cbr:${isCircle?'50%':'2px'};
+    `;
+    document.body.appendChild(p);
+    const remove = parseFloat(dur)*1000 + 120;
+    setTimeout(()=>p.remove(), remove);
+  }
+}
+</script>
+</body>
+</html>

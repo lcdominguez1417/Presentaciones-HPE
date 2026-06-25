@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¿Existe la Verdad? · Sesión 1 · Razones para Creer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt12{margin-top:var(--s12);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
+
+/* ── PROGRESS BAR ── */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;font-size:12px;font-weight:500;letter-spacing:0.2px;}
+@media(max-width:560px){.nav-tag{display:none;}}
+
+/* ── TYPOGRAPHY ── */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(42px,6.5vw,84px);font-weight:300;line-height:1.02;letter-spacing:-2.5px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:18px;font-weight:300;line-height:1.55;color:var(--body);}
+.body{font-size:16px;font-weight:300;line-height:1.6;color:var(--body);}
+.body-sm{font-size:14px;font-weight:300;line-height:1.55;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}.strong{font-weight:500;}.purple{color:var(--purple);}
+
+/* ── SCENES ── */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero.jpg) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.88) 0%,rgba(28,30,84,0.78) 55%,rgba(46,43,140,0.65) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:16ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.62);max-width:54ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+
+/* ── ACCENT BAR ── */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
+
+/* ── SECTION NUMBER watermark ── */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
+
+/* ── CARDS ── */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:var(--s32);}
+
+/* ── QUOTE ── */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:19px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
+.quote-src{font-size:12px;color:var(--body);margin-top:4px;font-style:italic;}
+.on-dark .quote-src{color:rgba(255,255,255,0.3);}
+
+/* ── PORTRAITS ── */
+.portraits{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--s24);margin-top:var(--s48);align-items:start;}
+.portrait{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:rgba(23,23,23,0.08) 0 15px 35px;transition:transform 220ms,box-shadow 220ms;}
+.portrait:hover{transform:translateY(-4px);box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.portrait-vis{width:100%;aspect-ratio:3/4;overflow:hidden;position:relative;
+  background:linear-gradient(160deg,var(--brand-dark) 0%,var(--dark-navy) 100%);}
+.portrait-vis::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(83,58,253,0.25) 0%,transparent 65%);pointer-events:none;}
+.portrait-img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.portrait-body{padding:var(--s16) var(--s16) var(--s24);}
+.portrait-name{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.2px;line-height:1.2;}
+.portrait-role{font-family:var(--fm);font-size:10px;color:var(--body);letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;line-height:1.4;}
+.portrait-faith{display:inline-block;margin-top:var(--s8);background:rgba(21,190,83,0.1);color:#108c3d;
+  border:1px solid rgba(21,190,83,0.3);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500;}
+.portrait-secular{background:rgba(234,34,97,0.08);color:var(--ruby);border:1px solid rgba(234,34,97,0.25);}
+.portrait-contrib{list-style:none;margin-top:var(--s12);display:flex;flex-direction:column;gap:4px;}
+.portrait-contrib li{font-size:11px;color:var(--body);line-height:1.4;padding-left:14px;position:relative;}
+.portrait-contrib li::before{content:'→';position:absolute;left:0;color:var(--purple);font-size:10px;line-height:1.5;}
+
+/* ── STEP FLOW (Pablo 4 Moves) ── */
+.step-flow{display:flex;flex-direction:column;gap:0;margin-top:var(--s48);}
+.step{display:grid;grid-template-columns:64px 1fr;gap:var(--s24);padding:var(--s32) 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+.step:last-child{border-bottom:none;}
+.step-num{font-family:var(--fm);font-size:32px;font-weight:300;color:rgba(185,185,249,0.25);line-height:1;padding-top:4px;}
+.step-content{}
+.step-label{font-family:var(--fm);font-size:10px;color:var(--purple-light);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.step-title{font-size:20px;font-weight:500;color:#fff;margin-bottom:var(--s8);line-height:1.25;}
+.step-body{font-size:15px;font-weight:300;color:rgba(255,255,255,0.58);line-height:1.55;}
+@media(max-width:640px){.step{grid-template-columns:1fr;}.step-num{font-size:22px;}}
+
+/* ── FALSIFICATIONS TABLE ── */
+.falsif{display:flex;flex-direction:column;gap:var(--s24);margin-top:var(--s48);}
+.falsif-item{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);}
+.falsif-head{background:rgba(234,34,97,0.12);padding:var(--s16) var(--s24);display:flex;align-items:center;gap:var(--s12);}
+.falsif-n{font-family:var(--fm);font-size:10px;color:var(--ruby);letter-spacing:1.5px;text-transform:uppercase;flex-shrink:0;}
+.falsif-name{font-size:16px;font-weight:500;color:#fff;}
+.falsif-def{font-size:13px;font-weight:300;color:rgba(255,255,255,0.55);font-style:italic;margin-top:2px;}
+.falsif-body{padding:var(--s16) var(--s24);background:rgba(255,255,255,0.03);}
+.falsif-prob{font-size:14px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.6;}
+.falsif-prob strong{color:rgba(255,255,255,0.85);font-weight:400;}
+
+/* ── DEFEAT TABLE (Road Runner) ── */
+.defeat{width:100%;border-collapse:collapse;margin-top:var(--s48);}
+.defeat th{text-align:left;font-family:var(--fm);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 0 var(--s16);color:rgba(185,185,249,0.5);border-bottom:2px solid rgba(255,255,255,0.1);}
+.defeat th:first-child{width:48%;}
+.defeat td{font-size:15px;font-weight:300;padding:var(--s16) 0;border-bottom:1px solid rgba(255,255,255,0.08);vertical-align:top;line-height:1.55;}
+.defeat td:first-child{color:rgba(255,255,255,0.85);padding-right:var(--s32);font-style:italic;}
+.defeat td:last-child{color:rgba(185,185,249,0.75);}
+.defeat td:last-child strong{color:var(--purple-light);font-weight:400;}
+@media(max-width:640px){.defeat thead{display:none;}.defeat td{display:block;width:100%;}.defeat td:first-child{border-bottom:none;padding-bottom:var(--s8);padding-right:0;}.defeat tr{display:block;margin-bottom:var(--s24);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:var(--s16);}}
+
+/* ── DISTINCTION CARDS ── */
+.distinction{display:grid;grid-template-columns:1fr 1fr;gap:var(--s24);margin-top:var(--s48);}
+@media(max-width:600px){.distinction{grid-template-columns:1fr;}}
+.dist-card{padding:var(--s24);border-radius:8px;}
+.dist-card.plaus{background:rgba(234,34,97,0.08);border:1px solid rgba(234,34,97,0.2);}
+.dist-card.cred{background:rgba(21,190,83,0.07);border:1px solid rgba(21,190,83,0.2);}
+.dist-label{font-family:var(--fm);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);}
+.dist-card.plaus .dist-label{color:var(--ruby);}
+.dist-card.cred .dist-label{color:var(--green);}
+.dist-card h3{font-size:18px;font-weight:500;color:#fff;margin-bottom:var(--s8);line-height:1.3;}
+.dist-card p{font-size:14px;font-weight:300;color:rgba(255,255,255,0.58);line-height:1.55;}
+
+/* ── TACTIC QUESTIONS (Colombo) ── */
+.tactic-q{display:grid;grid-template-columns:1fr 1fr;gap:var(--s24);margin-top:var(--s48);}
+@media(max-width:680px){.tactic-q{grid-template-columns:1fr;}}
+.tq{padding:var(--s32);border-radius:8px;background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);}
+.tq-num{font-family:var(--fm);font-size:11px;color:var(--purple);letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--s16);}
+.tq-text{font-size:24px;font-weight:300;color:var(--navy);letter-spacing:-0.5px;line-height:1.25;margin-bottom:var(--s16);}
+.tq-desc{font-size:14px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* ── CONVERSATION BUBBLES (Colombo example) ── */
+.convo{display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s48);max-width:680px;}
+.convo-msg{padding:var(--s16) var(--s24);border-radius:12px;font-size:15px;font-weight:300;line-height:1.55;}
+.convo-them{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);
+  border-radius:12px 12px 12px 4px;font-style:italic;}
+.convo-us{background:rgba(83,58,253,0.25);border:1px solid rgba(83,58,253,0.3);color:#fff;
+  border-radius:12px 12px 4px 12px;margin-left:auto;}
+.convo-label{font-family:var(--fm);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.convo-label.them{color:rgba(255,255,255,0.3);}
+.convo-label.us{color:var(--purple-light);text-align:right;}
+.convo-wrapper{display:flex;flex-direction:column;}
+.convo-wrapper.right{align-items:flex-end;}
+
+/* ── OBJECTION CARDS ── */
+.objections{display:flex;flex-direction:column;gap:var(--s32);margin-top:var(--s48);}
+.obj{border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.obj-q{background:var(--brand-dark);padding:var(--s24) var(--s32);display:flex;gap:var(--s16);align-items:flex-start;}
+.obj-q-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.obj-q p{font-size:17px;font-weight:300;color:rgba(255,255,255,0.9);font-style:italic;line-height:1.45;}
+.obj-a{padding:var(--s24) var(--s32);background:#fff;}
+.obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
+.obj-a p{font-size:15px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* ── HOMEWORK ── */
+.hw{list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s32);}
+.hw li{display:flex;gap:var(--s16);align-items:flex-start;}
+.hw-num{flex-shrink:0;width:32px;height:32px;border-radius:4px;background:var(--purple);color:#fff;
+  font-family:var(--fm);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;}
+.hw li p{font-size:16px;font-weight:300;color:rgba(255,255,255,0.7);line-height:1.55;padding-top:4px;}
+
+/* ── VERSE BLOCK ── */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.9);line-height:1.55;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
+
+/* ── PRAYER BLOCK ── */
+.prayer{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);}
+.prayer-label{font-family:var(--fm);font-size:10px;color:rgba(185,185,249,0.5);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s16);}
+.prayer p{font-size:16px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.72);line-height:1.65;}
+
+/* ── IMMERSIVE CONCEPT IMAGE ── */
+.concept-img{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 60px -20px;margin:var(--s48) 0;}
+.concept-img img{width:100%;display:block;}
+
+/* ── TWO COL ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* ── PILL ── */
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--purple-dim);
+  border:1px solid rgba(83,58,253,0.2);color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* ── DIVIDERS ── */
+.divider{height:1px;background:var(--border);}
+.divider-dark{height:1px;background:rgba(255,255,255,0.1);}
+
+/* ── SUMMARY CLOSING ── */
+.closing-phrase{margin-top:var(--s64);padding:var(--s48);background:rgba(83,58,253,0.12);
+  border:1px solid rgba(83,58,253,0.25);border-radius:8px;text-align:center;}
+.closing-phrase p{font-size:22px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.9);line-height:1.5;}
+
+/* ── REVEAL ANIMATIONS ── */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* ── SCROLL ID ANCHOR OFFSET ── */
+[id]{scroll-margin-top:80px;}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- ══════════════════════════ NAV ══════════════════════════ -->
+<nav class="nav">
+  <div class="wrap">
+    <div>
+      <img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE × AG" style="height:38px;width:auto;display:block;">
+    </div>
+    <div class="nav-tag">Sesión 1 · Razones para Creer</div>
+    <div class="nav-pill">Apologética</div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Razones para Creer · Sesión 1</div>
+    <h1 class="display r rd1">¿Existe<br>la Verdad?</h1>
+    <p class="body-lg r rd2">
+      Cuando alguien nos dice <em>"la Biblia puede ser verdad para ti, pero no para mí"</em>,
+      el creyente suele quedarse sin palabras. Este curso cambia eso — con amor, convicción y razones sólidas.
+    </p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">1 Pedro 3:15</span>
+      <span class="hero-badge">Hechos 17:16–31</span>
+      <span class="hero-badge">Audiencia 15–45 años</span>
+      <span class="hero-badge">RVR1960</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ BLOQUE 1 — ¿Qué es la apologética? ══════════════════════════ -->
+<section class="scene" id="apologetica">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="sec-num">01</span>
+      <p class="eyebrow">Bloque 1</p>
+      <h2 class="h1 mt16">¿Qué es la apologética<br>y por qué importa?</h2>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="accent-bar r"></div>
+        <p class="body-lg r">
+          La apologética <strong class="strong">no es pelearse con nadie</strong>. Es estar listos para dar razones de nuestra fe.
+          Pedro nos manda a hacerlo — y esa orden incluye el <em>cómo</em>: con mansedumbre y reverencia, no con altanería.
+        </p>
+        <div class="quote r mt32">
+          <p>"Estad siempre preparados para presentar defensa con mansedumbre y reverencia ante todo el que os demande razón de la esperanza que hay en vosotros."</p>
+          <div class="quote-attr">1 Pedro 3:15 · RVR1960</div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="card">
+          <p class="eyebrow">Definición</p>
+          <h3 class="h3 mt16">Apologética</h3>
+          <p class="body mt12">La disciplina que da razones para defender y explicar la fe cristiana de manera racional y respetuosa. Viene del griego <em>apologia</em> — "defensa". Era el término legal en los tribunales del primer siglo.</p>
+          <div class="divider" style="margin:var(--s24) 0;"></div>
+          <p class="eyebrow">Aparece en</p>
+          <p class="body-sm mt12">Hechos 22:1 · 25:16 · 1 Corintios 9:3 · Filipenses 1:7, 16 · 2 Timoteo 4:16 · <strong class="strong">1 Pedro 3:15</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- La fe cristiana no es ciega -->
+    <div class="mt64 r">
+      <div class="accent-bar"></div>
+      <h2 class="h2">La fe cristiana no es ciega</h2>
+      <p class="body-lg mt24" style="max-width:60ch;">
+        Muchos piensan que creer en Dios es como creer en Santa Claus — un sentimiento bonito sin fundamento.
+        Pero la fe bíblica nunca fue eso. Pedro dice <em>"estad siempre preparados"</em> — la palabra implica estudio, pensamiento, conocimiento.
+      </p>
+    </div>
+
+    <div class="two-col mt48">
+      <div class="card r">
+        <p class="eyebrow" style="color:var(--green);">Ilustración</p>
+        <h3 class="h3 mt16">El doctor y el ingeniero</h3>
+        <p class="body mt16">Un doctor no solo <em>siente</em> que sabe medicina — lo puede demostrar. Un ingeniero no solo <em>cree</em> que el puente aguantará — lo calculó. Nuestra fe también tiene fundamentos sólidos.</p>
+        <p class="body mt16" style="color:var(--purple);font-weight:500;">Lo que falta no es la evidencia. Lo que falta es aprender a comunicarla.</p>
+      </div>
+      <div class="card r rd2">
+        <p class="eyebrow">Dos palabras clave en 1 Pedro 3:15</p>
+        <div style="margin-top:var(--s24);display:flex;flex-direction:column;gap:var(--s16);">
+          <div style="padding:var(--s16);background:var(--purple-dim);border-radius:6px;border:1px solid rgba(83,58,253,0.15);">
+            <p style="font-family:var(--fm);font-size:10px;color:var(--purple);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">Preparados</p>
+            <p class="body-sm">Implica estudio, conocimiento, preparación activa. La apologética requiere esfuerzo intelectual.</p>
+          </div>
+          <div style="padding:var(--s16);background:rgba(21,190,83,0.06);border-radius:6px;border:1px solid rgba(21,190,83,0.15);">
+            <p style="font-family:var(--fm);font-size:10px;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">Mansedumbre</p>
+            <p class="body-sm">El tono importa tanto como el contenido. La apologética es tanto actitud como argumento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PABLO EN ATENAS ══════════════════════════ -->
+<section class="scene dark on-dark" id="atenas">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="sec-num">02</span>
+      <p class="eyebrow">El modelo bíblico</p>
+      <h2 class="h1 mt16">Pablo en el Areópago<br>de Atenas</h2>
+      <p class="body-lg mt24" style="max-width:58ch;">
+        Hechos 17:16–31 es el ejemplo apologético más completo de toda la Escritura: Pablo frente a los filósofos más
+        sofisticados de su tiempo. Cuatro movimientos que vale la pena observar.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="portrait r" style="max-width:320px;">
+          <div class="portrait-vis">
+            <img class="portrait-img" src="assets/portrait-pablo.jpg" alt="Pablo Apóstol en el Areópago de Atenas">
+          </div>
+          <div class="portrait-body">
+            <p class="portrait-name">Pablo Apóstol</p>
+            <p class="portrait-role">Apóstol · Filósofo cristiano · Siglo I d.C.</p>
+            <span class="portrait-faith">Fe cristiana</span>
+            <ul class="portrait-contrib">
+              <li>Predicó en el Areópago de Atenas (Hechos 17)</li>
+              <li>Usó la cultura griega para llegar al evangelio</li>
+              <li>Modelo de apologética contextualizada</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote r mt32">
+          <p>"Varones atenienses, en todo observo que sois muy religiosos…"</p>
+          <div class="quote-attr">Hechos 17:22 · RVR1960</div>
+          <div class="quote-src">Pablo no empieza condenando. Empieza conectando.</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow r">Cuatro movimientos</p>
+        <div class="step-flow r rd1">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <p class="step-label">Encuentro</p>
+              <p class="step-title">Terreno común</p>
+              <p class="step-body">"En todo observo que sois muy religiosos" (v. 22). No empieza condenando, empieza conectando. La apologética busca puentes, no muros.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <p class="step-label">Lenguaje</p>
+              <p class="step-title">Cita sus propios poetas</p>
+              <p class="step-body">"Como algunos de vuestros propios poetas también han dicho" (v. 28). Habla el idioma de su audiencia. No cita la Torá — cita a Arato y Cleantes.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <p class="step-label">Argumento</p>
+              <p class="step-title">De la creación al Creador</p>
+              <p class="step-body">Antes de hablar de Jesús, establece que hay un Dios personal, trascendente, que creó todo (v. 24–26). Las bases primero.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <p class="step-label">Evidencia</p>
+              <p class="step-title">La resurrección como hecho</p>
+              <p class="step-body">"Habiéndolo levantado de los muertos, ha dado fe a todos" (v. 31). La fe cristiana descansa en un hecho histórico verificable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote r mt64">
+      <p>"Todos los sermones de Pedro y Pablo registrados en Hechos tienen una fuerte columna vertebral apologética. La declaración de Pablo en Hechos 17:24–31 es una obra maestra de la persuasión cristiana."</p>
+      <div class="quote-attr">Douglas Groothuis · Christian Apologetics</div>
+      <div class="quote-src">Capítulo 2: La base bíblica de la apologética</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ BLOQUE 2 — ¿QUÉ ES LA VERDAD? ══════════════════════════ -->
+<section class="scene mid" id="verdad">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="sec-num" style="color:rgba(83,58,253,0.05);">03</span>
+      <p class="eyebrow">Bloque 2</p>
+      <h2 class="h1 mt16">¿Qué es la verdad?<br>Definirla antes de defenderla</h2>
+      <p class="body-lg mt24" style="max-width:58ch;">
+        Antes de defender que la fe cristiana es <em>verdadera</em>, es necesario estar de acuerdo en qué significa
+        que algo sea verdadero. Si dos personas usan "verdad" con definiciones distintas, no llegarán a ningún lado.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="accent-bar r"></div>
+        <h2 class="h2 r">La teoría de la correspondencia</h2>
+        <p class="body-lg mt24 r">Una afirmación es verdadera si <strong class="strong">corresponde con la realidad</strong>. Decir "está lloviendo" es verdadero solo si en efecto está lloviendo afuera.</p>
+        <p class="body mt24 r">La verdad no es lo que yo siento, ni lo que mi grupo cree, ni lo que me funciona — la verdad es lo que coincide con cómo son las cosas <em>en realidad</em>.</p>
+        <div class="quote r mt32">
+          <p>"Decir de lo que es que no es, o de lo que no es que es, es falso; mientras que decir de lo que es que es, y de lo que no es que no es, es verdadero."</p>
+          <div class="quote-attr">Aristóteles · Metafísica</div>
+          <div class="quote-src">La definición clásica que ha resistido 2,400 años de discusión filosófica.</div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="concept-img" style="margin:0;">
+          <img src="assets/concept-truth.jpg" alt="Teoría de la Correspondencia — llueve / realidad">
+        </div>
+        <div class="card mt24">
+          <p class="eyebrow">Lo que Jesús asumió</p>
+          <p class="body mt16">"Yo soy el camino, y la <strong class="strong">verdad</strong>, y la vida" — Juan 14:6. No dice "yo soy lo que a ti te funciona". La Biblia asume, de principio a fin, que la verdad es algo <em>objetivo, externo, que podemos conocer</em>.</p>
+          <p class="body mt12">"Santifícalos en tu verdad; tu palabra es verdad" — Juan 17:17.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ ARISTÓTELES PORTRAIT ══════════════════════════ -->
+<section class="scene" id="aristoteles">
+  <div class="wrap">
+    <div class="portraits r" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
+      <div class="portrait">
+        <div class="portrait-vis">
+          <img class="portrait-img" src="assets/portrait-aristotle.jpg" alt="Aristóteles — filósofo griego">
+        </div>
+        <div class="portrait-body">
+          <p class="portrait-name">Aristóteles</p>
+          <p class="portrait-role">Filósofo griego · 384–322 a.C.</p>
+          <span class="portrait-secular">Pagano / Politeísta</span>
+          <ul class="portrait-contrib">
+            <li>Formuló la definición clásica de verdad (Metafísica)</li>
+            <li>Fundó la lógica formal</li>
+            <li>Su definición ha resistido 2,400 años de debate</li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding:var(--s32);">
+        <p class="eyebrow">Por qué importa que sea pagano</p>
+        <h3 class="h3 mt16" style="max-width:12ch;">Un no-creyente que confirma nuestra base</h3>
+        <p class="body mt24">Que sea un filósofo griego politeísta el que definió la verdad objetiva muestra que esta no es solo una idea "cristiana". La correspondencia entre afirmación y realidad es reconocida por la razón humana universal.</p>
+        <p class="body mt16">Incluso sin la Biblia, la filosofía llegó a esta conclusión. La Biblia la asume y la eleva.</p>
+        <div class="pill mt24">Apoyado por la razón natural</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ 3 FALSIFICACIONES ══════════════════════════ -->
+<section class="scene dark on-dark" id="falsificaciones">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="sec-num">04</span>
+      <p class="eyebrow">Tres errores comunes</p>
+      <h2 class="h1 mt16">Tres falsificaciones<br>de la verdad que circulan hoy</h2>
+    </div>
+
+    <div class="falsif r">
+      <div class="falsif-item">
+        <div class="falsif-head">
+          <span class="falsif-n">Falsificación 01</span>
+          <div>
+            <p class="falsif-name">La verdad como coherencia</p>
+            <p class="falsif-def">"Es verdad si encaja con todo lo demás que creo."</p>
+          </div>
+        </div>
+        <div class="falsif-body">
+          <p class="falsif-prob">Una persona puede tener un sistema de creencias perfectamente coherente y <strong>completamente falso</strong>. Dos religiones contradictorias pueden ser internamente coherentes — pero ambas no pueden ser verdaderas a la vez.</p>
+        </div>
+      </div>
+
+      <div class="falsif-item r rd1">
+        <div class="falsif-head">
+          <span class="falsif-n">Falsificación 02</span>
+          <div>
+            <p class="falsif-name">La verdad pragmática <span style="font-size:12px;opacity:0.6;">(la más popular hoy)</span></p>
+            <p class="falsif-def">"Es verdad si me funciona / si me hace sentir bien / si produce buenos resultados."</p>
+          </div>
+        </div>
+        <div class="falsif-body">
+          <p class="falsif-prob">Lo que "funciona" no es lo mismo que lo que es verdadero. A un alcohólico le "funciona" emocionalmente otra cerveza — eso no la hace buena. Y hay verdades duras que no nos hacen sentir bien: <strong>un diagnóstico de cáncer no se vuelve falso porque deprima</strong>.</p>
+        </div>
+      </div>
+
+      <div class="falsif-item r rd2">
+        <div class="falsif-head">
+          <span class="falsif-n">Falsificación 03</span>
+          <div>
+            <p class="falsif-name">La verdad posmoderna</p>
+            <p class="falsif-def">"La verdad la construye cada cultura con su lenguaje. No hay realidad objetiva."</p>
+          </div>
+        </div>
+        <div class="falsif-body">
+          <p class="falsif-prob">Esa misma afirmación <strong>pretende ser verdadera para todas las culturas</strong>. Se contradice a sí misma. Y si la verdad la construye cada quien, no se puede decir que el nazismo estuvo mal — los nazis simplemente "construyeron" una verdad distinta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ BERTRAND RUSSELL ══════════════════════════ -->
+<section class="scene deeper on-dark" id="russell">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="r">
+        <div class="portrait" style="max-width:320px;">
+          <div class="portrait-vis">
+            <img class="portrait-img" src="assets/portrait-russell.jpg" alt="Bertrand Russell — filósofo ateo">
+          </div>
+          <div class="portrait-body">
+            <p class="portrait-name">Bertrand Russell</p>
+            <p class="portrait-role">Filósofo y matemático · 1872–1970</p>
+            <span class="portrait-secular">Ateo declarado</span>
+            <ul class="portrait-contrib">
+              <li>Nobel de Literatura 1950</li>
+              <li>History of Western Philosophy (1945)</li>
+              <li>Defensor de la verdad objetiva pese a su ateísmo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="r rd1">
+        <p class="eyebrow">Un ateo que nos da la razón</p>
+        <h2 class="h2 mt16">Cuando hasta el escéptico defiende la verdad objetiva</h2>
+        <div class="quote mt32">
+          <p>"El concepto de verdad como algo que depende de hechos en gran medida fuera del control humano ha sido una de las formas en que la filosofía ha inculcado el elemento necesario de humildad. Cuando se elimina este freno, se da un paso más en el camino hacia cierto tipo de locura: la intoxicación con el poder."</p>
+          <div class="quote-attr">Bertrand Russell · History of Western Philosophy, p. 828</div>
+        </div>
+        <div class="card-dark mt32">
+          <p class="eyebrow">Lo que Russell está diciendo</p>
+          <p class="body mt16">Cuando una sociedad abandona la idea de verdad objetiva, no se vuelve más libre — se vuelve más <strong>tiránica</strong>. La verdad objetiva nos obliga a someternos a algo más grande que nosotros. Si "yo construyo mi verdad", el más fuerte impone la suya.</p>
+          <p class="body mt16">Defender la verdad objetiva no es arrogancia — es lo más <em>humilde</em> que se puede hacer: reconocer que hay algo más grande que yo a lo que tengo que ajustarme.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ BLOQUE 3 — CORRECAMINOS ══════════════════════════ -->
+<section class="scene dark on-dark" id="correcaminos">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="sec-num">05</span>
+      <p class="eyebrow">Bloque 3 · Táctica</p>
+      <h2 class="h1 mt16">La táctica del Correcaminos</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">
+        En la caricatura, el Coyote persigue al Correcaminos hasta el borde del acantilado. El Correcaminos frena de golpe.
+        El Coyote sigue corriendo, queda suspendido en el aire un segundo… y se da cuenta de que no hay piso debajo.
+        <strong>Cae.</strong>
+      </p>
+      <p class="body mt16" style="max-width:56ch;">La táctica hace lo mismo: muestra que la afirmación contraria al cristianismo no tiene piso — se destruye a sí misma.</p>
+    </div>
+
+    <div class="concept-img r">
+      <img src="assets/concept-roadrunner.jpg" alt="Correcaminos — autocontradicción en el borde del acantilado">
+    </div>
+
+    <div class="r mt48">
+      <p class="eyebrow">La regla — voltear la afirmación sobre sí misma</p>
+      <p class="body-lg mt16" style="max-width:62ch;">Cuando alguien hace una afirmación, la pregunta es: <em>¿esta afirmación cumple su propio criterio?</em> Muchas afirmaciones del relativismo moderno son autocontradictorias.</p>
+    </div>
+
+    <div class="r mt32">
+      <table class="defeat">
+        <thead>
+          <tr>
+            <th>Lo que dicen</th>
+            <th>Cómo responder (Correcaminos)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"No existe la verdad absoluta."</td>
+            <td><strong>¿Eso que acabas de decir es una verdad absoluta?</strong> Si lo es, te contradices. Si no lo es, no tengo por qué creerte.</td>
+          </tr>
+          <tr>
+            <td>"Toda verdad es relativa."</td>
+            <td><strong>¿Esa afirmación es relativa o absoluta?</strong> Si es absoluta, te contradices. Si es relativa, vale solo para ti.</td>
+          </tr>
+          <tr>
+            <td>"No se puede conocer nada con certeza."</td>
+            <td><strong>¿Estás seguro de eso?</strong></td>
+          </tr>
+          <tr>
+            <td>"Solo creo lo que la ciencia puede probar."</td>
+            <td><strong>¿Puedes probar científicamente esa afirmación?</strong> La afirmación misma es filosófica, no científica.</td>
+          </tr>
+          <tr>
+            <td>"No me impongas tu moral."</td>
+            <td><strong>¿No es eso una imposición moral tuya sobre mí</strong> — la moral de "no imponer"?</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="distinction r mt48">
+      <div class="dist-card plaus">
+        <p class="dist-label">Plausibilidad</p>
+        <h3>Qué tan creíble parece en mi cultura</h3>
+        <p>El islam es plausible en Irán. El ateísmo es plausible en una universidad europea. La presión social no es prueba de verdad.</p>
+      </div>
+      <div class="dist-card cred">
+        <p class="dist-label">Credibilidad</p>
+        <h3>Si los argumentos son lógicamente sólidos</h3>
+        <p>Una creencia puede ser muy plausible (todos a tu alrededor la creen) y completamente falsa. La tarea no es seguir lo que se siente normal — es seguir lo que es verdadero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ BLOQUE 4 — COLOMBO ══════════════════════════ -->
+<section class="scene mid" id="colombo">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="sec-num" style="color:rgba(83,58,253,0.05);">06</span>
+      <p class="eyebrow">Bloque 4 · Táctica</p>
+      <h2 class="h1 mt16">La táctica de Colombo</h2>
+      <p class="body-lg mt24" style="max-width:58ch;">
+        El detective Colombo de la serie de TV nunca acusaba directamente. Llegaba a la escena del crimen con su gabardina arrugada,
+        parecía despistado, y simplemente hacía preguntas: <em>"Disculpe, señora… solo una cosita más…"</em>
+        Y con cada pregunta, el sospechoso se enredaba solo.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div class="r">
+        <div class="concept-img" style="margin:0 0 var(--s32);height:280px;">
+          <img src="assets/concept-colombo.jpg" alt="Detective Colombo — táctica de preguntas" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;">
+        </div>
+
+        <div class="portrait" style="max-width:320px;">
+          <div class="portrait-vis">
+            <img class="portrait-img" src="assets/portrait-koukl.jpg" alt="Greg Koukl — apologista cristiano">
+          </div>
+          <div class="portrait-body">
+            <p class="portrait-name">Greg Koukl</p>
+            <p class="portrait-role">Apologista · Fundador de Stand to Reason</p>
+            <span class="portrait-faith">Fe cristiana</span>
+            <ul class="portrait-contrib">
+              <li>Autor del libro <em>Tácticas</em> (Tactics)</li>
+              <li>Desarrolló la táctica de Colombo para apologética</li>
+              <li>Énfasis en preguntar antes de responder</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="r rd1">
+        <div class="accent-bar"></div>
+        <h3 class="h3">Las dos preguntas que todo cristiano debe saber</h3>
+        <p class="body mt16">No atacar, no debatir — solo preguntar. Al preguntar, le devuelves a la otra persona la responsabilidad de defender lo que dice.</p>
+
+        <div class="tactic-q mt32">
+          <div class="tq">
+            <p class="tq-num">Pregunta 1</p>
+            <p class="tq-text">"¿Qué quieres decir con eso?"</p>
+            <p class="tq-desc">Para <strong>clarificar</strong>. Antes de responder, entiende bien lo que te dicen. Muchas veces la objeción se deshace sola cuando la persona trata de explicarla. Los términos vagos ("la ciencia", "la religión", "todos los cristianos") esconden errores grandes.</p>
+          </div>
+          <div class="tq">
+            <p class="tq-num">Pregunta 2</p>
+            <p class="tq-text">"¿Cómo llegaste a esa conclusión?"</p>
+            <p class="tq-desc">Para que <strong>defiendan su posición</strong>. Muchas creencias populares no tienen fundamento cuando se examinan. Esta pregunta invierte la carga de la prueba sin agresividad: ahora ellos tienen que mostrar evidencia, no tú.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ EJEMPLO PRÁCTICO — COLOMBO ══════════════════════════ -->
+<section class="scene dark on-dark" id="ejemplo">
+  <div class="wrap">
+    <div class="r">
+      <p class="eyebrow">Ejemplo en la práctica</p>
+      <h2 class="h2 mt16">"La Biblia está llena de contradicciones."</h2>
+      <p class="body-lg mt16" style="max-width:60ch;">Así se ve la diferencia entre responder con y sin la táctica.</p>
+    </div>
+
+    <div class="two-col mt48">
+      <div class="r">
+        <div class="card-dark" style="border-color:rgba(234,34,97,0.3);">
+          <p style="font-family:var(--fm);font-size:10px;color:var(--ruby);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s16);">Sin la táctica — respuesta típica</p>
+          <p class="body" style="color:rgba(255,255,255,0.6);">Te pones a la defensiva. Intentas recordar respuestas que oíste alguna vez. Terminas inseguro. La conversación se vuelve un debate emocional donde nadie gana.</p>
+        </div>
+      </div>
+      <div class="r rd1">
+        <div class="card-dark" style="border-color:rgba(21,190,83,0.3);">
+          <p style="font-family:var(--fm);font-size:10px;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s16);">Con la táctica de Colombo</p>
+          <div class="convo mt8">
+            <div class="convo-wrapper">
+              <p class="convo-label them">Ellos</p>
+              <p class="convo-msg convo-them">"La Biblia está llena de contradicciones."</p>
+            </div>
+            <div class="convo-wrapper right">
+              <p class="convo-label us">Nosotros</p>
+              <p class="convo-msg convo-us" style="max-width:340px;">"Interesante. ¿Qué entiendes tú por contradicción?"</p>
+            </div>
+            <div class="convo-wrapper">
+              <p class="convo-label them">Ellos</p>
+              <p class="convo-msg convo-them">[escuchas]</p>
+            </div>
+            <div class="convo-wrapper right">
+              <p class="convo-label us">Nosotros</p>
+              <p class="convo-msg convo-us" style="max-width:340px;">"¿Puedes darme un ejemplo específico?"</p>
+            </div>
+            <div class="convo-wrapper right">
+              <p class="convo-label us">Nosotros</p>
+              <p class="convo-msg convo-us" style="max-width:400px;">"¿Cómo llegaste a la conclusión de que eso es una contradicción y no, por ejemplo, dos descripciones distintas del mismo evento?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="r mt48">
+      <div class="card-dark">
+        <p class="eyebrow">Resultado casi siempre</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--s24);margin-top:var(--s24);">
+          <div style="padding:var(--s16);background:rgba(83,58,253,0.15);border-radius:6px;">
+            <p style="font-size:13px;font-weight:500;color:#fff;margin-bottom:6px;">A — No hay ejemplo concreto</p>
+            <p class="body-sm" style="color:rgba(255,255,255,0.55);">Repitió algo que oyó sin pensarlo. La pregunta lo revela gentilmente.</p>
+          </div>
+          <div style="padding:var(--s16);background:rgba(83,58,253,0.15);border-radius:6px;">
+            <p style="font-size:13px;font-weight:500;color:#fff;margin-bottom:6px;">B — Ejemplo sin fundamento</p>
+            <p class="body-sm" style="color:rgba(255,255,255,0.55);">Tiene algo en mente que ya tiene respuesta conocida. Ahora se puede investigar juntos.</p>
+          </div>
+          <div style="padding:var(--s16);background:rgba(83,58,253,0.15);border-radius:6px;">
+            <p style="font-size:13px;font-weight:500;color:#fff;margin-bottom:6px;">C — Ejemplo real</p>
+            <p class="body-sm" style="color:rgba(255,255,255,0.55);">Hay algo específico. Ahora tienen una conversación honesta, no un debate emocional.</p>
+          </div>
+        </div>
+        <p class="body mt32" style="color:rgba(185,185,249,0.7);"><em>Las afirmaciones hechas sin evidencia pueden ser respondidas sin evidencia. Pero la táctica de Colombo es mejor: las examina junto con la persona. El objetivo no es ganar — es ayudar a pensar.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ BLOQUE 5 — DISCUSIÓN ══════════════════════════ -->
+<section class="scene deeper on-dark" id="discusion">
+  <div class="wrap" style="text-align:center;">
+    <div class="r">
+      <p class="eyebrow" style="justify-content:center;display:flex;">Bloque 5 · Discusión</p>
+      <h2 class="h2 mt24" style="color:#fff;max-width:18ch;margin:var(--s24) auto 0;">Ahora practiquen en clase</h2>
+    </div>
+    <div class="r rd1" style="max-width:680px;margin:var(--s48) auto 0;">
+      <div class="verse-block">
+        <p>Piensa en una conversación real donde alguien te haya dicho "eso es tu verdad" o algo similar. ¿Cómo respondiste? ¿Cómo lo responderías ahora?</p>
+        <span class="verse-ref">Practica las dos preguntas de Colombo con alguien del grupo.</span>
+      </div>
+    </div>
+    <div class="r rd2 mt48" style="display:flex;gap:var(--s24);flex-wrap:wrap;justify-content:center;">
+      <div class="hero-badge">Pregunta 1 — ¿Qué quieres decir?</div>
+      <div class="hero-badge">Pregunta 2 — ¿Cómo llegaste a eso?</div>
+      <div class="hero-badge">Escuchar antes de responder</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ BLOQUE 6 — CIERRE Y APLICACIÓN ══════════════════════════ -->
+<section class="scene dark on-dark" id="cierre">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="sec-num">07</span>
+      <p class="eyebrow">Bloque 6 · Cierre</p>
+      <h2 class="h1 mt16">Buscar la verdad<br>requiere virtud</h2>
+    </div>
+
+    <div class="two-col">
+      <div class="r">
+        <div class="portrait" style="max-width:320px;">
+          <div class="portrait-vis">
+            <img class="portrait-img" src="assets/portrait-groothuis.jpg" alt="Douglas Groothuis — filósofo cristiano contemporáneo">
+          </div>
+          <div class="portrait-body">
+            <p class="portrait-name">Douglas Groothuis</p>
+            <p class="portrait-role">Filósofo cristiano · Denver Seminary</p>
+            <span class="portrait-faith">Fe cristiana</span>
+            <ul class="portrait-contrib">
+              <li>Autor de <em>Christian Apologetics</em> (2011)</li>
+              <li>Profesor de filosofía y apologética</li>
+              <li>Énfasis en la virtud epistémica</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote r mt32">
+          <p>"Muchos no creyentes nunca consideran seriamente los argumentos a favor del cristianismo simplemente porque son despreocupados de la verdad. Buscar la verdad requiere evitar la pereza, cultivar la estudiosidad, y resistir la tentación de las desviaciones que la evitan."</p>
+          <div class="quote-attr">Douglas Groothuis · Christian Apologetics</div>
+          <div class="quote-src">Capítulo 7: Por qué la verdad es más importante</div>
+        </div>
+      </div>
+
+      <div class="r rd1">
+        <div class="accent-bar"></div>
+        <h3 class="h3">Tres virtudes para el buscador de verdad</h3>
+        <div style="display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s32);">
+          <div class="card-dark">
+            <p style="font-family:var(--fm);font-size:10px;color:var(--purple-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--s8);">Humildad</p>
+            <p class="body">Admitir que puedo estar equivocado. La verdad es más grande que yo.</p>
+          </div>
+          <div class="card-dark">
+            <p style="font-family:var(--fm);font-size:10px;color:var(--purple-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--s8);">Valentía</p>
+            <p class="body">Estar dispuesto a cambiar de opinión cuando la evidencia lo exige.</p>
+          </div>
+          <div class="card-dark">
+            <p style="font-family:var(--fm);font-size:10px;color:var(--purple-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:var(--s8);">Honestidad personal</p>
+            <p class="body">No esconderse detrás de excusas. Seguir la evidencia donde lleve.</p>
+          </div>
+        </div>
+
+        <!-- TAREA -->
+        <div class="divider-dark mt48"></div>
+        <p class="eyebrow mt48">Tarea de la semana</p>
+        <ul class="hw mt24">
+          <li>
+            <div class="hw-num">1</div>
+            <p>Memoriza 1 Pedro 3:15 (RVR1960). No el concepto — las palabras exactas.</p>
+          </li>
+          <li>
+            <div class="hw-num">2</div>
+            <p>Identifica a <strong>UNA persona</strong> en tu vida que duda de la fe o que ha dicho "eso es tu verdad". No le hables todavía. Solo piénsala. Ora por ella.</p>
+          </li>
+          <li>
+            <div class="hw-num">3</div>
+            <p>Practica las dos preguntas de Colombo en una conversación normal esta semana — con un amigo, en el trabajo, en casa. No es para discutir, es para que se vuelva natural <em>preguntar antes de responder</em>.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ORACIÓN DE CIERRE -->
+    <div class="r mt64">
+      <div class="prayer">
+        <p class="prayer-label">Oración sugerida de cierre</p>
+        <p>"Señor, gracias porque tu verdad no depende de lo que nadie piense — ni siquiera de lo que nosotros pensemos. Tú eres la verdad, y nosotros somos los que tenemos que ajustarnos a ti, no al revés. Hoy empezamos a aprender a defender lo que creemos. Danos valor para hacerlo, inteligencia para hacerlo bien, y sobre todo amor — porque sin amor, todo lo que digamos sonará a ruido. En el nombre de Jesús, amén."</p>
+      </div>
+    </div>
+
+    <div class="r mt48">
+      <div class="verse-block">
+        <p>"Estad siempre preparados para presentar defensa con mansedumbre y reverencia…"</p>
+        <span class="verse-ref">1 Pedro 3:15 · RVR1960</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ APÉNDICE — OBJECIONES ══════════════════════════ -->
+<section class="scene" id="objeciones">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="sec-num" style="color:rgba(83,58,253,0.05);">A</span>
+      <p class="eyebrow">Apéndice</p>
+      <h2 class="h1 mt16">Objeciones frecuentes<br>y cómo responderlas</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Respuestas sugeridas para las preguntas que más surgen. No para memorizar — para pensar.</p>
+    </div>
+
+    <div class="objections">
+      <div class="obj r">
+        <div class="obj-q">
+          <div class="obj-q-icon">🗣</div>
+          <p>"Eso es lo que a ti te enseñaron, pero en otras culturas creen cosas distintas."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Exactamente. Y esas culturas distintas no pueden tener todas la razón si sus creencias se contradicen entre sí. La diversidad de creencias no prueba que todas sean igualmente verdaderas — igual que la diversidad de diagnósticos médicos no significa que todos sean correctos. Hay un diagnóstico correcto, y vale la pena buscarlo.</p>
+        </div>
+      </div>
+
+      <div class="obj r rd1">
+        <div class="obj-q">
+          <div class="obj-q-icon">🗣</div>
+          <p>"Yo solo creo lo que la ciencia puede probar."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida (Correcaminos)</span>
+          <p>¿Puedes probar eso científicamente? Esa afirmación misma no es científica, es filosófica. La ciencia es una herramienta extraordinaria, pero hay preguntas ("¿por qué hay algo en lugar de nada?", "¿qué es el bien?", "¿soy más que mis átomos?") que la ciencia no puede responder. Limitar el conocimiento solo a lo científico es como decir que solo existe lo que se puede pesar en una balanza.</p>
+        </div>
+      </div>
+
+      <div class="obj r rd2">
+        <div class="obj-q">
+          <div class="obj-q-icon">🗣</div>
+          <p>"La religión es personal, no deberías imponérsela a nadie."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Nadie aquí quiere imponerle nada a nadie. Compartir razones no es imposición, es diálogo. Los médicos no "imponen" el diagnóstico — explican la realidad. Si el evangelio es verdad, amar es compartirlo. Si no lo es, no vale la pena defenderlo. La pregunta verdadera no es si compartirlo, sino si es verdadero.</p>
+        </div>
+      </div>
+
+      <div class="obj r">
+        <div class="obj-q">
+          <div class="obj-q-icon">🗣</div>
+          <p>"No me gusta hablar de religión, es muy personal."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Totalmente válido. Pero igual que uno puede hablar de medicina, de historia o de filosofía sin que sea una agresión, hablar de Dios también puede ser una conversación intelectual honesta. Y eso es exactamente lo que este curso enseña a hacer.</p>
+        </div>
+      </div>
+
+      <div class="obj r rd1">
+        <div class="obj-q">
+          <div class="obj-q-icon">🗣</div>
+          <p>"Están queriendo debatir a la gente en lugar de amarla."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Al contrario — la apologética es un acto de amor. Si un amigo tuviera cáncer y no lo supiera, ¿amarlo significaría no decirle nada? El apóstol Pablo razonaba con la gente en las sinagogas (Hechos 17:17). <strong>La verdad sin amor es brutalidad; el amor sin verdad es sentimentalismo.</strong> Necesitamos las dos.</p>
+        </div>
+      </div>
+
+      <div class="obj r rd2">
+        <div class="obj-q">
+          <div class="obj-q-icon">🗣</div>
+          <p>"¿El cristianismo es 'la verdad' y todas las otras religiones están equivocadas? Eso suena arrogante."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Si Jesús resucitó de los muertos como dice la Biblia, entonces sí — las afirmaciones contrarias del islam, del budismo o del ateísmo no pueden ser verdaderas a la vez. Pero lo que es arrogante no es afirmar que algo es verdad. Lo arrogante sería afirmarlo <em>sin evidencia</em>. Por eso este curso no se trata de imponer, se trata de examinar. Si al final no hay evidencia, deberíamos abandonarlo. Si la hay, deberíamos seguirla.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing-phrase r mt64" style="background:var(--brand-dark);border:1px solid rgba(185,185,249,0.15);">
+      <p style="color:rgba(255,255,255,0.88);">"La apologética no es ganar argumentos. Es abrir puertas."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer style="background:var(--navy);padding:var(--s48) 0;border-top:1px solid rgba(255,255,255,0.06);">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--s24);">
+    <div>
+      <img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE × AG" style="height:32px;width:auto;opacity:0.7;">
+    </div>
+    <div style="text-align:right;">
+      <p style="font-family:var(--fm);font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;">RAZONES PARA CREER · SESIÓN 1 · APOLOGÉTICA BÁSICA</p>
+      <p style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.2);margin-top:4px;">1 Pedro 3:15 · RVR1960</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── PROGRESS BAR ──
+(function(){
+  var bar=document.getElementById('bar');
+  function update(){
+    var s=document.documentElement.scrollTop||document.body.scrollTop;
+    var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    bar.style.width=(h>0?(s/h*100):0)+'%';
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  update();
+})();
+
+// ── REVEAL ON SCROLL ──
+(function(){
+  var els=document.querySelectorAll('.r');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in');});return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -48px 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>

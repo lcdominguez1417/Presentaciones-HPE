@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¿Tenemos una copia exacta? · Sesión 7 · Razones para Creer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
+
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;
+  display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-brand{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.3px;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;
+  font-size:12px;font-weight:500;letter-spacing:0.2px;}
+@media(max-width:560px){.nav-tag{display:none;} .nav .wrap{gap:var(--s12);} .nav-brand img{height:30px!important;}}
+
+/* TYPE ROLES */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.02;
+  letter-spacing:-2px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:18px;font-weight:300;line-height:1.55;color:var(--body);}
+.body{font-size:16px;font-weight:300;line-height:1.6;color:var(--body);}
+.body-sm{font-size:14px;font-weight:300;line-height:1.55;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}
+.strong{font-weight:500;}
+.purple{color:var(--purple);}
+
+/* SCENES */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
+
+/* HERO */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero.png) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.85) 0%,rgba(28,30,84,0.75) 55%,rgba(46,43,140,0.65) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:15ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.6);max-width:52ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+
+/* ACCENT LINE */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
+
+/* SECTION NUMBER watermark */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;
+  font-feature-settings:"tnum";}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s32);}
+.card-white .body,.card-white .body-lg,.card-white .body-sm{color:var(--body);}
+
+/* QUOTE */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;
+  color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
+.quote-src{font-size:12px;color:var(--body);margin-top:4px;font-style:italic;}
+.on-dark .quote-src{color:rgba(255,255,255,0.3);}
+
+/* PORTRAITS GRID */
+.portraits{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--s24);margin-top:var(--s48);align-items:start;}
+.portrait{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:rgba(23,23,23,0.08) 0 15px 35px;
+  transition:transform 220ms,box-shadow 220ms;}
+.portrait:hover{transform:translateY(-4px);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.portrait-vis{width:100%;aspect-ratio:3/4;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--s8);
+  background:linear-gradient(160deg,var(--brand-dark) 0%,var(--dark-navy) 100%);
+  position:relative;overflow:hidden;}
+.portrait-body{padding:var(--s16) var(--s16) var(--s24);}
+.portrait-name{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.2px;line-height:1.2;}
+.portrait-role{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;line-height:1.4;}
+.portrait-faith{display:inline-block;margin-top:var(--s8);
+  background:rgba(21,190,83,0.1);color:#108c3d;
+  border:1px solid rgba(21,190,83,0.3);padding:2px 8px;border-radius:4px;
+  font-size:11px;font-weight:500;}
+.portrait-secular{background:rgba(234,34,97,0.08);color:var(--ruby);
+  border:1px solid rgba(234,34,97,0.25);}
+.portrait-contrib{list-style:none;margin-top:var(--s12);display:flex;flex-direction:column;gap:4px;}
+.portrait-contrib li{font-size:11px;color:var(--body);line-height:1.4;padding-left:12px;position:relative;}
+.portrait-contrib li::before{content:'→';position:absolute;left:0;color:var(--purple);font-size:10px;line-height:1.5;}
+
+/* PROBLEM CARDS */
+.problems{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--s24);margin-top:var(--s48);}
+.problem{border-left:3px solid var(--ruby);padding:var(--s24);
+  background:rgba(234,34,97,0.04);border-radius:0 8px 8px 0;}
+.on-dark .problem{background:rgba(234,34,97,0.08);}
+.problem-n{font-family:var(--fm);font-size:10px;color:var(--ruby);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.problem-title{font-size:17px;font-weight:500;color:var(--navy);margin-bottom:var(--s8);line-height:1.3;}
+.on-dark .problem-title{color:#fff;}
+.problem-body{font-size:14px;font-weight:300;color:var(--body);line-height:1.55;}
+.on-dark .problem-body{color:rgba(255,255,255,0.55);}
+
+/* COMPARE */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--s32);margin-top:var(--s48);}
+@media(max-width:640px){.compare{grid-template-columns:1fr;}}
+.compare-head{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;padding-bottom:var(--s12);border-bottom:2px solid;margin-bottom:var(--s16);}
+.compare-head.yes{color:var(--green);border-color:var(--green);}
+.compare-head.no{color:var(--ruby);border-color:var(--ruby);}
+.compare-list{list-style:none;}
+.compare-list li{font-size:15px;font-weight:300;color:var(--body);
+  padding:var(--s8) 0;border-bottom:1px solid var(--border);
+  display:flex;gap:var(--s8);line-height:1.4;}
+.compare-list li::before{content:'—';color:var(--purple);flex-shrink:0;}
+
+/* OBJECTIONS */
+.objections{display:flex;flex-direction:column;gap:var(--s32);margin-top:var(--s48);}
+.obj{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.obj-q{background:var(--brand-dark);padding:var(--s24) var(--s32);
+  display:flex;gap:var(--s16);align-items:flex-start;}
+.obj-q-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.obj-q p{font-size:18px;font-weight:300;color:rgba(255,255,255,0.9);
+  font-style:italic;line-height:1.45;}
+.obj-a{padding:var(--s24) var(--s32);background:#fff;}
+.obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
+.obj-a p{font-size:16px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* SUMMARY TABLE */
+.summary{width:100%;border-collapse:collapse;margin-top:var(--s48);}
+.summary th{text-align:left;font-family:var(--fm);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 var(--s16) var(--s16) 0;color:var(--body);
+  border-bottom:2px solid var(--border);}
+.summary td{font-size:15px;font-weight:300;line-height:1.5;
+  padding:var(--s16) var(--s16) var(--s16) 0;
+  border-bottom:1px solid var(--border);color:var(--body);vertical-align:top;}
+.summary td.lbl{font-weight:500;color:var(--navy);}
+.summary td.resp{color:var(--purple);}
+
+/* HOMEWORK */
+.hw{list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s32);}
+.hw li{display:flex;gap:var(--s16);align-items:flex-start;}
+.hw-num{flex-shrink:0;width:32px;height:32px;border-radius:4px;
+  background:var(--purple);color:#fff;
+  font-family:var(--fm);font-size:13px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;}
+.hw li p{font-size:16px;font-weight:300;color:var(--body);line-height:1.55;padding-top:4px;}
+
+/* VERSE */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.9);line-height:1.5;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);
+  letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
+
+/* INFO STRIP */
+.info-strip{display:flex;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s48);}
+.info-item{flex:1;min-width:200px;}
+.info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.info-item-val{font-size:16px;font-weight:300;color:var(--navy);line-height:1.4;}
+
+/* DIVIDERS */
+.divider{height:1px;background:var(--border);}
+.divider-dark{height:1px;background:rgba(255,255,255,0.1);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* PILL TAG */
+.pill{display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);
+  color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* IMMERSIVE IMAGE */
+.immersive{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 45px -30px;margin:var(--s48) 0;}
+.immersive img{width:100%;display:block;}
+.immersive-cap{font-size:13px;color:var(--body);margin-top:var(--s16);line-height:1.5;}
+.on-dark .immersive-cap{color:rgba(255,255,255,0.5);}
+
+/* MANUSCRIPT CHART — interactive click-to-reveal */
+.ms-chart{background:#fff;border:1px solid var(--border);border-radius:8px;
+  padding:var(--s32);margin:var(--s48) 0;box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.ms-chart-head{display:flex;justify-content:space-between;align-items:center;gap:var(--s16);
+  flex-wrap:wrap;margin-bottom:var(--s32);}
+.ms-reveal-btn{font-family:var(--fm);font-size:12px;letter-spacing:0.6px;text-transform:uppercase;
+  background:var(--purple);color:#fff;border:none;border-radius:6px;padding:12px 20px;
+  cursor:pointer;transition:background 0.15s,color 0.15s;white-space:nowrap;}
+.ms-reveal-btn:hover{background:var(--purple-hover);}
+.ms-reveal-btn.is-revealed{background:#fff;color:var(--purple);border:1px solid var(--purple);}
+.ms-bars{display:flex;align-items:flex-end;gap:var(--s16);height:560px;
+  border-bottom:1px solid var(--border);}
+.ms-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  height:100%;min-width:0;}
+.ms-icon{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  border:2px solid rgba(83,58,253,0.2);box-shadow:0 4px 14px rgba(50,50,93,0.18);
+  margin-bottom:var(--s12);transition:box-shadow 0.4s,border-color 0.4s;}
+.ms-bar{width:100%;max-width:64px;border-radius:5px 5px 0 0;background:rgba(83,58,253,0.18);
+  transition:height 1.6s cubic-bezier(0.16,1,0.3,1);}
+.ms-val{font-family:var(--fm);font-size:13px;font-weight:500;color:var(--label);margin-bottom:var(--s8);
+  transition:color 0.4s,font-size 0.4s;}
+.ms-lbl{font-size:12px;color:var(--body);margin-top:var(--s12);text-align:center;line-height:1.3;}
+.ms-col.is-nt .ms-bar{background:var(--purple);}
+.ms-col.is-nt.is-revealed .ms-bar{box-shadow:0 0 40px rgba(83,58,253,0.5),0 0 90px rgba(83,58,253,0.25);}
+.ms-col.is-nt .ms-val{color:var(--purple);}
+.ms-col.is-nt.is-revealed .ms-val{font-size:20px;}
+.ms-col.is-nt .ms-lbl{color:var(--navy);font-weight:500;}
+.ms-col.is-nt .ms-icon{border-color:rgba(83,58,253,0.4);}
+.ms-col.is-nt.is-revealed .ms-icon{box-shadow:0 0 24px rgba(83,58,253,0.4);}
+.ms-flourish{text-align:center;font-size:14px;font-weight:500;color:var(--purple);margin-top:var(--s24);
+  opacity:0;transition:opacity 0.6s ease;}
+.ms-flourish.show{opacity:1;}
+@media(max-width:768px){.ms-bars{height:360px;gap:var(--s8);}.ms-icon{width:36px;height:36px;margin-bottom:var(--s8);}.ms-lbl{font-size:10px;}.ms-val{font-size:11px;}}
+
+/* CONCEPT DEFINITION BOX */
+.concept-box{border:1px solid rgba(251,146,60,0.4);border-left:4px solid #fb923c;
+  background:rgba(251,146,60,0.07);border-radius:8px;padding:var(--s24) var(--s32);}
+.concept-tag{font-family:var(--fm);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  background:rgba(251,146,60,0.15);color:#fb923c;border:1px solid rgba(251,146,60,0.35);
+  padding:3px 10px;border-radius:4px;display:inline-block;}
+
+/* CHAPTER ANCHOR */
+[id]{scroll-margin-top:80px;}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand"><img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:40px;width:auto;display:block;"></div>
+    <div class="nav-tag">¿Tenemos una copia exacta?</div>
+    <div class="nav-pill">Apologética</div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Sesión 7 · Razones para Creer · Apologética Cristiana</div>
+    <h1 class="display r rd1">¿Tenemos<br>una copia<br>exacta?</h1>
+    <p class="body-lg r rd2">La transmisión del Nuevo Testamento a través de la historia — y por qué es el documento mejor respaldado de la antigüedad.</p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">📖 2 Timoteo 3:16-17</span>
+      <span class="hero-badge">👥 15–45 años</span>
+      <span class="hero-badge">🎯 Manuscritos · Variantes · Preservación</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 0: APERTURA ═══════════════════════════ -->
+<section class="scene" id="apertura">
+  <div class="wrap">
+    <div class="r">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">El gancho</span>
+    </div>
+    <h2 class="h1 mt16 r rd1" style="max-width:20ch;">¿Teléfono descompuesto… o algo distinto?</h2>
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">Hay personas que piensan que la Biblia se transmitió como el juego del teléfono descompuesto: alguien dijo algo, se lo dijo a otro, que lo copió mal, y lo que tenemos hoy no se parece al original.</p>
+        <p class="body mt24" style="max-width:48ch;">Esta sesión examina si eso es verdad o es un mito. <strong class="strong">La evidencia histórica es sorprendente</strong> — y no se basa en fe ciega, sino en datos que cualquier historiador serio reconoce.</p>
+      </div>
+      <div class="r rd2">
+        <div class="card">
+          <span class="eyebrow">El objetivo de hoy</span>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s24);">
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">01</span>
+              <span class="body">Entender por qué "no tenemos los originales" no es un problema único de la Biblia.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">02</span>
+              <span class="body">Conocer las tres columnas de evidencia que respaldan al Nuevo Testamento.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">03</span>
+              <span class="body">Distinguir entre "variante" y "error" — y por qué Dios preservó su Palabra por diseño.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ BLOQUE 1: EL PROBLEMA QUE NO ES UN PROBLEMA ═══════════════════════════ -->
+<section class="scene dark on-dark" id="problema">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <span class="eyebrow">Bloque 1</span>
+      <h2 class="h1 mt16">El problema<br>que no es<br>un problema</h2>
+      <p class="body-lg mt24" style="max-width:54ch;">Seamos honestos: no tenemos ni una sola página original que escribieron Mateo, Pablo o Juan. Ninguna. Se deterioraron hace siglos. Eso es un hecho.</p>
+    </div>
+
+    <!-- La situación real -->
+    <div class="card-dark r rd1" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">La situación real</span>
+      <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">Eso le pasa a TODA la literatura del mundo antiguo. Nadie tiene los originales de Platón, de Homero, de Julio César. Y sin embargo los historiadores los estudian y confían en ellos todos los días.</p>
+      <p class="body mt24">La pregunta correcta no es <em class="italic">«¿tenemos el original?»</em>. La pregunta es: <strong class="strong" style="color:#fff;">«¿tenemos copias suficientemente buenas para saber qué decía el original?»</strong></p>
+    </div>
+
+    <!-- 27 libros visual -->
+    <h3 class="h3 mt64 r">El Nuevo Testamento no es un libro: son 27</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">No es un solo libro que alguien copió una vez. Son 27 documentos distintos, escritos por 9 autores diferentes, en 27 rollos distintos, durante 20 a 50 años. Cuando hablamos de su transmisión, hablamos de docenas de líneas independientes — no de una sola cadena de boca en boca.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-27-documentos.png" alt="27 documentos, 9 autores, transmisión independiente">
+      <p class="immersive-cap wrap" style="padding:0 var(--s8);">9 testigos y contemporáneos escribieron de forma independiente — no un susurro en fila, sino nueve grabaciones distintas del mismo evento.</p>
+    </div>
+
+    <!-- Por qué el teléfono no aplica -->
+    <div class="concept-box r rd3" style="margin-top:var(--s48);">
+      <span class="concept-tag">⚠ Por qué el teléfono descompuesto no aplica</span>
+      <p class="body mt16">El juego falla porque la información pasa por una <strong>sola cadena</strong> de personas, cada una recordando de oído. El Nuevo Testamento no se transmitió así: nueve testigos y contemporáneos pusieron sus observaciones por escrito de forma <strong>independiente</strong>, casi al mismo tiempo. Si una "copia" se altera, las otras ocho la delatan.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 2: LAS TRES COLUMNAS ═══════════════════════════ -->
+<section class="scene" id="columnas">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">02</div>
+      <span class="eyebrow">Bloque 2</span>
+      <h2 class="h1 mt16">Las tres columnas<br>de la evidencia</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Para saber si una copia antigua es confiable, los historiadores se fijan en tres cosas: <strong class="strong purple">cuántas copias hay</strong>, <strong class="strong purple">qué tan cerca están del original en el tiempo</strong>, y <strong class="strong purple">qué tanto respaldo externo</strong> confirma su contenido.</p>
+    </div>
+
+    <!-- COLUMNA 1: Cantidad -->
+    <h3 class="h3 mt32 r">Cantidad de manuscritos</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">El Nuevo Testamento tiene casi 5,700 manuscritos en griego. Sumando siríaco, copto, latín, árabe y otras versiones antiguas, llegamos a cerca de 15,000. El libro que le sigue más de cerca es la Ilíada de Homero… con 643. Muchas obras famosas del mundo antiguo sobreviven en menos de 12 manuscritos.</p>
+
+    <div class="ms-chart r rd2">
+      <div class="ms-chart-head">
+        <span class="concept-tag" style="background:rgba(83,58,253,0.1);color:var(--purple);border-color:rgba(83,58,253,0.3);">📊 Manuscritos que sobreviven, por obra</span>
+        <button class="ms-reveal-btn" id="msRevealBtn" type="button">Revelar el Nuevo Testamento</button>
+      </div>
+      <div class="ms-bars">
+        <div class="ms-col"><img class="ms-icon" src="assets/icon-platon.png" alt="Diálogos de Platón"><div class="ms-val">7</div><div class="ms-bar" style="height:10px;"></div><div class="ms-lbl">Diálogos de<br>Platón</div></div>
+        <div class="ms-col"><img class="ms-icon" src="assets/icon-herodoto.png" alt="Historias de Heródoto"><div class="ms-val">8</div><div class="ms-bar" style="height:12px;"></div><div class="ms-lbl">Heródoto</div></div>
+        <div class="ms-col"><img class="ms-icon" src="assets/icon-cesar.png" alt="César, Las Guerras de las Galias"><div class="ms-val">10</div><div class="ms-bar" style="height:14px;"></div><div class="ms-lbl">César ·<br>Las Galias</div></div>
+        <div class="ms-col"><img class="ms-icon" src="assets/icon-tacito.png" alt="Tácito, Anales"><div class="ms-val">20</div><div class="ms-bar" style="height:22px;"></div><div class="ms-lbl">Tácito ·<br>Anales</div></div>
+        <div class="ms-col"><img class="ms-icon" src="assets/icon-demostenes.png" alt="Demóstenes"><div class="ms-val">200</div><div class="ms-bar" style="height:65px;"></div><div class="ms-lbl">Demóstenes</div></div>
+        <div class="ms-col"><img class="ms-icon" src="assets/icon-iliada.png" alt="Ilíada de Homero"><div class="ms-val">643</div><div class="ms-bar" style="height:105px;"></div><div class="ms-lbl">Ilíada ·<br>Homero</div></div>
+        <div class="ms-col is-nt" id="msNtCol">
+          <img class="ms-icon" src="assets/icon-nt.png" alt="Nuevo Testamento">
+          <div class="ms-val" id="msNtVal">?</div>
+          <div class="ms-bar" id="msNtBar" style="height:4px;"></div>
+          <div class="ms-lbl">Nuevo<br>Testamento</div>
+        </div>
+      </div>
+      <p class="ms-flourish" id="msFlourish">Solo el Nuevo Testamento tiene más manuscritos que todas las demás obras de esta gráfica combinadas — casi 17 veces más.</p>
+    </div>
+
+    <!-- COLUMNA 2: Antigüedad -->
+    <h3 class="h3 mt64 r">Antigüedad de los manuscritos</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">La segunda variable es la brecha entre el original y la copia más antigua disponible. Para la Ilíada son unos 500 años. Para la mayoría de obras antiguas, más de 1,000 años. Para el Nuevo Testamento: <strong class="strong">unos 25 años</strong>.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-p52-papiro.png" alt="Fragmento Rylands P52, el manuscrito más antiguo del Nuevo Testamento">
+      <p class="immersive-cap wrap" style="padding:0 var(--s8);">El Fragmento Rylands (P52) — un fragmento del Evangelio de Juan que data de entre 117 y 138 d.C. Juan escribió su Evangelio alrededor del año 90: una brecha de 25 a 50 años. Ningún otro texto del mundo antiguo se acerca a eso. Se encontró en Egipto, lejos de Asia Menor donde probablemente se escribió — prueba de que ya circulaba ampliamente a comienzos del siglo II.</p>
+    </div>
+
+    <div class="concept-box r rd3">
+      <span class="concept-tag">⚠ Nota de honestidad académica</span>
+      <p class="body mt16">Algunos investigadores han propuesto que ciertos fragmentos hallados junto a los Rollos del Mar Muerto podrían ser copias del Evangelio de Marcos de los años 50 d.C. Esta identificación es <strong>disputada</strong> y varios eruditos textuales no la aceptan. La mencionamos con honestidad: incluso sin ese dato discutido, la brecha de 25 años del Fragmento Rylands ya deja al Nuevo Testamento sin comparación en el mundo antiguo.</p>
+    </div>
+
+    <!-- COLUMNA 3: Padres de la Iglesia -->
+    <h3 class="h3 mt64 r">El respaldo de los Padres de la Iglesia</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">En el año 303, el emperador Diocleciano ordenó destruir todos los manuscritos del Nuevo Testamento en el Imperio. Quemaron iglesias, quemaron Biblias, mataron cristianos. La persecución duró hasta el 311. ¿Lograron borrar el Nuevo Testamento? <strong class="strong">Para nada.</strong></p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-padres-iglesia.png" alt="Los Padres de la Iglesia citaron el Nuevo Testamento 36,289 veces">
+      <p class="immersive-cap wrap" style="padding:0 var(--s8);">Los escritores de la iglesia de los siglos II y III citaron el Nuevo Testamento 36,289 veces. Con esas citas se puede reconstruir todo el Nuevo Testamento excepto once versículos. Aunque hubieran quemado todos los manuscritos, el texto sobrevivía en las citas.</p>
+    </div>
+
+    <!-- Tabla comparativa -->
+    <div class="r rd3" style="overflow-x:auto;margin-top:var(--s64);">
+      <table class="summary">
+        <thead>
+          <tr>
+            <th>Obra</th>
+            <th>Manuscritos</th>
+            <th>Brecha original-copia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl">Nuevo Testamento</td>
+            <td class="resp">~15,000 (5,700 en griego)</td>
+            <td>~25 años</td>
+          </tr>
+          <tr>
+            <td class="lbl">Ilíada (Homero)</td>
+            <td>643</td>
+            <td>~500 años</td>
+          </tr>
+          <tr>
+            <td class="lbl">10 mejores obras clásicas (juntas)</td>
+            <td>Menos que el NT solo</td>
+            <td>500–1,000+ años</td>
+          </tr>
+          <tr>
+            <td class="lbl">Mayoría de obras antiguas</td>
+            <td>Menos de 12</td>
+            <td>1,000+ años</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Portraits: Kenyon + Diocleciano + Padres -->
+    <h3 class="h3 mt64 r">Las voces detrás de la evidencia</h3>
+    <div class="portraits r rd1">
+
+      <div class="portrait">
+        <div class="portrait-vis" style="padding:0;">
+          <img src="assets/portrait-kenyon.png" alt="Fredric Kenyon" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Fredric Kenyon</div>
+          <div class="portrait-role">Paleógrafo · Director del Museo Británico</div>
+          <span class="portrait-faith">Autoridad académica</span>
+          <p class="body-sm" style="margin-top:var(--s8);">Una de las máximas autoridades en manuscritos antiguos del siglo XX.</p>
+        </div>
+      </div>
+
+      <div class="portrait">
+        <div class="portrait-vis" style="padding:0;">
+          <img src="assets/portrait-justino.png" alt="Justino Mártir" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Justino Mártir</div>
+          <div class="portrait-role">Apologista · Siglo II</div>
+          <span class="portrait-faith">Padre de la Iglesia</span>
+          <p class="body-sm" style="margin-top:var(--s8);">Uno de los primeros en citar extensamente los escritos apostólicos en defensa de la fe.</p>
+        </div>
+      </div>
+
+      <div class="portrait">
+        <div class="portrait-vis" style="padding:0;">
+          <img src="assets/portrait-origenes.png" alt="Orígenes de Alejandría" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Orígenes de Alejandría</div>
+          <div class="portrait-role">Teólogo · Siglo III</div>
+          <span class="portrait-faith">Padre de la Iglesia</span>
+          <p class="body-sm" style="margin-top:var(--s8);">Junto a Ireneo, Clemente de Alejandría y Tertuliano, parte de las 36,289 citas que reconstruyen el NT.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Kenyon quote -->
+    <div class="quote r rd2" style="margin-top:var(--s48);">
+      <p>"El número de manuscritos del Nuevo Testamento, de sus primeras traducciones y de sus citas en los escritores más antiguos de la Iglesia, es tan grande que es prácticamente seguro que la verdadera lectura de cada pasaje dudoso se conserva en alguna de estas antiguas autoridades. Esto no se puede decir de ningún otro libro antiguo en el mundo."</p>
+      <div class="quote-attr">Fredric Kenyon · Our Bible and the Ancient Manuscripts</div>
+      <div class="quote-src">Citado en Geisler-Turek</div>
+    </div>
+
+    <!-- Credos orales -->
+    <div class="card mt48 r rd3" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Los credos que son más antiguos que los manuscritos</span>
+      <p class="body mt16">Antes de que existiera cualquier manuscrito, ya circulaban fórmulas memorizadas. Pablo, en 1 Corintios 15:3-8, cita un credo sobre la muerte y resurrección de Jesús que la mayoría de los eruditos data en los años 30 d.C. — apenas unos años después de la crucifixión. Hay al menos 40 fórmulas así en el Nuevo Testamento.</p>
+      <p class="body mt16">La transmisión no empezó con tinta y papiro: empezó con la predicación estructurada para memorizarse, en una cultura entrenada desde niños para retener tradición oral con precisión.</p>
+    </div>
+
+    <!-- Objeción: originales serían mejor -->
+    <div class="obj mt48 r rd4">
+      <div class="obj-q">
+        <span class="obj-q-icon">💬</span>
+        <p>"¿No sería más fácil tener directamente los originales?"</p>
+      </div>
+      <div class="obj-a">
+        <span class="obj-a-label">Respuesta sugerida</span>
+        <p>Parecería que sí, pero hay una ironía: si hubiera existido un único documento "original" en manos de alguien, esa persona habría podido alterarlo sin que nadie más lo notara. Al tener miles de copias repartidas por todo el mundo antiguo — Egipto, Roma, Siria —, ninguna autoridad puede cambiarlas todas a la vez sin que las demás lo delaten. La multiplicidad de copias terminó siendo la protección del texto, no su debilidad.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 3: ¿QUÉ HAY DE LOS ERRORES? ═══════════════════════════ -->
+<section class="scene dark on-dark" id="errores">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">03</div>
+      <span class="eyebrow">Bloque 3</span>
+      <h2 class="h1 mt16">¿Qué hay<br>de los "errores"?</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Hay personas que dicen: "El Nuevo Testamento tiene 200,000 errores". Suena aterrador. Pero no son errores: son <strong class="strong" style="color:#fff;">variantes de lectura</strong>.</p>
+    </div>
+
+    <!-- El mito explicado -->
+    <div class="immersive r rd1">
+      <img src="assets/concept-variantes-no-errores.png" alt="Variantes, no errores — la misma variante contada miles de veces">
+      <p class="immersive-cap wrap" style="padding:0 var(--s8);">No son 200,000 versículos con problemas. Es que la misma variante, repetida en 5,700 manuscritos, se cuenta cada vez. Si una palabra está deletreada distinto en 2,000 manuscritos, eso suma 2,000 "errores" en la estadística… pero es el mismo detalle, en el mismo versículo.</p>
+    </div>
+
+    <!-- Stats card -->
+    <div class="card-dark mt48 r rd2" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Los números que sí importan (eruditos de los siglos XIX-XX)</span>
+      <div style="display:flex;flex-direction:column;gap:var(--s24);margin-top:var(--s24);">
+        <div>
+          <p class="body-lg" style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">Westcott y Hort:</strong> solo 1 de cada 60 variantes tiene alguna relevancia — texto 98.33% puro.</p>
+        </div>
+        <div>
+          <p class="body-lg" style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">Philip Schaff:</strong> de 150,000 variantes conocidas en su época, solo 400 cambian el significado de un pasaje, solo 50 tienen importancia real, y ninguna afecta una doctrina central de la fe.</p>
+        </div>
+        <div>
+          <p class="body-lg" style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">Bruce Metzger:</strong> comparado con el 90% de precisión del Mahabharata hindú y el 95% de la Ilíada, el Nuevo Testamento alcanza un <strong style="color:var(--purple-light);">99.5%</strong> — y ese 0.5% restante no toca ninguna doctrina.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <span class="eyebrow">La precisión, en perspectiva</span>
+        <div style="display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s24);">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:6px;"><span>Mahabharata (hindú)</span><span>90%</span></div>
+            <div style="height:10px;border-radius:4px;background:rgba(255,255,255,0.08);overflow:hidden;"><div style="height:100%;width:90%;background:rgba(255,255,255,0.25);border-radius:4px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:6px;"><span>Ilíada (Homero)</span><span>95%</span></div>
+            <div style="height:10px;border-radius:4px;background:rgba(255,255,255,0.08);overflow:hidden;"><div style="height:100%;width:95%;background:rgba(255,255,255,0.25);border-radius:4px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:#fff;font-weight:500;margin-bottom:6px;"><span>Nuevo Testamento</span><span>99.5%</span></div>
+            <div style="height:10px;border-radius:4px;background:rgba(255,255,255,0.08);overflow:hidden;"><div style="height:100%;width:99.5%;background:var(--purple-light);border-radius:4px;"></div></div>
+          </div>
+        </div>
+        <p class="body-sm mt16" style="color:rgba(255,255,255,0.5);">Bruce Metzger comparó así la precisión textual: el NT supera a las otras dos grandes obras de la antigüedad — y el 0.5% restante no toca ninguna doctrina.</p>
+      </div>
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-metzger.png" alt="Bruce Metzger" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Bruce Metzger</div>
+            <div class="portrait-role">Erudito en crítica textual · Princeton</div>
+            <span class="portrait-faith">Cristiano</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Una de las máximas autoridades en crítica textual del Nuevo Testamento del siglo XX.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ejercicio de reconstrucción -->
+    <h3 class="h3 mt64 r">Ejercicio de reconstrucción — Filipenses 4:13</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">Cuatro "copias" del mismo versículo con errores de copista. ¿Qué decía el original?</p>
+    <div class="card mt32 r rd2 card-white" style="background:#fff;">
+      <ol style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);">
+        <li style="display:flex;gap:var(--s12);"><span class="purple strong">1.</span><span class="body">"Puedo hacer todas las cosas por medio de Cristo que me da fuerza."</span></li>
+        <li style="display:flex;gap:var(--s12);"><span class="purple strong">2.</span><span class="body">"Puedo hacer <em>todad</em> las cosas por medio de Cristo que me da fuerza."</span></li>
+        <li style="display:flex;gap:var(--s12);"><span class="purple strong">3.</span><span class="body">"Puedo hacer todas <em>estas</em> cosas por medio de Cristo que me da fuerza."</span></li>
+        <li style="display:flex;gap:var(--s12);"><span class="purple strong">4.</span><span class="body">"Puedo hacer todos los <em>adelgazamientos</em> por medio de Cristo que me da fuerza."</span></li>
+      </ol>
+      <p class="body mt24" style="border-top:1px solid var(--border);padding-top:var(--s24);">No hay ningún misterio sobre qué decía el original. Y los manuscritos reales del Nuevo Testamento tienen <strong class="strong">menos diferencias entre sí</strong> que este ejemplo de práctica.</p>
+    </div>
+
+    <!-- Ejercicio de reconstrucción 2 -->
+    <h3 class="h3 mt64 r">Otro ejemplo — Juan 3:16</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">El versículo más conocido de la Biblia, copiado a mano cuatro veces. El orden de las palabras cambia, una palabra se omite… pero el mensaje no se mueve ni un milímetro.</p>
+    <div class="card mt32 r rd2 card-white" style="background:#fff;">
+      <ol style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);">
+        <li style="display:flex;gap:var(--s12);"><span class="purple strong">1.</span><span class="body">"<em>De tal manera</em> amó Dios al mundo, que dio a su <em>único</em> Hijo."</span></li>
+        <li style="display:flex;gap:var(--s12);"><span class="purple strong">2.</span><span class="body">"<em>Porque</em> amó Dios al mundo, que dio a su <em>único</em> Hijo."</span></li>
+        <li style="display:flex;gap:var(--s12);"><span class="purple strong">3.</span><span class="body">"<em>Porque tanto</em> amó Dios al mundo, que dio a su Hijo."</span></li>
+        <li style="display:flex;gap:var(--s12);"><span class="purple strong">4.</span><span class="body">"Dios amó al mundo <em>de tal manera</em>, que dio a su Hijo."</span></li>
+      </ol>
+      <p class="body mt24" style="border-top:1px solid var(--border);padding-top:var(--s24);">Cuatro formas distintas de decir la misma frase inicial, y una palabra ("único") que aparece y desaparece. Eso es exactamente lo que es una <strong class="strong">variante</strong>: nadie duda jamás de qué trata el versículo — que Dios amó al mundo y dio a su Hijo.</p>
+    </div>
+
+    <!-- Ehrman objection + portrait -->
+    <div class="two-col mt64">
+      <div class="r rd1">
+        <div class="obj" style="margin:0;">
+          <div class="obj-q">
+            <span class="obj-q-icon">💬</span>
+            <p>"Pero incluso un crítico como Bart Ehrman dice que el Nuevo Testamento tiene errores."</p>
+          </div>
+          <div class="obj-a">
+            <span class="obj-a-label">Respuesta sugerida</span>
+            <p>Y es cierto — y vale la pena decirlo con honestidad: Ehrman es uno de los críticos más conocidos del Nuevo Testamento, y aun así reconoce que, comparando los miles de manuscritos disponibles, los eruditos pueden reconstruir el texto original con un grado de confianza muy alto. Su desacuerdo no es tanto con la transmisión del texto, sino con si ese texto es inspirado por Dios. Son dos preguntas distintas: ¿qué decía el original? (eso lo sabemos con gran precisión) y ¿es verdad lo que dice? (esa es la pregunta de la Sesión 8).</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-ehrman.png" alt="Bart Ehrman" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Bart Ehrman</div>
+            <div class="portrait-role">Crítico textual · UNC Chapel Hill</div>
+            <span class="portrait-faith portrait-secular">Agnóstico</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Uno de los críticos más citados del NT — y aun así afirma que el texto original se reconstruye con alta confianza.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 4: DIOS PRESERVÓ SU PALABRA ═══════════════════════════ -->
+<section class="scene" id="preservacion">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <span class="eyebrow">Bloque 4 · El corazón del argumento</span>
+      <h2 class="h1 mt16">Dios preservó<br>su Palabra<br>por diseño</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Si Dios inspiró la Biblia, ¿por qué no preservó los originales? ¿Por qué dejó que se perdieran? Tal vez fue mejor así.</p>
+    </div>
+
+    <!-- Diocleciano concept + portrait -->
+    <div class="immersive r rd1">
+      <img src="assets/concept-diocleciano-persecucion.png" alt="El emperador Diocleciano ordenó destruir el Nuevo Testamento en el año 303 d.C.">
+    </div>
+
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-diocleciano.png" alt="Emperador Diocleciano" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Diocleciano</div>
+            <div class="portrait-role">Emperador romano · 284–305 d.C.</div>
+            <span class="portrait-faith portrait-secular">Persecutor</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Ordenó destruir todos los manuscritos del Nuevo Testamento en el año 303. Fracasó.</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <p class="body-lg" style="max-width:48ch;">Diocleciano lo intentó con todo el poder del Imperio Romano — y fracasó. Eso no es suerte. <strong class="strong">Eso es providencia.</strong></p>
+        <p class="body mt24" style="max-width:48ch;">Si existiera un único documento físico en manos de alguien, esa persona podría cambiarlo. Pero con miles de copias repartidas por Egipto, Asia Menor, Roma, Siria, el norte de África, no hay forma humana de alterarlas todas a la vez. La multiplicidad de copias ES la protección de la Palabra.</p>
+      </div>
+    </div>
+
+    <!-- Mapa de multiplicidad -->
+    <div class="immersive r rd2" style="margin-top:var(--s64);">
+      <img src="assets/concept-multiplicidad-mapa.png" alt="La multiplicidad de copias en Egipto, Roma y Siria como protección del texto">
+      <p class="immersive-cap wrap" style="padding:0 var(--s8);">Egipto, Roma, Siria: si alguien hubiera alterado el texto en un lugar, las copias de los demás mostrarían la diferencia de inmediato.</p>
+    </div>
+
+    <!-- Theopneustos -->
+    <div class="card mt64 r rd3" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Theopneustos — "exhalada por Dios"</span>
+      <p class="body-lg mt16">Pablo le escribe a Timoteo que toda la Escritura es inspirada por Dios — en griego, <em class="italic">theopneustos</em>, literalmente "exhalada por Dios". Dios no solo inspiró ese texto. <strong class="strong">Lo preservó</strong>: a través de miles de copias, miles de citas, y dos siglos de persecución activa que no lograron borrarlo.</p>
+    </div>
+
+    <!-- Verse block -->
+    <div class="verse-block mt48 r rd4" style="background:rgba(83,58,253,0.08);border-color:rgba(83,58,253,0.2);">
+      <p style="color:var(--navy);">"Toda la Escritura es inspirada por Dios, y útil para enseñar, para redargüir, para corregir, para instruir en justicia, a fin de que el hombre de Dios sea perfecto, enteramente preparado para toda buena obra."</p>
+      <span class="verse-ref" style="color:var(--purple);">2 Timoteo 3:16-17 · RVR1960</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 5: OBJECIONES DIFÍCILES ═══════════════════════════ -->
+<section class="scene dark on-dark" id="objeciones">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <span class="eyebrow">Bloque 5</span>
+      <h2 class="h1 mt16">Objeciones difíciles</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Las preguntas más comunes — con respuestas honestas y sin miedo.</p>
+    </div>
+
+    <!-- Nicea concept -->
+    <div class="immersive r rd1">
+      <img src="assets/concept-nicea-mito.png" alt="El Concilio de Nicea no cambió el texto bíblico">
+    </div>
+
+    <div class="objections r rd2">
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"¿No cambió Constantino la Biblia en el Concilio de Nicea?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>El Concilio de Nicea (325 d.C.) trató sobre la naturaleza de Cristo, no sobre el texto bíblico. De hecho, para esa misma época ya circulaba el Codex Vaticanus, un manuscrito que contiene casi todo el Nuevo Testamento — prueba de que el texto ya estaba fijado antes del Concilio y no cambió después. Esta idea es una confusión popular, amplificada por novelas como El Código Da Vinci, no por la historia real.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"¿Y los versículos que 'no estaban en los originales', como la mujer adúltera?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Esos son justamente los pasajes marcados en los manuscritos y en las notas al pie de tu propia Biblia — el sistema funciona. Los eruditos los identificaron, los señalaron, y tú puedes verlos. Eso demuestra transparencia, no ocultamiento. Y ninguno de esos pasajes en disputa (Juan 7:53-8:11 incluido) cambia ninguna doctrina cristiana: el carácter de Jesús que retratan ya aparece, sin ninguna duda textual, en docenas de otros pasajes.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"¿Cómo sabes que los copistas no alteraron las cosas a propósito?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Porque existían copias independientes hechas al mismo tiempo en lugares distintos: Egipto, Roma, Siria. Si alguien hubiera alterado el texto en Roma, las copias de Egipto mostrarían la diferencia de inmediato. Tener múltiples líneas de transmisión independientes hace que una corrupción intencional a gran escala sea prácticamente imposible de lograr sin que se note.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Con tantas copias y tanto tiempo, ¿no es más probable que el texto se haya corrompido?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Es al revés de lo que parece: más copias significa más puntos de comparación, no más oportunidad de error indetectable. Si solo existiera una copia y se alterara, nunca lo sabríamos. Con 15,000 copias independientes, cualquier alteración local queda expuesta al compararla con las demás. La cantidad es lo que hace posible, precisamente, reconstruir el original con tanta confianza.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Aunque la transmisión sea exacta, eso no prueba que lo que está escrito sea verdad."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta sugerida</span>
+          <p>Tienes toda la razón, y es una distinción importante. Hoy demostramos algo específico: que el texto que tenemos hoy refleja con fidelidad lo que escribieron los autores originales. Eso es transmisión. La pregunta de si esos autores decían la verdad — si fueron testigos honestos, si tenían motivos para mentir o exagerar — es una pregunta distinta. Y es exactamente lo que vamos a examinar en la Sesión 8.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 6: CIERRE ═══════════════════════════ -->
+<section class="scene" id="cierre">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">06</div>
+      <span class="eyebrow">Bloque 6 · Cierre</span>
+      <h2 class="h1 mt16">Resumen<br>de bolsillo</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Para tener a mano en cualquier conversación.</p>
+    </div>
+
+    <!-- Pregunta para discutir -->
+    <div class="card r rd1">
+      <span class="eyebrow">Pregunta para discutir en clase</span>
+      <p class="body-lg mt16">El Nuevo Testamento tiene casi 5,700 manuscritos griegos y más de 36,000 citas de los Padres de la Iglesia. ¿Qué te dice ese dato sobre cómo Dios preservó su Palabra? ¿Cambia algo en cómo ves tu Biblia esta semana?</p>
+    </div>
+
+    <!-- Summary table -->
+    <div class="r rd2" style="overflow-x:auto;margin-top:var(--s48);">
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:28%;">Si te dicen…</th>
+            <th>Tú respondes…</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl">"La Biblia fue cambiada con el tiempo."</td>
+            <td class="resp">"¿Cambiada por quién, cuándo y con qué evidencia?" (Correcaminos). Tenemos ~15,000 manuscritos para comparar.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Tiene 200,000 errores."</td>
+            <td class="resp">Son variantes, no errores de contenido. El 99.5% del texto es seguro; el 0.5% no afecta ninguna doctrina.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Constantino la cambió en Nicea."</td>
+            <td class="resp">Nicea (325 d.C.) trató sobre la naturaleza de Cristo, no el texto. El Codex Vaticanus ya existía.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"No tenemos los originales."</td>
+            <td class="resp">Ninguna obra antigua los tiene. Por eso comparamos copias — y el NT tiene más que cualquier otra.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Cierre y aplicación -->
+    <div class="card mt48 r rd3" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Cierre y aplicación personal</span>
+      <p class="body-lg mt16">El Nuevo Testamento es el documento mejor respaldado de la antigüedad: más manuscritos, más antiguo, más citado que ningún otro, y 99.5% preciso en su texto. Cuando alguien dice "la Biblia fue cambiada", hay una respuesta que no se basa en fe ciega, sino en evidencia histórica que cualquier historiador serio reconoce.</p>
+      <p class="body mt16">Y más allá del argumento: ese texto viajó siglos para llegar hasta nosotros. Sobrevivió imperios y persecuciones. Cuando se lee, se está leyendo la misma Palabra que leyeron los primeros cristianos.</p>
+    </div>
+
+    <!-- Homework -->
+    <h3 class="h3 mt64 r rd4">Tarea de la semana</h3>
+    <ul class="hw mt24 r rd5">
+      <li>
+        <div class="hw-num">01</div>
+        <p>Memoriza el versículo: <em>"Toda la Escritura es inspirada por Dios, y útil para enseñar, para redargüir, para corregir, para instruir en justicia."</em> — 2 Timoteo 3:16 (RVR1960).</p>
+      </li>
+      <li>
+        <div class="hw-num">02</div>
+        <p>Observa el mundo: busca en tu propia Biblia una nota al pie sobre una "variante textual" (suelen aparecer cerca de Juan 7:53-8:11 o Marcos 16:9-20) y léela con la nueva mirada: transparencia, no ocultamiento.</p>
+      </li>
+      <li>
+        <div class="hw-num">03</div>
+        <p>Úsalo en una conversación real: si alguien dice "la Biblia fue cambiada", practica el Correcaminos: "¿Cambiada por quién, cuándo, y con qué evidencia lo sabes?"</p>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="scene deeper on-dark" id="oracion">
+  <div class="wrap">
+
+    <div class="r">
+      <span class="eyebrow">Cierre en oración</span>
+      <div class="verse-block mt24">
+        <p>"Señor, gracias por tu Palabra, que sobrevivió siglos, imperios y persecuciones para llegar hasta nosotros. Gracias porque no tenemos que elegir entre la mente y la fe: la evidencia respalda lo que creemos. Ayúdanos a leerla esta semana sabiendo que sostenemos algo que tú mismo preservaste. Amén."</p>
+        <span class="verse-ref">Oración de cierre · Sesión 7</span>
+      </div>
+    </div>
+
+    <div class="verse-block mt32 r rd1" style="background:rgba(83,58,253,0.15);border-color:rgba(185,185,249,0.2);">
+      <p>"Toda la Escritura es inspirada por Dios…"</p>
+      <span class="verse-ref">2 Timoteo 3:16 · RVR1960</span>
+    </div>
+
+    <div class="info-strip mt64 r rd2">
+      <div class="info-item">
+        <div class="info-item-label">Texto base</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">2 Timoteo 3:16-17 · RVR1960</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Serie</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Razones para Creer · Apologética Cristiana</div>
+      </div>
+    </div>
+
+    <div class="mt64 r rd3" style="text-align:center;">
+      <img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:36px;width:auto;opacity:0.6;margin:0 auto;">
+    </div>
+
+  </div>
+</footer>
+
+<script>
+// Progress bar
+function onScroll(){
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('bar').style.width=Math.min(pct,100)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// Manuscript chart — click-to-reveal NT bar
+(function(){
+  const btn=document.getElementById('msRevealBtn');
+  const bar=document.getElementById('msNtBar');
+  const val=document.getElementById('msNtVal');
+  const col=document.getElementById('msNtCol');
+  const flourish=document.getElementById('msFlourish');
+  if(!btn)return;
+  let revealed=false;
+  function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+  function animateCount(from,to,dur){
+    const start=performance.now();
+    function step(now){
+      const p=Math.min((now-start)/dur,1);
+      const eased=1-Math.pow(1-p,3);
+      val.textContent=fmt(Math.round(from+(to-from)*eased));
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  btn.addEventListener('click',function(){
+    revealed=!revealed;
+    if(revealed){
+      bar.style.height='400px';
+      col.classList.add('is-revealed');
+      animateCount(0,15000,1600);
+      btn.textContent='Ocultar de nuevo';
+      btn.classList.add('is-revealed');
+      setTimeout(()=>flourish.classList.add('show'),900);
+    }else{
+      bar.style.height='4px';
+      col.classList.remove('is-revealed');
+      val.textContent='?';
+      btn.textContent='Revelar el Nuevo Testamento';
+      btn.classList.remove('is-revealed');
+      flourish.classList.remove('show');
+    }
+  });
+})();
+</script>
+</body>
+</html>

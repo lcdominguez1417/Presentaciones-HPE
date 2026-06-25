@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¿Son Posibles los Milagros? · Sesión 6 · Razones para Creer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
+
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;
+  display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-brand{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.3px;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;
+  font-size:12px;font-weight:500;letter-spacing:0.2px;}
+@media(max-width:560px){.nav-tag{display:none;} .nav .wrap{gap:var(--s12);} .nav-brand img{height:30px!important;}}
+
+/* TYPE ROLES */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.02;
+  letter-spacing:-2px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:18px;font-weight:300;line-height:1.55;color:var(--body);}
+.body{font-size:16px;font-weight:300;line-height:1.6;color:var(--body);}
+.body-sm{font-size:14px;font-weight:300;line-height:1.55;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}
+.strong{font-weight:500;}
+.purple{color:var(--purple);}
+
+/* SCENES */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
+
+/* HERO */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero.png) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.88) 0%,rgba(28,30,84,0.78) 55%,rgba(46,43,140,0.68) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:14ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.6);max-width:54ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+.hero-ripple{position:absolute;right:-8%;bottom:-10%;width:min(60vw,720px);opacity:0.22;pointer-events:none;z-index:1;}
+@media(min-width:1024px){.hero-ripple{opacity:0.35;}}
+
+/* ACCENT LINE */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
+
+/* SECTION NUMBER watermark */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;
+  font-feature-settings:"tnum";}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s32);}
+
+/* QUOTE */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;
+  color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
+.quote-src{font-size:12px;color:var(--body);margin-top:4px;font-style:italic;}
+.on-dark .quote-src{color:rgba(255,255,255,0.3);}
+
+/* PORTRAITS */
+.portraits{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--s24);margin-top:var(--s48);align-items:start;}
+.portrait{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:rgba(23,23,23,0.08) 0 15px 35px;
+  transition:transform 220ms,box-shadow 220ms;}
+.portrait:hover{transform:translateY(-4px);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.portrait-vis{width:100%;aspect-ratio:3/4;overflow:hidden;position:relative;}
+.portrait-img{width:100%;height:100%;object-fit:cover;display:block;}
+.portrait-body{padding:var(--s16) var(--s16) var(--s24);}
+.portrait-name{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.2px;line-height:1.2;}
+.on-dark .portrait-name{color:var(--navy);}
+.portrait-role{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;line-height:1.4;}
+.portrait-faith{display:inline-block;margin-top:var(--s8);
+  background:rgba(21,190,83,0.1);color:#108c3d;
+  border:1px solid rgba(21,190,83,0.3);padding:2px 8px;border-radius:4px;
+  font-size:11px;font-weight:500;}
+.portrait-secular{background:rgba(234,34,97,0.08);color:var(--ruby);
+  border:1px solid rgba(234,34,97,0.25);}
+.portrait-contrib{list-style:none;margin-top:var(--s12);display:flex;flex-direction:column;gap:4px;}
+.portrait-contrib li{font-size:11px;color:var(--body);line-height:1.4;padding-left:12px;position:relative;}
+.portrait-contrib li::before{content:'→';position:absolute;left:0;color:var(--purple);font-size:10px;line-height:1.5;}
+.portrait-pair{display:grid;grid-template-columns:220px 1fr;gap:var(--s32);align-items:start;}
+@media(max-width:640px){.portrait-pair{grid-template-columns:1fr;}}
+
+/* STEP FLOW */
+.step-flow{display:flex;flex-direction:column;gap:var(--s24);}
+.step{display:flex;gap:var(--s16);align-items:flex-start;padding:var(--s16) 0;border-bottom:1px solid var(--border);}
+.on-dark .step{border-bottom-color:rgba(255,255,255,0.1);}
+.step:last-child{border-bottom:none;}
+.step-num{font-family:var(--fm);font-size:32px;font-weight:300;color:rgba(83,58,253,0.25);line-height:1;padding-top:4px;flex-shrink:0;}
+.on-dark .step-num{color:rgba(185,185,249,0.25);}
+.step-label{font-family:var(--fm);font-size:10px;color:var(--purple);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.on-dark .step-label{color:var(--purple-light);}
+.step-title{font-size:18px;font-weight:500;color:var(--navy);margin-bottom:4px;}
+.step-body{font-size:14px;font-weight:300;color:var(--body);line-height:1.55;}
+
+/* PROBLEM / FALLA CARDS */
+.problems{display:flex;flex-direction:column;gap:var(--s24);margin-top:var(--s48);}
+.problem{border-left:3px solid var(--ruby);padding:var(--s24);
+  background:rgba(234,34,97,0.04);border-radius:0 8px 8px 0;}
+.on-dark .problem{background:rgba(234,34,97,0.08);}
+.problem-n{font-family:var(--fm);font-size:10px;color:var(--ruby);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.problem-title{font-size:18px;font-weight:500;color:var(--navy);margin-bottom:var(--s12);line-height:1.3;}
+.on-dark .problem-title{color:#fff;}
+.problem-body{font-size:15px;font-weight:300;color:var(--body);line-height:1.6;}
+.on-dark .problem-body{color:rgba(255,255,255,0.6);}
+
+/* COMPARE */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--s32);margin-top:var(--s48);}
+@media(max-width:640px){.compare{grid-template-columns:1fr;}}
+.compare-head{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;padding-bottom:var(--s12);border-bottom:2px solid;margin-bottom:var(--s16);}
+.compare-head.yes{color:var(--green);border-color:var(--green);}
+.compare-head.no{color:var(--ruby);border-color:var(--ruby);}
+.compare-list{list-style:none;}
+.compare-list li{font-size:15px;font-weight:300;color:var(--body);
+  padding:var(--s8) 0;border-bottom:1px solid var(--border);
+  display:flex;gap:var(--s8);line-height:1.45;}
+.on-dark .compare-list li{border-bottom-color:rgba(255,255,255,0.1);}
+.compare-list li::before{content:'—';color:var(--purple);flex-shrink:0;}
+
+/* TERM ALERT */
+.term-alert{border:1px solid rgba(251,146,60,0.4);border-left:4px solid #fb923c;
+  background:rgba(251,146,60,0.07);border-radius:8px;padding:var(--s24) var(--s32);}
+.term-tag{font-family:var(--fm);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  background:rgba(251,146,60,0.15);color:#fb923c;border:1px solid rgba(251,146,60,0.35);
+  padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:var(--s16);}
+.term-alert h4{font-size:18px;font-weight:600;color:var(--navy);letter-spacing:-0.3px;}
+.on-dark .term-alert h4{color:#fff;}
+
+/* OBJECTIONS */
+.objections{display:flex;flex-direction:column;gap:var(--s32);}
+.obj{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.obj-q{background:var(--brand-dark);padding:var(--s24) var(--s32);
+  display:flex;gap:var(--s16);align-items:flex-start;}
+.obj-q-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.obj-q p{font-size:18px;font-weight:300;color:rgba(255,255,255,0.9);
+  font-style:italic;line-height:1.45;}
+.obj-a{padding:var(--s24) var(--s32);background:#fff;}
+.obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
+.obj-a p{font-size:16px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* SUMMARY TABLE */
+.summary{width:100%;border-collapse:collapse;margin-top:var(--s48);}
+.summary th{text-align:left;font-family:var(--fm);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 var(--s16) var(--s16) 0;color:var(--body);
+  border-bottom:2px solid var(--border);}
+.summary td{font-size:15px;font-weight:300;line-height:1.5;
+  padding:var(--s16) var(--s16) var(--s16) 0;
+  border-bottom:1px solid var(--border);color:var(--body);vertical-align:top;}
+.summary td.lbl{font-weight:500;color:var(--navy);}
+.summary td.resp{color:var(--purple);}
+.summary tr.highlight td{background:rgba(83,58,253,0.05);}
+.summary tr.highlight td.lbl{color:var(--purple);font-weight:600;}
+
+/* HOMEWORK */
+.hw{list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s32);}
+.hw li{display:flex;gap:var(--s16);align-items:flex-start;}
+.hw-num{flex-shrink:0;width:32px;height:32px;border-radius:4px;
+  background:var(--purple);color:#fff;
+  font-family:var(--fm);font-size:13px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;}
+.hw li p{font-size:16px;font-weight:300;color:var(--body);line-height:1.55;padding-top:4px;}
+
+/* VERSE */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.9);line-height:1.5;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);
+  letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
+
+/* INFO STRIP */
+.info-strip{display:flex;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s48);}
+.info-item{flex:1;min-width:200px;}
+.info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.info-item-val{font-size:16px;font-weight:300;color:var(--navy);line-height:1.4;}
+
+/* DIVIDERS */
+.divider{height:1px;background:var(--border);}
+.divider-dark{height:1px;background:rgba(255,255,255,0.1);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* PILL TAG */
+.pill{display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);
+  color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* IMMERSIVE IMAGE */
+.immersive{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 45px -30px;margin:var(--s48) 0;}
+.immersive img{width:100%;display:block;}
+.immersive-cap{font-size:13px;font-weight:300;color:var(--body);font-style:italic;
+  margin-top:var(--s12);line-height:1.5;}
+.on-dark .immersive-cap{color:rgba(255,255,255,0.45);}
+
+/* 3-COL CATEGORY GRID */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s24);margin-top:var(--s48);}
+@media(max-width:768px){.cat-grid{grid-template-columns:1fr;}}
+.cat-row{margin-top:var(--s16);}
+.cat-row-label{font-family:var(--fm);font-size:9px;color:rgba(185,185,249,0.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.cat-row-val{font-size:14px;font-weight:300;color:rgba(255,255,255,0.78);line-height:1.5;}
+.cat-card.is-miracle{border:1px solid rgba(185,185,249,0.4);background:rgba(83,58,253,0.12);}
+
+/* CHAPTER ANCHOR */
+[id]{scroll-margin-top:80px;}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand"><img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:40px;width:auto;display:block;"></div>
+    <div class="nav-tag">¿Son Posibles los Milagros?</div>
+    <div class="nav-pill">Apologética</div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="inicio">
+  <svg class="hero-ripple" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#b9b9f9" stroke-width="1.5">
+      <circle cx="300" cy="460" r="40" opacity="0.5"/>
+      <circle cx="300" cy="460" r="80" opacity="0.4"/>
+      <circle cx="300" cy="460" r="130" opacity="0.3"/>
+      <circle cx="300" cy="460" r="190" opacity="0.2"/>
+      <circle cx="300" cy="460" r="260" opacity="0.12"/>
+    </g>
+    <line x1="300" y1="0" x2="300" y2="460" stroke="#f96bee" stroke-width="3" opacity="0.5"/>
+  </svg>
+
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Sesión 6 · Razones para Creer · Apologética Cristiana</div>
+    <h1 class="display r rd1">¿Son posibles<br>los milagros?</h1>
+    <p class="body-lg r rd2">Lo sobrenatural ante la ciencia, la filosofía y la experiencia. Negarlo por principio no es ciencia — es un prejuicio disfrazado de ciencia.</p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">📖 Juan 2:11 · RVR1960</span>
+      <span class="hero-badge">👥 15–45 años</span>
+      <span class="hero-badge">🎯 Hume · Naturalismo · Señales</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ APERTURA ═══════════════════════════ -->
+<section class="scene" id="apertura">
+  <div class="wrap">
+    <div class="r">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">La pregunta de partida</span>
+    </div>
+    <h2 class="h1 mt16 r rd1" style="max-width:18ch;">¿Es ciencia…<br>o es prejuicio?</h2>
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">La cultura moderna ha convencido a muchos de que lo sobrenatural es imposible por definición. Esta sesión examina esa suposición de frente.</p>
+        <p class="body mt24" style="max-width:48ch;">¿Es una <strong class="strong">conclusión científica</strong>… o un <strong class="strong">prejuicio filosófico</strong> disfrazado de ciencia? Vamos a mirar la evidencia, no a darla por supuesta.</p>
+      </div>
+      <div class="r rd2">
+        <div class="card" style="margin-top:calc(-1 * var(--s32) + 2px);">
+          <span class="eyebrow">El objetivo de hoy</span>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s24);">
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">01</span>
+              <span class="body">Distinguir coincidencia, providencia y milagro genuino.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">02</span>
+              <span class="body">Mostrar las 3 fallas del argumento más famoso contra los milagros.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">03</span>
+              <span class="body">Ver por qué la ciencia no tiene herramientas para descartar lo sobrenatural.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ BLOQUE 1: ¿QUÉ ES UN MILAGRO? ═══════════════════════════ -->
+<section class="scene dark on-dark" id="que-es-milagro">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <span class="eyebrow">Bloque 1</span>
+      <h2 class="h1 mt16">¿Qué es<br>un milagro?</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Antes de defender los milagros hay que definirlos bien. Muchas discusiones se enredan porque usamos la misma palabra para tres cosas distintas. C.S. Lewis, en su libro <em class="italic">Milagros</em>, propone una distinción que ordena todo el debate.</p>
+    </div>
+
+    <!-- 3 CATEGORÍAS -->
+    <div class="cat-grid r rd1">
+      <div class="card-dark cat-card">
+        <span class="eyebrow" style="color:rgba(185,185,249,0.7);">Coincidencia</span>
+        <div class="cat-row">
+          <div class="cat-row-label">Qué es</div>
+          <div class="cat-row-val">Un evento natural percibido como significativo por su momento.</div>
+        </div>
+        <div class="cat-row">
+          <div class="cat-row-label">Ejemplo</div>
+          <div class="cat-row-val">Encontrar las llaves justo cuando las necesitas.</div>
+        </div>
+        <div class="cat-row">
+          <div class="cat-row-label">¿Trasciende la naturaleza?</div>
+          <div class="cat-row-val" style="color:var(--ruby);">No.</div>
+        </div>
+      </div>
+      <div class="card-dark cat-card">
+        <span class="eyebrow" style="color:rgba(185,185,249,0.7);">Providencia</span>
+        <div class="cat-row">
+          <div class="cat-row-label">Qué es</div>
+          <div class="cat-row-val">Dios dirige medios naturales para cumplir su propósito, sin salir de las leyes.</div>
+        </div>
+        <div class="cat-row">
+          <div class="cat-row-label">Ejemplo</div>
+          <div class="cat-row-val">El viento que separó el Mar Rojo (Éxodo 14:21).</div>
+        </div>
+        <div class="cat-row">
+          <div class="cat-row-label">¿Trasciende la naturaleza?</div>
+          <div class="cat-row-val" style="color:#fbbf24;">No: Dios obra dentro de ella.</div>
+        </div>
+      </div>
+      <div class="card-dark cat-card is-miracle">
+        <span class="eyebrow" style="color:var(--purple-light);">Milagro</span>
+        <div class="cat-row">
+          <div class="cat-row-label">Qué es</div>
+          <div class="cat-row-val">Dios introduce una causa que la naturaleza sola no puede producir.</div>
+        </div>
+        <div class="cat-row">
+          <div class="cat-row-label">Ejemplo</div>
+          <div class="cat-row-val">Lázaro resucitado. El agua convertida en vino.</div>
+        </div>
+        <div class="cat-row">
+          <div class="cat-row-label">¿Trasciende la naturaleza?</div>
+          <div class="cat-row-val" style="color:var(--green);">Sí: añade algo nuevo al patrón.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEFINICIÓN LEWIS -->
+    <div class="quote r rd2">
+      <p>El arte divino de los milagros no consiste en suspender el patrón de la naturaleza, sino en alimentar un evento nuevo dentro de ese patrón. Dios introduce una causa nueva; la naturaleza la procesa con normalidad.</p>
+      <div class="quote-attr">C.S. Lewis · Filósofo y escritor · Oxford</div>
+      <div class="quote-src">Definición de milagro, según <em>Milagros</em> (1947)</div>
+    </div>
+
+    <div class="immersive r rd3">
+      <img src="assets/concept-patron-nuevo.png" alt="Un nuevo hilo entra al patrón de la naturaleza">
+      <p class="immersive-cap">Un milagro no rompe la trama de la naturaleza: introduce un hilo nuevo que la trama recibe y procesa con normalidad.</p>
+    </div>
+
+    <!-- C.S. LEWIS PORTRAIT -->
+    <div class="portrait-pair r rd4" style="margin-top:var(--s64);">
+      <div class="portrait" style="margin:0;">
+        <div class="portrait-vis">
+          <img class="portrait-img" src="assets/portrait-cslewis.png" alt="C.S. Lewis">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">C.S. Lewis</div>
+          <div class="portrait-role">Filósofo · Escritor · Oxford</div>
+          <span class="portrait-faith">Creyente</span>
+          <ul class="portrait-contrib">
+            <li>Catedrático en Oxford y Cambridge</li>
+            <li><em>Milagros</em> (1947) — el libro que ordena este debate</li>
+            <li><em>Mero Cristianismo</em>, <em>Cartas del Diablo a su Sobrino</em></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Sobre Lewis</span>
+        <p class="body mt16">Lewis no defiende los milagros negando la ciencia — al contrario: usa la lógica con precisión de filósofo. Su distinción de tres categorías es la herramienta más citada en la apologética moderna para evitar discusiones que se enredan por no definir los términos.</p>
+        <p class="body mt16">Esa misma claridad es la que aplicaremos al caso bíblico más conocido de un milagro "imposible": el hierro que flotó.</p>
+      </div>
+    </div>
+
+    <!-- HACHA FLOTANTE -->
+    <div class="card-dark mt64 r rd5" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">La cabeza de hacha que flotó · 2 Reyes 6:1-7</span>
+      <h3 class="h3 mt16">El hierro no flota.<br>Eso no cambia con el milagro.</h3>
+      <p class="body mt24">El hierro se hunde — eso sigue siendo cierto. Lo que pasó es que un poder fuera del sistema sostuvo el hacha, y entonces flotó. La ley de la gravedad sigue intacta; simplemente entró en juego una causa que la gravedad sola no podía producir.</p>
+      <p class="body mt16" style="color:rgba(255,255,255,0.75);">Así funcionan los milagros: <strong class="strong" style="color:#fff;">no anulan las leyes, las trascienden.</strong></p>
+    </div>
+    <div class="immersive r">
+      <img src="assets/concept-hacha-flotando.png" alt="La cabeza de hacha que flotó sobre el agua">
+      <p class="immersive-cap">2 Reyes 6:1-7 — el hierro sigue obedeciendo la gravedad; una causa ajena al sistema lo sostuvo desde afuera.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 2: HUME ═══════════════════════════ -->
+<section class="scene" id="hume">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">02</div>
+      <span class="eyebrow">Bloque 2</span>
+      <h2 class="h1 mt16">El argumento<br>de Hume y sus fallas</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">David Hume (1711–1776) formuló el ataque anti-milagro más influyente de la historia. Suena contundente… hasta que lo examinamos de cerca.</p>
+    </div>
+
+    <div class="portrait-pair r rd1">
+      <div class="portrait" style="margin:0;">
+        <div class="portrait-vis">
+          <img class="portrait-img" src="assets/portrait-hume.png" alt="David Hume">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">David Hume</div>
+          <div class="portrait-role">Filósofo empirista · Escocia</div>
+          <span class="portrait-faith portrait-secular">Escéptico</span>
+          <ul class="portrait-contrib">
+            <li>1711–1776 · Ilustración escocesa</li>
+            <li>Formuló el argumento anti-milagro más citado</li>
+            <li><em>Investigación sobre el entendimiento humano</em> (1748)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Su razonamiento, paso a paso</span>
+        <div class="step-flow mt24">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <p class="step-body">La ley natural describe lo que ocurre de forma regular.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <p class="step-body">Un milagro es, por definición, un suceso raro.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <p class="step-body">La evidencia de lo regular siempre supera a la de lo raro.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <p class="step-body">El sabio basa su creencia en la mayor evidencia.</p>
+            </div>
+          </div>
+          <div class="step" style="border-bottom:none;">
+            <div class="step-num" style="color:var(--ruby);">∴</div>
+            <div class="step-content">
+              <p class="step-title" style="color:var(--ruby);">El sabio nunca debe creer en un milagro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-lg mt64 r rd2" style="max-width:60ch;">La premisa débil es la número 3: <em class="italic">"lo regular siempre pesa más que lo raro."</em> El argumento entero tiene tres fallas de fondo.</p>
+
+    <div class="problems r rd3">
+      <div class="problem">
+        <div class="problem-n">Falla 1 — Es circular</div>
+        <div class="problem-title">Asume lo que quiere probar</div>
+        <p class="problem-body">Hume dice que la experiencia "uniforme" prueba que los milagros no ocurren. Pero solo sabemos que la experiencia es uniforme si ya decidimos que todos los testimonios de milagros son falsos. Los milagros no ocurren… porque de antemano dijimos que no ocurren. Eso no es ciencia; es un prejuicio disfrazado de argumento.</p>
+        <div class="quote" style="margin:var(--s24) 0 0;">
+          <p>Sabemos que la experiencia contra ellos es uniforme solo si sabemos que todos los informes son falsos. Y solo podemos saber eso si ya sabemos que los milagros nunca ocurrieron. Estamos discutiendo en círculo.</p>
+          <div class="quote-attr">C.S. Lewis · Milagros</div>
+          <div class="quote-src">Citado en Geisler-Turek y en Groothuis</div>
+        </div>
+        <div class="immersive" style="margin:var(--s24) 0 0;">
+          <img src="assets/concept-circulo-hume.png" alt="Un lazo cerrado de razonamiento circular">
+          <p class="immersive-cap">El argumento de Hume traza un círculo cerrado: la conclusión que quiere probar ya está escondida dentro de su propia premisa.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-n">Falla 2 — Confunde improbable con imposible</div>
+        <div class="problem-title">Las leyes describen un sistema cerrado — no pueden hablar de lo que está fuera de él</div>
+        <p class="problem-body">Las leyes naturales describen lo que pasa regularmente en un sistema cerrado. No pueden decir nada sobre si existe un agente fuera del sistema que pueda intervenir. Si Dios existe, su intervención no la prohíbe ninguna ley natural: las leyes simplemente no cubren ese caso.</p>
+      </div>
+    </div>
+
+    <div class="immersive r rd4">
+      <img src="assets/concept-mano-poker.png" alt="Una mano de póker perfecta">
+      <p class="immersive-cap">La mano de póker perfecta: improbable, sí — pero con testigos sobrios y buena evidencia, no la negamos solo por ser rara.</p>
+    </div>
+
+    <div class="term-alert r rd4">
+      <span class="term-tag">⚠ Término que debes conocer</span>
+      <h4>¿Qué es la probabilidad condicional?</h4>
+      <p class="body mt12">Que a alguien le repartan una mano perfecta tres veces seguidas es improbabilísimo. Pero si hay buena evidencia de que ocurrió, no lo negamos solo por ser raro. Igual con los milagros: <strong class="strong purple">la probabilidad sube muchísimo</strong> cuando (1) hay un Dios capaz de obrarlos y (2) hay buena evidencia del caso concreto. A esto los filósofos lo llaman <strong class="strong">probabilidad condicional</strong>.</p>
+    </div>
+
+    <div class="portrait-pair mt64 r rd5">
+      <div>
+        <div class="problem" style="margin:0;">
+          <div class="problem-n">Falla 3 — Desprecia el testimonio</div>
+          <div class="problem-title">Los antiguos no eran ingenuos</div>
+          <p class="problem-body">Hume descartó de entrada los reportes de milagros como cosa de "gente ignorante". Pero los antiguos sabían que las vírgenes no conciben y que los muertos no resucitan — por eso José se alarmó con María. Solo puedes reconocer un milagro si conoces la ley natural que se está excediendo.</p>
+        </div>
+      </div>
+      <div class="portrait" style="margin:0;">
+        <div class="portrait-vis">
+          <img class="portrait-img" src="assets/portrait-keener.png" alt="Craig Keener">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Craig Keener</div>
+          <div class="portrait-role">Erudito del Nuevo Testamento</div>
+          <span class="portrait-faith">Creyente</span>
+          <ul class="portrait-contrib">
+            <li><em>Miracles</em> — obra académica de dos volúmenes</li>
+            <li>Documenta cientos de casos contemporáneos</li>
+            <li>Sanidades reportadas que no se descartan tan fácil</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="obj mt64 r">
+      <div class="obj-q">
+        <span class="obj-q-icon">💬</span>
+        <p>"Pero la ciencia ha explicado muchas cosas que antes parecían milagros."</p>
+      </div>
+      <div class="obj-a">
+        <span class="obj-a-label">Respuesta sugerida</span>
+        <p>Correcto — y eso confirma el punto. Lo que era "coincidencia" o "providencia" sí tiene explicación natural. Pero un milagro genuino no es "algo que todavía no entendemos": es algo que introduce una causa que el sistema natural no puede producir solo. La ciencia describe lo que pasa dentro del sistema; no puede pronunciarse sobre si hay Alguien fuera de él.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 3: ¿PUEDE LA CIENCIA DESCARTAR LO SOBRENATURAL? ═══════════════════════════ -->
+<section class="scene dark on-dark" id="ciencia">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">03</div>
+      <span class="eyebrow">Bloque 3</span>
+      <h2 class="h1 mt16">¿Puede la ciencia<br>descartar lo sobrenatural?</h2>
+      <p class="body-lg mt24" style="max-width:58ch;">La herramienta correcta para la pregunta correcta. La ciencia es un método para estudiar el mundo natural mediante observación, medición y repetición — por su propia naturaleza, no puede pronunciarse sobre lo que está fuera de ese mundo.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/concept-termometro-amor.png" alt="Un termómetro frente a un corazón que brilla">
+      <p class="immersive-cap">"La ciencia prueba que los milagros no existen" es como decir "mi termómetro prueba que no hay amor en esta sala." El termómetro es excelente para lo que mide… pero no fue hecho para medir amor.</p>
+    </div>
+
+    <div class="compare r rd2">
+      <div>
+        <div class="compare-head yes">✓ Naturalismo metodológico</div>
+        <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">"Para hacer ciencia, busco causas naturales."</p>
+        <p class="body mt8">Legítimo y necesario. Es el método de la ciencia, no una declaración sobre toda la realidad.</p>
+      </div>
+      <div>
+        <div class="compare-head no">✗ Naturalismo filosófico</div>
+        <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">"Solo existen causas naturales; lo sobrenatural no existe."</p>
+        <p class="body mt8">Esto NO es una conclusión científica — es una afirmación filosófica que la ciencia no puede demostrar. El error está en confundir el método con una declaración sobre toda la realidad.</p>
+      </div>
+    </div>
+
+    <!-- FILTRO DE GEISLER -->
+    <h3 class="h3 mt64 r rd3">¿Cómo reconocemos un milagro de verdad?</h3>
+    <p class="body mt16 r rd3" style="max-width:60ch;">Ser creyente no significa llamar "milagro" a todo lo llamativo. Tomar en serio los milagros exige aprender a distinguirlos de lo que no lo es. Geisler propone un filtro sencillo y honesto.</p>
+
+    <div class="r rd4" style="overflow-x:auto;">
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:32%;color:rgba(255,255,255,0.5);">No es milagro…</th>
+            <th style="color:rgba(255,255,255,0.5);">…porque</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl" style="color:#fff;">Curación psicosomática</td>
+            <td class="resp" style="color:rgba(255,255,255,0.65);">La mente sí influye en el cuerpo (estrés, alergias). Real, pero psicológico, no sobrenatural.</td>
+          </tr>
+          <tr>
+            <td class="lbl" style="color:#fff;">Magia / ilusionismo</td>
+            <td class="resp" style="color:rgba(255,255,255,0.65);">Es truco y juego de manos bajo control humano. Engaña, no trasciende la naturaleza.</td>
+          </tr>
+          <tr>
+            <td class="lbl" style="color:#fff;">Anomalía natural</td>
+            <td class="resp" style="color:rgba(255,255,255,0.65);">Un fenómeno raro que aún no entendemos (como el vuelo del abejorro): tiene causa natural.</td>
+          </tr>
+          <tr class="highlight">
+            <td class="lbl">Milagro genuino</td>
+            <td class="resp" style="color:var(--purple-light);">Dios introduce una causa que la naturaleza no puede producir — y suele ir con revelación y anuncio previo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="portrait-pair mt64 r rd5">
+      <div class="portrait" style="margin:0;">
+        <div class="portrait-vis">
+          <img class="portrait-img" src="assets/portrait-geisler.png" alt="Norman Geisler">
+        </div>
+        <div class="portrait-body">
+          <div class="portrait-name">Norman Geisler</div>
+          <div class="portrait-role">Teólogo y filósofo cristiano</div>
+          <span class="portrait-faith">Creyente</span>
+          <ul class="portrait-contrib">
+            <li>Propone el filtro para reconocer milagros genuinos</li>
+            <li>Coautor de <em>I Don't Have Enough Faith to Be an Atheist</em></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Por qué la resurrección no es una "anomalía"</span>
+        <p class="body mt16">Una anomalía es un misterio natural que aún no resolvemos — los científicos no entendían el vuelo del abejorro… hasta que lo entendieron. La resurrección de Jesús es de otra clase: no es un fenómeno raro esperando explicación natural, porque fue anunciada de antemano y va acompañada de revelación. Esa es la huella de un acto de Dios, no de una rareza de la naturaleza.</p>
+      </div>
+    </div>
+
+    <div class="obj mt64 r">
+      <div class="obj-q">
+        <span class="obj-q-icon">💬</span>
+        <p>"Si los milagros ocurren, ¿por qué Dios no sana a todos? ¿Por qué a unos sí y a otros no?"</p>
+      </div>
+      <div class="obj-a">
+        <span class="obj-a-label">Respuesta sugerida</span>
+        <p>Es la pregunta más honesta y más dolorosa, y la tomamos en serio. Primero: no siempre sabemos por qué — la soberanía de Dios no nos resulta del todo predecible. Segundo: que Dios no sane a todos no prueba que no sane a nadie. Podemos decir "sí, los milagros son posibles y ocurren" sin resolver del todo el misterio del sufrimiento (que veremos en la Sesión 11).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 4: LOS MILAGROS DE JESÚS Y LA FE ═══════════════════════════ -->
+<section class="scene" id="senales">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <span class="eyebrow">Bloque 4</span>
+      <h2 class="h1 mt16">Los milagros de Jesús<br>y la fe</h2>
+      <p class="body-lg mt24" style="max-width:58ch;">Recojamos el hilo de todo el curso. Si Dios existe, entonces la caja ya está abierta — los milagros son posibles. No hay que probarlos uno por uno; basta con que exista un Dios capaz de obrarlos.</p>
+    </div>
+
+    <div class="step-flow r rd1">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <p class="step-label">Sesión 2</p>
+          <p class="step-title">El universo tuvo una Causa</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <p class="step-label">Sesión 3</p>
+          <p class="step-title">El universo muestra diseño</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <p class="step-label">Sesión 4</p>
+          <p class="step-title">La vida exige información</p>
+        </div>
+      </div>
+      <div class="step" style="border-bottom:none;">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <p class="step-label">Sesión 5</p>
+          <p class="step-title">La conciencia apunta a un Legislador</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-lg mt48 r rd2" style="max-width:58ch;">Por eso los milagros de Jesús no son trucos ni espectáculos: son <strong class="strong purple">señales</strong>. La palabra que usa Juan no es "truco" ni "maravilla", sino "señal" — algo que apunta a una realidad mayor.</p>
+
+    <div class="immersive r rd3">
+      <img src="assets/concept-senales.png" alt="El agua convertida en vino como señal">
+      <p class="immersive-cap">La primera señal de Jesús, el agua en vino, abre todo su ministerio en Caná de Galilea (Juan 2:1-11).</p>
+    </div>
+
+    <div class="verse-block r rd4" style="background:rgba(83,58,253,0.06);border-color:rgba(83,58,253,0.2);">
+      <p style="color:var(--navy);">"Este principio de señales hizo Jesús en Caná de Galilea, y manifestó su gloria; y sus discípulos creyeron en él."</p>
+      <span class="verse-ref" style="color:var(--purple);">Juan 2:11 · RVR1960</span>
+    </div>
+
+    <p class="body mt32 r rd5" style="max-width:60ch;">Fíjate en el orden: la señal manifestó su gloria, <strong class="strong">y entonces</strong> creyeron. Los milagros no son fuegos artificiales para impresionar; son ventanas por las que se asoma quién es Jesús. Apuntan más allá de sí mismos, hacia Aquel que los hace.</p>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 5: OBJECIONES DIFÍCILES ═══════════════════════════ -->
+<section class="scene dark on-dark" id="objeciones">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <span class="eyebrow">Bloque 5</span>
+      <h2 class="h1 mt16">Objeciones difíciles</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Las preguntas más comunes — con respuestas honestas y sin miedo.</p>
+    </div>
+
+    <div class="objections r rd1">
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Las personas que reportan milagros están sesgadas: quieren creer."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>El sesgo de confirmación es real y hay que tomarlo en serio — por eso importan los casos documentados con registros médicos antes y después, y con médicos ajenos al evento. El sesgo no explica todos los casos. Y ojo: el escéptico también tiene sesgo. El deseo de no creer distorsiona el juicio tanto como el deseo de creer. La honestidad pide examinar la evidencia, no descartarla por adelantado.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"¿Por qué Dios no hace milagros más obvios para que todos crean?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>La pregunta supone que ver un milagro produce fe — pero Jesús mostró que no es así. Muchos vieron resucitar a Lázaro y aun así no creyeron; algunos hasta quisieron matarlo (Juan 11:45-48). El problema de la incredulidad no suele ser falta de evidencia, sino disposición del corazón. Dios no parece interesado en forzar: en la Biblia los milagros siempre vienen con un llamado, no como espectáculos sueltos.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"¿No es más honesto ser agnóstico sobre los milagros?"</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>¡El agnosticismo honesto es muy razonable! Decir "no lo sé todavía, muéstrame" es una postura abierta y digna. Lo que NO es honesto es la postura de Hume: afirmar con certeza que los milagros son imposibles apoyándose en un argumento circular. La verdadera apertura a la evidencia nos obliga a examinar los datos, no a cerrarles la puerta de antemano.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Los antiguos eran ignorantes y creían cualquier cosa."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>No tanto como suponemos. Sabían perfectamente que los muertos no vuelven y que las vírgenes no dan a luz — por eso esos eventos les resultaban tan asombrosos como a nosotros. Solo puedes reconocer un milagro si conoces la ley que se está excediendo. La idea de que "la gente de antes se tragaba todo" es más un prejuicio nuestro que un dato histórico.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Cada religión tiene sus milagros; se anulan entre sí."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>No realmente. Las religiones relacionan sus milagros de formas muy distintas con sus doctrinas, y no todas hacen afirmaciones históricas verificables. En el cristianismo, los milagros de Jesús —sobre todo la resurrección— son públicos, ubicados en tiempo y lugar concretos, y con testigos. No piden "fe ciega": se ofrecen a la investigación histórica. Eso los pone en una categoría distinta, como veremos en las Sesiones 10 y 11.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">💬</span>
+          <p>"Aunque los milagros sean posibles, eso no prueba que el Dios cristiano sea el verdadero."</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Y tienes toda la razón — lo decimos con honestidad. Mostrar que lo sobrenatural es posible solo abre la puerta: nos saca del "nada fuera de la materia puede existir" y nos deja en "una intervención divina es perfectamente razonable". Eso no nos lleva todavía hasta Jesús. Pero es un puente enorme. En las Sesiones 7 a 12 mostraremos por qué, de todos los milagros reportados, hay UNO —la resurrección— con evidencia histórica que lo distingue de todos los demás. Hoy abrimos la puerta; más adelante entramos a la casa.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 6: DISCUSIÓN Y CIERRE ═══════════════════════════ -->
+<section class="scene" id="cierre">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">06</div>
+      <span class="eyebrow">Bloque 6 · Cierre</span>
+      <h2 class="h1 mt16">Discusión<br>y cierre</h2>
+      <p class="body-lg mt24" style="max-width:54ch;">Para tener a mano en cualquier conversación.</p>
+    </div>
+
+    <div class="card r rd1" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Pregunta para discutir en clase</span>
+      <p class="body-lg italic mt16">"Si el argumento de Hume contra los milagros resulta ser circular (asume lo que quiere probar), ¿cómo cambia eso tu forma de responder a alguien que dice 'la ciencia ya probó que los milagros no existen'?"</p>
+    </div>
+
+    <p class="body-lg mt64 r rd2" style="max-width:60ch;">Durante 200 años el argumento de Hume sonó a ciencia. Pero al examinarlo descubrimos que es un prejuicio que asume su propia conclusión. La ciencia no puede descartar lo sobrenatural — simplemente no tiene herramientas para medirlo.</p>
+    <p class="body mt16 r rd2" style="max-width:60ch;">Si Dios existe, la caja ya está abierta: los milagros son posibles. Y los de Jesús no fueron trucos: fueron señales que manifestaron su gloria. No tenemos que escoger entre la mente y la fe.</p>
+
+    <h3 class="h3 mt64 r rd3">Resumen de bolsillo</h3>
+    <div class="r rd3" style="overflow-x:auto;">
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:32%;">Si te dicen…</th>
+            <th>Tú respondes…</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lbl">"La ciencia probó que los milagros no existen."</td>
+            <td class="resp">La ciencia mide lo natural; no tiene herramientas para lo sobrenatural. Es como medir el amor con un termómetro.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Eso fue un milagro."</td>
+            <td class="resp">"¿A qué llamas milagro?" (Correcaminos). ¿Coincidencia, providencia o intervención directa?</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Hume probó que es irracional creer en milagros."</td>
+            <td class="resp">El argumento de Hume es circular: asume que nunca ocurrieron para concluir que no ocurren.</td>
+          </tr>
+          <tr>
+            <td class="lbl">"Los milagros son muy improbables."</td>
+            <td class="resp">Improbable no es imposible. Si Dios existe y hay buena evidencia, la probabilidad sube muchísimo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="h3 mt64 r rd4">Tarea de la semana</h3>
+    <ul class="hw r rd5">
+      <li>
+        <div class="hw-num">01</div>
+        <p>Memoriza el versículo: <em>"…porque nada hay imposible para Dios."</em> — Lucas 1:37 (RVR1960).</p>
+      </li>
+      <li>
+        <div class="hw-num">02</div>
+        <p>Observa el mundo: esta semana, cuando algo te parezca "un milagro", detente y clasifícalo con honestidad: ¿coincidencia, providencia o intervención directa de Dios? Aprender a distinguir te hará más creíble, no menos.</p>
+      </li>
+      <li>
+        <div class="hw-num">03</div>
+        <p>Úsalo en una conversación real: cuando alguien diga "la ciencia probó que los milagros no existen", practica el Correcaminos: "¿La ciencia lo probó… o lo dio por supuesto desde el principio?"</p>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="scene deeper on-dark" id="oracion">
+  <div class="wrap">
+
+    <div class="r">
+      <span class="eyebrow">Cierre en oración</span>
+      <div class="verse-block mt24">
+        <p>"Señor, gracias porque eres un Dios que actúa, no un relojero ausente. Gracias porque no tenemos que apagar la mente para creer en Ti. Danos discernimiento para reconocer tu mano sin ingenuidad y sin miedo, y fe para confiar en que nada te es imposible. Amén."</p>
+        <span class="verse-ref">Oración de cierre · Sesión 6</span>
+      </div>
+    </div>
+
+    <div class="verse-block mt32 r rd1" style="background:rgba(83,58,253,0.15);border-color:rgba(185,185,249,0.2);">
+      <p>"…porque nada hay imposible para Dios."</p>
+      <span class="verse-ref">Lucas 1:37 · RVR1960</span>
+    </div>
+
+    <div class="info-strip mt64 r rd2">
+      <div class="info-item">
+        <div class="info-item-label">Texto base</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Juan 2:11 · RVR1960</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Serie</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Razones para Creer · Apologética Cristiana</div>
+      </div>
+    </div>
+
+    <div class="mt64" style="text-align:center;">
+      <img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:36px;width:auto;opacity:0.6;margin:0 auto;">
+    </div>
+
+  </div>
+</footer>
+
+<script>
+function onScroll(){
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('bar').style.width=Math.min(pct,100)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

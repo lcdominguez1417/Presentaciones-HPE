@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¿Cuáles libros están y cuáles no? · Sesión 9 · Razones para Creer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;--amber:#fb923c;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
+
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;
+  display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-brand{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.3px;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;
+  font-size:12px;font-weight:500;letter-spacing:0.2px;flex-shrink:0;}
+@media(max-width:768px){.nav-tag{display:none;}}
+
+/* TYPE ROLES */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.02;
+  letter-spacing:-2px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:18px;font-weight:300;line-height:1.55;color:var(--body);}
+.body{font-size:16px;font-weight:300;line-height:1.6;color:var(--body);}
+.body-sm{font-size:14px;font-weight:300;line-height:1.55;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}
+.strong{font-weight:500;}
+.purple{color:var(--purple);}
+
+/* SCENES */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
+
+/* HERO */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero.png) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.88) 0%,rgba(28,30,84,0.78) 55%,rgba(46,43,140,0.68) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:15ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.6);max-width:52ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+.hero-motif{position:absolute;right:-8%;top:50%;transform:translateY(-50%);
+  width:min(50vw,620px);opacity:0.16;pointer-events:none;z-index:1;}
+@media(min-width:1024px){.hero-motif{opacity:0.28;}}
+
+/* ACCENT LINE */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
+
+/* SECTION NUMBER watermark */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;
+  font-feature-settings:"tnum";}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s32);}
+
+/* QUOTE */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;
+  color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
+.quote-src{font-size:12px;color:var(--body);margin-top:4px;font-style:italic;}
+.on-dark .quote-src{color:rgba(255,255,255,0.3);}
+
+/* PORTRAITS GRID */
+.portraits{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--s24);margin-top:var(--s48);align-items:start;}
+.portrait{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:rgba(23,23,23,0.08) 0 15px 35px;
+  transition:transform 220ms,box-shadow 220ms;}
+.portrait:hover{transform:translateY(-4px);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.portrait-vis{width:100%;aspect-ratio:3/4;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--s8);
+  background:linear-gradient(160deg,var(--brand-dark) 0%,var(--dark-navy) 100%);
+  position:relative;overflow:hidden;}
+.portrait-img{width:100%;height:100%;object-fit:cover;display:block;}
+.portrait-body{padding:var(--s16) var(--s16) var(--s24);}
+.portrait-name{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.2px;line-height:1.2;}
+.portrait-role{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;line-height:1.4;}
+.portrait-tag{display:inline-block;margin-top:var(--s8);
+  background:rgba(83,58,253,0.08);color:var(--purple);
+  border:1px solid rgba(83,58,253,0.25);padding:2px 8px;border-radius:4px;
+  font-size:11px;font-weight:500;}
+
+/* MINI GRID (tres criterios) */
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s24);margin-top:var(--s32);}
+.mini-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:var(--s24);}
+.mini-num{font-family:var(--fm);font-size:22px;font-weight:300;color:var(--purple-light);
+  background:rgba(255,255,255,0.08);width:36px;height:36px;border-radius:4px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:var(--s16);}
+.mini-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;line-height:1.3;}
+.mini-body{font-size:13px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.5;}
+
+/* UNLOCK CHIP (icono, sin etiqueta de texto) */
+.unlock{display:inline-flex;align-items:center;gap:var(--s12);border:1px solid var(--border);
+  background:#fff;border-radius:8px;padding:10px var(--s20,18px);margin-top:var(--s24);max-width:60ch;}
+.on-dark .unlock{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.14);}
+.unlock svg{width:24px;height:24px;flex-shrink:0;color:var(--purple);
+  animation:bulbGlow 2.8s ease-in-out infinite;}
+.on-dark .unlock svg{color:var(--purple-light);}
+.unlock p{font-size:14px;font-weight:300;color:var(--body);line-height:1.45;}
+.on-dark .unlock p{color:rgba(255,255,255,0.65);}
+@keyframes bulbGlow{0%,100%{opacity:0.55;filter:drop-shadow(0 0 0px currentColor);}50%{opacity:1;filter:drop-shadow(0 0 7px currentColor);}}
+@media(prefers-reduced-motion:reduce){.unlock svg{animation:none;}}
+
+/* TERM / DEFINITION BOX */
+.term-box{border:1px solid rgba(83,58,253,0.3);border-left:4px solid var(--purple);
+  background:rgba(83,58,253,0.05);border-radius:8px;padding:var(--s24) var(--s32);margin-top:var(--s32);}
+.on-dark .term-box{background:rgba(185,185,249,0.06);border-color:rgba(185,185,249,0.35);}
+.term-badge{font-family:var(--fm);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  background:rgba(83,58,253,0.12);color:var(--purple);border:1px solid rgba(83,58,253,0.3);
+  padding:3px 10px;border-radius:4px;display:inline-block;}
+.term-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s16);margin-top:var(--s24);}
+@media(max-width:640px){.term-grid{grid-template-columns:1fr;}}
+.term-cell{border-radius:6px;padding:var(--s16);}
+.term-cell.q{background:rgba(21,190,83,0.08);border:1px solid rgba(21,190,83,0.25);}
+.term-cell.a{background:rgba(234,34,97,0.06);border:1px solid rgba(234,34,97,0.2);}
+.term-cell-label{font-family:var(--fm);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+
+/* TOGGLE — mito vs. historia */
+.toggle-zone{margin-top:var(--s32);border:1px solid rgba(255,255,255,0.14);border-radius:8px;
+  background:rgba(255,255,255,0.04);padding:var(--s32);text-align:center;}
+.toggle-label{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:#fff;
+  min-height:64px;display:flex;align-items:center;justify-content:center;transition:opacity 200ms;}
+.toggle-src{font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  margin-top:var(--s8);color:rgba(255,255,255,0.4);transition:opacity 200ms;}
+.toggle-btn{margin-top:var(--s24);background:var(--purple);color:#fff;border:none;
+  padding:12px 28px;border-radius:4px;font-family:var(--f);font-size:14px;font-weight:500;
+  cursor:pointer;transition:background 160ms,transform 160ms;}
+.toggle-btn:hover{background:var(--purple-hover);transform:translateY(-1px);}
+.toggle-btn:active{transform:translateY(0);}
+.toggle-pill{display:inline-block;font-family:var(--fm);font-size:10px;letter-spacing:1.5px;
+  text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:var(--s16);
+  transition:background 200ms,color 200ms;}
+.toggle-pill.mito{background:rgba(234,34,97,0.18);color:#ff9dc0;}
+.toggle-pill.historia{background:rgba(21,190,83,0.2);color:#6de3a0;}
+
+/* MINI GRID stat */
+.stat-row{display:flex;flex-wrap:wrap;gap:var(--s24);margin-top:var(--s32);}
+.stat-box{flex:1;min-width:200px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s24);}
+.stat-num{font-family:var(--fm);font-size:40px;font-weight:300;color:var(--purple-light);letter-spacing:-1px;}
+.stat-lbl{font-size:13px;font-weight:300;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4;}
+
+/* OBJECTIONS */
+.objections{display:flex;flex-direction:column;gap:var(--s32);margin-top:var(--s48);}
+.obj{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.obj-q{background:var(--brand-dark);padding:var(--s24) var(--s32);
+  display:flex;gap:var(--s16);align-items:flex-start;}
+.obj-q-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.obj-q p{font-size:18px;font-weight:300;color:rgba(255,255,255,0.9);
+  font-style:italic;line-height:1.45;}
+.obj-a{padding:var(--s24) var(--s32);background:#fff;}
+.obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
+.obj-a p{font-size:16px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* SUMMARY TABLE */
+.summary{width:100%;border-collapse:collapse;margin-top:var(--s32);}
+.summary th{text-align:left;font-family:var(--fm);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 var(--s16) var(--s16) 0;color:var(--body);
+  border-bottom:2px solid var(--border);}
+.summary td{font-size:15px;font-weight:300;line-height:1.5;
+  padding:var(--s16) var(--s16) var(--s16) 0;
+  border-bottom:1px solid var(--border);color:var(--body);vertical-align:top;}
+.summary td.num{font-family:var(--fm);color:var(--purple);font-weight:500;white-space:nowrap;}
+.summary td.lbl{font-weight:500;color:var(--navy);}
+
+/* HOMEWORK */
+.hw{list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s32);}
+.hw li{display:flex;gap:var(--s16);align-items:flex-start;}
+.hw-num{flex-shrink:0;width:32px;height:32px;border-radius:4px;
+  background:var(--purple);color:#fff;
+  font-family:var(--fm);font-size:13px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;}
+.hw li p{font-size:16px;font-weight:300;color:var(--body);line-height:1.55;padding-top:4px;}
+
+/* VERSE */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.9);line-height:1.5;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);
+  letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
+
+/* INFO STRIP */
+.info-strip{display:flex;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s48);}
+.info-item{flex:1;min-width:200px;}
+.info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.info-item-val{font-size:16px;font-weight:300;color:var(--navy);line-height:1.4;}
+
+/* DIVIDERS */
+.divider{height:1px;background:var(--border);}
+.divider-dark{height:1px;background:rgba(255,255,255,0.1);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* PILL TAG */
+.pill{display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);
+  color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* IMMERSIVE IMAGE */
+.immersive{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 45px -30px;margin:var(--s48) 0;}
+.immersive img{width:100%;display:block;}
+
+/* CHAPTER ANCHOR */
+[id]{scroll-margin-top:80px;}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand"><img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:40px;width:auto;display:block;"></div>
+    <div class="nav-tag">¿Cuáles libros están y cuáles no?</div>
+    <div class="nav-pill">Apologética</div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="inicio">
+  <!-- Measuring-rod / canon motif SVG -->
+  <svg class="hero-motif" viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#533afd" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#f96bee" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    <!-- kanon / measuring rod -->
+    <rect x="80" y="140" width="340" height="26" rx="4" stroke="url(#g1)" stroke-width="4" fill="none"/>
+    <line x1="115" y1="140" x2="115" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <line x1="150" y1="140" x2="150" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <line x1="185" y1="140" x2="185" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <line x1="220" y1="140" x2="220" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <line x1="255" y1="140" x2="255" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <line x1="290" y1="140" x2="290" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <line x1="325" y1="140" x2="325" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <line x1="360" y1="140" x2="360" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <line x1="385" y1="140" x2="385" y2="166" stroke="#b9b9f9" stroke-width="3" opacity="0.6"/>
+    <!-- 27 scrolls stacked -->
+    <rect x="150" y="220" width="200" height="16" rx="8" stroke="#f96bee" stroke-width="3" fill="none" opacity="0.55"/>
+    <rect x="165" y="250" width="170" height="16" rx="8" stroke="#533afd" stroke-width="3" fill="none" opacity="0.5"/>
+    <rect x="150" y="280" width="200" height="16" rx="8" stroke="#f96bee" stroke-width="3" fill="none" opacity="0.45"/>
+    <rect x="180" y="310" width="140" height="16" rx="8" stroke="#533afd" stroke-width="3" fill="none" opacity="0.4"/>
+    <rect x="160" y="340" width="180" height="16" rx="8" stroke="#f96bee" stroke-width="3" fill="none" opacity="0.35"/>
+  </svg>
+
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Sesión 9 · Razones para Creer · Apologética Cristiana</div>
+    <h1 class="display r rd1">¿Cuáles libros<br>están y cuáles no?</h1>
+    <p class="body-lg r rd2">Un filtro no crea el sabor del café — solo deja pasar lo que ya estaba ahí desde antes. Así reconoció la iglesia el canon de la Biblia: no inventó su autoridad, la reconoció.</p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">📖 2 Pedro 3:15-16</span>
+      <span class="hero-badge">👥 15–45 años</span>
+      <span class="hero-badge">🎯 27 libros · 3 criterios · 2 generaciones</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ APERTURA ═══════════════════════════ -->
+<section class="scene" id="apertura">
+  <div class="wrap">
+    <div class="r">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">La analogía de partida</span>
+    </div>
+    <h2 class="h1 mt16 r rd1" style="max-width:22ch;">El filtro no crea el café. Solo deja pasar lo que ya era café.</h2>
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">Cuando preparas café con filtro, el filtro no crea el sabor, el aroma ni el color del café. Todo eso ya existía en el grano molido antes de tocar el filtro. El filtro solo separa el café de los residuos y deja pasar lo que ya era café.</p>
+        <p class="body mt24" style="max-width:48ch;">Eso es exactamente lo que hizo la iglesia con el canon de la Biblia. <strong class="strong purple">No creó la autoridad de esos libros — la reconoció.</strong> Como el filtro: solo dejó pasar lo que ya tenía autoridad desde el principio.</p>
+      </div>
+      <div class="r rd2">
+        <div class="card">
+          <span class="eyebrow">El objetivo de hoy</span>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s24);">
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">01</span>
+              <span class="body">Entender que "canon" es una vara de medir, no una lista inventada por un comité.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">02</span>
+              <span class="body">Distinguir el mito de "El Código Da Vinci" de lo que Nicea realmente decidió en 325 d.C.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">03</span>
+              <span class="body">Aplicar los tres criterios del canon y ver por qué los evangelios gnósticos nunca calificaron.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="immersive r rd3">
+      <img src="assets/concept-filtro-cafe.png" alt="Café pasando por un filtro — el filtro no crea el café, solo deja pasar lo que ya era café" style="width:100%;display:block;border-radius:8px;">
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ BLOQUE 1: EL MITO Y LA HISTORIA REAL ═══════════════════════════ -->
+<section class="scene dark on-dark" id="mito-nicea">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <span class="eyebrow">Bloque 1</span>
+      <h2 class="h1 mt16">¿Quién decidió?<br>El mito y la<br>historia real</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">La narrativa más repetida sobre la Biblia también es la más equivocada. Vamos a separar la leyenda de la historia documentada.</p>
+      <div class="unlock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.5 10.6 18 9.3 18 8a6 6 0 0 0-12 0c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/>
+          <path d="M9 18h6"/>
+          <path d="M10 22h4"/>
+        </svg>
+        <p>Vas a poder responder, en treinta segundos, la pregunta que más se repite sobre la Biblia: <em>"¿no decidieron unos obispos qué libros entraban?"</em></p>
+      </div>
+    </div>
+
+    <!-- Narrativa popular vs. historia real -->
+    <h3 class="h3 mt64 r">La narrativa popular</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">Gracias a novelas y documentales tipo "El Código Da Vinci", muchos creen que en el año 325, en el Concilio de Nicea, un grupo de obispos votó qué libros entrarían en la Biblia, descartando a propósito otros evangelios.</p>
+    <p class="body mt16 r rd2" style="max-width:60ch;">El Concilio de Nicea (325 d.C.) se reunió para tratar la naturaleza de Cristo frente a la herejía arriana — <strong class="strong" style="color:#fff;">no abordó el canon del Nuevo Testamento.</strong> La idea de que "Nicea decidió la Biblia" es un mito sin base histórica.</p>
+
+    <div class="immersive r rd3">
+      <img src="assets/concept-mito-nicea.png" alt="Mito de Hollywood de un concilio votando la Biblia, junto al Concilio de Nicea real debatiendo la naturaleza de Cristo" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <!-- Toggle interactivo: mito vs historia -->
+    <div class="toggle-zone r rd4">
+      <span id="toggle-pill" class="toggle-pill mito">Mito</span>
+      <p id="toggle-text" class="toggle-label">"En Nicea, los obispos votaron qué libros entrarían en la Biblia."</p>
+      <div id="toggle-src" class="toggle-src">— versión de "El Código Da Vinci"</div>
+      <button class="toggle-btn" onclick="revelarVerdad()">Revela lo que Nicea realmente decidió</button>
+    </div>
+
+    <!-- Palabra canon -->
+    <h3 class="h3 mt64 r">Lo que significa la palabra "canon"</h3>
+    <p class="body mt16 r rd1" style="max-width:60ch;">La palabra "canon" viene del griego <em class="italic">kanon</em>, que significa "vara de medir" o "regla". Un canon no es una lista creada arbitrariamente — es una medida que se aplica para reconocer algo que ya existe.</p>
+
+    <div class="two-col mt32">
+      <div class="r rd2">
+        <div class="immersive" style="margin:0;">
+          <img src="assets/concept-kanon-vara.png" alt="Una vara de medir antigua (kanon) junto a un manuscrito, símbolo del canon bíblico" style="width:100%;display:block;border-radius:8px;">
+        </div>
+      </div>
+      <div class="r rd3">
+        <div class="card-dark" style="border-left:3px solid var(--purple-light);">
+          <p class="body" style="color:rgba(255,255,255,0.75);">El canon es <strong class="strong" style="color:#fff;">una lista de libros autorizados</strong>, no una lista autorizada de libros. Cada libro ya tenía autoridad por sí mismo antes de que cualquier concilio los reuniera formalmente.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metzger quote + portrait -->
+    <div class="two-col mt64">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-metzger.png" alt="Bruce Metzger" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Bruce Metzger</div>
+            <div class="portrait-role">Erudito · Princeton Theological Seminary</div>
+            <span class="portrait-tag">Reconocimiento, no invención</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Uno de los mayores especialistas del siglo XX en la historia y el texto del Nuevo Testamento.</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="quote">
+          <p>"Un libro no se convirtió en canónico para la iglesia porque fue formalmente declarado así por algún concilio eclesiástico. Más bien, los varios libros fueron reconocidos como poseedores de autoridad divina por las comunidades cristianas durante el primer y segundo siglo."</p>
+          <div class="quote-attr">Bruce Metzger · Erudito de Princeton</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 2: LOS TRES CRITERIOS ═══════════════════════════ -->
+<section class="scene" id="tres-criterios">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">02</div>
+      <span class="eyebrow">Bloque 2</span>
+      <h2 class="h1 mt16">Los tres criterios<br>del canon</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Si la iglesia no votó libros al azar, ¿con qué midió cuáles ya tenían autoridad apostólica? Con tres preguntas concretas.</p>
+    </div>
+
+    <div class="mini-grid r rd1" style="background:var(--brand-dark);border-radius:8px;padding:var(--s32);">
+      <div class="mini-card">
+        <div class="mini-num">1</div>
+        <div class="mini-title">Apostolicidad</div>
+        <div class="mini-body">¿El libro fue escrito por un apóstol, o por alguien con conexión directa y cercana a un apóstol? Mateo y Juan eran apóstoles directos. Marcos escribió basado en el testimonio de Pedro. Lucas investigó con testigos oculares y trabajó cercanamente con Pablo.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-num">2</div>
+        <div class="mini-title">Coherencia</div>
+        <div class="mini-body">¿El contenido concuerda con la enseñanza apostólica ya reconocida, o la contradice?</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-num">3</div>
+        <div class="mini-title">Catolicidad</div>
+        <div class="mini-body">¿El libro fue reconocido y usado ampliamente por iglesias de distintas regiones, no solo por un grupo aislado?</div>
+      </div>
+    </div>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-tres-criterios.png" alt="Tres columnas — apostolicidad, coherencia y catolicidad — sosteniendo el canon bíblico" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <!-- Cadena de testimonios -->
+    <h3 class="h3 mt64 r">La cadena de testimonios: de Juan a Ireneo</h3>
+    <p class="body mt16 r rd1" style="max-width:62ch;">El apóstol Juan, testigo ocular de Jesús, discipuló personalmente a <strong class="strong">Policarpo (69-155 d.C.)</strong>. Policarpo, a su vez, discipuló a <strong class="strong">Ireneo (130-202 d.C.)</strong>, quien escribió defendiendo los cuatro Evangelios y citó a Juan como su fuente directa.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-cadena-testimonios.png" alt="Cadena de testimonio de Juan a Policarpo a Ireneo, conectados por un hilo de luz" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="card mt32 r rd3" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body-lg">Solo <strong class="strong purple">dos generaciones de distancia</strong> entre un testigo ocular de Jesús y un escritor cristiano que ya defiende formalmente los mismos libros que tenemos hoy.</p>
+    </div>
+
+    <p class="body mt32 r rd1" style="max-width:62ch;"><strong class="strong">Papías (60-120 d.C.)</strong> también tuvo contacto con testigos directos de los apóstoles y confirmó por escrito quién escribió los Evangelios de Marcos y Mateo.</p>
+
+    <div class="stat-row r rd2" style="background:var(--brand-dark);border-radius:8px;padding:var(--s24);">
+      <div class="stat-box">
+        <div class="stat-num">23/27</div>
+        <div class="stat-lbl">libros del Nuevo Testamento ya ampliamente reconocidos y citados para finales del siglo II.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">2</div>
+        <div class="stat-lbl">generaciones de distancia entre Juan, testigo ocular, e Ireneo, defensor formal del canon.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">3</div>
+        <div class="stat-lbl">criterios — apostolicidad, coherencia, catolicidad — aplicados de forma consistente por siglos.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 3: LOS LIBROS QUE QUEDARON FUERA ═══════════════════════════ -->
+<section class="scene dark on-dark" id="libros-fuera">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">03</div>
+      <span class="eyebrow">Bloque 3</span>
+      <h2 class="h1 mt16">Los libros que<br>quedaron fuera</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Evangelios como el de Tomás en el Nuevo Testamento, y libros como Macabeos o Tobías en el Antiguo. ¿Fueron censurados, o nunca calificaron?</p>
+      <div class="unlock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.5 10.6 18 9.3 18 8a6 6 0 0 0-12 0c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/>
+          <path d="M9 18h6"/>
+          <path d="M10 22h4"/>
+        </svg>
+        <p>Vas a poder explicar, con datos y fechas, por qué los evangelios gnósticos y los libros apócrifos del Antiguo Testamento nunca estuvieron genuinamente "en la mesa" para ser elegidos.</p>
+      </div>
+    </div>
+
+    <h3 class="h3 mt64 r">¿Por qué no entraron los evangelios gnósticos?</h3>
+    <p class="body mt16 r rd1" style="max-width:62ch;">Libros como el Evangelio de Tomás, el Evangelio de Pedro o el Evangelio de Judas fallaron los tres criterios al mismo tiempo. Fueron escritos entre el siglo II y el IV — más de cien años después de los hechos. Su contenido contradice la enseñanza apostólica, presentando a Jesús como un maestro de secretos esotéricos. Y nunca fueron usados ampliamente por la iglesia, solo por grupos aislados.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-evangelios-gnosticos.png" alt="Un cofre de escritos gnósticos apartado en la sombra, frente a los evangelios canónicos reconocidos" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <!-- Groothuis quote + portrait -->
+    <div class="two-col mt32">
+      <div class="r rd1">
+        <div class="quote">
+          <p>"No hay evidencia de ningún canon que alguna vez los incluyera, ni de que alguien los propusiera para canonización, ni de que fueran lo suficientemente conocidos como para haber sido candidatos serios."</p>
+          <div class="quote-attr">Douglas Groothuis · Christian Apologetics</div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-groothuis.png" alt="Douglas Groothuis" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Douglas Groothuis</div>
+            <div class="portrait-role">Filósofo · Denver Seminary</div>
+            <span class="portrait-tag">Nunca candidatos serios</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Autor de <em class="italic">Christian Apologetics</em>, especializado en evaluar la evidencia histórica del cristianismo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-dark mt32 r rd3" style="border-left:3px solid var(--purple-light);">
+      <p class="body" style="color:rgba(255,255,255,0.75);">Los evangelios gnósticos nunca estuvieron genuinamente <strong class="strong" style="color:#fff;">"en la mesa"</strong> para ser elegidos. No fueron suprimidos — nunca fueron candidatos serios desde el principio.</p>
+    </div>
+
+    <!-- AT: libros apócrifos / deuterocanónicos -->
+    <h3 class="h3 mt64 r">¿Y el Antiguo Testamento? Los libros apócrifos</h3>
+    <p class="body mt16 r rd1" style="max-width:62ch;">La pregunta del canon no es solo sobre el Nuevo Testamento. Las Biblias católica y ortodoxa incluyen libros adicionales en el Antiguo Testamento que las Biblias protestantes no incluyen. ¿Por qué la diferencia?</p>
+
+    <div class="r rd2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:var(--s12);margin-top:var(--s24);">
+      <div class="pill" style="justify-content:center;">Tobías</div>
+      <div class="pill" style="justify-content:center;">Judit</div>
+      <div class="pill" style="justify-content:center;">Sabiduría</div>
+      <div class="pill" style="justify-content:center;">Eclesiástico</div>
+      <div class="pill" style="justify-content:center;">Baruc</div>
+      <div class="pill" style="justify-content:center;">1-2 Macabeos</div>
+      <div class="pill" style="justify-content:center;">Add. a Ester y Daniel</div>
+    </div>
+
+    <div class="immersive r rd3">
+      <img src="assets/concept-apocrifos-at.png" alt="Un estante sagrado de rollos hebreos iluminados junto a un estante separado de escritos intertestamentarios en griego" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="card mt24 r rd1" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body">Estos libros fueron escritos en el período intertestamentario (aprox. 400 a.C. – siglo I d.C.), la mayoría en griego, no en hebreo. <strong class="strong purple">Nunca formaron parte del canon hebreo que los judíos de la época de Jesús reconocían como Escritura.</strong> Ni Jesús ni los autores del Nuevo Testamento los citan como Escritura, aunque conocían su existencia.</p>
+    </div>
+
+    <div class="two-col mt64">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-josefo.png" alt="Flavio Josefo" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Flavio Josefo</div>
+            <div class="portrait-role">Historiador judío · Siglo I d.C.</div>
+            <span class="portrait-tag">22 libros, canon cerrado</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Testigo judío contemporáneo a los apóstoles sobre cuáles libros ya se consideraban Escritura sagrada.</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="quote">
+          <p>"No tenemos una multitud incontable de libros entre nosotros, en desacuerdo y contradiciéndose unos a otros, sino solo veintidós libros que contienen el registro de todos los tiempos pasados, los cuales son justamente creídos como divinos..."</p>
+          <div class="quote-attr">Flavio Josefo · Contra Apión, siglo I d.C.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body mt24 r rd3" style="max-width:62ch;">Esos "22 libros" de Josefo, agrupados de otra manera, equivalen exactamente a los 39 libros del Antiguo Testamento protestante actual. Siglos después, Jerónimo — traductor de la Vulgata en el siglo IV — ya distinguía los libros adicionales como <em class="italic">apócrifos</em>: útiles para la lectura, pero no para establecer doctrina. Fue hasta el <strong class="strong">Concilio de Trento, en 1546</strong> — como respuesta directa a la Reforma protestante — que la Iglesia Católica los declaró formalmente canónicos.</p>
+
+    <!-- Ningun libro eliminado (conclusión conjunta AT + NT) -->
+    <h3 class="h3 mt64 r">Ningún libro fue "eliminado"</h3>
+    <p class="body mt16 r rd1" style="max-width:62ch;">Ni en el Nuevo Testamento ni en el Antiguo, ningún libro fue arrancado de la Biblia por decisión política. La iglesia — y antes de ella, el pueblo judío con sus propias Escrituras — fue reconociendo de manera consistente, a lo largo de varios siglos, qué libros ya circulaban con autoridad genuina desde el principio. <strong class="strong" style="color:#fff;">En ambos testamentos, el proceso fue de reconocimiento, no de censura.</strong></p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-ningun-libro-eliminado.png" alt="Manos sosteniendo con cuidado un conjunto de manuscritos antiguos, símbolo de reconocimiento y no de censura" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 4: JESÚS, EL AT Y LA PROMESA DEL ESPÍRITU ═══════════════════════════ -->
+<section class="scene" id="espiritu-santo">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <span class="eyebrow">Bloque 4</span>
+      <h2 class="h1 mt16">Jesús, el Antiguo<br>Testamento y la<br>promesa del Espíritu</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">El canon no empieza en el siglo IV. Empieza con lo que Jesús mismo hizo con las Escrituras que ya existían, y con lo que prometió para las que faltaban por escribirse.</p>
+      <div class="unlock">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.5 10.6 18 9.3 18 8a6 6 0 0 0-12 0c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/>
+          <path d="M9 18h6"/>
+          <path d="M10 22h4"/>
+        </svg>
+        <p>Vas a conectar la promesa de Jesús a sus apóstoles con la razón por la que sus escritos ya se leían como Escritura en el siglo I.</p>
+      </div>
+    </div>
+
+    <p class="body mt16 r rd1" style="max-width:62ch;">Jesús mismo trató el Antiguo Testamento como la Palabra autorizada de Dios, citando la Ley, los Profetas y los Salmos como autoridad final. Antes de irse, prometió a sus apóstoles que el Espíritu Santo los guiaría a toda verdad y les ayudaría a recordar todo lo que Él les había enseñado <span class="body-sm" style="color:var(--purple);">(Juan 14:26, 16:13)</span>.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-espiritu-santo-promesa.png" alt="Jesús con sus discípulos en el aposento alto, con una luz suave en forma de paloma sobre el grupo" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="card mt24 r rd3" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body">Los apóstoles no eran simplemente discípulos cualquiera — eran <strong class="strong purple">emisarios especialmente elegidos y comisionados personalmente por Jesús</strong> para transmitir su mensaje con autoridad.</p>
+    </div>
+
+    <div class="verse-block mt48 r rd4" style="background:rgba(83,58,253,0.12);border-color:rgba(83,58,253,0.25);">
+      <p>"Y tened entendido que la paciencia de nuestro Señor es para salvación; como también nuestro amado hermano Pablo, según la sabiduría que le ha sido dada, os ha escrito, casi en todas sus epístolas, hablando en ellas de estas cosas..."</p>
+      <span class="verse-ref">2 Pedro 3:15-16 · RVR1960</span>
+    </div>
+
+    <p class="body mt24 r rd5" style="max-width:62ch;">Este pasaje muestra a Pedro reconociendo las cartas de Pablo como <strong class="strong">"Escrituras"</strong> — ya en el siglo I, un apóstol citando a otro apóstol como autoridad equivalente al Antiguo Testamento.</p>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ OBJECIONES ═══════════════════════════ -->
+<section class="scene mid" id="objeciones">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <span class="eyebrow">Bloque 5</span>
+      <h2 class="h1 mt16">Objeciones difíciles</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Las preguntas que probablemente te van a hacer — y cómo responderlas con honestidad.</p>
+    </div>
+
+    <div class="objections r rd1">
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>"El Código Da Vinci" dice que Nicea votó los libros de la Biblia.</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>El Concilio de Nicea (325 d.C.) trató la naturaleza de Cristo, no el canon. Para esa fecha, la gran mayoría de los 27 libros ya eran ampliamente reconocidos desde hacía más de un siglo. Atanasio (367) y los concilios de Hipona (393) y Cartago (397) simplemente confirmaron por escrito lo que ya se reconocía.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>¿Por qué la Biblia católica tiene más libros en el Antiguo Testamento?</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Esos libros adicionales (los apócrifos) nunca fueron parte del canon hebreo reconocido por los judíos en la época de Jesús.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>¿Y si encuentran un documento auténtico que no conocíamos?</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Cualquier escrito apostólico genuino habría circulado y sido reconocido ampliamente desde el siglo I o II, como ocurrió con los 27 libros actuales. Un documento "descubierto" veinte siglos después no cumpliría el criterio de catolicidad.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>¿Cómo sé que los 27 libros son los correctos?</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Porque cumplen, de manera verificable, los tres criterios: conexión apostólica directa, coherencia con la enseñanza ya establecida, y reconocimiento amplio y temprano por iglesias de distintas regiones.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>Esto demuestra que el proceso fue cuidadoso, pero no que sea inspirado por Dios.</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Es cierto: el proceso histórico del canon no prueba por sí solo la inspiración divina. Lo que sí establece es que tenemos buenas razones históricas para confiar en que estos 27 libros son el testimonio genuino y temprano de los apóstoles. La pregunta que queda es si lo que ese testimonio afirma sobre la resurrección realmente ocurrió — lo que se examina en la Sesión 10.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ RESUMEN ═══════════════════════════ -->
+<section class="scene" id="resumen">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">06</div>
+      <span class="eyebrow">Bloque 6 · Resumen</span>
+      <h2 class="h1 mt16">Los tres criterios<br>y la línea de tiempo,<br>de un vistazo</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Para tener a mano en cualquier conversación.</p>
+    </div>
+
+    <div class="r rd1" style="overflow-x:auto;">
+      <span class="pill">Los tres criterios</span>
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:26%;">Criterio</th>
+            <th>Pregunta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">Apostolicidad</td><td class="lbl">¿Escrito por un apóstol o por alguien en conexión directa y cercana con uno?</td></tr>
+          <tr><td class="num">Coherencia</td><td class="lbl">¿Concuerda con la enseñanza apostólica ya reconocida y el resto de la revelación?</td></tr>
+          <tr><td class="num">Catolicidad</td><td class="lbl">¿Fue reconocido y usado ampliamente por iglesias de distintas regiones?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="r rd2 mt64" style="overflow-x:auto;">
+      <span class="pill">Línea de tiempo del canon</span>
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:22%;">Fecha</th>
+            <th>Evento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">30-60 d.C.</td><td class="lbl">Los apóstoles escriben los libros del Nuevo Testamento</td></tr>
+          <tr><td class="num">60-120</td><td class="lbl">Papías confirma por escrito la autoría de Marcos y Mateo</td></tr>
+          <tr><td class="num">69-202</td><td class="lbl">Cadena Juan → Policarpo → Ireneo defiende los cuatro Evangelios</td></tr>
+          <tr><td class="num">180-200</td><td class="lbl">23 de los 27 libros ya son ampliamente reconocidos y citados</td></tr>
+          <tr><td class="num">325</td><td class="lbl">Concilio de Nicea (trata la naturaleza de Cristo, NO el canon)</td></tr>
+          <tr><td class="num">367</td><td class="lbl">Atanasio publica la primera lista completa de los 27 libros</td></tr>
+          <tr><td class="num">393 / 397</td><td class="lbl">Concilios de Hipona y Cartago confirman formalmente el canon</td></tr>
+          <tr><td class="num">1546</td><td class="lbl">Concilio de Trento declara canónicos los libros deuterocanónicos católicos, en respuesta a la Reforma</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CIERRE ═══════════════════════════ -->
+<section class="scene mid" id="cierre">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">07</div>
+      <span class="eyebrow">Cierre</span>
+      <h2 class="h1 mt16">No una votación.<br>Un reconocimiento<br>de varios siglos</h2>
+    </div>
+
+    <div class="two-col mt32">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">¿Cómo sabemos que tenemos los libros correctos? No porque un concilio politizado votara siglos después. Porque desde el siglo I, los escritos de los apóstoles — hombres comisionados personalmente por Jesús y respaldados por la promesa del Espíritu Santo — circularon, fueron reconocidos y fueron usados por iglesias de distintas regiones, dentro de una cadena de testimonio corta y verificable.</p>
+        <p class="body mt24" style="max-width:48ch;">Los evangelios que quedaron fuera nunca fueron candidatos serios — fallaron los tres criterios a la vez, no por censura, sino porque simplemente no tenían las credenciales.</p>
+        <p class="body mt24 strong" style="max-width:48ch;color:var(--navy);">La Biblia que sostienes en tus manos no es el resultado de una votación política. Es el reconocimiento, a lo largo de varios siglos y por iglesias de todo el mundo conocido, de lo que ya era — desde el primer día — la Palabra autorizada transmitida por los apóstoles de Cristo.</p>
+      </div>
+      <div class="r rd2">
+        <div class="verse-block" style="background:rgba(83,58,253,0.06);border-color:rgba(83,58,253,0.2);">
+          <p style="color:var(--navy);">"Y tened entendido que la paciencia de nuestro Señor es para salvación; como también nuestro amado hermano Pablo... os ha escrito, casi en todas sus epístolas."</p>
+          <span class="verse-ref" style="color:var(--purple);">2 Pedro 3:15-16 · RVR1960</span>
+        </div>
+        <div class="card mt24">
+          <span class="eyebrow">En una frase</span>
+          <p class="body mt12">El canon es una lista de libros autorizados, no una lista autorizada de libros.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Discusión -->
+    <div class="card mt64 r rd3">
+      <span class="eyebrow">Preguntas para discutir en clase</span>
+      <ul style="list-style:none;margin-top:var(--s24);display:flex;flex-direction:column;gap:var(--s16);">
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">01</span>
+          <p class="body italic">"Si alguien te dice que 'un grupo de hombres decidió qué libros entraban en la Biblia', ¿qué le responderías usando la analogía del filtro de café?"</p>
+        </li>
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">02</span>
+          <p class="body italic">"¿Por qué la cadena Juan → Policarpo → Ireneo — solo dos generaciones — es una evidencia tan fuerte a favor de los cuatro Evangelios?"</p>
+        </li>
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">03</span>
+          <p class="body italic">"Aplica los tres criterios (apostolicidad, coherencia, catolicidad) al Evangelio de Tomás. ¿Cuáles falla, y por qué?"</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tarea -->
+    <h3 class="h3 mt64 r rd4">Tarea de la semana</h3>
+    <ul class="hw mt24 r rd5">
+      <li>
+        <div class="hw-num">01</div>
+        <p>Memoriza: <em>"...casi en todas sus epístolas, hablando en ellas de estas cosas..."</em> — 2 Pedro 3:15-16 (RVR1960).</p>
+      </li>
+      <li>
+        <div class="hw-num">02</div>
+        <p>Investiga un dato más sobre Atanasio (367 d.C.) y su carta pascual, donde aparece por primera vez la lista completa de los 27 libros del Nuevo Testamento tal como la tenemos hoy.</p>
+      </li>
+      <li>
+        <div class="hw-num">03</div>
+        <p>Practica esta semana la pregunta del filtro con alguien: "¿Sabías que la palabra 'canon' significa 'vara de medir'?" Anota su reacción.</p>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="scene deeper on-dark" id="oracion">
+  <div class="wrap">
+
+    <div class="r">
+      <span class="eyebrow">Cierre en oración</span>
+      <div class="verse-block mt24">
+        <p>"Señor, gracias por tu Palabra fiel, transmitida por hombres que caminaron con Cristo y que el Espíritu Santo guio a toda verdad. Gracias porque no depende de una votación humana, sino de tu obra a lo largo de la historia. Ayúdanos a confiar en las Escrituras que hoy sostenemos, y a compartir con humildad y firmeza por qué podemos confiar en ellas. Amén."</p>
+        <span class="verse-ref">Oración de cierre · Sesión 9</span>
+      </div>
+    </div>
+
+    <div class="verse-block mt32 r rd1" style="background:rgba(83,58,253,0.15);border-color:rgba(185,185,249,0.2);">
+      <p>"Y tened entendido que la paciencia de nuestro Señor es para salvación; como también nuestro amado hermano Pablo, según la sabiduría que le ha sido dada, os ha escrito, casi en todas sus epístolas, hablando en ellas de estas cosas..."</p>
+      <span class="verse-ref">2 Pedro 3:15-16 · RVR1960</span>
+    </div>
+
+    <div class="info-strip mt64 r rd2">
+      <div class="info-item">
+        <div class="info-item-label">Texto base</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">2 Pedro 3:15-16 · RVR1960</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Serie</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Razones para Creer · Apologética Cristiana</div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+// Progress bar
+function onScroll(){
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('bar').style.width=Math.min(pct,100)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// ── MITO vs HISTORIA toggle ──
+let mostrandoMito = true;
+function revelarVerdad(){
+  const pill = document.getElementById('toggle-pill');
+  const text = document.getElementById('toggle-text');
+  const src = document.getElementById('toggle-src');
+
+  text.style.opacity = 0;
+  src.style.opacity = 0;
+
+  setTimeout(()=>{
+    mostrandoMito = !mostrandoMito;
+    if(mostrandoMito){
+      pill.textContent = 'Mito';
+      pill.className = 'toggle-pill mito';
+      text.textContent = '"En Nicea, los obispos votaron qué libros entrarían en la Biblia."';
+      src.textContent = '— versión de "El Código Da Vinci"';
+    } else {
+      pill.textContent = 'Historia';
+      pill.className = 'toggle-pill historia';
+      text.textContent = '"Nicea (325 d.C.) trató la naturaleza de Cristo. Los 27 libros ya eran mayormente reconocidos desde hacía más de un siglo."';
+      src.textContent = '— registro histórico documentado';
+    }
+    text.style.opacity = 1;
+    src.style.opacity = 1;
+  }, 200);
+}
+</script>
+</body>
+</html>

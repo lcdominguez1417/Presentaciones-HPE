@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¿Decían la verdad los autores? · Sesión 8 · Razones para Creer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;--amber:#fb923c;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
+
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;
+  display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-brand{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.3px;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;
+  font-size:12px;font-weight:500;letter-spacing:0.2px;}
+@media(max-width:560px){.nav-tag{display:none;}}
+
+/* TYPE ROLES */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.02;
+  letter-spacing:-2px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:18px;font-weight:300;line-height:1.55;color:var(--body);}
+.body{font-size:16px;font-weight:300;line-height:1.6;color:var(--body);}
+.body-sm{font-size:14px;font-weight:300;line-height:1.55;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}
+.strong{font-weight:500;}
+.purple{color:var(--purple);}
+
+/* SCENES */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
+
+/* HERO */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero.png) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.88) 0%,rgba(28,30,84,0.78) 55%,rgba(46,43,140,0.68) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:15ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.6);max-width:52ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+.hero-motif{position:absolute;right:-8%;top:50%;transform:translateY(-50%);
+  width:min(50vw,620px);opacity:0.16;pointer-events:none;z-index:1;}
+@media(min-width:1024px){.hero-motif{opacity:0.28;}}
+
+/* ACCENT LINE */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
+
+/* SECTION NUMBER watermark */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;
+  font-feature-settings:"tnum";}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s32);}
+
+/* QUOTE */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;
+  color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
+.quote-src{font-size:12px;color:var(--body);margin-top:4px;font-style:italic;}
+.on-dark .quote-src{color:rgba(255,255,255,0.3);}
+
+/* PORTRAITS GRID */
+.portraits{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--s24);margin-top:var(--s48);align-items:start;}
+.portrait{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:rgba(23,23,23,0.08) 0 15px 35px;
+  transition:transform 220ms,box-shadow 220ms;}
+.portrait:hover{transform:translateY(-4px);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.portrait-vis{width:100%;aspect-ratio:3/4;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--s8);
+  background:linear-gradient(160deg,var(--brand-dark) 0%,var(--dark-navy) 100%);
+  position:relative;overflow:hidden;}
+.portrait-img{width:100%;height:100%;object-fit:cover;display:block;}
+.portrait-body{padding:var(--s16) var(--s16) var(--s24);}
+.portrait-name{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.2px;line-height:1.2;}
+.portrait-role{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;line-height:1.4;}
+.portrait-tag{display:inline-block;margin-top:var(--s8);
+  background:rgba(83,58,253,0.08);color:var(--purple);
+  border:1px solid rgba(83,58,253,0.25);padding:2px 8px;border-radius:4px;
+  font-size:11px;font-weight:500;}
+
+/* PROBLEM / REASON CARDS */
+.problems{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--s24);margin-top:var(--s48);}
+.problem{border-left:3px solid var(--purple);padding:var(--s24);
+  background:rgba(83,58,253,0.04);border-radius:0 8px 8px 0;}
+.on-dark .problem{background:rgba(185,185,249,0.06);}
+.problem-n{font-family:var(--fm);font-size:10px;color:var(--purple);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.on-dark .problem-n{color:var(--purple-light);}
+.problem-title{font-size:17px;font-weight:500;color:var(--navy);margin-bottom:var(--s8);line-height:1.3;}
+.on-dark .problem-title{color:#fff;}
+.problem-body{font-size:14px;font-weight:300;color:var(--body);line-height:1.55;}
+.on-dark .problem-body{color:rgba(255,255,255,0.55);}
+
+/* COMPARE */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--s32);margin-top:var(--s48);}
+@media(max-width:640px){.compare{grid-template-columns:1fr;}}
+.compare-head{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;padding-bottom:var(--s12);border-bottom:2px solid;margin-bottom:var(--s16);}
+.compare-head.yes{color:var(--green);border-color:var(--green);}
+.compare-head.no{color:var(--ruby);border-color:var(--ruby);}
+.compare-list{list-style:none;}
+.compare-list li{font-size:15px;font-weight:300;color:var(--body);
+  padding:var(--s8) 0;border-bottom:1px solid var(--border);
+  display:flex;gap:var(--s8);line-height:1.4;}
+.compare-list li::before{content:'—';color:var(--purple);flex-shrink:0;}
+
+/* OBJECTIONS */
+.objections{display:flex;flex-direction:column;gap:var(--s32);margin-top:var(--s48);}
+.obj{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.obj-q{background:var(--brand-dark);padding:var(--s24) var(--s32);
+  display:flex;gap:var(--s16);align-items:flex-start;}
+.obj-q-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.obj-q p{font-size:18px;font-weight:300;color:rgba(255,255,255,0.9);
+  font-style:italic;line-height:1.45;}
+.obj-a{padding:var(--s24) var(--s32);background:#fff;}
+.obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
+.obj-a p{font-size:16px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* SUMMARY TABLE */
+.summary{width:100%;border-collapse:collapse;margin-top:var(--s48);}
+.summary th{text-align:left;font-family:var(--fm);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 var(--s16) var(--s16) 0;color:var(--body);
+  border-bottom:2px solid var(--border);}
+.summary td{font-size:15px;font-weight:300;line-height:1.5;
+  padding:var(--s16) var(--s16) var(--s16) 0;
+  border-bottom:1px solid var(--border);color:var(--body);vertical-align:top;}
+.summary td.num{font-family:var(--fm);color:var(--purple);font-weight:500;}
+.summary td.lbl{font-weight:500;color:var(--navy);}
+
+/* HOMEWORK */
+.hw{list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s32);}
+.hw li{display:flex;gap:var(--s16);align-items:flex-start;}
+.hw-num{flex-shrink:0;width:32px;height:32px;border-radius:4px;
+  background:var(--purple);color:#fff;
+  font-family:var(--fm);font-size:13px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;}
+.hw li p{font-size:16px;font-weight:300;color:var(--body);line-height:1.55;padding-top:4px;}
+
+/* VERSE */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.9);line-height:1.5;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);
+  letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
+
+/* INFO STRIP */
+.info-strip{display:flex;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s48);}
+.info-item{flex:1;min-width:200px;}
+.info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.info-item-val{font-size:16px;font-weight:300;color:var(--navy);line-height:1.4;}
+
+/* DIVIDERS */
+.divider{height:1px;background:var(--border);}
+.divider-dark{height:1px;background:rgba(255,255,255,0.1);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* PILL TAG */
+.pill{display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);
+  color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* IMMERSIVE IMAGE */
+.immersive{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 45px -30px;margin:var(--s48) 0;}
+.immersive img{width:100%;display:block;}
+
+/* TERM / DEFINITION BOX */
+.term-box{border:1px solid rgba(83,58,253,0.3);border-left:4px solid var(--purple);
+  background:rgba(83,58,253,0.05);border-radius:8px;padding:var(--s24) var(--s32);margin-top:var(--s32);}
+.on-dark .term-box{background:rgba(185,185,249,0.06);border-color:rgba(185,185,249,0.35);}
+.term-badge{font-family:var(--fm);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  background:rgba(83,58,253,0.12);color:var(--purple);border:1px solid rgba(83,58,253,0.3);
+  padding:3px 10px;border-radius:4px;display:inline-block;}
+.term-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s16);margin-top:var(--s24);}
+@media(max-width:640px){.term-grid{grid-template-columns:1fr;}}
+.term-cell{border-radius:6px;padding:var(--s16);}
+.term-cell.q{background:rgba(21,190,83,0.08);border:1px solid rgba(21,190,83,0.25);}
+.term-cell.a{background:rgba(234,34,97,0.06);border:1px solid rgba(234,34,97,0.2);}
+.term-cell-label{font-family:var(--fm);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+
+/* MINI GRID (razones en breve) */
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s24);margin-top:var(--s32);}
+.mini-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s24);}
+.mini-num{font-family:var(--fm);font-size:22px;font-weight:300;color:var(--purple-light);
+  background:var(--brand-dark);width:36px;height:36px;border-radius:4px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:var(--s16);}
+.mini-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px;line-height:1.3;}
+.mini-body{font-size:13px;font-weight:300;color:var(--body);line-height:1.5;}
+
+/* STAMP INTERACTIVE */
+.stamp-zone{position:relative;display:flex;align-items:center;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s32);}
+.stamp-doc{position:relative;flex:1;min-width:240px;background:rgba(255,255,255,0.04);
+  border:1px dashed rgba(255,255,255,0.25);border-radius:8px;padding:var(--s32);overflow:hidden;min-height:140px;
+  display:flex;align-items:center;justify-content:center;}
+.stamp-mark{position:absolute;font-family:var(--fm);font-weight:700;font-size:clamp(22px,4vw,34px);
+  letter-spacing:3px;color:var(--ruby);border:4px solid var(--ruby);border-radius:8px;
+  padding:8px 20px;transform:rotate(-11deg) scale(0);opacity:0;
+  transition:transform 320ms cubic-bezier(.34,1.56,.64,1),opacity 200ms;
+  text-transform:uppercase;pointer-events:none;}
+.stamp-mark.show{transform:rotate(-11deg) scale(1);opacity:0.92;}
+.stamp-doc-txt{font-family:var(--fm);font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;}
+.stamp-btn{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:var(--s8);
+  background:none;border:none;cursor:pointer;padding:var(--s8);border-radius:12px;
+  transition:transform 180ms, filter 180ms;filter:drop-shadow(0 0 12px rgba(83,58,253,0.4));}
+.stamp-btn:hover{transform:scale(1.08) rotate(-3deg);filter:drop-shadow(0 0 20px rgba(83,58,253,0.7));}
+.stamp-btn:active{transform:scale(0.92);}
+.stamp-hint{font-family:var(--fm);font-size:10px;color:rgba(185,185,249,0.5);letter-spacing:1px;text-transform:uppercase;}
+
+/* CHAPTER ANCHOR */
+[id]{scroll-margin-top:80px;}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand"><img src="../../brands/hecho-por-el/Logo HPE x AG.png" alt="HPE x AG" style="height:40px;width:auto;display:block;"></div>
+    <div class="nav-tag">¿Decían la verdad los autores?</div>
+    <div class="nav-pill">Apologética</div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="inicio">
+  <!-- Scales-of-justice motif SVG -->
+  <svg class="hero-motif" viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#533afd" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#f96bee" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    <!-- stand -->
+    <line x1="250" y1="60" x2="250" y2="600" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"/>
+    <line x1="150" y1="600" x2="350" y2="600" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"/>
+    <!-- beam -->
+    <line x1="90" y1="150" x2="410" y2="150" stroke="#b9b9f9" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="250" cy="150" r="10" fill="#f96bee"/>
+    <!-- left pan -->
+    <line x1="90" y1="150" x2="90" y2="260" stroke="#b9b9f9" stroke-width="3" opacity="0.55"/>
+    <line x1="40" y1="260" x2="140" y2="260" stroke="#b9b9f9" stroke-width="3" opacity="0.55"/>
+    <path d="M40,260 Q90,320 140,260" stroke="#f96bee" stroke-width="4" fill="none" opacity="0.7"/>
+    <!-- right pan -->
+    <line x1="410" y1="150" x2="410" y2="240" stroke="#b9b9f9" stroke-width="3" opacity="0.55"/>
+    <line x1="360" y1="240" x2="460" y2="240" stroke="#b9b9f9" stroke-width="3" opacity="0.55"/>
+    <path d="M360,240 Q410,300 460,240" stroke="#f96bee" stroke-width="4" fill="none" opacity="0.7"/>
+    <!-- scroll motifs floating -->
+    <rect x="205" y="330" width="90" height="14" rx="7" stroke="#533afd" stroke-width="3" fill="none" opacity="0.5"/>
+    <rect x="215" y="360" width="70" height="14" rx="7" stroke="#f96bee" stroke-width="3" fill="none" opacity="0.4"/>
+    <rect x="195" y="390" width="110" height="14" rx="7" stroke="#533afd" stroke-width="3" fill="none" opacity="0.5"/>
+  </svg>
+
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Sesión 8 · Razones para Creer · Apologética Cristiana</div>
+    <h1 class="display r rd1">¿Decían la verdad<br>los autores?</h1>
+    <p class="body-lg r rd2">Un tribunal. Un testigo que jura haberlo visto con sus propios ojos. La pregunta que le hacemos hoy: ¿tenían los escritores del Nuevo Testamento algún motivo para mentir?</p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">📖 2 Pedro 1:16</span>
+      <span class="hero-badge">👥 15–45 años</span>
+      <span class="hero-badge">🎯 27 documentos · 9 autores · 10 razones</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ APERTURA ═══════════════════════════ -->
+<section class="scene" id="apertura">
+  <div class="wrap">
+    <div class="r">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">La pregunta de partida</span>
+    </div>
+    <h2 class="h1 mt16 r rd1" style="max-width:20ch;">"Lo vi con mis propios ojos." ¿Y ahora qué?</h2>
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">Imaginemos un tribunal. Un testigo declara: "Lo vi con mis propios ojos." La siguiente pregunta de cualquier abogado sería: ¿tiene usted algún motivo para mentir? ¿Qué gana con decir esto?</p>
+        <p class="body mt24" style="max-width:48ch;">Esa es la pregunta que le hacemos hoy a los autores del Nuevo Testamento. No solo: ¿estuvieron ahí? Sino: <strong class="strong">¿tenían algún motivo para inventar lo que escribieron?</strong></p>
+        <p class="body mt24" style="max-width:48ch;">Los escritores del Nuevo Testamento no ganaron nada con su historia. Al contrario: ganaron persecución, prisión y muerte. <strong class="strong purple">Eso cambia todo.</strong></p>
+      </div>
+      <div class="r rd2">
+        <div class="card">
+          <span class="eyebrow">El objetivo de hoy</span>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s24);">
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">01</span>
+              <span class="body">Ver que el Nuevo Testamento tiene seis líneas de testimonio independientes, no una sola voz.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">02</span>
+              <span class="body">Repasar diez razones internas por las que esos escritores dijeron la verdad.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">03</span>
+              <span class="body">Entender por qué morir sin retractarse es la prueba más difícil de descartar.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ BLOQUE 1: SEIS LÍNEAS ═══════════════════════════ -->
+<section class="scene dark on-dark" id="seis-lineas">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <span class="eyebrow">Bloque 1</span>
+      <h2 class="h1 mt16">¿Estuvieron ahí?<br>Seis líneas de<br>testimonio independiente</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">El Nuevo Testamento no es "un libro" — son <strong class="strong" style="color:#fff;">27 documentos escritos por 9 autores</strong>, en un período de 15 a 40 años después de los hechos.</p>
+    </div>
+
+    <!-- Six lines diagram -->
+    <div class="immersive r rd1">
+      <img src="assets/concept-seis-lineas.png" alt="Seis líneas independientes de testimonio convergiendo" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="card-dark r rd2" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Seis voces, no una</span>
+      <p class="body mt16">Los investigadores Frank Turek y Norman Geisler identifican al menos <strong class="strong" style="color:#fff;">seis líneas independientes de testimonio</strong> dentro del Nuevo Testamento:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:var(--s12);margin-top:var(--s24);">
+        <div class="pill" style="justify-content:center;">Lucas / Hechos</div>
+        <div class="pill" style="justify-content:center;">Juan</div>
+        <div class="pill" style="justify-content:center;">Mateo</div>
+        <div class="pill" style="justify-content:center;">Marcos</div>
+        <div class="pill" style="justify-content:center;">Pablo</div>
+        <div class="pill" style="justify-content:center;">Pedro</div>
+      </div>
+    </div>
+
+    <!-- Coherencia con disimilitud -->
+    <div class="quote r rd3">
+      <p>Si cuatro testigos de un accidente cuentan la misma historia básica pero cada uno recuerda detalles distintos, eso no es contradicción — es exactamente cómo suena el testimonio real. Los historiadores lo llaman <strong class="strong" style="color:inherit;">"coherencia con disimilitud"</strong>.</p>
+    </div>
+
+    <!-- Lucas 84 puntos -->
+    <h3 class="h3 mt64 r">El caso de Lucas: 84 puntos verificados</h3>
+    <p class="body mt16 r rd1" style="max-width:58ch;">El erudito clásico Colin Hemer estudió el libro de Hechos versículo por versículo y encontró <strong class="strong" style="color:#fff;">84 detalles históricamente confirmados</strong> en los últimos 16 capítulos: rutas marítimas, títulos de funcionarios, nombres de ciudades, costumbres locales — datos que solo alguien con acceso directo a testigos presenciales podría conocer.</p>
+
+    <div class="two-col mt32">
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-hemer.png" alt="Colin Hemer" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Colin Hemer</div>
+            <div class="portrait-role">Erudito clásico · Historiador</div>
+            <span class="portrait-tag">84 puntos verificados</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Estudió Hechos versículo por versículo comparándolo con la arqueología y la historia grecorromana del siglo I.</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd3">
+        <div class="immersive" style="margin:0;">
+          <img src="assets/concept-lucas-medico.png" alt="Lucas el médico documentando la hematohidrosis de Jesús" style="width:100%;display:block;border-radius:8px;">
+        </div>
+        <p class="body-sm mt16" style="color:rgba(255,255,255,0.55);font-style:italic;">Lucas registra que Jesús sudaba gotas de sangre la noche antes de su crucifixión — una descripción precisa de la <strong style="color:rgba(255,255,255,0.8);">hematohidrosis</strong>, una condición real que ocurre bajo estrés extremo. Lucas era médico. Nadie sin formación médica habría podido inventar ese detalle en el siglo primero.</p>
+      </div>
+    </div>
+
+    <!-- Juan 59 puntos -->
+    <h3 class="h3 mt64 r">Juan: 59 detalles históricos confirmados</h3>
+    <p class="body mt16 r rd1" style="max-width:58ch;">El erudito Craig Blomberg identificó <strong class="strong" style="color:#fff;">59 detalles históricamente confirmados o muy probables</strong> en el Evangelio de Juan — entre ellos la piscina de Betesda con sus cinco pórticos, confirmada arqueológicamente, y la geografía precisa de Galilea.</p>
+
+    <div class="two-col mt32">
+      <div class="r rd2">
+        <div class="immersive" style="margin:0;">
+          <img src="assets/concept-piscina-betesda.png" alt="La Piscina de Betesda con sus cinco pórticos" style="width:100%;display:block;border-radius:8px;">
+        </div>
+        <p class="body-sm mt16" style="color:rgba(255,255,255,0.55);font-style:italic;">Juan menciona una piscina con exactamente cinco pórticos en Jerusalén (Juan 5:2). Durante siglos se dudó de este detalle — hasta que la arqueología del siglo XX confirmó la estructura tal como Juan la describió.</p>
+      </div>
+      <div class="r rd3">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-blomberg.png" alt="Craig Blomberg" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Craig Blomberg</div>
+            <div class="portrait-role">Erudito del Nuevo Testamento</div>
+            <span class="portrait-tag">59 detalles confirmados</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Catalogó los detalles del Evangelio de Juan verificables por arqueología y geografía del primer siglo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 2: DIEZ RAZONES ═══════════════════════════ -->
+<section class="scene" id="diez-razones">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">02</div>
+      <span class="eyebrow">Bloque 2</span>
+      <h2 class="h1 mt16">Diez razones por<br>las que dijeron<br>la verdad</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">No basta con estar presente en los hechos. Hay que preguntar además: ¿qué tan honesto es el relato que escribieron? Estas son las señales internas de un testimonio genuino.</p>
+    </div>
+
+    <!-- Definición: criterio de vergüenza -->
+    <div class="term-box r rd1">
+      <span class="term-badge">⚖ Herramienta que debes conocer</span>
+      <h4 style="font-size:18px;font-weight:600;color:var(--navy);letter-spacing:-0.3px;margin-top:var(--s16);">¿Qué es el "criterio de vergüenza"?</h4>
+      <p class="body mt12">Es una herramienta que usan los historiadores — no solo los cristianos — para evaluar la fiabilidad de un documento antiguo: <strong class="strong">nadie inventa detalles que lo hacen quedar mal a él mismo</strong>. Si un relato incluye momentos vergonzosos para sus propios autores o para su héroe, es mucho más probable que sea un reporte honesto que una leyenda fabricada.</p>
+      <div class="term-grid">
+        <div class="term-cell q">
+          <div class="term-cell-label" style="color:#108c3d;">Si fuera invención</div>
+          <p class="body-sm">Los autores se retratarían como héroes valientes y a Jesús solo con líneas triunfales.</p>
+        </div>
+        <div class="term-cell a">
+          <div class="term-cell-label" style="color:var(--ruby);">Lo que realmente escribieron</div>
+          <p class="body-sm">Cobardía propia, dudas, y palabras de Jesús que ni ellos podían explicar del todo.</p>
+        </div>
+      </div>
+      <p class="body-sm mt16" style="color:var(--body);">Es la clave detrás de las <strong class="strong">razones 1, 2 y 5</strong>. Las demás razones que siguen usan otras pruebas históricas — precisión verificable, distinción de fuentes, sobriedad narrativa — que iremos viendo una por una.</p>
+    </div>
+
+    <!-- Razones 1 y 2 -->
+    <div class="r rd1">
+      <span class="pill">Razones 1–2</span>
+      <h3 class="h3 mt16">Detalles vergonzosos (de ellos y de Jesús)</h3>
+    </div>
+    <p class="body mt16 r rd1" style="max-width:60ch;">Los discípulos se duermen dos veces mientras Jesús pide que oren. Pedro promete "nunca te negaré" y esa misma noche lo niega tres veces. Todos los hombres huyen en la crucifixión; los que se quedan al pie de la cruz son las mujeres.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-detalles-vergonzosos.png" alt="Los discípulos dormidos, la negación de Pedro, las mujeres al pie de la cruz" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="card mt32 r rd3" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body">Las primeras testigas de la resurrección son mujeres — y en el siglo primero, <strong class="strong purple">el testimonio de una mujer no era admisible en tribunales judíos</strong>. Si los apóstoles hubieran inventado la historia, jamás habrían puesto a mujeres como primeras testigas.</p>
+      <p class="body mt16">También incluyeron palabras difíciles de Jesús que nadie habría inventado: que "el Padre es más grande que yo", que ni Él mismo sabe el día ni la hora de su regreso.</p>
+    </div>
+
+    <!-- Razón 3 -->
+    <div class="r rd1" style="margin-top:var(--s64);">
+      <span class="pill">Razón 3</span>
+      <h3 class="h3 mt16">Incluyeron las exigentes demandas de Jesús</h3>
+    </div>
+    <p class="body mt16 r rd1" style="max-width:60ch;">Si los escritores hubieran querido atraer seguidores fácilmente, lo lógico habría sido suavizar el mensaje. Hicieron lo contrario: registraron exigencias durísimas de cumplir y de vender. <em class="italic">"Amen a sus enemigos."</em> <em class="italic">"El que no toma su cruz cada día no es digno de mí."</em> <em class="italic">"Vendan lo que tienen y denlo a los pobres."</em></p>
+
+    <div class="card mt24 r rd2" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body">Nadie que inventa una religión para ganar adeptos escribe frases que exigen sacrificio total en vez de prometer comodidad. Eso es la marca de alguien que está reportando lo que Jesús realmente dijo — no lo que hubiera sido conveniente decir.</p>
+    </div>
+
+    <!-- Razón 4 -->
+    <div class="r rd1" style="margin-top:var(--s64);">
+      <span class="pill">Razón 4</span>
+      <h3 class="h3 mt16">Distinguieron cuidadosamente sus palabras de las de Jesús</h3>
+    </div>
+    <div class="two-col mt24">
+      <div class="r rd1">
+        <p class="body" style="max-width:48ch;">Pablo, que escribe casi la mitad del Nuevo Testamento, cita a Jesús directamente solo un puñado de veces. En 1 Corintios 7:10-12 distingue explícitamente: <em class="italic">"no yo, sino el Señor"</em> frente a <em class="italic">"yo, no el Señor"</em>.</p>
+        <p class="body mt16" style="max-width:48ch;"><strong class="strong">Un mentiroso no hace ese nivel de distinción.</strong> Alguien que inventa una historia le habría atribuido a Jesús todas sus propias opiniones, sin marcar la diferencia. Pablo hace justo lo contrario.</p>
+      </div>
+      <div class="r rd2">
+        <div class="immersive" style="margin:0;">
+          <img src="assets/concept-distincion-palabras.png" alt="Manuscrito antiguo distinguiendo las palabras propias de las de Jesús" style="width:100%;display:block;border-radius:8px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Razón 5 -->
+    <div class="r rd1" style="margin-top:var(--s64);">
+      <span class="pill">Razón 5</span>
+      <h3 class="h3 mt16">Incluyeron eventos de la resurrección que no habrían inventado</h3>
+    </div>
+    <div class="two-col mt24">
+      <div class="r rd1">
+        <div class="immersive" style="margin:0;">
+          <img src="assets/concept-tomas-duda.png" alt="Tomás dudando incluso después de ver al Resucitado" style="width:100%;display:block;border-radius:8px;">
+        </div>
+      </div>
+      <div class="r rd2">
+        <p class="body" style="max-width:48ch;">Las mujeres encuentran la tumba vacía y no entienden qué pasó. Los discípulos no les creen. Tomás duda incluso después de que los demás le dicen que vieron al Resucitado. Mateo registra que <em class="italic">"algunos dudaron"</em> — después de ver al Resucitado.</p>
+        <p class="body mt16 purple strong" style="max-width:48ch;">Nadie que fabrica una leyenda escribe eso. Eso solo aparece en la historia porque realmente ocurrió.</p>
+      </div>
+    </div>
+
+    <!-- Razón 6 -->
+    <div class="r rd1" style="margin-top:var(--s64);">
+      <span class="pill">Razón 6</span>
+      <h3 class="h3 mt16">Mencionaron más de 30 figuras históricas reales, confirmadas por arqueología</h3>
+    </div>
+    <p class="body mt16 r rd1" style="max-width:62ch;">El Nuevo Testamento no ocurre "había una vez, en un lugar lejano". Nombra con precisión a gobernantes, sacerdotes y funcionarios reales de su época: <strong class="strong">Poncio Pilato</strong> (confirmado por una inscripción hallada en Cesarea en 1961), el sumo sacerdote <strong class="strong">Caifás</strong> (su osario familiar fue descubierto en Jerusalén en 1990), el procónsul <strong class="strong">Galión</strong> (fechado por una inscripción hallada en Delfos), además de Sergio Paulo, Lisanias y otros.</p>
+
+    <div class="card mt24 r rd2" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body">Nombrar autoridades reales y verificables es una apuesta arriesgada para un mentiroso: cualquier lector de la época podía comprobar los datos y desmentirlos. Los autores lo hicieron de todas formas — más de treinta veces.</p>
+    </div>
+
+    <!-- Razón 7 -->
+    <div class="r rd1" style="margin-top:var(--s64);">
+      <span class="pill">Razón 7</span>
+      <h3 class="h3 mt16">Sus relatos muestran detalles divergentes: la marca de un testimonio genuino</h3>
+    </div>
+    <p class="body mt16 r rd1" style="max-width:62ch;">Ya lo vimos en el Bloque 1 con la <strong class="strong">"coherencia con disimilitud"</strong>: los cuatro Evangelios narran los mismos hechos centrales, pero cada autor recuerda ángulos y detalles distintos — igual que pasaría si entrevistaras por separado a cuatro testigos reales de un mismo evento.</p>
+
+    <div class="card mt24 r rd2" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body">Si los cuatro relatos coincidieran palabra por palabra, sería la señal de un guion inventado en conjunto — no de testigos independientes. Las diferencias no debilitan el caso: <strong class="strong purple">lo fortalecen.</strong></p>
+    </div>
+
+    <!-- Razón 8 -->
+    <div class="r rd1" style="margin-top:var(--s64);">
+      <span class="pill">Razón 8</span>
+      <h3 class="h3 mt16">Desafiaron a sus lectores a verificar los hechos ante audiencias hostiles</h3>
+    </div>
+    <p class="body mt16 r rd1" style="max-width:62ch;">En 1 Corintios 15:6, Pablo escribe que más de 500 personas vieron a Jesús resucitado al mismo tiempo, <em class="italic">"de los cuales muchos viven aún, y otros ya duermen"</em>. Eso es una invitación abierta: vayan y pregúntenles.</p>
+
+    <div class="card mt24 r rd2" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body">Pablo escribió esto en una carta pública, a una audiencia que incluía escépticos y opositores del cristianismo con motivos para desmentirlo. Nadie hace esa invitación si sabe que es mentira — es demasiado fácil de refutar.</p>
+    </div>
+
+    <!-- Razón 9 -->
+    <div class="r rd1" style="margin-top:var(--s64);">
+      <span class="pill">Razón 9</span>
+      <h3 class="h3 mt16">Narraron los milagros como periodistas, no como predicadores</h3>
+    </div>
+    <p class="body mt16 r rd1" style="max-width:60ch;">Los Evangelios describen la resurrección con sobriedad: <em class="italic">"y al tercer día resucitó."</em> Punto. Sin dramatismo. Compara eso con lo que se escribió cuando alguien sí quiso embellecer la historia, décadas más tarde.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-periodista-vs-leyenda.png" alt="La sobriedad de los Evangelios canónicos frente al embellecimiento de los apócrifos" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="quote r rd3" style="border-left-color:var(--ruby);">
+      <p>"…los cielos se abrieron, y dos hombres descendieron brillando con una gran luz, y una cruz gigante salió de la tumba…"</p>
+      <div class="quote-attr">Evangelio apócrifo de Pedro · escrito más de 100 años después</div>
+      <div class="quote-src">Eso sí es leyenda. Eso sí es embellecimiento — y es exactamente lo que los Evangelios canónicos, escritos décadas antes, no hacen.</div>
+    </div>
+
+    <div class="card-dark mt64 r rd1" style="background:var(--brand-dark);border-left:3px solid var(--purple-light);color:#fff;">
+      <span class="eyebrow">La razón 10 cierra el bloque siguiente</span>
+      <p class="body mt12" style="color:rgba(255,255,255,0.7);">Falta una razón más — la más contundente de las diez. La dejamos para su propio espacio, porque merece toda la atención: <strong class="strong" style="color:#fff;">murieron sin retractarse.</strong> ↓</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 3: EL MARTIRIO ═══════════════════════════ -->
+<section class="scene dark on-dark" id="martirio">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">03</div>
+      <span class="eyebrow">Bloque 3 · Razón 10</span>
+      <h2 class="h1 mt16">Murieron sin<br>retractarse</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">La gente muere por lo que <em>cree</em> que es verdad. Pero <strong class="strong" style="color:#fff;">nadie muere por lo que sabe que es mentira.</strong></p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/concept-martirio-apostoles.png" alt="Símbolos del martirio de los apóstoles" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="card-dark r rd2" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Lo que sabemos con certeza histórica</span>
+      <p class="body mt16">Los apóstoles predicaron la resurrección frente a las mismas autoridades que podían matarlos — y los mataron. <strong class="strong" style="color:#fff;">Santiago fue decapitado. Pedro fue crucificado. Pablo fue decapitado.</strong> Ninguno se retractó.</p>
+    </div>
+
+    <!-- Colson / Watergate -->
+    <h3 class="h3 mt64 r">El paralelo de Watergate</h3>
+    <p class="body mt16 r rd1" style="max-width:58ch;">Watergate fue el escándalo político que en 1972 terminó con la presidencia de Richard Nixon en Estados Unidos. Un grupo de asesores presidenciales encubrió un delito — y bastaron menos de dos semanas de presión legal para que empezaran a confesar y delatarse entre sí, para salvarse a sí mismos.</p>
+
+    <div class="two-col mt32">
+      <div class="r rd2">
+        <div class="card-dark">
+          <span class="eyebrow">Comparación de Chuck Colson</span>
+          <p class="body-lg mt16" style="color:rgba(255,255,255,0.85);">Colson, ex asesor del presidente Nixon y él mismo implicado en Watergate, comparó ambos casos: <strong class="strong" style="color:#fff;">doce hombres poderosos con abogados y protección no aguantaron ni dos semanas de presión política</strong> antes de quebrarse y confesar. Los apóstoles — pescadores sin poder, sin abogados, sin nada que ganar — enfrentaron azotes, cárcel y ejecución durante años, y ninguno se quebró.</p>
+        </div>
+      </div>
+      <div class="r rd3">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-colson.png" alt="Chuck Colson" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Chuck Colson</div>
+            <div class="portrait-role">Ex asesor del presidente Nixon</div>
+            <span class="portrait-tag">Implicado en Watergate</span>
+            <p class="body-sm" style="margin-top:var(--s8);">Vivió en carne propia cuánto aguanta el poder político bajo presión — y usó esa experiencia para comparar la resistencia de los apóstoles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scalia -->
+    <h3 class="h3 mt64 r">Una segunda opinión — desde el derecho</h3>
+    <p class="body mt16 r rd1" style="max-width:58ch;">No hace falta ser creyente para reconocer el peso de un testimonio sin motivo para mentir. Antonin Scalia, uno de los juristas más influyentes de su generación, lo dijo evaluando exactamente ese criterio: el interés propio del testigo.</p>
+    <div class="two-col mt24">
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-scalia.png" alt="Antonin Scalia" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Antonin Scalia</div>
+            <div class="portrait-role">Juez de la Corte Suprema de EE.UU.</div>
+            <p class="body-sm" style="margin-top:var(--s8);">Su trabajo era decidir, caso tras caso, cuándo un testimonio merece o no merece confianza — sin ningún interés personal en el resultado.</p>
+          </div>
+        </div>
+      </div>
+      <div class="r rd3">
+        <div class="quote">
+          <p>"No es irracional aceptar el testimonio de testigos oculares que no tenían nada que ganar."</p>
+          <div class="quote-attr">Antonin Scalia · Juez de la Corte Suprema de EE.UU.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lo que distingue a estos mártires -->
+    <div class="card-dark mt64 r rd3" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Lo que distingue a estos mártires de otros mártires de la historia</span>
+      <p class="body mt16">Muchas personas mueren cada año por creencias religiosas heredadas de sus padres o su cultura — una fe recibida de otros, nunca verificada personalmente. Eso demuestra sinceridad, pero no demuestra que la creencia sea cierta.</p>
+      <p class="body mt16">Los mártires del Nuevo Testamento eran distintos: <strong class="strong" style="color:#fff;">no morían por una fe recibida</strong>. Morían por algo que decían haber verificado personalmente con sus propios sentidos — lo vieron, lo tocaron, comieron con Él.</p>
+    </div>
+
+    <!-- Abandonaron instituciones -->
+    <h3 class="h3 mt64 r">Abandonaron sus instituciones más sagradas</h3>
+    <p class="body mt16 r rd1" style="max-width:58ch;">En cuestión de semanas, judíos devotos abandonaron 1,500 años de práctica religiosa: dejaron el sistema de sacrificios en el Templo, dejaron el sábado como día central de descanso, comenzaron a adorar a un hombre como Dios.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/concept-abandono-instituciones.png" alt="El altar de sacrificios cediendo lugar a la comunión de los primeros creyentes" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="card mt32 r rd3" style="background:#fff;border-left:3px solid var(--purple);">
+      <p class="body">Solo una explicación tiene sentido histórico: <strong class="strong purple">vieron con sus propios ojos que Jesús resucitó.</strong> Ninguna otra motivación explica que gente devota abandone de la noche a la mañana lo más sagrado que tenía.</p>
+    </div>
+
+    <!-- Stamp interactive -->
+    <div class="stamp-zone r rd4">
+      <div class="stamp-doc">
+        <span class="stamp-doc-txt">Expediente del testigo</span>
+        <div id="stamp-mark" class="stamp-mark">Testimonio veraz</div>
+      </div>
+      <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:var(--s8);">
+        <button id="sello-btn" class="stamp-btn" onclick="sellarVeredicto()" aria-label="Sellar el veredicto" title="Haz clic para sellar el veredicto">
+          <img src="assets/doodle-sello.png" alt="Sello de veredicto" width="110" height="110" style="display:block;object-fit:contain;pointer-events:none;">
+        </button>
+        <span class="stamp-hint">¡Haz clic para sellar!</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ PESO ACUMULATIVO ═══════════════════════════ -->
+<section class="scene" id="peso-evidencia">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <span class="eyebrow">Bloque 4</span>
+      <h2 class="h1 mt16">El peso acumulativo<br>de la evidencia</h2>
+      <p class="body-lg mt24" style="max-width:56ch;">Ningún punto por sí solo lo prueba todo. Pero sumados uno sobre otro, forman un caso difícil de descartar.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/concept-peso-evidencia.png" alt="Balanza cargada con el peso acumulativo de la evidencia histórica" style="width:100%;display:block;border-radius:8px;">
+    </div>
+
+    <div class="card mt32 r rd2" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <p class="body-lg">Tenemos una copia confiable y temprana del texto del Nuevo Testamento (Sesión 7). Quienes lo escribieron tenían acceso directo a los hechos (seis líneas de testimonio), y dieron toda señal interna de estar diciendo la verdad (diez razones) — y lo sostuvieron hasta la muerte (el martirio).</p>
+      <p class="body mt16">Esto no prueba todavía, por sí solo, que Jesús resucitó. Pero sí prueba que <strong class="strong purple">los testigos no estaban mintiendo</strong>. Y eso cambia el peso de la evidencia que examinaremos en la <strong class="strong">Sesión 10</strong>.</p>
+    </div>
+
+    <div class="verse-block mt48 r rd3" style="background:rgba(83,58,253,0.06);border-color:rgba(83,58,253,0.2);">
+      <p style="color:var(--navy);">"Porque no os hemos dado a conocer el poder y la venida de nuestro Señor Jesucristo siguiendo fábulas artificiosas, sino como habiendo visto con nuestros propios ojos su majestad."</p>
+      <span class="verse-ref" style="color:var(--purple);">2 Pedro 1:16 · RVR1960</span>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ OBJECIONES ═══════════════════════════ -->
+<section class="scene mid" id="objeciones">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <span class="eyebrow">Bloque 5</span>
+      <h2 class="h1 mt16">Objeciones difíciles</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Las preguntas que probablemente te van a hacer — y cómo responderlas con honestidad.</p>
+    </div>
+
+    <div class="objections r rd1">
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>¿Y si los apóstoles simplemente alucinaron?</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Las alucinaciones son experiencias individuales y privadas — nunca colectivas. Recuerda a los 500 testigos de la Razón 8: no fue una persona viendo algo a solas, sino un grupo entero viéndolo a la vez, en al menos doce ocasiones distintas, durante 40 días. Pablo era enemigo del movimiento y también tuvo su encuentro con el Resucitado.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>¿Cómo sabemos que los Evangelios no fueron escritos mucho después?</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Los documentos del Nuevo Testamento ya estaban siendo citados antes del año 100 d.C. Hechos no menciona la destrucción de Jerusalén en el año 70, lo que sugiere que se escribió antes de esa fecha.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>¿Y los evangelios que no están en la Biblia?</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Los evangelios apócrifos fueron escritos entre los siglos II y IV — más de cien años después. Los canónicos son sobrios y sin adorno; los apócrifos están llenos de detalles fantásticos, como vimos con el Evangelio de Pedro.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>Los escritores eran creyentes convertidos — ¿no es un testimonio sesgado?</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>La pregunta correcta no es "¿qué creían?" sino "¿por qué se convirtieron?". Abandonaron 1,500 años de tradición sagrada de la noche a la mañana — algo que solo tiene sentido si vieron algo que los convenció.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>Esto solo demuestra que los escritores eran confiables — no que el cristianismo sea verdadero.</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Es cierto, y conviene decirlo con humildad: la confiabilidad histórica no prueba por sí sola la divinidad de Cristo. Lo que establece es la base para tomar en serio lo que ellos afirman haber visto — lo que examinaremos a fondo en la Sesión 10.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ RESUMEN ═══════════════════════════ -->
+<section class="scene" id="resumen">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">06</div>
+      <span class="eyebrow">Bloque 6 · Resumen</span>
+      <h2 class="h1 mt16">Las diez razones,<br>de un vistazo</h2>
+      <p class="body-lg mt24" style="max-width:52ch;">Para tener a mano en cualquier conversación.</p>
+    </div>
+
+    <div class="r rd1" style="overflow-x:auto;">
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:10%;">#</th>
+            <th>Razón</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">1–2</td><td class="lbl">Incluyeron detalles vergonzosos sobre sí mismos y sobre Jesús</td></tr>
+          <tr><td class="num">3</td><td class="lbl">Incluyeron las exigentes demandas de Jesús</td></tr>
+          <tr><td class="num">4</td><td class="lbl">Distinguieron cuidadosamente las palabras de Jesús de las suyas propias</td></tr>
+          <tr><td class="num">5</td><td class="lbl">Incluyeron eventos de la resurrección que no habrían inventado</td></tr>
+          <tr><td class="num">6</td><td class="lbl">Mencionaron más de 30 figuras históricas reales, confirmadas por arqueología</td></tr>
+          <tr><td class="num">7</td><td class="lbl">Sus relatos muestran detalles divergentes — marca de testimonio genuino</td></tr>
+          <tr><td class="num">8</td><td class="lbl">Desafiaron a sus lectores a verificar los hechos ante audiencias hostiles</td></tr>
+          <tr><td class="num">9</td><td class="lbl">Describieron los milagros con sobriedad de periodista</td></tr>
+          <tr><td class="num">10</td><td class="lbl">Abandonaron creencias sagradas de 1,500 años y murieron sin retractarse</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CIERRE ═══════════════════════════ -->
+<section class="scene mid" id="cierre">
+  <div class="wrap">
+
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">07</div>
+      <span class="eyebrow">Cierre</span>
+      <h2 class="h1 mt16">Pagaron con<br>su vida lo que<br>decían haber visto</h2>
+    </div>
+
+    <div class="two-col mt32">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">Lucas fue verificado en 84 puntos históricos independientes. Juan en 59. Los escritores incluyeron detalles que los hacen quedar mal. No inventaron citas de Jesús aunque les habría convenido. Narraron los milagros sin dramatismo. Murieron sin retractarse de lo que decían haber visto. Y abandonaron más de mil años de práctica religiosa de la noche a la mañana.</p>
+        <p class="body mt24 strong" style="max-width:48ch;color:var(--navy);">La Biblia que tienes en las manos no fue escrita por personas que buscaban fama, poder o dinero. Fue escrita por personas que pagaron con su vida lo que decían haber visto.</p>
+      </div>
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-kreeft.png" alt="Peter Kreeft" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Peter Kreeft</div>
+            <div class="portrait-role">Filósofo · Boston College</div>
+          </div>
+        </div>
+        <div class="quote" style="margin-top:var(--s24);">
+          <p>"¿Por qué mentirían los apóstoles? Lo que obtuvieron fue persecución, tortura y martirio — apenas una lista de beneficios."</p>
+          <div class="quote-attr">Peter Kreeft · Filósofo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Discusión -->
+    <div class="card mt64 r rd3">
+      <span class="eyebrow">Preguntas para discutir en clase</span>
+      <ul style="list-style:none;margin-top:var(--s24);display:flex;flex-direction:column;gap:var(--s20);">
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">01</span>
+          <p class="body italic">"Si tú fueras el escritor de una leyenda inventada, ¿pondrías a mujeres como primeras testigas, o dirías que dudaste después de ver al Resucitado? ¿Qué te dice eso sobre lo que realmente pasó?"</p>
+        </li>
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">02</span>
+          <p class="body italic">"¿Por qué el hecho de que murieran sin retractarse es una evidencia distinta a la de otros mártires religiosos de la historia?"</p>
+        </li>
+        <li style="display:flex;gap:var(--s16);align-items:flex-start;">
+          <span style="font-family:var(--fm);font-size:11px;color:var(--purple);font-weight:500;letter-spacing:1px;min-width:24px;margin-top:2px;">03</span>
+          <p class="body italic">"¿Qué le responderías a alguien que dice 'igual, eran creyentes, así que su testimonio no cuenta'?"</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Homework -->
+    <h3 class="h3 mt64 r rd4">Tarea de la semana</h3>
+    <ul class="hw mt24 r rd5">
+      <li>
+        <div class="hw-num">01</div>
+        <p>Memoriza: <em>"…sino como habiendo visto con nuestros propios ojos su majestad."</em> — 2 Pedro 1:16 (RVR1960).</p>
+      </li>
+      <li>
+        <div class="hw-num">02</div>
+        <p>Lee Lucas 22:39-46 y Juan 20:24-29. Anota qué detalles vergonzosos o de duda encuentras que nadie inventaría en una leyenda.</p>
+      </li>
+      <li>
+        <div class="hw-num">03</div>
+        <p>Practica esta semana la pregunta del tribunal con alguien: "¿Qué ganaron los apóstoles con inventar esto?" Anota su reacción.</p>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="scene deeper on-dark" id="oracion">
+  <div class="wrap">
+
+    <div class="r">
+      <span class="eyebrow">Cierre en oración</span>
+      <div class="verse-block mt24">
+        <p>"Señor, gracias por hombres y mujeres que prefirieron morir antes que negar lo que vieron. Gracias porque nuestra fe no descansa en fábulas artificiosas, sino en testimonio pagado con sangre. Danos ese mismo valor para sostener la verdad esta semana. Amén."</p>
+        <span class="verse-ref">Oración de cierre · Sesión 8</span>
+      </div>
+    </div>
+
+    <div class="verse-block mt32 r rd1" style="background:rgba(83,58,253,0.15);border-color:rgba(185,185,249,0.2);">
+      <p>"Porque no os hemos dado a conocer el poder y la venida de nuestro Señor Jesucristo siguiendo fábulas artificiosas, sino como habiendo visto con nuestros propios ojos su majestad."</p>
+      <span class="verse-ref">2 Pedro 1:16 · RVR1960</span>
+    </div>
+
+    <div class="info-strip mt64 r rd2">
+      <div class="info-item">
+        <div class="info-item-label">Texto base</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">2 Pedro 1:16 · RVR1960</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Serie</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Razones para Creer · Apologética Cristiana</div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+// Progress bar
+function onScroll(){
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('bar').style.width=Math.min(pct,100)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// ── SELLO DE VEREDICTO ──
+function sellarVeredicto(){
+  const btn = document.getElementById('sello-btn');
+  const mark = document.getElementById('stamp-mark');
+
+  btn.style.transition='transform 80ms';
+  btn.style.transform='scale(0.85) rotate(-10deg)';
+  setTimeout(()=>{ btn.style.transform='scale(1.1) rotate(4deg)'; },80);
+  setTimeout(()=>{ btn.style.transform=''; btn.style.transition='transform 180ms, filter 180ms'; },200);
+
+  mark.classList.remove('show');
+  void mark.offsetWidth; // restart animation
+  setTimeout(()=>{ mark.classList.add('show'); }, 60);
+}
+</script>
+</body>
+</html>

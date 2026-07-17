@@ -26,7 +26,7 @@ body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothi
 img{max-width:100%;display:block;}
 
 /* LAYOUT */
-.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s48);}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--s48);}
 @media(max-width:768px){.wrap{padding:0 var(--s24);}}
 .mt8{margin-top:var(--s8);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
 .mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
@@ -55,9 +55,9 @@ img{max-width:100%;display:block;}
 .h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
 .h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
 .h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
-.body-lg{font-size:18px;font-weight:300;line-height:1.55;color:var(--body);}
-.body{font-size:16px;font-weight:300;line-height:1.6;color:var(--body);}
-.body-sm{font-size:14px;font-weight:300;line-height:1.55;color:var(--body);}
+.body-lg{font-size:20px;font-weight:300;line-height:1.6;color:var(--body);}
+.body{font-size:18px;font-weight:300;line-height:1.65;color:var(--body);}
+.body-sm{font-size:15px;font-weight:300;line-height:1.6;color:var(--body);}
 .on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
 .on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
 .italic{font-style:italic;}
@@ -149,7 +149,7 @@ img{max-width:100%;display:block;}
   background:rgba(255,255,255,0.08);width:36px;height:36px;border-radius:4px;
   display:flex;align-items:center;justify-content:center;margin-bottom:var(--s16);}
 .mini-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;line-height:1.3;}
-.mini-body{font-size:13px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.5;}
+.mini-body{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.5;}
 
 /* UNLOCK CHIP (icono, sin etiqueta de texto) */
 .unlock{display:inline-flex;align-items:center;gap:var(--s12);border:1px solid var(--border);
@@ -158,7 +158,7 @@ img{max-width:100%;display:block;}
 .unlock svg{width:24px;height:24px;flex-shrink:0;color:var(--purple);
   animation:bulbGlow 2.8s ease-in-out infinite;}
 .on-dark .unlock svg{color:var(--purple-light);}
-.unlock p{font-size:14px;font-weight:300;color:var(--body);line-height:1.45;}
+.unlock p{font-size:15px;font-weight:300;color:var(--body);line-height:1.45;}
 .on-dark .unlock p{color:rgba(255,255,255,0.65);}
 @keyframes bulbGlow{0%,100%{opacity:0.55;filter:drop-shadow(0 0 0px currentColor);}50%{opacity:1;filter:drop-shadow(0 0 7px currentColor);}}
 @media(prefers-reduced-motion:reduce){.unlock svg{animation:none;}}
@@ -200,7 +200,7 @@ img{max-width:100%;display:block;}
 .stat-box{flex:1;min-width:200px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
   border-radius:8px;padding:var(--s24);}
 .stat-num{font-family:var(--fm);font-size:40px;font-weight:300;color:var(--purple-light);letter-spacing:-1px;}
-.stat-lbl{font-size:13px;font-weight:300;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4;}
+.stat-lbl{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4;}
 
 /* OBJECTIONS */
 .objections{display:flex;flex-direction:column;gap:var(--s32);margin-top:var(--s48);}
@@ -214,7 +214,7 @@ img{max-width:100%;display:block;}
 .obj-a{padding:var(--s24) var(--s32);background:#fff;}
 .obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);
   letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
-.obj-a p{font-size:16px;font-weight:300;color:var(--body);line-height:1.6;}
+.obj-a p{font-size:17px;font-weight:300;color:var(--body);line-height:1.6;}
 
 /* SUMMARY TABLE */
 .summary{width:100%;border-collapse:collapse;margin-top:var(--s32);}
@@ -235,7 +235,7 @@ img{max-width:100%;display:block;}
   background:var(--purple);color:#fff;
   font-family:var(--fm);font-size:13px;font-weight:500;
   display:flex;align-items:center;justify-content:center;}
-.hw li p{font-size:16px;font-weight:300;color:var(--body);line-height:1.55;padding-top:4px;}
+.hw li p{font-size:17px;font-weight:300;color:var(--body);line-height:1.55;padding-top:4px;}
 
 /* VERSE */
 .verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
@@ -250,7 +250,7 @@ img{max-width:100%;display:block;}
 .info-item{flex:1;min-width:200px;}
 .info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
   letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
-.info-item-val{font-size:16px;font-weight:300;color:var(--navy);line-height:1.4;}
+.info-item-val{font-size:17px;font-weight:300;color:var(--navy);line-height:1.4;}
 
 /* DIVIDERS */
 .divider{height:1px;background:var(--border);}
@@ -280,6 +280,34 @@ img{max-width:100%;display:block;}
 
 /* CHAPTER ANCHOR */
 [id]{scroll-margin-top:80px;}
+
+/* ══════════ ANNOTATION / MARKER OVERLAY (teaching tool) ══════════ */
+#annot-canvas{position:fixed;inset:0;z-index:400;pointer-events:none;touch-action:auto;}
+#annot-canvas.active{pointer-events:auto;cursor:crosshair;}
+.annot-fab{position:fixed;right:20px;bottom:20px;z-index:500;width:52px;height:52px;border-radius:50%;
+  border:none;cursor:pointer;background:var(--purple);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 28px rgba(83,58,253,0.5);transition:transform 160ms,background 160ms;}
+.annot-fab:hover{transform:scale(1.07);background:var(--purple-hover);}
+.annot-fab svg{width:24px;height:24px;}
+.annot-bar{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:500;
+  display:none;align-items:center;gap:6px;
+  background:rgba(6,27,49,0.94);backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:7px 9px;
+  box-shadow:0 14px 44px rgba(0,0,0,0.45);font-family:var(--f);max-width:calc(100vw - 24px);flex-wrap:wrap;justify-content:center;}
+.annot-btn{width:38px;height:38px;border-radius:9px;border:1px solid transparent;background:transparent;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;
+  transition:background 140ms,border-color 140ms;flex-shrink:0;}
+.annot-btn:hover{background:rgba(255,255,255,0.1);}
+.annot-btn.active{background:var(--purple);border-color:var(--purple);}
+.annot-btn svg{width:20px;height:20px;}
+.annot-sep{width:1px;height:24px;background:rgba(255,255,255,0.16);margin:0 2px;flex-shrink:0;}
+.annot-colors{display:flex;align-items:center;gap:6px;}
+.annot-sw{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,0.35);
+  cursor:pointer;padding:0;transition:transform 120ms,border-color 120ms;flex-shrink:0;}
+.annot-sw:hover{transform:scale(1.1);}
+.annot-sw.active{border-color:#fff;transform:scale(1.15);}
+@media print{#annot-canvas,.annot-fab,.annot-bar{display:none !important;}}
 </style>
 </head>
 <body>
@@ -386,7 +414,7 @@ img{max-width:100%;display:block;}
       <div class="sec-num" aria-hidden="true">01</div>
       <span class="eyebrow">Bloque 1</span>
       <h2 class="h1 mt16">¿Quién decidió?<br>El mito y la<br>historia real</h2>
-      <p class="body-lg mt24" style="max-width:56ch;">La narrativa más repetida sobre la Biblia también es la más equivocada. Vamos a separar la leyenda de la historia documentada.</p>
+      <p class="body-lg mt24" style="max-width:70ch;">La narrativa más repetida sobre la Biblia también es la más equivocada. Vamos a separar la leyenda de la historia documentada.</p>
       <div class="unlock">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.5 10.6 18 9.3 18 8a6 6 0 0 0-12 0c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/>
@@ -399,8 +427,8 @@ img{max-width:100%;display:block;}
 
     <!-- Narrativa popular vs. historia real -->
     <h3 class="h3 mt64 r">La narrativa popular</h3>
-    <p class="body mt16 r rd1" style="max-width:60ch;">Gracias a novelas y documentales tipo "El Código Da Vinci", muchos creen que en el año 325, en el Concilio de Nicea, un grupo de obispos votó qué libros entrarían en la Biblia, descartando a propósito otros evangelios.</p>
-    <p class="body mt16 r rd2" style="max-width:60ch;">El Concilio de Nicea (325 d.C.) se reunió para tratar la naturaleza de Cristo frente a la herejía arriana — <strong class="strong" style="color:#fff;">no abordó el canon del Nuevo Testamento.</strong> La idea de que "Nicea decidió la Biblia" es un mito sin base histórica.</p>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Gracias a novelas y documentales tipo "El Código Da Vinci", muchos creen que en el año 325, en el Concilio de Nicea, un grupo de obispos votó qué libros entrarían en la Biblia, descartando a propósito otros evangelios.</p>
+    <p class="body mt16 r rd2" style="max-width:78ch;">El Concilio de Nicea (325 d.C.) se reunió para tratar la naturaleza de Cristo frente a la herejía arriana — <strong class="strong" style="color:#fff;">no abordó el canon del Nuevo Testamento.</strong> La idea de que "Nicea decidió la Biblia" es un mito sin base histórica.</p>
 
     <div class="immersive r rd3">
       <img src="assets/concept-mito-nicea.png" alt="Mito de Hollywood de un concilio votando la Biblia, junto al Concilio de Nicea real debatiendo la naturaleza de Cristo" style="width:100%;display:block;border-radius:8px;">
@@ -416,7 +444,7 @@ img{max-width:100%;display:block;}
 
     <!-- Palabra canon -->
     <h3 class="h3 mt64 r">Lo que significa la palabra "canon"</h3>
-    <p class="body mt16 r rd1" style="max-width:60ch;">La palabra "canon" viene del griego <em class="italic">kanon</em>, que significa "vara de medir" o "regla". Un canon no es una lista creada arbitrariamente — es una medida que se aplica para reconocer algo que ya existe.</p>
+    <p class="body mt16 r rd1" style="max-width:78ch;">La palabra "canon" viene del griego <em class="italic">kanon</em>, que significa "vara de medir" o "regla". Un canon no es una lista creada arbitrariamente — es una medida que se aplica para reconocer algo que ya existe.</p>
 
     <div class="two-col mt32">
       <div class="r rd2">
@@ -465,7 +493,7 @@ img{max-width:100%;display:block;}
       <div class="sec-num" aria-hidden="true">02</div>
       <span class="eyebrow">Bloque 2</span>
       <h2 class="h1 mt16">Los tres criterios<br>del canon</h2>
-      <p class="body-lg mt24" style="max-width:56ch;">Si la iglesia no votó libros al azar, ¿con qué midió cuáles ya tenían autoridad apostólica? Con tres preguntas concretas.</p>
+      <p class="body-lg mt24" style="max-width:70ch;">Si la iglesia no votó libros al azar, ¿con qué midió cuáles ya tenían autoridad apostólica? Con tres preguntas concretas.</p>
     </div>
 
     <div class="mini-grid r rd1" style="background:var(--brand-dark);border-radius:8px;padding:var(--s32);">
@@ -492,7 +520,7 @@ img{max-width:100%;display:block;}
 
     <!-- Cadena de testimonios -->
     <h3 class="h3 mt64 r">La cadena de testimonios: de Juan a Ireneo</h3>
-    <p class="body mt16 r rd1" style="max-width:62ch;">El apóstol Juan, testigo ocular de Jesús, discipuló personalmente a <strong class="strong">Policarpo (69-155 d.C.)</strong>. Policarpo, a su vez, discipuló a <strong class="strong">Ireneo (130-202 d.C.)</strong>, quien escribió defendiendo los cuatro Evangelios y citó a Juan como su fuente directa.</p>
+    <p class="body mt16 r rd1" style="max-width:78ch;">El apóstol Juan, testigo ocular de Jesús, discipuló personalmente a <strong class="strong">Policarpo (69-155 d.C.)</strong>. Policarpo, a su vez, discipuló a <strong class="strong">Ireneo (130-202 d.C.)</strong>, quien escribió defendiendo los cuatro Evangelios y citó a Juan como su fuente directa.</p>
 
     <div class="immersive r rd2">
       <img src="assets/concept-cadena-testimonios.png" alt="Cadena de testimonio de Juan a Policarpo a Ireneo, conectados por un hilo de luz" style="width:100%;display:block;border-radius:8px;">
@@ -502,7 +530,7 @@ img{max-width:100%;display:block;}
       <p class="body-lg">Solo <strong class="strong purple">dos generaciones de distancia</strong> entre un testigo ocular de Jesús y un escritor cristiano que ya defiende formalmente los mismos libros que tenemos hoy.</p>
     </div>
 
-    <p class="body mt32 r rd1" style="max-width:62ch;"><strong class="strong">Papías (60-120 d.C.)</strong> también tuvo contacto con testigos directos de los apóstoles y confirmó por escrito quién escribió los Evangelios de Marcos y Mateo.</p>
+    <p class="body mt32 r rd1" style="max-width:78ch;"><strong class="strong">Papías (60-120 d.C.)</strong> también tuvo contacto con testigos directos de los apóstoles y confirmó por escrito quién escribió los Evangelios de Marcos y Mateo.</p>
 
     <div class="stat-row r rd2" style="background:var(--brand-dark);border-radius:8px;padding:var(--s24);">
       <div class="stat-box">
@@ -530,7 +558,7 @@ img{max-width:100%;display:block;}
       <div class="sec-num" aria-hidden="true">03</div>
       <span class="eyebrow">Bloque 3</span>
       <h2 class="h1 mt16">Los libros que<br>quedaron fuera</h2>
-      <p class="body-lg mt24" style="max-width:56ch;">Evangelios como el de Tomás en el Nuevo Testamento, y libros como Macabeos o Tobías en el Antiguo. ¿Fueron censurados, o nunca calificaron?</p>
+      <p class="body-lg mt24" style="max-width:70ch;">Evangelios como el de Tomás en el Nuevo Testamento, y libros como Macabeos o Tobías en el Antiguo. ¿Fueron censurados, o nunca calificaron?</p>
       <div class="unlock">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.5 10.6 18 9.3 18 8a6 6 0 0 0-12 0c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/>
@@ -542,7 +570,7 @@ img{max-width:100%;display:block;}
     </div>
 
     <h3 class="h3 mt64 r">¿Por qué no entraron los evangelios gnósticos?</h3>
-    <p class="body mt16 r rd1" style="max-width:62ch;">Libros como el Evangelio de Tomás, el Evangelio de Pedro o el Evangelio de Judas fallaron los tres criterios al mismo tiempo. Fueron escritos entre el siglo II y el IV — más de cien años después de los hechos. Su contenido contradice la enseñanza apostólica, presentando a Jesús como un maestro de secretos esotéricos. Y nunca fueron usados ampliamente por la iglesia, solo por grupos aislados.</p>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Libros como el Evangelio de Tomás, el Evangelio de Pedro o el Evangelio de Judas fallaron los tres criterios al mismo tiempo. Fueron escritos entre el siglo II y el IV — más de cien años después de los hechos. Su contenido contradice la enseñanza apostólica, presentando a Jesús como un maestro de secretos esotéricos. Y nunca fueron usados ampliamente por la iglesia, solo por grupos aislados.</p>
 
     <div class="immersive r rd2">
       <img src="assets/concept-evangelios-gnosticos.png" alt="Un cofre de escritos gnósticos apartado en la sombra, frente a los evangelios canónicos reconocidos" style="width:100%;display:block;border-radius:8px;">
@@ -577,7 +605,7 @@ img{max-width:100%;display:block;}
 
     <!-- AT: libros apócrifos / deuterocanónicos -->
     <h3 class="h3 mt64 r">¿Y el Antiguo Testamento? Los libros apócrifos</h3>
-    <p class="body mt16 r rd1" style="max-width:62ch;">La pregunta del canon no es solo sobre el Nuevo Testamento. Las Biblias católica y ortodoxa incluyen libros adicionales en el Antiguo Testamento que las Biblias protestantes no incluyen. ¿Por qué la diferencia?</p>
+    <p class="body mt16 r rd1" style="max-width:78ch;">La pregunta del canon no es solo sobre el Nuevo Testamento. Las Biblias católica y ortodoxa incluyen libros adicionales en el Antiguo Testamento que las Biblias protestantes no incluyen. ¿Por qué la diferencia?</p>
 
     <div class="r rd2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:var(--s12);margin-top:var(--s24);">
       <div class="pill" style="justify-content:center;">Tobías</div>
@@ -619,11 +647,11 @@ img{max-width:100%;display:block;}
       </div>
     </div>
 
-    <p class="body mt24 r rd3" style="max-width:62ch;">Esos "22 libros" de Josefo, agrupados de otra manera, equivalen exactamente a los 39 libros del Antiguo Testamento protestante actual. Siglos después, Jerónimo — traductor de la Vulgata en el siglo IV — ya distinguía los libros adicionales como <em class="italic">apócrifos</em>: útiles para la lectura, pero no para establecer doctrina. Fue hasta el <strong class="strong">Concilio de Trento, en 1546</strong> — como respuesta directa a la Reforma protestante — que la Iglesia Católica los declaró formalmente canónicos.</p>
+    <p class="body mt24 r rd3" style="max-width:78ch;">Esos "22 libros" de Josefo, agrupados de otra manera, equivalen exactamente a los 39 libros del Antiguo Testamento protestante actual. Siglos después, Jerónimo — traductor de la Vulgata en el siglo IV — ya distinguía los libros adicionales como <em class="italic">apócrifos</em>: útiles para la lectura, pero no para establecer doctrina. Fue hasta el <strong class="strong">Concilio de Trento, en 1546</strong> — como respuesta directa a la Reforma protestante — que la Iglesia Católica los declaró formalmente canónicos.</p>
 
     <!-- Ningun libro eliminado (conclusión conjunta AT + NT) -->
     <h3 class="h3 mt64 r">Ningún libro fue "eliminado"</h3>
-    <p class="body mt16 r rd1" style="max-width:62ch;">Ni en el Nuevo Testamento ni en el Antiguo, ningún libro fue arrancado de la Biblia por decisión política. La iglesia — y antes de ella, el pueblo judío con sus propias Escrituras — fue reconociendo de manera consistente, a lo largo de varios siglos, qué libros ya circulaban con autoridad genuina desde el principio. <strong class="strong" style="color:#fff;">En ambos testamentos, el proceso fue de reconocimiento, no de censura.</strong></p>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Ni en el Nuevo Testamento ni en el Antiguo, ningún libro fue arrancado de la Biblia por decisión política. La iglesia — y antes de ella, el pueblo judío con sus propias Escrituras — fue reconociendo de manera consistente, a lo largo de varios siglos, qué libros ya circulaban con autoridad genuina desde el principio. <strong class="strong" style="color:#fff;">En ambos testamentos, el proceso fue de reconocimiento, no de censura.</strong></p>
 
     <div class="immersive r rd2">
       <img src="assets/concept-ningun-libro-eliminado.png" alt="Manos sosteniendo con cuidado un conjunto de manuscritos antiguos, símbolo de reconocimiento y no de censura" style="width:100%;display:block;border-radius:8px;">
@@ -640,7 +668,7 @@ img{max-width:100%;display:block;}
       <div class="sec-num" aria-hidden="true">04</div>
       <span class="eyebrow">Bloque 4</span>
       <h2 class="h1 mt16">Jesús, el Antiguo<br>Testamento y la<br>promesa del Espíritu</h2>
-      <p class="body-lg mt24" style="max-width:56ch;">El canon no empieza en el siglo IV. Empieza con lo que Jesús mismo hizo con las Escrituras que ya existían, y con lo que prometió para las que faltaban por escribirse.</p>
+      <p class="body-lg mt24" style="max-width:70ch;">El canon no empieza en el siglo IV. Empieza con lo que Jesús mismo hizo con las Escrituras que ya existían, y con lo que prometió para las que faltaban por escribirse.</p>
       <div class="unlock">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.5 10.6 18 9.3 18 8a6 6 0 0 0-12 0c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/>
@@ -651,7 +679,7 @@ img{max-width:100%;display:block;}
       </div>
     </div>
 
-    <p class="body mt16 r rd1" style="max-width:62ch;">Jesús mismo trató el Antiguo Testamento como la Palabra autorizada de Dios, citando la Ley, los Profetas y los Salmos como autoridad final. Antes de irse, prometió a sus apóstoles que el Espíritu Santo los guiaría a toda verdad y les ayudaría a recordar todo lo que Él les había enseñado <span class="body-sm" style="color:var(--purple);">(Juan 14:26, 16:13)</span>.</p>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Jesús mismo trató el Antiguo Testamento como la Palabra autorizada de Dios, citando la Ley, los Profetas y los Salmos como autoridad final. Antes de irse, prometió a sus apóstoles que el Espíritu Santo los guiaría a toda verdad y les ayudaría a recordar todo lo que Él les había enseñado <span class="body-sm" style="color:var(--purple);">(Juan 14:26, 16:13)</span>.</p>
 
     <div class="immersive r rd2">
       <img src="assets/concept-espiritu-santo-promesa.png" alt="Jesús con sus discípulos en el aposento alto, con una luz suave en forma de paloma sobre el grupo" style="width:100%;display:block;border-radius:8px;">
@@ -666,7 +694,7 @@ img{max-width:100%;display:block;}
       <span class="verse-ref">2 Pedro 3:15-16 · RVR1960</span>
     </div>
 
-    <p class="body mt24 r rd5" style="max-width:62ch;">Este pasaje muestra a Pedro reconociendo las cartas de Pablo como <strong class="strong">"Escrituras"</strong> — ya en el siglo I, un apóstol citando a otro apóstol como autoridad equivalente al Antiguo Testamento.</p>
+    <p class="body mt24 r rd5" style="max-width:78ch;">Este pasaje muestra a Pedro reconociendo las cartas de Pablo como <strong class="strong">"Escrituras"</strong> — ya en el siglo I, un apóstol citando a otro apóstol como autoridad equivalente al Antiguo Testamento.</p>
 
   </div>
 </section>
@@ -681,7 +709,7 @@ img{max-width:100%;display:block;}
       <div class="sec-num" aria-hidden="true">05</div>
       <span class="eyebrow">Bloque 5</span>
       <h2 class="h1 mt16">Objeciones difíciles</h2>
-      <p class="body-lg mt24" style="max-width:52ch;">Las preguntas que probablemente te van a hacer — y cómo responderlas con honestidad.</p>
+      <p class="body-lg mt24" style="max-width:66ch;">Las preguntas que probablemente te van a hacer — y cómo responderlas con honestidad.</p>
     </div>
 
     <div class="objections r rd1">
@@ -753,7 +781,7 @@ img{max-width:100%;display:block;}
       <div class="sec-num" aria-hidden="true">06</div>
       <span class="eyebrow">Bloque 6 · Resumen</span>
       <h2 class="h1 mt16">Los tres criterios<br>y la línea de tiempo,<br>de un vistazo</h2>
-      <p class="body-lg mt24" style="max-width:52ch;">Para tener a mano en cualquier conversación.</p>
+      <p class="body-lg mt24" style="max-width:66ch;">Para tener a mano en cualquier conversación.</p>
     </div>
 
     <div class="r rd1" style="overflow-x:auto;">
@@ -896,6 +924,51 @@ img{max-width:100%;display:block;}
   </div>
 </footer>
 
+<!-- ══════════ MARCADOR / PIZARRÓN (herramienta de clase) ══════════ -->
+<canvas id="annot-canvas"></canvas>
+
+<button id="annot-fab" class="annot-fab" title="Marcador / pizarrón" aria-label="Abrir marcador">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 20l4.5-1 9-9-3.5-3.5-9 9z"/><path d="M13 6.5l3.5 3.5"/>
+  </svg>
+</button>
+
+<div id="annot-bar" class="annot-bar" role="toolbar" aria-label="Herramientas de marcador">
+  <button class="annot-btn" data-tool="none" title="Puntero — interactuar con la página" aria-label="Puntero">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l6 15 2-6 6-2z"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="pen" title="Marcador / lápiz" aria-label="Marcador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4.5-1 9-9-3.5-3.5-9 9z"/><path d="M13 6.5l3.5 3.5"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="hl" title="Resaltador" aria-label="Resaltador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h6"/><path d="M8 17l8-8 3 3-8 8H8z"/><path d="M14 7l3 3"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="eraser" title="Borrador" aria-label="Borrador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h11"/><path d="M5 15l6-6 7 7-4 4H9z"/></svg>
+  </button>
+  <span id="annot-colors-wrap" style="display:flex;align-items:center;gap:6px;">
+    <span class="annot-sep"></span>
+    <span class="annot-colors" id="annot-pen-colors">
+      <button class="annot-sw active" style="background:#ef4444" data-pen="#ef4444" aria-label="Rojo"></button>
+      <button class="annot-sw" style="background:#533afd" data-pen="#533afd" aria-label="Morado"></button>
+      <button class="annot-sw" style="background:#ffffff" data-pen="#ffffff" aria-label="Blanco"></button>
+      <button class="annot-sw" style="background:#22d3ee" data-pen="#22d3ee" aria-label="Cian"></button>
+    </span>
+    <span class="annot-colors" id="annot-hl-colors" style="display:none">
+      <button class="annot-sw active" style="background:#facc15" data-hl="rgba(250,204,21,0.40)" aria-label="Amarillo"></button>
+      <button class="annot-sw" style="background:#4ade80" data-hl="rgba(74,222,128,0.40)" aria-label="Verde"></button>
+      <button class="annot-sw" style="background:#f472b6" data-hl="rgba(244,114,182,0.45)" aria-label="Rosa"></button>
+    </span>
+  </span>
+  <span class="annot-sep"></span>
+  <button class="annot-btn" id="annot-clear" title="Borrar todo" aria-label="Borrar todo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"/><path d="M9 7V5h6v2"/><path d="M7 7l1 12h8l1-12"/></svg>
+  </button>
+  <button class="annot-btn" id="annot-close" title="Cerrar marcador" aria-label="Cerrar marcador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+
 <script>
 // Progress bar
 function onScroll(){
@@ -938,6 +1011,93 @@ function revelarVerdad(){
     src.style.opacity = 1;
   }, 200);
 }
+
+// ── MARCADOR / PIZARRÓN (herramienta de clase) ──
+(function(){
+  const canvas=document.getElementById('annot-canvas');
+  const ctx=canvas.getContext('2d');
+  const bar=document.getElementById('annot-bar');
+  const fab=document.getElementById('annot-fab');
+  const colorsWrap=document.getElementById('annot-colors-wrap');
+  const penRow=document.getElementById('annot-pen-colors');
+  const hlRow=document.getElementById('annot-hl-colors');
+
+  let strokes=[], current=null, tool=null;      // 'pen' | 'hl' | 'eraser' | null
+  let penColor='#ef4444', hlColor='rgba(250,204,21,0.40)';
+
+  function resize(){
+    const dpr=Math.max(1,Math.min(window.devicePixelRatio||1,2));
+    canvas.width=innerWidth*dpr; canvas.height=innerHeight*dpr;
+    canvas.style.width=innerWidth+'px'; canvas.style.height=innerHeight+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    redraw();
+  }
+  function drawStroke(s){
+    const oy=scrollY, p=s.points; if(!p.length)return;
+    ctx.lineCap='round'; ctx.lineJoin='round';
+    ctx.strokeStyle=s.color; ctx.lineWidth=s.size;
+    ctx.beginPath(); ctx.moveTo(p[0].x, p[0].y-oy);
+    for(let i=1;i<p.length;i++) ctx.lineTo(p[i].x, p[i].y-oy);
+    if(p.length===1) ctx.lineTo(p[0].x+0.1, p[0].y-oy);
+    ctx.stroke();
+  }
+  function redraw(){
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    for(const s of strokes) drawStroke(s);
+    if(current) drawStroke(current);
+  }
+  let raf=null;
+  addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(()=>{raf=null;redraw();}); },{passive:true});
+  addEventListener('resize',resize);
+
+  const pt=e=>({x:e.clientX, y:e.clientY+scrollY});
+  function eraseAt(p){
+    const r=16, r2=r*r; let changed=false;
+    strokes=strokes.filter(s=>{
+      for(const q of s.points){const dx=q.x-p.x,dy=q.y-p.y; if(dx*dx+dy*dy<=r2){changed=true;return false;}}
+      return true;
+    });
+    if(changed) redraw();
+  }
+  canvas.addEventListener('pointerdown',e=>{
+    if(!tool)return;
+    canvas.setPointerCapture(e.pointerId);
+    if(tool==='eraser'){ eraseAt(pt(e)); return; }
+    current={tool, color: tool==='hl'?hlColor:penColor, size: tool==='hl'?18:3.5, points:[pt(e)]};
+    redraw();
+  });
+  canvas.addEventListener('pointermove',e=>{
+    if(!tool)return;
+    if(tool==='eraser'){ if(e.buttons) eraseAt(pt(e)); return; }
+    if(!current)return;
+    current.points.push(pt(e)); redraw();
+  });
+  function end(){ if(current){strokes.push(current);current=null;} }
+  canvas.addEventListener('pointerup',end);
+  canvas.addEventListener('pointercancel',end);
+
+  function refresh(){
+    canvas.classList.toggle('active', !!tool);
+    canvas.style.touchAction = tool ? 'none' : 'auto';
+    document.querySelectorAll('[data-tool]').forEach(b=>b.classList.toggle('active', b.dataset.tool===(tool||'none')));
+    const showColors=(tool==='pen'||tool==='hl');
+    colorsWrap.style.display=showColors?'flex':'none';
+    penRow.style.display=tool==='pen'?'flex':'none';
+    hlRow.style.display=tool==='hl'?'flex':'none';
+  }
+  function setTool(t){ tool=t; refresh(); }
+  function markActive(sel,btn){ document.querySelectorAll(sel).forEach(x=>x.classList.toggle('active',x===btn)); }
+
+  document.querySelectorAll('[data-tool]').forEach(b=>b.onclick=()=>setTool(b.dataset.tool==='none'?null:b.dataset.tool));
+  document.querySelectorAll('[data-pen]').forEach(b=>b.onclick=()=>{penColor=b.dataset.pen; markActive('[data-pen]',b);});
+  document.querySelectorAll('[data-hl]').forEach(b=>b.onclick=()=>{hlColor=b.dataset.hl; markActive('[data-hl]',b);});
+  document.getElementById('annot-clear').onclick=()=>{ strokes=[]; current=null; redraw(); };
+  document.getElementById('annot-close').onclick=()=>{ bar.style.display='none'; fab.style.display='flex'; setTool(null); };
+  fab.onclick=()=>{ bar.style.display='flex'; fab.style.display='none'; setTool('pen'); };
+  addEventListener('keydown',e=>{ if(e.key==='Escape' && bar.style.display!=='none') setTool(null); });
+
+  resize();
+})();
 </script>
 </body>
 </html>

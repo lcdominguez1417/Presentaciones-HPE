@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>La Resurrección de Jesús · Sesión 10 · Razones para Creer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;--amber:#fb923c;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+
+/* LAYOUT */
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
+
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;
+  display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-brand{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.3px;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;
+  font-size:12px;font-weight:500;letter-spacing:0.2px;flex-shrink:0;}
+@media(max-width:768px){.nav-tag{display:none;}}
+
+/* TYPE ROLES */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.02;
+  letter-spacing:-2px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:20px;font-weight:300;line-height:1.6;color:var(--body);}
+.body{font-size:18px;font-weight:300;line-height:1.65;color:var(--body);}
+.body-sm{font-size:15px;font-weight:300;line-height:1.6;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}
+.strong{font-weight:500;}
+.purple{color:var(--purple);}
+
+/* SCENES */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
+
+/* HERO */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero-empty-tomb.jpg) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.90) 0%,rgba(28,30,84,0.82) 55%,rgba(46,43,140,0.74) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:16ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.7);max-width:64ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+
+/* ACCENT LINE */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
+
+/* SECTION NUMBER watermark */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;
+  font-feature-settings:"tnum";}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s32);}
+
+/* QUOTE */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;
+  color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
+
+/* PORTRAITS */
+.portrait{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:rgba(23,23,23,0.08) 0 15px 35px;}
+.portrait-vis{width:100%;aspect-ratio:3/4;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--s8);
+  background:linear-gradient(160deg,var(--brand-dark) 0%,var(--dark-navy) 100%);
+  position:relative;overflow:hidden;}
+.portrait-img{width:100%;height:100%;object-fit:cover;display:block;}
+.portrait-body{padding:var(--s16) var(--s16) var(--s24);}
+.portrait-name{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.2px;line-height:1.2;}
+.portrait-role{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:0.8px;text-transform:uppercase;margin-top:4px;line-height:1.4;}
+.portrait-tag{display:inline-block;margin-top:var(--s8);
+  background:rgba(83,58,253,0.08);color:var(--purple);
+  border:1px solid rgba(83,58,253,0.25);padding:2px 8px;border-radius:4px;
+  font-size:11px;font-weight:500;}
+
+/* MINI GRID */
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--s24);margin-top:var(--s32);}
+.mini-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:var(--s24);}
+.mini-card.light{background:#fff;border:1px solid var(--border);box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.mini-num{font-family:var(--fm);font-size:22px;font-weight:300;color:var(--purple-light);
+  background:rgba(255,255,255,0.08);width:36px;height:36px;border-radius:4px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:var(--s16);}
+.mini-card.light .mini-num{color:var(--purple);background:var(--purple-dim);}
+.mini-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;line-height:1.3;}
+.mini-card.light .mini-title{color:var(--navy);}
+.mini-body{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.5;}
+.mini-card.light .mini-body{color:var(--body);}
+
+/* VERSE */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.9);line-height:1.5;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);
+  letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
+
+/* IMMERSIVE IMAGE */
+.immersive{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 45px -30px;margin:var(--s48) 0;}
+.immersive img{width:100%;display:block;}
+
+/* STAT ROW */
+.stat-row{display:flex;flex-wrap:wrap;gap:var(--s24);margin-top:var(--s32);}
+.stat-box{flex:1;min-width:180px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s24);}
+.stat-box.light{background:#fff;border:1px solid var(--border);box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.stat-num{font-family:var(--fm);font-size:36px;font-weight:300;color:var(--purple-light);letter-spacing:-1px;}
+.stat-box.light .stat-num{color:var(--purple);}
+.stat-lbl{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);margin-top:8px;line-height:1.4;}
+.stat-box.light .stat-lbl{color:var(--body);}
+
+/* OBJECTIONS */
+.objections{display:flex;flex-direction:column;gap:var(--s32);margin-top:var(--s48);}
+.obj{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  box-shadow:rgba(23,23,23,0.06) 0 3px 6px;}
+.obj-q{background:var(--brand-dark);padding:var(--s24) var(--s32);
+  display:flex;gap:var(--s16);align-items:flex-start;}
+.obj-q-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.obj-q p{font-size:18px;font-weight:300;color:rgba(255,255,255,0.9);
+  font-style:italic;line-height:1.45;}
+.obj-a{padding:var(--s24) var(--s32);background:#fff;}
+.obj-a-label{font-family:var(--fm);font-size:10px;color:var(--purple);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s12);display:block;}
+.obj-a p{font-size:17px;font-weight:300;color:var(--body);line-height:1.6;}
+
+/* SUMMARY TABLE */
+.summary{width:100%;border-collapse:collapse;margin-top:var(--s32);}
+.summary th{text-align:left;font-family:var(--fm);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 var(--s16) var(--s16) 0;color:var(--body);
+  border-bottom:2px solid var(--border);}
+.summary td{font-size:15px;font-weight:300;line-height:1.5;
+  padding:var(--s16) var(--s16) var(--s16) 0;
+  border-bottom:1px solid var(--border);color:var(--body);vertical-align:top;}
+.summary td.num{font-family:var(--fm);color:var(--purple);font-weight:500;white-space:nowrap;}
+.summary td.lbl{font-weight:500;color:var(--navy);}
+
+/* INFO STRIP */
+.info-strip{display:flex;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s48);}
+.info-item{flex:1;min-width:200px;}
+.info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.info-item-val{font-size:17px;font-weight:300;color:var(--navy);line-height:1.4;}
+
+/* DIVIDERS */
+.divider{height:1px;background:var(--border);}
+.divider-dark{height:1px;background:rgba(255,255,255,0.1);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* PILL TAG */
+.pill{display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);
+  color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* CHAPTER ANCHOR */
+[id]{scroll-margin-top:80px;}
+
+/* ══════════ ANNOTATION / MARKER OVERLAY (teaching tool) ══════════ */
+#annot-canvas{position:fixed;inset:0;z-index:400;pointer-events:none;touch-action:auto;}
+#annot-canvas.active{pointer-events:auto;cursor:crosshair;}
+.annot-fab{position:fixed;right:20px;bottom:20px;z-index:500;width:52px;height:52px;border-radius:50%;
+  border:none;cursor:pointer;background:var(--purple);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 28px rgba(83,58,253,0.5);transition:transform 160ms,background 160ms;}
+.annot-fab:hover{transform:scale(1.07);background:var(--purple-hover);}
+.annot-fab svg{width:24px;height:24px;}
+.annot-bar{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:500;
+  display:none;align-items:center;gap:6px;
+  background:rgba(6,27,49,0.94);backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:7px 9px;
+  box-shadow:0 14px 44px rgba(0,0,0,0.45);font-family:var(--f);max-width:calc(100vw - 24px);flex-wrap:wrap;justify-content:center;}
+.annot-btn{width:38px;height:38px;border-radius:9px;border:1px solid transparent;background:transparent;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;
+  transition:background 140ms,border-color 140ms;flex-shrink:0;}
+.annot-btn:hover{background:rgba(255,255,255,0.1);}
+.annot-btn.active{background:var(--purple);border-color:var(--purple);}
+.annot-btn svg{width:20px;height:20px;}
+.annot-sep{width:1px;height:24px;background:rgba(255,255,255,0.16);margin:0 2px;flex-shrink:0;}
+.annot-colors{display:flex;align-items:center;gap:6px;}
+.annot-sw{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,0.35);
+  cursor:pointer;padding:0;transition:transform 120ms,border-color 120ms;flex-shrink:0;}
+.annot-sw:hover{transform:scale(1.1);}
+.annot-sw.active{border-color:#fff;transform:scale(1.15);}
+@media print{#annot-canvas,.annot-fab,.annot-bar{display:none !important;}}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand"><img src="assets/logo-hpe-x-ag.png" alt="Hecho Por Él x Apologética Guatemala" style="height:40px;width:auto;display:block;"></div>
+    <div class="nav-tag">La resurrección de Jesús</div>
+    <div class="nav-pill">Apologética</div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Sesión 10 · Razones para Creer · Apologética Cristiana</div>
+    <h1 class="display r rd1">Los hechos<br>mínimos que<br>cambian todo</h1>
+    <p class="body-lg r rd2">Por los próximos minutos, no pienses como creyente. Piensa como historiador, como detective, como juez que tiene que evaluar evidencia: ¿existe suficiente evidencia histórica para concluir que Jesús de Nazaret resucitó de entre los muertos?</p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">📖 1 Corintios 15:17</span>
+      <span class="hero-badge">👥 15–45 años</span>
+      <span class="hero-badge">🎯 4 hechos mínimos · 500+ testigos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ESTRATEGIA ═══════════════════════════ -->
+<section class="scene" id="estrategia">
+  <div class="wrap">
+    <div class="r">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">La estrategia</span>
+    </div>
+    <h2 class="h1 mt16 r rd1" style="max-width:24ch;">Un consenso que cruza la línea de la fe</h2>
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">Gary Habermas dedicó décadas a revisar la literatura académica sobre la resurrección — miles de trabajos de estudiosos del Nuevo Testamento, muchos escépticos, agnósticos e incluso ateos. Encontró un conjunto de <strong class="strong">hechos mínimos</strong> sobre los que existe consenso académico amplio, sin importar la postura religiosa del erudito.</p>
+        <p class="body mt24" style="max-width:48ch;">La estrategia: si la resurrección es la <em>única</em> explicación que da cuenta de TODOS estos hechos, sin distorsionar ninguno, tenemos razones poderosas para creer que ocurrió — no solo por fe, sino por evidencia.</p>
+      </div>
+      <div class="r rd2">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-habermas.jpg" alt="Gary Habermas" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Gary Habermas</div>
+            <div class="portrait-role">Filósofo e historiador · método de los hechos mínimos</div>
+            <span class="portrait-tag">Consenso, no solo fe</span>
+            <p class="body-sm mt8">"Se trata de identificar los hechos que hasta el erudito más escéptico concede — y preguntar qué explicación da cuenta de todos ellos a la vez."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-grid r rd3">
+      <div class="mini-card light"><div class="mini-num">01</div><div class="mini-title">Historiador</div><div class="mini-body">Examina las fuentes más antiguas, compara testimonios, busca corroboración independiente.</div></div>
+      <div class="mini-card light"><div class="mini-num">02</div><div class="mini-title">Detective</div><div class="mini-body">Reúne la evidencia física y circunstancial antes de proponer una explicación.</div></div>
+      <div class="mini-card light"><div class="mini-num">03</div><div class="mini-title">Juez</div><div class="mini-body">Evalúa qué teoría explica todos los hechos, no solo los convenientes.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ HECHO 01: MUERTE EN LA CRUZ ═══════════════════════════ -->
+<section class="scene dark on-dark" id="hecho-1">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <span class="eyebrow">Hecho mínimo</span>
+      <h2 class="h1 mt16">Jesús murió<br>en la cruz</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Antes de hablar de resurrección hay que establecer algo primero: que hubo un cadáver. Lo confirman fuentes que no tenían ningún interés en defender el cristianismo.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/hecho1-crucifixion.jpg" alt="Ilustración respetuosa y no gráfica de tres cruces en una colina al atardecer, vistas a distancia bajo un cielo dramático">
+    </div>
+
+    <h3 class="h3 mt64 r">Confirmado por fuentes hostiles</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Cuando tus enemigos confirman tu dato, ese dato ya no está en disputa — y eso es exactamente lo que pasó con la crucifixión de Jesús.</p>
+    <div class="mini-grid r rd2">
+      <div class="mini-card"><div class="mini-title">Josefo</div><div class="mini-body">Historiador judío del siglo I que menciona la crucifixión de Jesús bajo Poncio Pilato.</div></div>
+      <div class="mini-card"><div class="mini-title">Tácito</div><div class="mini-body">El historiador romano describe en sus <em>Anales</em> cómo Christus fue ejecutado por Pilato bajo Tiberio.</div></div>
+      <div class="mini-card"><div class="mini-title">El Talmud</div><div class="mini-body">El registro judío afirma que Jesús fue colgado en la víspera de la Pascua.</div></div>
+    </div>
+
+    <h3 class="h3 mt64 r">Lo que concluyó la medicina moderna</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">En 1986, tres médicos —entre ellos un patólogo de la Clínica Mayo— publicaron en el <em>Journal of the American Medical Association</em> un análisis técnico de la muerte de Jesús.</p>
+    <div class="quote r rd2">
+      <p>"El peso de la evidencia histórica y médica indica que Jesús estaba muerto antes de que le infligieran la herida en el costado... las interpretaciones basadas en la suposición de que Jesús no murió en la cruz parecen contradecir el conocimiento médico moderno."</p>
+      <div class="quote-attr">Journal of the American Medical Association, 255:11 (1986)</div>
+    </div>
+
+    <h3 class="h3 mt64 r">Qué era físicamente una crucifixión</h3>
+    <div class="two-col mt32">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-metherell.jpg" alt="Dr. Alexander Metherell" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Dr. Alexander Metherell</div>
+            <div class="portrait-role">Patólogo · doctor en medicina e ingeniería</div>
+            <span class="portrait-tag">Shock hipovolémico</span>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <p class="body">Antes de la cruz, Jesús fue flagelado con un <em>flagrum</em>: tiras de cuero con huesos y metal. A esas alturas ya estaba en shock hipovolémico — pérdida masiva de sangre, corazón acelerado, presión desplomada. Por eso no pudo cargar su propia cruz.</p>
+        <p class="body mt16">Al colgar de los clavos, la cavidad pulmonar se colapsa y la víctima no puede exhalar; para respirar tiene que empujarse hacia arriba sobre los clavos, una y otra vez, hasta que ya no puede — y muere asfixiado.</p>
+      </div>
+    </div>
+    <div class="card-dark mt32 r rd3" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">El detalle que confirma la muerte</span>
+      <p class="body mt12" style="color:rgba(255,255,255,0.75);">A los dos crucificados junto a Jesús les rompieron las piernas para acelerar la asfixia. A Jesús no — los verdugos, profesionales que respondían con su vida si fallaban, ya lo habían constatado muerto. Y por si acaso, le clavaron una lanza en el costado.</p>
+    </div>
+
+    <h3 class="h3 mt64 r">La arqueología lo confirma</h3>
+    <div class="two-col mt24">
+      <div class="r rd1">
+        <p class="body">En 1968, en una cueva de Jerusalén, se encontraron los restos de Yohanan Ben Ha'galgol — víctima real de crucifixión romana del siglo I — con un clavo de siete pulgadas todavía atravesado en el hueso del talón. La física que describe Metherell no es especulación: es lo que la arqueología desenterró.</p>
+      </div>
+      <div class="r rd2">
+        <div class="immersive" style="margin:0;">
+          <img src="assets/hecho1-arqueologia.jpg" alt="Ilustración científica de un hueso de talón antiguo con un clavo de hierro atravesado, estilo diagrama arqueológico">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ HECHO 02-03: TUMBA CONOCIDA Y VACÍA ═══════════════════════════ -->
+<section class="scene" id="hecho-2-3">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">02–03</div>
+      <span class="eyebrow">Hechos mínimos</span>
+      <h2 class="h1 mt16">La tumba,<br>conocida y vacía</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Jesús no solo murió: fue sepultado en un lugar identificable, y días después ese lugar estaba vacío. Ambos datos, juntos, son mucho más difíciles de explicar de lo que parece.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/hecho2-tumba-conocida.jpg" alt="Ilustración de la entrada de una tumba antigua excavada en roca, en un jardín amurallado cerca de Jerusalén, con una gran piedra circular junto a la puerta">
+    </div>
+
+    <h3 class="h3 mt64 r">Sepultado por uno de sus jueces</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Jesús fue sepultado en una tumba propiedad de José de Arimatea, <strong class="strong">miembro del Sanedrín</strong> — la misma corte que lo condenó a muerte. Si los primeros cristianos estuvieran inventando la historia, ¿pondrían a uno de esos jueces bajo una luz favorable? Jamás. Eso no ayuda la narrativa de nadie.</p>
+    <p class="body mt16 r rd2" style="max-width:78ch;">Y hay algo más decisivo: que la tumba fuera conocida importa muchísimo. Los discípulos no habrían podido predicar en Jerusalén, a solo siete semanas de los hechos, que la tumba estaba vacía, si nadie supiera dónde quedaba.</p>
+
+    <div class="two-col mt32">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-robinson.jpg" alt="John A. T. Robinson" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">John A. T. Robinson</div>
+            <div class="portrait-role">Erudito de tendencia liberal · Nuevo Testamento</div>
+            <span class="portrait-tag">Uno de los hechos mejor atestiguados</span>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="quote" style="margin-top:0;">
+          <p>"El entierro de Jesús es uno de los hechos más antiguos y mejor atestiguados acerca de Jesús" — atestiguado en 1 Corintios 15, en los cuatro Evangelios y en la predicación de Hechos.</p>
+          <div class="quote-attr">John A. T. Robinson</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h3 mt64 r">La tumba apareció vacía</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Si el cuerpo de Jesús todavía hubiera estado en esa tumba, el movimiento cristiano habría muerto ese mismo fin de semana. Las autoridades solo tenían que sacar el cuerpo y pasearlo por las calles de Jerusalén. Les habría encantado. No lo hicieron. <strong class="strong">No podían.</strong></p>
+
+    <div class="immersive r rd2">
+      <img src="assets/hecho3-tumba-vacia.jpg" alt="Ilustración del interior de una tumba vacía antigua, con lienzos de lino cuidadosamente doblados y un haz de luz dorada entrando por la puerta">
+    </div>
+
+    <div class="card mt32 r rd3" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Testimonio del enemigo</span>
+      <p class="body mt12">¿Y qué dijeron entonces? Mateo 28 registra que los líderes sobornaron a los soldados para que dijeran que los discípulos robaron el cuerpo. Los enemigos del cristianismo <strong class="strong">no negaron que la tumba estuviera vacía</strong> — la explicaron de otra manera. Eso es testimonio del enemigo: la forma más poderosa de corroboración que existe en historia.</p>
+    </div>
+
+    <h3 class="h3 mt64 r">Los primeros testigos fueron mujeres</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Quienes descubren la tumba vacía son mujeres. Y una de ellas, María Magdalena, es descrita por el propio Lucas como alguien que había estado poseída por demonios.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/hecho3-mujeres-testigos.jpg" alt="Ilustración de tres mujeres con vestimenta judía del siglo primero, de espaldas, ante la entrada de una tumba vacía al amanecer">
+    </div>
+
+    <p class="body mt16 r rd3" style="max-width:78ch;">En el siglo I, el testimonio de una mujer no tenía peso legal en un tribunal judío. Si estás inventando una historia para convencer al mundo, pones a los hombres valientes como primeros testigos. Citar ese testimonio solo lastima el intento de pasar una mentira como verdad. Está ahí porque así ocurrió.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ HECHO 04: APARICIONES Y TESTIGOS ═══════════════════════════ -->
+<section class="scene dark on-dark" id="hecho-4">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <span class="eyebrow">Hecho mínimo</span>
+      <h2 class="h1 mt16">Las apariciones<br>y los testigos</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Un cuerpo muerto y una tumba vacía solo explican qué pasó con el cadáver. Lo que transforma el caso es que múltiples personas, en circunstancias distintas, afirmaron haber visto a Jesús vivo — y sostuvieron esa afirmación hasta la muerte.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/hecho4-testigos.jpg" alt="Ilustración de una gran multitud de personas del siglo primero, de pie juntas bajo luz radiante, con expresión de asombro">
+    </div>
+
+    <h3 class="h3 mt64 r">El credo más antiguo del cristianismo</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Pablo escribió 1 Corintios alrededor del año 55 — a menos de 25 años de la crucifixión. Pero el credo que cita en el capítulo 15 es más antiguo que la carta: "os he enseñado lo que asimismo recibí" es vocabulario técnico en griego para transmitir una tradición oral ya formalizada.</p>
+    <p class="body mt16 r rd2" style="max-width:78ch;">Pablo cuenta en Gálatas que visitó a Pedro y a Santiago en Jerusalén — y en este credo aparecen justamente Pedro y Santiago como testigos. La mayoría de los eruditos concluye que Pablo recibió el credo directamente de ellos: <strong class="strong">apenas tres a cinco años después de la crucifixión.</strong> Eso destruye la idea de una leyenda que creció lentamente.</p>
+
+    <div class="two-col mt32">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-lapide.jpg" alt="Pinchas Lapide" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Pinchas Lapide</div>
+            <div class="portrait-role">Erudito judío del Nuevo Testamento</div>
+            <span class="portrait-tag">Nunca se hizo cristiano</span>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="quote" style="margin-top:0;">
+          <p>"La resurrección pertenece a la categoría de los acontecimientos verdaderamente reales y efectivos, pues sin un hecho de la historia no hay acto de verdadera fe."</p>
+          <div class="quote-attr">Pinchas Lapide</div>
+        </div>
+      </div>
+    </div>
+    <p class="body-sm mt16 r rd3" style="max-width:78ch;">Lapide, examinando la evidencia como historiador, concedió la historicidad de la resurrección sin abandonar su fe judía. Identificó ocho elementos lingüísticos que prueban que Pablo transmite material recibido de los primeros testigos.</p>
+
+    <h3 class="h3 mt64 r">La lista de testigos</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Pedro. Los doce. Más de quinientas personas a la vez — "la mayoría de los cuales vive aún". Eso es un desafío directo: si no me creen, vayan y pregúntenles. Después: Santiago. Todos los apóstoles. Y finalmente Pablo mismo.</p>
+    <div class="stat-row r rd2">
+      <div class="stat-box"><div class="stat-num">1</div><div class="stat-lbl">Pedro, el primer testigo individual</div></div>
+      <div class="stat-box"><div class="stat-num">12</div><div class="stat-lbl">Los apóstoles reunidos</div></div>
+      <div class="stat-box"><div class="stat-num">500+</div><div class="stat-lbl">A la vez, la mayoría vivos aún</div></div>
+      <div class="stat-box"><div class="stat-num">2</div><div class="stat-lbl">Un hermano escéptico y un perseguidor</div></div>
+    </div>
+
+    <h3 class="h3 mt64 r">Los dos testigos que lo cambian todo</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">De toda la lista, dos casos rompen cualquier explicación fácil: un hermano que no creía, y un enemigo que perseguía a muerte.</p>
+    <div class="two-col mt32">
+      <div class="r rd1">
+        <div class="card-dark" style="border-left:3px solid var(--purple-light);">
+          <span class="eyebrow">El escéptico</span>
+          <h4 class="h3 mt8" style="font-size:22px;color:#fff;">Santiago</h4>
+          <p class="body mt16" style="color:rgba(255,255,255,0.75);">Hermano de Jesús. Juan 7:5 dice que durante su ministerio, sus hermanos no creían en Él — era escéptico. Pero después de la resurrección se convierte en líder de la iglesia en Jerusalén, y termina martirizado alrededor del año 62. ¿Qué convierte a un hermano escéptico en un mártir? El Resucitado se le apareció a él (1 Corintios 15:7).</p>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="card-dark" style="border-left:3px solid var(--purple-light);">
+          <span class="eyebrow">El perseguidor</span>
+          <h4 class="h3 mt8" style="font-size:22px;color:#fff;">Pablo</h4>
+          <p class="body mt16" style="color:rgba(255,255,255,0.75);">No era un escéptico neutral — era el enemigo número uno. Arrestaba creyentes. Consintió en la muerte de Esteban. Camino a Damasco tuvo un encuentro que lo dejó ciego tres días: de perseguidor más feroz a defensor más ardiente — y fue ejecutado por esa fe.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="immersive r rd3">
+      <img src="assets/hecho4-damasco.jpg" alt="Ilustración de un viajero derribado por una luz radiante que desciende del cielo en un camino del desierto antiguo">
+    </div>
+
+    <div class="verse-block r rd4">
+      <p>Si la resurrección fuera una alucinación producto del deseo de creer, ¿por qué le ocurrió justamente a las dos personas que <em>no</em> querían creer?</p>
+    </div>
+
+    <h3 class="h3 mt64 r">Y ninguno se retractó</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Los discípulos no murieron por lo que creían que había pasado. Murieron por lo que afirmaban haber visto con sus propios ojos. No hay ni una sola retractación conocida.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ VEREDICTO ═══════════════════════════ -->
+<section class="scene mid" id="veredicto">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="eyebrow">El veredicto</span>
+      <h2 class="h1 mt16" style="max-width:22ch;">¿Cuál es la mejor explicación?</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Cuatro hechos, sostenidos por consenso académico amplio: <strong class="strong">(1)</strong> Jesús murió crucificado. <strong class="strong">(2)</strong> Fue sepultado en una tumba conocida. <strong class="strong">(3)</strong> Esa tumba apareció vacía. <strong class="strong">(4)</strong> Múltiples personas —incluyendo un hermano escéptico y un perseguidor activo— afirmaron verlo vivo, y murieron sosteniéndolo.</p>
+    </div>
+
+    <h3 class="h3 mt32 r">Las alternativas, en un vistazo</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">Los escépticos han propuesto cuatro teorías. El problema estructural que comparten: cada una, en el mejor de los casos, explica <em>un</em> hecho — y deja los otros tres sin explicación.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/alternativas-teorias.jpg" alt="Ilustración conceptual de cuatro piezas de rompecabezas rotas y dispersas, simbolizando cuatro teorías fallidas">
+    </div>
+
+    <div class="mini-grid r rd3">
+      <div class="mini-card light"><div class="mini-title">Desmayo</div><div class="mini-body">Contradice el conocimiento médico moderno (JAMA); un hombre agonizante no se aclama como vencedor.</div></div>
+      <div class="mini-card light"><div class="mini-title">Robo</div><div class="mini-body">¿Murieron torturados por sostener una mentira propia? No explica a Santiago ni a Pablo.</div></div>
+      <div class="mini-card light"><div class="mini-title">Alucinación</div><div class="mini-body">No es experiencia colectiva — y no explica la tumba vacía.</div></div>
+      <div class="mini-card light"><div class="mini-title">Tumba errada</div><div class="mini-body">Las autoridades solo tenían que ir a la correcta. No explica ninguna aparición.</div></div>
+    </div>
+
+    <div class="card mt48 r rd4" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Invertir la carga de la prueba</span>
+      <p class="body mt12">Cuando alguien diga "los discípulos robaron el cuerpo", no empieces refutando. Pregunta: <strong class="strong purple">"¿Qué evidencia del siglo primero tienes a favor de esa teoría?"</strong> La respuesta es: ninguna. La única teoría alternativa que aparece en una fuente del siglo I es "robaron el cuerpo" — y aparece en Mateo, identificada explícitamente como una mentira pagada.</p>
+    </div>
+
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <div class="portrait">
+          <div class="portrait-vis" style="padding:0;">
+            <img src="assets/portrait-flew.jpg" alt="Antony Flew" class="portrait-img">
+          </div>
+          <div class="portrait-body">
+            <div class="portrait-name">Antony Flew</div>
+            <div class="portrait-role">Filósofo · durante décadas, el ateo más conocido del mundo</div>
+            <span class="portrait-tag">Concedió el punto siendo ateo</span>
+          </div>
+        </div>
+      </div>
+      <div class="r rd2">
+        <div class="quote" style="margin-top:0;">
+          <p>"La tumba estaba vacía."</p>
+          <div class="quote-attr">Antony Flew · debate con Gary Habermas</div>
+        </div>
+        <p class="body-sm mt8">Reconoció que ninguna explicación naturalista daba cuenta adecuada de los hechos.</p>
+      </div>
+    </div>
+
+    <p class="body-lg mt48 r rd1" style="max-width:78ch;">La resurrección explica todo a la vez: la tumba vacía, las apariciones múltiples, la conversión de Santiago y de Pablo, el nacimiento de la iglesia precisamente en Jerusalén —el único lugar donde los hechos podían verificarse o refutarse—, y el cambio del día de adoración del sábado al primer día de la semana en judíos devotos.</p>
+    <p class="body strong mt16 r rd2" style="max-width:78ch;color:var(--navy);">Una religión entera fue construida sobre este evento, en el lugar exacto donde era más fácil desmentirlo. Y nadie pudo desmentirlo.</p>
+
+    <div class="verse-block mt48 r rd3" style="background:rgba(234,34,97,0.06);border-color:rgba(234,34,97,0.2);">
+      <p style="color:var(--navy);">"Y si Cristo no resucitó, vuestra fe es vana; aún estáis en vuestros pecados."</p>
+      <span class="verse-ref" style="color:var(--ruby);">1 Corintios 15:17 (RVR1960)</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ OBJECIONES ═══════════════════════════ -->
+<section class="scene" id="objeciones">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="eyebrow">Expediente de objeciones</span>
+      <h2 class="h1 mt16" style="max-width:20ch;">Objeciones difíciles</h2>
+      <p class="body-lg mt24" style="max-width:60ch;">Cinco preguntas que cualquier persona razonable va a hacer — y cómo responderlas con honestidad.</p>
+    </div>
+
+    <div class="objections r rd1">
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>La resurrección es un mito copiado de religiones paganas (Osiris, Mitra, Adonis).</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Esas deidades son "figuras nebulosas de un pasado imaginario": mitificaciones de los ciclos de la naturaleza, sin personas, lugares ni fechas verificables. El dato decisivo es cronológico: el primer paralelo real de un dios moribundo y resucitado no aparece hasta el año 150 d.C. — más de un siglo <strong class="strong">después</strong> del origen del cristianismo. El único caso precristiano, Osiris, ni siquiera vuelve a la vida física.</p>
+          <div class="two-col mt24">
+            <div>
+              <div class="portrait">
+                <div class="portrait-vis" style="padding:0;">
+                  <img src="assets/portrait-metzger.jpg" alt="Bruce Metzger" class="portrait-img">
+                </div>
+                <div class="portrait-body">
+                  <div class="portrait-name">Bruce Metzger</div>
+                  <div class="portrait-role">Erudito bíblico · crítica textual</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="quote" style="margin-top:0;">
+                <p>Describe a esas deidades como "figuras nebulosas de un pasado imaginario".</p>
+                <div class="quote-attr">Bruce Metzger</div>
+              </div>
+            </div>
+          </div>
+          <p class="body-sm mt16">Y aunque existieran paralelos previos, eso no probaría copia: Star Trek precedió al transbordador espacial, y eso no significa que los informes de la NASA se copiaran de Star Trek.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>Los discípulos solo tuvieron alucinaciones.</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Las alucinaciones son experiencias individuales y privadas. No le ocurren a más de quinientas personas simultáneamente, ni a gente en circunstancias completamente distintas: María llorando en el jardín, dos caminando a Emaús, pescadores en el lago, los once en un aposento. Además, no explican la tumba vacía — y si tantos hubieran alucinado, se habrían curado con una simple visita a la tumba ocupada.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>¿Y los milagros de otras religiones?</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>No todas las afirmaciones milagrosas tienen el mismo respaldo. Lo que distingue a la resurrección es la convergencia de cinco cosas a la vez: testigos múltiples e independientes, escritura temprana dentro de la generación de los testigos, confirmación desde fuentes hostiles, conversiones inexplicables de un escéptico y un perseguidor, y el surgimiento de la iglesia exactamente donde los hechos podían refutarse.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>La gente de esa época era supersticiosa.</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Sabían perfectamente que los muertos no resucitan — por eso los discípulos estaban escondidos y desesperados después de la crucifixión.</p>
+          <div class="two-col mt24">
+            <div>
+              <div class="portrait">
+                <div class="portrait-vis" style="padding:0;">
+                  <img src="assets/portrait-wright.jpg" alt="N. T. Wright" class="portrait-img">
+                </div>
+                <div class="portrait-body">
+                  <div class="portrait-name">N. T. Wright</div>
+                  <div class="portrait-role">Obispo anglicano · erudito del Nuevo Testamento</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="quote" style="margin-top:0;">
+                <p>Documenta que los judíos creían en una resurrección <strong class="strong">general y al final de la historia</strong>, no en una resurrección individual antes del fin.</p>
+                <div class="quote-attr">N. T. Wright</div>
+              </div>
+            </div>
+          </div>
+          <p class="body-sm mt16">La resurrección de Jesús no era algo que estuvieran esperando: los sorprendió a ellos primero.</p>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">
+          <span class="obj-q-icon">❓</span>
+          <p>Concedo que pasó algo extraordinario — pero eso no prueba que Jesús sea Dios.</p>
+        </div>
+        <div class="obj-a">
+          <span class="obj-a-label">Respuesta</span>
+          <p>Es una objeción honesta. Lo que hemos establecido es que los cuatro hechos mínimos son sólidos y que la resurrección es la mejor explicación. Es un paso enorme, pero es un paso. Un hombre que anunció por adelantado su propia muerte y resurrección, y luego resucitó, no queda en la categoría de "maestro interesante". La resurrección es la credencial que respalda todo lo demás que Jesús afirmó sobre sí mismo. La Sesión 11 toma las teorías alternativas una por una y enfrenta el problema del mal. La Sesión 12 llega a la pregunta que ninguna evidencia puede responder por ti: ¿y qué si es verdad?</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ RESUMEN ═══════════════════════════ -->
+<section class="scene mid" id="resumen">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="eyebrow">Resumen del expediente</span>
+      <h2 class="h1 mt16" style="max-width:20ch;">Cuatro hechos, un vistazo</h2>
+    </div>
+
+    <div class="r rd1" style="overflow-x:auto;">
+      <span class="pill">Los hechos mínimos</span>
+      <table class="summary">
+        <thead><tr><th style="width:14%;">Hecho</th><th>Contenido</th></tr></thead>
+        <tbody>
+          <tr><td class="num">#1</td><td class="lbl">Jesús murió crucificado — confirmado por Josefo, Tácito, el Talmud y el JAMA.</td></tr>
+          <tr><td class="num">#2</td><td class="lbl">Fue sepultado en la tumba conocida de José de Arimatea, miembro del Sanedrín.</td></tr>
+          <tr><td class="num">#3</td><td class="lbl">La tumba apareció vacía — y los enemigos no la negaron, la explicaron de otro modo.</td></tr>
+          <tr><td class="num">#4</td><td class="lbl">Múltiples testigos lo vieron vivo, incluidos un hermano escéptico y un perseguidor.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="r rd2 mt64" style="overflow-x:auto;">
+      <span class="pill">Por qué fallan las alternativas</span>
+      <table class="summary">
+        <thead><tr><th style="width:18%;">Teoría</th><th>Por qué falla</th></tr></thead>
+        <tbody>
+          <tr><td class="num">Desmayo</td><td class="lbl">Contradice el conocimiento médico moderno (JAMA); un hombre así no se aclama como vencedor.</td></tr>
+          <tr><td class="num">Robo</td><td class="lbl">¿Murieron por sostener una mentira propia? No explica a Santiago ni a Pablo.</td></tr>
+          <tr><td class="num">Alucinación</td><td class="lbl">No es experiencia colectiva — y no explica la tumba vacía.</td></tr>
+          <tr><td class="num">Tumba errada</td><td class="lbl">Las autoridades solo tenían que ir a la correcta. No explica las apariciones.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CIERRE ═══════════════════════════ -->
+<section class="scene dark on-dark" id="cierre">
+  <div class="wrap">
+    <div class="immersive r" style="box-shadow:none;">
+      <img src="assets/cierre-dos-caminos.jpg" alt="Ilustración de un haz de luz dorada saliendo de una tumba vacía y dividiéndose en dos caminos sobre un paisaje al amanecer">
+    </div>
+
+    <div class="sec-header r rd1" style="padding-top:0;">
+      <span class="eyebrow">Cierre</span>
+      <h2 class="h1 mt16" style="max-width:22ch;">La moneda tiene dos caras</h2>
+    </div>
+    <p class="body-lg r rd2" style="max-width:70ch;">Pablo fue brutalmente claro sobre lo que está en juego: si Cristo no resucitó, todo lo que había predicado no servía para nada. Pone toda su religión sobre la mesa. Ningún fundador de religión hace eso. <strong class="strong" style="color:#fff;">La resurrección no es un adorno del evangelio. Es el evangelio.</strong></p>
+    <p class="body-lg mt16 r rd3" style="max-width:70ch;">Pero esa moneda tiene otra cara. Si Cristo <strong class="strong" style="color:#fff;">sí</strong> resucitó, todo cambia. Cambia cómo vives hoy. Cambia cómo enfrentas la muerte. Cambia cómo hablas con alguien que no cree.</p>
+    <p class="body mt24 r rd4" style="max-width:64ch;">No se trata de saltar al vacío. La evidencia histórica apunta en una sola dirección. El paso de los hechos a la fe personal no es un salto a la oscuridad — es un paso confiado sobre terreno sólido.</p>
+
+    <div class="verse-block r rd5">
+      <p>"La resurrección pertenece a la categoría de los acontecimientos verdaderamente reales, porque sin un hecho de la historia no hay acto de verdadera fe."</p>
+      <span class="verse-ref">Pinchas Lapide — erudito judío que nunca se hizo cristiano</span>
+    </div>
+    <div class="verse-block mt24 r rd1" style="background:rgba(234,34,97,0.12);border-color:rgba(234,34,97,0.3);">
+      <p>"Y si Cristo no resucitó, vuestra fe es vana; aún estáis en vuestros pecados."</p>
+      <span class="verse-ref" style="color:#ff9dc0;">1 Corintios 15:17 (RVR1960)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="scene deeper on-dark" id="preguntas">
+  <div class="wrap">
+    <div class="r">
+      <span class="eyebrow">¿Preguntas?</span>
+      <h3 class="h2 mt16">¿Hay alguna objeción<br>que hayas escuchado<br>y quieras trabajar?</h3>
+      <p class="body-lg mt24" style="max-width:60ch;">Sesión 10 · Curso de Apologética Básica.</p>
+    </div>
+
+    <div class="info-strip r rd1">
+      <div class="info-item">
+        <div class="info-item-label">Texto base</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">1 Corintios 15:17 · RVR1960</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Serie</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Razones para Creer · Apologética Cristiana</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ MARCADOR / PIZARRÓN (herramienta de clase) ══════════ -->
+<canvas id="annot-canvas"></canvas>
+
+<button id="annot-fab" class="annot-fab" title="Marcador / pizarrón" aria-label="Abrir marcador">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 20l4.5-1 9-9-3.5-3.5-9 9z"/><path d="M13 6.5l3.5 3.5"/>
+  </svg>
+</button>
+
+<div id="annot-bar" class="annot-bar" role="toolbar" aria-label="Herramientas de marcador">
+  <button class="annot-btn" data-tool="none" title="Puntero — interactuar con la página" aria-label="Puntero">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l6 15 2-6 6-2z"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="pen" title="Marcador / lápiz" aria-label="Marcador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4.5-1 9-9-3.5-3.5-9 9z"/><path d="M13 6.5l3.5 3.5"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="hl" title="Resaltador" aria-label="Resaltador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h6"/><path d="M8 17l8-8 3 3-8 8H8z"/><path d="M14 7l3 3"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="eraser" title="Borrador" aria-label="Borrador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h11"/><path d="M5 15l6-6 7 7-4 4H9z"/></svg>
+  </button>
+  <span id="annot-colors-wrap" style="display:flex;align-items:center;gap:6px;">
+    <span class="annot-sep"></span>
+    <span class="annot-colors" id="annot-pen-colors">
+      <button class="annot-sw active" style="background:#ef4444" data-pen="#ef4444" aria-label="Rojo"></button>
+      <button class="annot-sw" style="background:#533afd" data-pen="#533afd" aria-label="Morado"></button>
+      <button class="annot-sw" style="background:#ffffff" data-pen="#ffffff" aria-label="Blanco"></button>
+      <button class="annot-sw" style="background:#22d3ee" data-pen="#22d3ee" aria-label="Cian"></button>
+    </span>
+    <span class="annot-colors" id="annot-hl-colors" style="display:none">
+      <button class="annot-sw active" style="background:#facc15" data-hl="rgba(250,204,21,0.40)" aria-label="Amarillo"></button>
+      <button class="annot-sw" style="background:#4ade80" data-hl="rgba(74,222,128,0.40)" aria-label="Verde"></button>
+      <button class="annot-sw" style="background:#f472b6" data-hl="rgba(244,114,182,0.45)" aria-label="Rosa"></button>
+    </span>
+  </span>
+  <span class="annot-sep"></span>
+  <button class="annot-btn" id="annot-clear" title="Borrar todo" aria-label="Borrar todo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"/><path d="M9 7V5h6v2"/><path d="M7 7l1 12h8l1-12"/></svg>
+  </button>
+  <button class="annot-btn" id="annot-close" title="Cerrar marcador" aria-label="Cerrar marcador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+
+<script>
+function onScroll(){
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('bar').style.width=Math.min(pct,100)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+(function(){
+  const canvas=document.getElementById('annot-canvas');
+  const ctx=canvas.getContext('2d');
+  const bar=document.getElementById('annot-bar');
+  const fab=document.getElementById('annot-fab');
+  const colorsWrap=document.getElementById('annot-colors-wrap');
+  const penRow=document.getElementById('annot-pen-colors');
+  const hlRow=document.getElementById('annot-hl-colors');
+
+  let strokes=[], current=null, tool=null;
+  let penColor='#ef4444', hlColor='rgba(250,204,21,0.40)';
+
+  function resize(){
+    const dpr=Math.max(1,Math.min(window.devicePixelRatio||1,2));
+    canvas.width=innerWidth*dpr; canvas.height=innerHeight*dpr;
+    canvas.style.width=innerWidth+'px'; canvas.style.height=innerHeight+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    redraw();
+  }
+  function drawStroke(s){
+    const oy=scrollY, p=s.points; if(!p.length)return;
+    ctx.lineCap='round'; ctx.lineJoin='round';
+    ctx.strokeStyle=s.color; ctx.lineWidth=s.size;
+    ctx.beginPath(); ctx.moveTo(p[0].x, p[0].y-oy);
+    for(let i=1;i<p.length;i++) ctx.lineTo(p[i].x, p[i].y-oy);
+    if(p.length===1) ctx.lineTo(p[0].x+0.1, p[0].y-oy);
+    ctx.stroke();
+  }
+  function redraw(){
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    for(const s of strokes) drawStroke(s);
+    if(current) drawStroke(current);
+  }
+  let raf=null;
+  addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(()=>{raf=null;redraw();}); },{passive:true});
+  addEventListener('resize',resize);
+
+  const pt=e=>({x:e.clientX, y:e.clientY+scrollY});
+  function eraseAt(p){
+    const r=16, r2=r*r; let changed=false;
+    strokes=strokes.filter(s=>{
+      for(const q of s.points){const dx=q.x-p.x,dy=q.y-p.y; if(dx*dx+dy*dy<=r2){changed=true;return false;}}
+      return true;
+    });
+    if(changed) redraw();
+  }
+  canvas.addEventListener('pointerdown',e=>{
+    if(!tool)return;
+    canvas.setPointerCapture(e.pointerId);
+    if(tool==='eraser'){ eraseAt(pt(e)); return; }
+    current={tool, color: tool==='hl'?hlColor:penColor, size: tool==='hl'?18:3.5, points:[pt(e)]};
+    redraw();
+  });
+  canvas.addEventListener('pointermove',e=>{
+    if(!tool)return;
+    if(tool==='eraser'){ if(e.buttons) eraseAt(pt(e)); return; }
+    if(!current)return;
+    current.points.push(pt(e)); redraw();
+  });
+  function end(){ if(current){strokes.push(current);current=null;} }
+  canvas.addEventListener('pointerup',end);
+  canvas.addEventListener('pointercancel',end);
+
+  function refresh(){
+    canvas.classList.toggle('active', !!tool);
+    canvas.style.touchAction = tool ? 'none' : 'auto';
+    document.querySelectorAll('[data-tool]').forEach(b=>b.classList.toggle('active', b.dataset.tool===(tool||'none')));
+    const showColors=(tool==='pen'||tool==='hl');
+    colorsWrap.style.display=showColors?'flex':'none';
+    penRow.style.display=tool==='pen'?'flex':'none';
+    hlRow.style.display=tool==='hl'?'flex':'none';
+  }
+  function setTool(t){ tool=t; refresh(); }
+  function markActive(sel,btn){ document.querySelectorAll(sel).forEach(x=>x.classList.toggle('active',x===btn)); }
+
+  document.querySelectorAll('[data-tool]').forEach(b=>b.onclick=()=>setTool(b.dataset.tool==='none'?null:b.dataset.tool));
+  document.querySelectorAll('[data-pen]').forEach(b=>b.onclick=()=>{penColor=b.dataset.pen; markActive('[data-pen]',b);});
+  document.querySelectorAll('[data-hl]').forEach(b=>b.onclick=()=>{hlColor=b.dataset.hl; markActive('[data-hl]',b);});
+  document.getElementById('annot-clear').onclick=()=>{ strokes=[]; current=null; redraw(); };
+  document.getElementById('annot-close').onclick=()=>{ bar.style.display='none'; fab.style.display='flex'; setTool(null); };
+  fab.onclick=()=>{ bar.style.display='flex'; fab.style.display='none'; setTool('pen'); };
+  addEventListener('keydown',e=>{ if(e.key==='Escape' && bar.style.display!=='none') setTool(null); });
+
+  resize();
+})();
+</script>
+</body>
+</html>

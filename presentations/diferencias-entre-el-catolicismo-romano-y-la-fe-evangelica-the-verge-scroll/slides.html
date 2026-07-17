@@ -2,539 +2,911 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Catolicismo y Fe Evangélica — 7 diferencias | The Verge Edition</title>
+<title>Catolicismo y fe evangélica · 7 diferencias · Razones para Creer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --canvas:#131313; --canvas-up:#1b1b1b; --slate:#2d2d2d; --hairline:#313131; --hairline-soft:rgba(255,255,255,0.14);
-    --ink:#ffffff; --ink-muted:#e9e9e9; --ink-dim:#949494; --ink-on-tile:#000000;
-    --mint:#3cffd0; --mint-border:#309875; --ultraviolet:#5200ff; --purple-rule:#3d00bf;
-    --yellow:#ffe600; --pink:#ff4fa3; --orange:#ff6b35; --link-hover:#3860be; --focus:#1eaedb;
-    --display:'Anton',Impact,sans-serif; --sans:'Space Grotesk',Helvetica,Arial,sans-serif; --mono:'Space Mono','Courier New',monospace;
-    --s8:8px; --s16:16px; --s24:24px; --s32:32px; --s48:48px; --s64:64px; --s96:96px; --s128:128px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{font-family:var(--sans);background:var(--canvas);color:var(--ink);}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 var(--s64);}
-  @media (max-width:768px){.wrap{padding:0 var(--s24);}}
+:root{
+  --purple:#533afd;--purple-hover:#4434d4;--purple-deep:#2e2b8c;
+  --purple-light:#b9b9f9;--purple-dim:rgba(83,58,253,0.08);
+  --navy:#061b31;--brand-dark:#1c1e54;--dark-navy:#0d253d;
+  --white:#ffffff;--body:#64748d;--label:#273951;--border:#e5edf5;
+  --ruby:#ea2261;--magenta:#f96bee;--green:#15be53;--amber:#fb923c;
+  --sh-blue:rgba(50,50,93,0.25);--sh-black:rgba(0,0,0,0.10);
+  --f:Inter,'SF Pro Display',-apple-system,sans-serif;
+  --fm:'IBM Plex Mono','SFMono-Regular',monospace;
+  --s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;
+  --s48:48px;--s64:64px;--s96:96px;--s128:128px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);background:#fff;color:var(--navy);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
 
-  /* progress + nav */
-  #progress{position:fixed;top:0;left:0;height:3px;background:var(--mint);width:0%;z-index:100;transition:width 80ms linear;}
-  .topnav{position:sticky;top:0;z-index:90;background:rgba(19,19,19,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--hairline);height:64px;display:flex;align-items:center;}
-  .topnav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
-  .brandmark{display:flex;align-items:center;}
-  .brandmark img{height:40px;width:auto;display:block;}
-  .nav-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-dim);}
+/* LAYOUT */
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--s48);}
+@media(max-width:768px){.wrap{padding:0 var(--s24);}}
+.mt8{margin-top:var(--s8);}.mt16{margin-top:var(--s16);}.mt24{margin-top:var(--s24);}
+.mt32{margin-top:var(--s32);}.mt48{margin-top:var(--s48);}.mt64{margin-top:var(--s64);}
 
-  /* type roles */
-  .eyebrow-whisper{font-family:var(--sans);font-weight:300;font-size:18px;line-height:1.2;letter-spacing:1.9px;text-transform:uppercase;color:var(--ink-dim);}
-  .mono-label{font-family:var(--mono);font-weight:600;font-size:12px;line-height:1.3;letter-spacing:1.5px;text-transform:uppercase;}
-  .mono-micro{font-family:var(--mono);font-weight:500;font-size:11px;line-height:1.3;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-dim);}
-  .display-hero{font-family:var(--display);font-weight:400;font-size:80px;line-height:0.98;letter-spacing:0.3px;}
-  .display-section{font-family:var(--display);font-weight:400;font-size:40px;line-height:1.04;letter-spacing:0.2px;}
-  .headline-card{font-family:var(--sans);font-weight:700;font-size:25px;line-height:1.28;letter-spacing:-0.2px;}
-  .body{font-family:var(--sans);font-weight:500;font-size:17px;line-height:1.6;}
-  .body-sm{font-family:var(--sans);font-weight:400;font-size:15px;line-height:1.55;color:var(--ink-muted);}
-  @media (max-width:560px){.display-hero{font-size:48px;} .display-section{font-size:30px;}}
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--purple);width:0%;z-index:300;transition:width 60ms linear;}
 
-  section.scene{padding:var(--s96) 0;}
-  .hero{padding-top:var(--s64);}
-  .hero .body{margin-top:var(--s24);max-width:46ch;color:var(--ink-muted);}
-  .scene.dark p.body{max-width:58ch;}
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;
+  display:flex;align-items:center;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-brand{font-size:15px;font-weight:500;color:var(--navy);letter-spacing:-0.3px;}
+.nav-tag{font-family:var(--fm);font-size:11px;color:var(--body);letter-spacing:1.2px;text-transform:uppercase;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw;}
+.nav-pill{background:var(--purple);color:#fff;padding:6px 14px;border-radius:4px;
+  font-size:12px;font-weight:500;letter-spacing:0.2px;flex-shrink:0;}
+@media(max-width:768px){.nav-tag{display:none;}}
 
-  /* StoryStream */
-  .storystream{position:relative;padding-top:var(--s8);}
-  .rail-line{position:absolute;left:43px;top:12px;bottom:12px;width:1px;background:var(--hairline-soft);}
-  .story-item{position:relative;display:grid;grid-template-columns:88px 1fr;gap:var(--s24);margin-bottom:var(--s64);}
-  .story-item:last-child{margin-bottom:0;}
-  .rail-mark{display:flex;flex-direction:column;align-items:center;padding-top:var(--s32);}
-  .rail-dot{width:10px;height:10px;border-radius:50%;background:var(--mint);margin-bottom:var(--s8);flex-shrink:0;border:2px solid var(--canvas);}
-  .rail-ts{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:1.1px;text-transform:uppercase;color:var(--ink-dim);text-align:center;line-height:1.4;}
-  @media (max-width:680px){
-    .story-item{grid-template-columns:1fr;gap:var(--s16);}
-    .rail-line{display:none;}
-    .rail-mark{flex-direction:row;justify-content:flex-start;padding-top:0;gap:var(--s8);}
-  }
+/* TYPE ROLES */
+.eyebrow{font-family:var(--fm);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);}
+.on-dark .eyebrow,.on-dark.eyebrow{color:var(--purple-light);}
+.display{font-size:clamp(40px,6vw,80px);font-weight:300;line-height:1.02;
+  letter-spacing:-2px;color:var(--navy);}
+.h1{font-size:clamp(32px,5vw,64px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--navy);}
+.h2{font-size:clamp(26px,4vw,48px);font-weight:300;line-height:1.08;letter-spacing:-1px;color:var(--navy);}
+.h3{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:1.1;letter-spacing:-0.6px;color:var(--navy);}
+.body-lg{font-size:20px;font-weight:300;line-height:1.6;color:var(--body);}
+.body{font-size:18px;font-weight:300;line-height:1.65;color:var(--body);}
+.body-sm{font-size:15px;font-weight:300;line-height:1.6;color:var(--body);}
+.on-dark .display,.on-dark .h1,.on-dark .h2,.on-dark .h3{color:#fff;}
+.on-dark .body-lg,.on-dark .body,.on-dark .body-sm{color:rgba(255,255,255,0.6);}
+.italic{font-style:italic;}
+.strong{font-weight:500;}
+.purple{color:var(--purple);}
 
-  .tile{border-radius:24px;padding:var(--s48);color:var(--ink-on-tile);}
-  .tile.on-dark{color:var(--ink);}
-  .tile .mono-label{opacity:0.75;display:flex;align-items:center;gap:var(--s8);}
-  .tile.on-dark .mono-label{opacity:0.85;}
-  .tile .display-section{margin-top:var(--s16);max-width:18ch;}
-  .tile .intro-line{margin-top:var(--s16);max-width:48ch;opacity:0.85;}
-  @media (max-width:560px){.tile{padding:var(--s24);}}
+/* SCENES */
+.scene{padding:var(--s96) 0;}
+.scene.mid{background:#f6f9fc;}
+.scene.dark{background:var(--brand-dark);}
+.scene.deeper{background:var(--dark-navy);}
 
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--s32);margin-top:var(--s48);}
-  @media (max-width:680px){.compare{grid-template-columns:1fr;}}
-  .compare .col-head{margin-bottom:var(--s16);}
-  .compare ul{list-style:none;}
-  .compare li{font-family:var(--sans);font-size:15px;font-weight:500;line-height:1.5;padding:var(--s8) 0;border-top:1px solid rgba(0,0,0,0.14);}
-  .tile.on-dark .compare li{border-top:1px solid rgba(255,255,255,0.2);}
-  .compare li:first-child{border-top:none;}
+/* HERO */
+.hero{min-height:100vh;padding:var(--s96) 0;
+  background:url(assets/hero.png) center/cover no-repeat;
+  position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(6,27,49,0.88) 0%,rgba(28,30,84,0.78) 55%,rgba(46,43,140,0.68) 100%);
+  pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:3;}
+.hero .eyebrow{color:var(--purple-light);margin-bottom:var(--s24);}
+.hero .display{color:#fff;max-width:16ch;margin-bottom:var(--s32);}
+.hero .body-lg{color:rgba(255,255,255,0.6);max-width:62ch;margin-bottom:var(--s48);}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s12);}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--s8);
+  background:rgba(255,255,255,0.08);border:1px solid rgba(185,185,249,0.3);
+  color:var(--purple-light);padding:8px 16px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
 
-  .verse{margin-top:var(--s48);border-left:3px solid currentColor;padding-left:var(--s24);font-style:italic;font-size:18px;line-height:1.45;}
-  .verse .ref{margin-top:var(--s8);font-style:normal;}
+/* ACCENT LINE */
+.accent-bar{width:48px;height:3px;background:var(--purple);border-radius:2px;margin-bottom:var(--s32);}
+.on-dark .accent-bar{background:var(--purple-light);}
 
-  .defend{margin-top:var(--s32);border-radius:16px;padding:var(--s24);background:rgba(0,0,0,0.1);border:1px solid rgba(0,0,0,0.16);}
-  .tile.on-dark .defend{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);}
-  .defend .mono-label{opacity:0.7;margin-bottom:var(--s8);display:block;}
-  .defend p{font-family:var(--sans);font-size:15px;font-weight:500;line-height:1.55;}
+/* SECTION NUMBER watermark */
+.sec-num{font-family:var(--fm);font-size:clamp(100px,18vw,200px);font-weight:300;
+  line-height:0.9;color:rgba(83,58,253,0.06);letter-spacing:-6px;
+  position:absolute;top:-24px;left:-24px;pointer-events:none;user-select:none;
+  font-feature-settings:"tnum";}
+.on-dark .sec-num{color:rgba(185,185,249,0.07);}
+.sec-header{position:relative;padding-top:var(--s32);margin-bottom:var(--s64);}
 
-  /* deep-dive (extra) tile */
-  .tile.slate{background:var(--slate);border:1px solid var(--hairline-soft);}
-  .tile.slate .mono-label{color:var(--mint);opacity:1;}
-  .rail-dot.outline{background:transparent;border:2px solid var(--mint);}
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:var(--s32);
+  box-shadow:var(--sh-blue) 0 30px 45px -30px,var(--sh-black) 0 18px 36px -18px;}
+.card-dark{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:var(--s32);}
 
-  .deepdive-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:var(--s48);margin-top:var(--s32);align-items:start;}
-  @media (max-width:768px){.deepdive-grid{grid-template-columns:1fr;}}
-  .illo{width:100%;border-radius:16px;border:1px solid var(--hairline-soft);display:block;}
-  .illo-caption{margin-top:var(--s8);color:var(--ink-dim);}
+/* QUOTE */
+.quote{border-left:3px solid var(--purple);padding:var(--s24) var(--s32);
+  background:var(--purple-dim);border-radius:0 8px 8px 0;margin:var(--s48) 0;}
+.on-dark .quote{background:rgba(185,185,249,0.08);border-left-color:var(--purple-light);}
+.quote p{font-size:20px;font-weight:300;font-style:italic;line-height:1.5;color:var(--navy);}
+.on-dark .quote p{color:rgba(255,255,255,0.9);}
+.quote-attr{margin-top:var(--s12);font-family:var(--fm);font-size:11px;
+  color:var(--body);letter-spacing:1px;text-transform:uppercase;}
+.on-dark .quote-attr{color:rgba(255,255,255,0.4);}
 
-  .ot-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s16);margin-top:var(--s24);}
-  @media (max-width:560px){.ot-breakdown{grid-template-columns:1fr;}}
-  .ot-breakdown .part{border-top:1px solid var(--hairline-soft);padding-top:var(--s8);}
-  .ot-breakdown .part .mono-label{display:block;margin-bottom:var(--s8);font-size:11px;}
-  .ot-breakdown .part .body-sm{color:var(--ink-muted);}
+/* MINI GRID */
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s24);margin-top:var(--s32);}
+.mini-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:var(--s24);}
+.mini-num{font-family:var(--fm);font-size:22px;font-weight:300;color:var(--purple-light);
+  background:rgba(255,255,255,0.08);width:36px;height:36px;border-radius:4px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:var(--s16);}
+.mini-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;line-height:1.3;}
+.mini-body{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.5;}
 
-  .section-label{margin-top:var(--s48);display:block;}
-  .criteria-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s16);margin-top:var(--s24);}
-  @media (max-width:900px){.criteria-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:560px){.criteria-grid{grid-template-columns:1fr;}}
-  .criterion{border-top:1px solid var(--hairline-soft);padding-top:var(--s8);}
-  .criterion .mono-label{font-size:11px;display:block;margin-bottom:var(--s8);}
-  .criterion .body-sm{color:var(--ink-muted);}
+/* TERM / COMPARE BOX (Enseñanza católica vs. Respuesta evangélica) */
+.term-box{border:1px solid rgba(83,58,253,0.3);border-left:4px solid var(--purple);
+  background:rgba(83,58,253,0.05);border-radius:8px;padding:var(--s24) var(--s32);margin-top:var(--s32);}
+.on-dark .term-box{background:rgba(185,185,249,0.06);border-color:rgba(185,185,249,0.35);}
+.term-badge{font-family:var(--fm);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  background:rgba(83,58,253,0.12);color:var(--purple);border:1px solid rgba(83,58,253,0.3);
+  padding:3px 10px;border-radius:4px;display:inline-block;}
+.on-dark .term-badge{background:rgba(185,185,249,0.14);color:var(--purple-light);border-color:rgba(185,185,249,0.35);}
+.term-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s16);margin-top:var(--s24);}
+@media(max-width:640px){.term-grid{grid-template-columns:1fr;}}
+.term-cell{border-radius:6px;padding:var(--s16);}
+.term-cell.q{background:rgba(234,34,97,0.06);border:1px solid rgba(234,34,97,0.2);}
+.term-cell.a{background:rgba(21,190,83,0.08);border:1px solid rgba(21,190,83,0.25);}
+.term-cell-label{font-family:var(--fm);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;display:block;}
+.term-cell ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.term-cell li{font-size:15px;font-weight:300;line-height:1.5;color:var(--body);padding-left:14px;position:relative;}
+.term-cell li::before{content:'—';position:absolute;left:0;color:var(--body);opacity:0.5;}
 
-  .timeline-strip{display:flex;gap:var(--s16);margin-top:var(--s24);padding-top:var(--s24);border-top:1px solid var(--hairline-soft);}
-  .timeline-strip .point{flex:1;}
-  .timeline-strip .point .mono-micro{display:block;margin-bottom:var(--s8);color:var(--mint);}
-  @media (max-width:680px){.timeline-strip{flex-direction:column;gap:var(--s16);}}
+/* VERSE */
+.verse-block{margin-top:var(--s48);padding:var(--s32);border-radius:8px;
+  background:rgba(83,58,253,0.12);border:1px solid rgba(83,58,253,0.25);}
+.verse-block p{font-size:20px;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.9);line-height:1.5;}
+.verse-ref{font-family:var(--fm);font-size:11px;color:var(--purple-light);
+  letter-spacing:1px;text-transform:uppercase;margin-top:var(--s12);display:block;}
 
-  table.recap{width:100%;border-collapse:collapse;margin-top:var(--s32);}
-  table.recap th{text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:1.2px;text-transform:uppercase;padding:0 16px 12px 0;opacity:0.6;}
-  table.recap td{font-size:15px;padding:14px 16px 14px 0;border-top:1px solid rgba(0,0,0,0.14);}
-  table.recap td.label{font-weight:700;}
+/* IMMERSIVE IMAGE */
+.immersive{width:100%;border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-blue) 0 30px 45px -30px;margin:var(--s48) 0;}
+.immersive img{width:100%;display:block;}
 
-  .ground-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s24);margin-top:var(--s48);}
-  @media (max-width:768px){.ground-rules{grid-template-columns:1fr;}}
-  .ground-rules .rule{border-top:1px solid var(--hairline);padding-top:var(--s16);}
-  .ground-rules .rule .mono-label{color:var(--mint);margin-bottom:var(--s8);display:block;}
+/* SUMMARY TABLE */
+.summary{width:100%;border-collapse:collapse;margin-top:var(--s32);}
+.summary th{text-align:left;font-family:var(--fm);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:0 var(--s16) var(--s16) 0;color:var(--body);
+  border-bottom:2px solid var(--border);}
+.summary td{font-size:15px;font-weight:300;line-height:1.5;
+  padding:var(--s16) var(--s16) var(--s16) 0;
+  border-bottom:1px solid var(--border);color:var(--body);vertical-align:top;}
+.summary td.num{font-family:var(--fm);color:var(--purple);font-weight:500;white-space:nowrap;}
+.summary td.lbl{font-weight:500;color:var(--navy);}
 
-  footer{background:#000000;border-top:1px solid var(--hairline);padding:var(--s96) 0 var(--s64);}
-  footer .body-sm{max-width:50ch;}
-  footer .display-section{font-size:30px;margin-bottom:var(--s16);}
+/* INFO STRIP */
+.info-strip{display:flex;gap:var(--s32);flex-wrap:wrap;margin-top:var(--s48);}
+.info-item{flex:1;min-width:200px;}
+.info-item-label{font-family:var(--fm);font-size:10px;color:var(--body);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:var(--s8);}
+.info-item-val{font-size:17px;font-weight:300;color:var(--navy);line-height:1.4;}
 
-  .reveal{opacity:0;transform:translateY(20px);transition:opacity 600ms ease,transform 600ms ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}}
+/* DIVIDERS */
+.divider{height:1px;background:var(--border);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--s64);align-items:start;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease;}
+.r.in{opacity:1;transform:none;}
+.rd1{transition-delay:80ms;}.rd2{transition-delay:160ms;}.rd3{transition-delay:240ms;}
+.rd4{transition-delay:320ms;}.rd5{transition-delay:400ms;}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* PILL TAG */
+.pill{display:inline-flex;align-items:center;gap:6px;
+  background:var(--purple-dim);border:1px solid rgba(83,58,253,0.2);
+  color:var(--purple);padding:4px 10px;border-radius:4px;
+  font-family:var(--fm);font-size:11px;letter-spacing:0.8px;text-transform:uppercase;}
+
+/* CHAPTER ANCHOR */
+[id]{scroll-margin-top:80px;}
+
+/* ══════════ ANNOTATION / MARKER OVERLAY (teaching tool) ══════════ */
+#annot-canvas{position:fixed;inset:0;z-index:400;pointer-events:none;touch-action:auto;}
+#annot-canvas.active{pointer-events:auto;cursor:crosshair;}
+.annot-fab{position:fixed;right:20px;bottom:20px;z-index:500;width:52px;height:52px;border-radius:50%;
+  border:none;cursor:pointer;background:var(--purple);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 28px rgba(83,58,253,0.5);transition:transform 160ms,background 160ms;}
+.annot-fab:hover{transform:scale(1.07);background:var(--purple-hover);}
+.annot-fab svg{width:24px;height:24px;}
+.annot-bar{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:500;
+  display:none;align-items:center;gap:6px;
+  background:rgba(6,27,49,0.94);backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:7px 9px;
+  box-shadow:0 14px 44px rgba(0,0,0,0.45);font-family:var(--f);max-width:calc(100vw - 24px);flex-wrap:wrap;justify-content:center;}
+.annot-btn{width:38px;height:38px;border-radius:9px;border:1px solid transparent;background:transparent;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;
+  transition:background 140ms,border-color 140ms;flex-shrink:0;}
+.annot-btn:hover{background:rgba(255,255,255,0.1);}
+.annot-btn.active{background:var(--purple);border-color:var(--purple);}
+.annot-btn svg{width:20px;height:20px;}
+.annot-sep{width:1px;height:24px;background:rgba(255,255,255,0.16);margin:0 2px;flex-shrink:0;}
+.annot-colors{display:flex;align-items:center;gap:6px;}
+.annot-sw{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,0.35);
+  cursor:pointer;padding:0;transition:transform 120ms,border-color 120ms;flex-shrink:0;}
+.annot-sw:hover{transform:scale(1.1);}
+.annot-sw.active{border-color:#fff;transform:scale(1.15);}
+@media print{#annot-canvas,.annot-fab,.annot-bar{display:none !important;}}
 </style>
 </head>
 <body>
 
-<div id="progress"></div>
-<nav class="topnav">
+<div id="bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
   <div class="wrap">
-    <div class="brandmark"><img src="assets/logo-hecho-por-el.png" alt="Hecho Por Él"></div>
-    <div class="nav-eyebrow">Estudio bíblico · 7 episodios</div>
+    <div class="nav-brand"><img src="assets/logo-hecho-por-el.png" alt="Hecho Por Él x Apologética Guatemala" style="height:40px;width:auto;display:block;"></div>
+    <div class="nav-tag">Catolicismo y fe evangélica</div>
+    <div class="nav-pill">Apologética</div>
   </div>
 </nav>
 
-<section class="scene hero dark">
-  <div class="wrap reveal">
-    <div class="mono-label" style="color:var(--mint);">Fe evangélica frente a Roma</div>
-    <h1 class="display-hero" style="margin-top:var(--s16);max-width:16ch;">Catolicismo y fe evangélica</h1>
-    <p class="body">Siete diferencias centrales, explicadas para jóvenes — qué enseña la Iglesia Católica, qué responde la Biblia, y cómo defenderlo sin pelear.</p>
-  </div>
-</section>
-
-<section class="scene dark" style="padding-top:0;">
-  <div class="wrap reveal">
-    <div class="eyebrow-whisper">Propósito</div>
-    <h2 class="display-section" style="margin-top:var(--s16);max-width:24ch;">Entender para amar mejor</h2>
-    <p class="body" style="margin-top:var(--s16);max-width:58ch;color:var(--ink-muted);">Probablemente tienes familia o amigos católicos. Este estudio no busca ganar una discusión — busca que conozcas lo que crees, por qué lo crees, y que puedas explicarlo con claridad y respeto.</p>
-    <div class="ground-rules">
-      <div class="rule">
-        <span class="mono-label">Regla 01</span>
-        <p class="body-sm">Honra a la persona. Cuestiona la doctrina, nunca al individuo.</p>
-      </div>
-      <div class="rule">
-        <span class="mono-label">Regla 02</span>
-        <p class="body-sm">Pregunta antes de afirmar. La mayoría no conoce el porqué de lo que practica.</p>
-      </div>
-      <div class="rule">
-        <span class="mono-label">Regla 03</span>
-        <p class="body-sm">La meta es claridad, no victoria. 1 Pedro 3:15 — con mansedumbre y reverencia.</p>
-      </div>
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-content">
+    <div class="eyebrow r">Estudio bíblico · 7 episodios · Razones para Creer</div>
+    <h1 class="display r rd1">Catolicismo y<br>fe evangélica</h1>
+    <p class="body-lg r rd2">Siete diferencias centrales, explicadas para jóvenes — qué enseña la Iglesia Católica, qué responde la Biblia, y cómo defenderlo sin pelear.</p>
+    <div class="hero-meta r rd3">
+      <span class="hero-badge">📖 Efesios 4:15</span>
+      <span class="hero-badge">👥 15–45 años</span>
+      <span class="hero-badge">🎯 7 diferencias · con respeto</span>
     </div>
   </div>
 </section>
 
-<section class="scene dark" style="padding-top:0;">
+<!-- ═══════════════════════════ APERTURA ═══════════════════════════ -->
+<section class="scene" id="proposito">
   <div class="wrap">
-    <div class="storystream reveal">
-      <div class="rail-line"></div>
-
-      <!-- 01 CANON — mint -->
-      <div class="story-item">
-        <div class="rail-mark"><span class="rail-dot" style="background:var(--mint);"></span><span class="rail-ts">EP. 01</span></div>
-        <div class="tile" style="background:var(--mint);">
-          <div class="mono-label">El canon</div>
-          <h3 class="display-section">¿66 libros o 73?</h3>
-          <p class="intro-line">Apocalipsis 22:18-19 — no añadas ni quites de esta profecía.</p>
-          <div class="compare">
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Enseñanza católica</div>
-              <ul>
-                <li>7 libros deuterocanónicos</li>
-                <li>Vienen de la Septuaginta griega</li>
-                <li>Confirmados en Trento, 1546</li>
-                <li>Apoyan la oración por los difuntos</li>
-              </ul>
-            </div>
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Respuesta evangélica</div>
-              <ul>
-                <li>39 del Antiguo Testamento</li>
-                <li>27 del Nuevo Testamento</li>
-                <li>El canon hebreo que usó Jesús</li>
-                <li>Ningún apóstol los cita como Escritura</li>
-              </ul>
-            </div>
-          </div>
-          <div class="verse">"No añadas ni quites de esta profecía."<div class="ref mono-micro" style="color:#1a1a1a;opacity:0.65;">Apocalipsis 22:18-19</div></div>
-          <div class="defend">
-            <span class="mono-label">Cómo defenderlo con respeto</span>
-            <p>No se trata de qué Biblia es "más gruesa". Pregunta con calma: ¿qué libros citó Jesús como Escritura? Lucas 24:44 lo resume él mismo — Ley, Profetas y Salmos, el canon hebreo de su tiempo.</p>
-          </div>
+    <div class="r">
+      <div class="accent-bar"></div>
+      <span class="eyebrow">Propósito</span>
+    </div>
+    <h2 class="h1 mt16 r rd1" style="max-width:22ch;">Entender para amar mejor</h2>
+    <div class="two-col mt48">
+      <div class="r rd1">
+        <p class="body-lg" style="max-width:48ch;">Probablemente tienes familia o amigos católicos. Este estudio no busca ganar una discusión — busca que conozcas lo que crees, por qué lo crees, y que puedas explicarlo con claridad y respeto.</p>
+      </div>
+      <div class="r rd2">
+        <div class="card">
+          <span class="eyebrow">Tres reglas de juego</span>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--s16);margin-top:var(--s24);">
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">01</span>
+              <span class="body">Honra a la persona. Cuestiona la doctrina, nunca al individuo.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">02</span>
+              <span class="body">Pregunta antes de afirmar. La mayoría no conoce el porqué de lo que practica.</span>
+            </li>
+            <li style="display:flex;gap:var(--s12);align-items:flex-start;">
+              <span style="color:var(--purple);font-weight:500;flex-shrink:0;">03</span>
+              <span class="body">La meta es claridad, no victoria. 1 Pedro 3:15 — con mansedumbre y reverencia.</span>
+            </li>
+          </ul>
         </div>
       </div>
-
-      <!-- EXTRA — por qué estos libros — slate -->
-      <div class="story-item">
-        <div class="rail-mark"><span class="rail-dot outline"></span><span class="rail-ts">A fondo</span></div>
-        <div class="tile slate on-dark">
-          <div class="mono-label">A fondo · El canon</div>
-          <h3 class="display-section">¿Por qué estos libros y no otros?</h3>
-          <p class="intro-line">Dos preguntas que te dan herramientas reales para responder: qué Biblia leyó Jesús, y cómo se cerraron los 27 libros del Nuevo Testamento.</p>
-
-          <div class="deepdive-grid">
-            <div>
-              <span class="mono-label" style="font-size:13px;">El Antiguo Testamento que usó Jesús</span>
-              <p class="body" style="margin-top:var(--s16);">En Lucas 24:44 Jesús resume su Biblia en tres bloques: la Ley, los Profetas y los Salmos — el Tanaj hebreo completo. "Salmos" nombra a todo el tercer bloque (los Escritos), porque era su libro más extenso.</p>
-              <div class="ot-breakdown">
-                <div class="part">
-                  <span class="mono-label">Ley · Torá</span>
-                  <p class="body-sm">Génesis a Deuteronomio</p>
-                </div>
-                <div class="part">
-                  <span class="mono-label">Profetas · Nevi'im</span>
-                  <p class="body-sm">Isaías, Jeremías, los Doce</p>
-                </div>
-                <div class="part">
-                  <span class="mono-label">Escritos · Ketuvim</span>
-                  <p class="body-sm">Salmos, Proverbios, Crónicas</p>
-                </div>
-              </div>
-              <p class="body-sm" style="margin-top:var(--s16);">Los judíos del siglo I contaban 22 ó 24 libros agrupando varios en uno solo (los 12 profetas menores, por ejemplo) — el mismo contenido que nuestros 39, solo contado distinto. El historiador judío Josefo ya describía ese conjunto como cerrado y sagrado, sin los deuterocanónicos.</p>
-            </div>
-            <div>
-              <img class="illo" src="assets/canon-criteria.png" alt="Ilustración: rollos antiguos marcados como reconocidos o descartados">
-              <p class="mono-micro illo-caption">Reconocidos vs. nunca tratados como Escritura</p>
-            </div>
-          </div>
-
-          <span class="mono-label section-label" style="font-size:13px;">Los criterios para los 27 libros del Nuevo Testamento</span>
-          <p class="body" style="margin-top:var(--s16);">No se "eligieron" por votación siglos después. La iglesia primitiva reconoció lo que ya circulaba como autoritativo, con cinco pruebas:</p>
-          <div class="criteria-grid">
-            <div class="criterion"><span class="mono-label">Apostolicidad</span><p class="body-sm">Escrito por un apóstol o su círculo cercano — Marcos con Pedro, Lucas con Pablo.</p></div>
-            <div class="criterion"><span class="mono-label">Antigüedad</span><p class="body-sm">Del siglo I, época de los testigos oculares — no generaciones después.</p></div>
-            <div class="criterion"><span class="mono-label">Ortodoxia</span><p class="body-sm">Coherente con lo que los apóstoles ya enseñaban, sin contradecirlo.</p></div>
-            <div class="criterion"><span class="mono-label">Catolicidad</span><p class="body-sm">Leído y usado ampliamente — no solo por un grupo aislado.</p></div>
-            <div class="criterion"><span class="mono-label">Autoridad reconocida</span><p class="body-sm">La iglesia lo sintió inspirado al leerlo — no se lo otorgó por decreto.</p></div>
-          </div>
-          <p class="body-sm" style="margin-top:var(--s16);">Por eso quedaron fuera el Evangelio de Tomás (gnóstico, siglo II, no centra la cruz), el Evangelio de Pedro o el Pastor de Hermas — útiles para algunos, pero sin origen apostólico ni uso universal.</p>
-
-          <div class="timeline-strip">
-            <div class="point"><span class="mono-micro">~170 d.C.</span><p class="body-sm">El Fragmento Muratorio ya lista casi todos los 27 libros.</p></div>
-            <div class="point"><span class="mono-micro">~324 d.C.</span><p class="body-sm">Eusebio los clasifica: reconocidos, disputados y rechazados.</p></div>
-            <div class="point"><span class="mono-micro">367 d.C.</span><p class="body-sm">Atanasio escribe la primera lista exacta de los 27.</p></div>
-            <div class="point"><span class="mono-micro">393–397 d.C.</span><p class="body-sm">Hipona y Cartago la ratifican: confirman, no inventan.</p></div>
-          </div>
-
-          <div class="defend">
-            <span class="mono-label">Cómo defenderlo con respeto</span>
-            <p>Cuando alguien diga "la Iglesia inventó la Biblia siglos después", aclara la diferencia entre reconocer y crear: estos libros ya se leían como Escritura desde el siglo II — los concilios del siglo IV solo confirmaron por escrito lo que la iglesia ya vivía.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 02 LA VIRGEN — ultraviolet -->
-      <div class="story-item">
-        <div class="rail-mark"><span class="rail-dot" style="background:var(--ultraviolet);"></span><span class="rail-ts">EP. 02</span></div>
-        <div class="tile on-dark" style="background:var(--ultraviolet);">
-          <div class="mono-label">La Virgen María</div>
-          <h3 class="display-section">Honrarla sin coronarla</h3>
-          <p class="intro-line">Lucas 1:46-48 — su propio cántico señala a Dios, no a sí misma.</p>
-          <div class="compare">
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Enseñanza católica</div>
-              <ul>
-                <li>Inmaculada Concepción, sin pecado</li>
-                <li>Asunción corporal al cielo</li>
-                <li>Mediadora e intercesora</li>
-                <li>"Reina del cielo", Madre de la Iglesia</li>
-              </ul>
-            </div>
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Respuesta evangélica</div>
-              <ul>
-                <li>Bienaventurada entre las mujeres</li>
-                <li>Ejemplo de fe y obediencia</li>
-                <li>Necesitó un Salvador, como todos</li>
-                <li>Ella misma señala a Jesús (Jn. 2:5)</li>
-              </ul>
-            </div>
-          </div>
-          <div class="verse">"Todas las generaciones me llamarán bienaventurada."<div class="ref mono-micro" style="color:var(--ink-dim);">Lucas 1:48</div></div>
-          <div class="defend">
-            <span class="mono-label">Cómo defenderlo con respeto</span>
-            <p>Honra a María citando lo que ella misma dijo: "Haced lo que él os dijere" (Juan 2:5). El mayor respeto que podemos darle es señalar, como ella, hacia su Hijo.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 03 LOS SANTOS — yellow -->
-      <div class="story-item">
-        <div class="rail-mark"><span class="rail-dot" style="background:var(--yellow);"></span><span class="rail-ts">EP. 03</span></div>
-        <div class="tile" style="background:var(--yellow);">
-          <div class="mono-label">Los santos</div>
-          <h3 class="display-section">Todos, sacerdocio santo</h3>
-          <p class="intro-line">1 Pedro 2:9 — vosotros sois real sacerdocio, nación santa.</p>
-          <div class="compare">
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Enseñanza católica</div>
-              <ul>
-                <li>Intercesión de santos canonizados</li>
-                <li>Veneración (dulia), no adoración</li>
-                <li>Patronos para cada necesidad</li>
-                <li>Comunión de los santos en el cielo</li>
-              </ul>
-            </div>
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Respuesta evangélica</div>
-              <ul>
-                <li>"Santos" = todo creyente vivo (Ef. 1:1)</li>
-                <li>Su fe es ejemplo, no intercesión</li>
-                <li>Acceso directo al trono de gracia</li>
-                <li>Un solo intercesor: Cristo (Heb. 7:25)</li>
-              </ul>
-            </div>
-          </div>
-          <div class="verse">"Acerquémonos confiadamente al trono de la gracia."<div class="ref mono-micro" style="color:#1a1a1a;opacity:0.65;">Hebreos 4:16</div></div>
-          <div class="defend">
-            <span class="mono-label">Cómo defenderlo con respeto</span>
-            <p>Admira su fe como en Hebreos 11 — son "una nube de testigos" que nos anima a correr (Heb. 12:1). Pero ora directo: el trono ya está abierto para ti, sin fila de espera.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 04 AUTORIDAD — pink -->
-      <div class="story-item">
-        <div class="rail-mark"><span class="rail-dot" style="background:var(--pink);"></span><span class="rail-ts">EP. 04</span></div>
-        <div class="tile" style="background:var(--pink);">
-          <div class="mono-label">La autoridad</div>
-          <h3 class="display-section">Escritura, suficiente y clara</h3>
-          <p class="intro-line">2 Timoteo 3:16-17 — útil para enseñar, reprender y corregir.</p>
-          <div class="compare">
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Enseñanza católica</div>
-              <ul>
-                <li>Escritura + Tradición + Magisterio</li>
-                <li>El Papa y los obispos interpretan</li>
-                <li>El Magisterio define el sentido final</li>
-                <li>Tradición con autoridad equivalente</li>
-              </ul>
-            </div>
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Respuesta evangélica</div>
-              <ul>
-                <li>Sola Scriptura: la autoridad final</li>
-                <li>Toda doctrina se examina con ella</li>
-                <li>Los de Berea la examinaban a diario</li>
-                <li>Suficiente para "toda buena obra"</li>
-              </ul>
-            </div>
-          </div>
-          <div class="verse">"Examinaban cada día las Escrituras."<div class="ref mono-micro" style="color:#1a1a1a;opacity:0.65;">Hechos 17:11</div></div>
-          <div class="defend">
-            <span class="mono-label">Cómo defenderlo con respeto</span>
-            <p>No descalifiques la tradición de un golpe. Pregunta con respeto: cuando una tradición humana y un texto bíblico claro chocan, ¿cuál debería tener la última palabra?</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 05 SALVACIÓN — orange -->
-      <div class="story-item">
-        <div class="rail-mark"><span class="rail-dot" style="background:var(--orange);"></span><span class="rail-ts">EP. 05</span></div>
-        <div class="tile" style="background:var(--orange);">
-          <div class="mono-label">La salvación</div>
-          <h3 class="display-section">Por gracia, mediante la fe</h3>
-          <p class="intro-line">Efesios 2:8-9 — no por obras, para que nadie se gloríe.</p>
-          <div class="compare">
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Enseñanza católica</div>
-              <ul>
-                <li>Gracia + obras + sacramentos</li>
-                <li>Se puede perder y recuperar la gracia</li>
-                <li>Mérito y penitencia</li>
-                <li>Proceso continuo hasta el purgatorio</li>
-              </ul>
-            </div>
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Respuesta evangélica</div>
-              <ul>
-                <li>Un regalo, no un salario (Rom. 6:23)</li>
-                <li>Las obras son fruto, no raíz (Ef. 2:10)</li>
-                <li>Seguridad en la obra ya hecha de Cristo</li>
-                <li>Perdón completo al creer (Hech. 13:39)</li>
-              </ul>
-            </div>
-          </div>
-          <div class="verse">"Por gracia sois salvos... no por obras."<div class="ref mono-micro" style="color:#1a1a1a;opacity:0.65;">Efesios 2:8-9</div></div>
-          <div class="defend">
-            <span class="mono-label">Cómo defenderlo con respeto</span>
-            <p>Aclara el malentendido más común: no decimos que las obras no importan — Santiago 2:17 también es bíblico. Decimos que no son el cimiento, sino el fruto que crece después.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 06 EUCARISTÍA — mint (reuse) -->
-      <div class="story-item">
-        <div class="rail-mark"><span class="rail-dot" style="background:var(--mint);"></span><span class="rail-ts">EP. 06</span></div>
-        <div class="tile" style="background:var(--mint);">
-          <div class="mono-label">La eucaristía</div>
-          <h3 class="display-section">Un sacrificio, no repetido</h3>
-          <p class="intro-line">Hebreos 10:14 — con una sola ofrenda, perfectos para siempre.</p>
-          <div class="compare">
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Enseñanza católica</div>
-              <ul>
-                <li>Transubstanciación: pan y vino reales</li>
-                <li>La misa re-presenta el sacrificio</li>
-                <li>Solo el sacerdote puede consagrar</li>
-                <li>Necesaria para la gracia salvadora</li>
-              </ul>
-            </div>
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Respuesta evangélica</div>
-              <ul>
-                <li>"Haced esto en memoria de mí" (Lc. 22:19)</li>
-                <li>Anuncia una muerte ya consumada</li>
-                <li>Cristo murió una vez, para siempre</li>
-                <li>Abierta a todo creyente, sin jerarquía</li>
-              </ul>
-            </div>
-          </div>
-          <div class="verse">"Con una sola ofrenda hizo perfectos para siempre."<div class="ref mono-micro" style="color:#1a1a1a;opacity:0.65;">Hebreos 10:14</div></div>
-          <div class="defend">
-            <span class="mono-label">Cómo defenderlo con respeto</span>
-            <p>Honra la Cena profundamente — no es "solo simbolismo" sin peso. El punto bíblico central está en Hebreos 9-10: el sacrificio de Cristo no se repite, se recuerda.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 07 PURGATORIO — ultraviolet (reuse) -->
-      <div class="story-item">
-        <div class="rail-mark"><span class="rail-dot" style="background:var(--ultraviolet);"></span><span class="rail-ts">EP. 07</span></div>
-        <div class="tile on-dark" style="background:var(--ultraviolet);">
-          <div class="mono-label">El purgatorio</div>
-          <h3 class="display-section">Hoy, no después</h3>
-          <p class="intro-line">Lucas 23:43 — hoy estarás conmigo en el paraíso.</p>
-          <div class="compare">
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Enseñanza católica</div>
-              <ul>
-                <li>Purificación tras la muerte</li>
-                <li>Prepara el alma antes del cielo</li>
-                <li>Las oraciones de los vivos ayudan</li>
-                <li>Apoyado en 2 Macabeos 12:46</li>
-              </ul>
-            </div>
-            <div>
-              <div class="col-head headline-card" style="font-size:18px;">Respuesta evangélica</div>
-              <ul>
-                <li>El ladrón en la cruz no tuvo tiempo</li>
-                <li>Cristo lo recibió ese mismo día</li>
-                <li>"Perfectos para siempre" (Heb. 10:14)</li>
-                <li>Ausentes del cuerpo, presentes al Señor</li>
-              </ul>
-            </div>
-          </div>
-          <div class="verse">"Hoy estarás conmigo en el paraíso."<div class="ref mono-micro" style="color:var(--ink-dim);">Lucas 23:43</div></div>
-          <div class="defend">
-            <span class="mono-label">Cómo defenderlo con respeto</span>
-            <p>No niegues que anhelamos ser más santos — niega que haga falta un proceso para ser aceptados. El ladrón no tuvo obras ni tiempo: solo fe, y fue suficiente.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- RESUMEN — white spotlight tile -->
-<section class="scene dark">
-  <div class="wrap reveal">
-    <div class="tile" style="background:#ffffff;">
-      <div class="mono-label">Resumen</div>
-      <h2 class="display-section">Siete diferencias, un vistazo</h2>
-      <table class="recap">
-        <tr><th style="width:18%;">Tema</th><th style="width:41%;">Enseñanza católica</th><th style="width:41%;">Respuesta evangélica</th></tr>
-        <tr><td class="label">Canon</td><td>73 libros</td><td>66 libros</td></tr>
-        <tr><td class="label">La Virgen</td><td>Mediadora, sin pecado</td><td>Ejemplo de fe, señala a Cristo</td></tr>
-        <tr><td class="label">Los santos</td><td>Interceden ante Dios</td><td>Ejemplo; un solo intercesor</td></tr>
-        <tr><td class="label">Autoridad</td><td>Biblia + Tradición + Magisterio</td><td>Solo la Biblia</td></tr>
-        <tr><td class="label">Salvación</td><td>Gracia + obras</td><td>Gracia mediante fe</td></tr>
-        <tr><td class="label">Eucaristía</td><td>Transubstanciación</td><td>Memorial</td></tr>
-        <tr><td class="label">Purgatorio</td><td>Purificación post-mortem</td><td>Presencia inmediata con Dios</td></tr>
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ BLOQUE 1: EL CANON ═══════════════════════════ -->
+<section class="scene dark on-dark" id="canon">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">01</div>
+      <span class="eyebrow">Episodio 1</span>
+      <h2 class="h1 mt16">¿66 libros<br>o 73?</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Apocalipsis 22:18-19 — no añadas ni quites de esta profecía.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/ep01-canon.png" alt="Ilustración: pila de libros sellados como reconocidos junto a libros añadidos dibujados solo en contorno">
+    </div>
+
+    <div class="term-box r rd2">
+      <span class="term-badge">Comparación</span>
+      <div class="term-grid">
+        <div class="term-cell q">
+          <span class="term-cell-label" style="color:#ff9dc0;">Enseñanza católica</span>
+          <ul>
+            <li>7 libros deuterocanónicos</li>
+            <li>Vienen de la Septuaginta griega</li>
+            <li>Confirmados en Trento, 1546</li>
+            <li>Apoyan la oración por los difuntos</li>
+          </ul>
+        </div>
+        <div class="term-cell a">
+          <span class="term-cell-label" style="color:#6de3a0;">Respuesta evangélica</span>
+          <ul>
+            <li>39 del Antiguo Testamento</li>
+            <li>27 del Nuevo Testamento</li>
+            <li>El canon hebreo que usó Jesús</li>
+            <li>Ningún apóstol los cita como Escritura</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="verse-block r rd3">
+      <p>"No añadas ni quites de esta profecía."</p>
+      <span class="verse-ref">Apocalipsis 22:18-19</span>
+    </div>
+
+    <div class="card-dark mt32 r rd4" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Cómo defenderlo con respeto</span>
+      <p class="body mt12" style="color:rgba(255,255,255,0.75);">No se trata de qué Biblia es "más gruesa". Pregunta con calma: ¿qué libros citó Jesús como Escritura? Lucas 24:44 lo resume él mismo — Ley, Profetas y Salmos, el canon hebreo de su tiempo.</p>
+    </div>
+
+    <!-- A FONDO: por qué estos libros -->
+    <h3 class="h3 mt64 r">A fondo: ¿por qué estos libros y no otros?</h3>
+    <p class="body mt16 r rd1" style="max-width:78ch;">En Lucas 24:44 Jesús resume su Biblia en tres bloques: la Ley, los Profetas y los Salmos — el Tanaj hebreo completo. "Salmos" nombra a todo el tercer bloque (los Escritos), porque era su libro más extenso.</p>
+
+    <div class="mini-grid r rd2">
+      <div class="mini-card">
+        <div class="mini-num">1</div>
+        <div class="mini-title">Ley · Torá</div>
+        <div class="mini-body">Génesis a Deuteronomio.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-num">2</div>
+        <div class="mini-title">Profetas · Nevi'im</div>
+        <div class="mini-body">Isaías, Jeremías, los Doce.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-num">3</div>
+        <div class="mini-title">Escritos · Ketuvim</div>
+        <div class="mini-body">Salmos, Proverbios, Crónicas.</div>
+      </div>
+    </div>
+
+    <p class="body mt32 r rd1" style="max-width:78ch;">Los judíos del siglo I contaban 22 ó 24 libros agrupando varios en uno solo (los 12 profetas menores, por ejemplo) — el mismo contenido que nuestros 39, solo contado distinto. El historiador judío Josefo ya describía ese conjunto como cerrado y sagrado, sin los deuterocanónicos.</p>
+
+    <div class="immersive r rd2">
+      <img src="assets/canon-criteria.png" alt="Ilustración: rollos antiguos marcados como reconocidos o descartados">
+    </div>
+
+    <p class="body mt16 r rd3" style="max-width:78ch;">Los 27 libros del Nuevo Testamento no se "eligieron" por votación siglos después. La iglesia primitiva reconoció lo que ya circulaba como autoritativo, con cinco pruebas:</p>
+
+    <div class="mini-grid r rd4">
+      <div class="mini-card"><div class="mini-title">Apostolicidad</div><div class="mini-body">Escrito por un apóstol o su círculo cercano.</div></div>
+      <div class="mini-card"><div class="mini-title">Antigüedad</div><div class="mini-body">Del siglo I, época de los testigos oculares.</div></div>
+      <div class="mini-card"><div class="mini-title">Ortodoxia</div><div class="mini-body">Coherente con lo que los apóstoles ya enseñaban.</div></div>
+      <div class="mini-card"><div class="mini-title">Catolicidad</div><div class="mini-body">Leído y usado ampliamente, no solo por un grupo aislado.</div></div>
+      <div class="mini-card"><div class="mini-title">Autoridad reconocida</div><div class="mini-body">La iglesia lo sintió inspirado, no se lo otorgó por decreto.</div></div>
+    </div>
+
+    <p class="body-sm mt24 r rd5" style="max-width:78ch;color:rgba(255,255,255,0.5);">Por eso quedaron fuera el Evangelio de Tomás (gnóstico, siglo II, no centra la cruz), el Evangelio de Pedro o el Pastor de Hermas — útiles para algunos, pero sin origen apostólico ni uso universal.</p>
+
+    <div class="card-dark mt32 r rd1" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Cómo defenderlo con respeto</span>
+      <p class="body mt12" style="color:rgba(255,255,255,0.75);">Cuando alguien diga "la Iglesia inventó la Biblia siglos después", aclara la diferencia entre reconocer y crear: estos libros ya se leían como Escritura desde el siglo II — los concilios del siglo IV solo confirmaron por escrito lo que la iglesia ya vivía.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 2: LA VIRGEN MARÍA ═══════════════════════════ -->
+<section class="scene" id="maria">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">02</div>
+      <span class="eyebrow">Episodio 2</span>
+      <h2 class="h1 mt16">Honrarla sin<br>coronarla</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Lucas 1:46-48 — su propio cántico señala a Dios, no a sí misma.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/ep02-maria.png" alt="Ilustración: María en perfil humilde señalando hacia una cruz radiante sobre ella">
+    </div>
+
+    <div class="term-box r rd2">
+      <span class="term-badge">Comparación</span>
+      <div class="term-grid">
+        <div class="term-cell q">
+          <span class="term-cell-label" style="color:#ff9dc0;">Enseñanza católica</span>
+          <ul>
+            <li>Inmaculada Concepción, sin pecado</li>
+            <li>Asunción corporal al cielo</li>
+            <li>Mediadora e intercesora</li>
+            <li>"Reina del cielo", Madre de la Iglesia</li>
+          </ul>
+        </div>
+        <div class="term-cell a">
+          <span class="term-cell-label" style="color:#6de3a0;">Respuesta evangélica</span>
+          <ul>
+            <li>Bienaventurada entre las mujeres</li>
+            <li>Ejemplo de fe y obediencia</li>
+            <li>Necesitó un Salvador, como todos</li>
+            <li>Ella misma señala a Jesús (Jn. 2:5)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="verse-block r rd3" style="background:rgba(83,58,253,0.06);border-color:rgba(83,58,253,0.2);">
+      <p style="color:var(--navy);">"Todas las generaciones me llamarán bienaventurada."</p>
+      <span class="verse-ref" style="color:var(--purple);">Lucas 1:48</span>
+    </div>
+
+    <div class="card mt32 r rd4" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Cómo defenderlo con respeto</span>
+      <p class="body mt12">Honra a María citando lo que ella misma dijo: "Haced lo que él os dijere" (Juan 2:5). El mayor respeto que podemos darle es señalar, como ella, hacia su Hijo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 3: LOS SANTOS ═══════════════════════════ -->
+<section class="scene dark on-dark" id="santos">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">03</div>
+      <span class="eyebrow">Episodio 3</span>
+      <h2 class="h1 mt16">Todos,<br>sacerdocio santo</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">1 Pedro 2:9 — vosotros sois real sacerdocio, nación santa.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/ep03-santos.png" alt="Ilustración: un grupo de creyentes, todos con halo, ante un camino recto que lleva directo al trono">
+    </div>
+
+    <div class="term-box r rd2">
+      <span class="term-badge">Comparación</span>
+      <div class="term-grid">
+        <div class="term-cell q">
+          <span class="term-cell-label" style="color:#ff9dc0;">Enseñanza católica</span>
+          <ul>
+            <li>Intercesión de santos canonizados</li>
+            <li>Veneración (dulia), no adoración</li>
+            <li>Patronos para cada necesidad</li>
+            <li>Comunión de los santos en el cielo</li>
+          </ul>
+        </div>
+        <div class="term-cell a">
+          <span class="term-cell-label" style="color:#6de3a0;">Respuesta evangélica</span>
+          <ul>
+            <li>"Santos" = todo creyente vivo (Ef. 1:1)</li>
+            <li>Su fe es ejemplo, no intercesión</li>
+            <li>Acceso directo al trono de gracia</li>
+            <li>Un solo intercesor: Cristo (Heb. 7:25)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="verse-block r rd3">
+      <p>"Acerquémonos confiadamente al trono de la gracia."</p>
+      <span class="verse-ref">Hebreos 4:16</span>
+    </div>
+
+    <div class="card-dark mt32 r rd4" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Cómo defenderlo con respeto</span>
+      <p class="body mt12" style="color:rgba(255,255,255,0.75);">Admira su fe como en Hebreos 11 — son "una nube de testigos" que nos anima a correr (Heb. 12:1). Pero ora directo: el trono ya está abierto para ti, sin fila de espera.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 4: LA AUTORIDAD ═══════════════════════════ -->
+<section class="scene" id="autoridad">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">04</div>
+      <span class="eyebrow">Episodio 4</span>
+      <h2 class="h1 mt16">Escritura,<br>suficiente y clara</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">2 Timoteo 3:16-17 — útil para enseñar, reprender y corregir.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/ep04-autoridad.png" alt="Ilustración: un gran libro abierto del que cuelga una plomada que mide rollos más pequeños">
+    </div>
+
+    <div class="term-box r rd2">
+      <span class="term-badge">Comparación</span>
+      <div class="term-grid">
+        <div class="term-cell q">
+          <span class="term-cell-label" style="color:#ff9dc0;">Enseñanza católica</span>
+          <ul>
+            <li>Escritura + Tradición + Magisterio</li>
+            <li>El Papa y los obispos interpretan</li>
+            <li>El Magisterio define el sentido final</li>
+            <li>Tradición con autoridad equivalente</li>
+          </ul>
+        </div>
+        <div class="term-cell a">
+          <span class="term-cell-label" style="color:#6de3a0;">Respuesta evangélica</span>
+          <ul>
+            <li>Sola Scriptura: la autoridad final</li>
+            <li>Toda doctrina se examina con ella</li>
+            <li>Los de Berea la examinaban a diario</li>
+            <li>Suficiente para "toda buena obra"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="verse-block r rd3" style="background:rgba(83,58,253,0.06);border-color:rgba(83,58,253,0.2);">
+      <p style="color:var(--navy);">"Examinaban cada día las Escrituras."</p>
+      <span class="verse-ref" style="color:var(--purple);">Hechos 17:11</span>
+    </div>
+
+    <div class="card mt32 r rd4" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Cómo defenderlo con respeto</span>
+      <p class="body mt12">No descalifiques la tradición de un golpe. Pregunta con respeto: cuando una tradición humana y un texto bíblico claro chocan, ¿cuál debería tener la última palabra?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 5: LA SALVACIÓN ═══════════════════════════ -->
+<section class="scene dark on-dark" id="salvacion">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">05</div>
+      <span class="eyebrow">Episodio 5</span>
+      <h2 class="h1 mt16">Por gracia,<br>mediante la fe</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Efesios 2:8-9 — no por obras, para que nadie se gloríe.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/ep05-salvacion.png" alt="Ilustración: manos abiertas recibiendo un regalo que desciende, junto a una escalera en contorno que no llega a ningún lado">
+    </div>
+
+    <div class="term-box r rd2">
+      <span class="term-badge">Comparación</span>
+      <div class="term-grid">
+        <div class="term-cell q">
+          <span class="term-cell-label" style="color:#ff9dc0;">Enseñanza católica</span>
+          <ul>
+            <li>Gracia + obras + sacramentos</li>
+            <li>Se puede perder y recuperar la gracia</li>
+            <li>Mérito y penitencia</li>
+            <li>Proceso continuo hasta el purgatorio</li>
+          </ul>
+        </div>
+        <div class="term-cell a">
+          <span class="term-cell-label" style="color:#6de3a0;">Respuesta evangélica</span>
+          <ul>
+            <li>Un regalo, no un salario (Rom. 6:23)</li>
+            <li>Las obras son fruto, no raíz (Ef. 2:10)</li>
+            <li>Seguridad en la obra ya hecha de Cristo</li>
+            <li>Perdón completo al creer (Hech. 13:39)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="verse-block r rd3">
+      <p>"Por gracia sois salvos... no por obras."</p>
+      <span class="verse-ref">Efesios 2:8-9</span>
+    </div>
+
+    <div class="card-dark mt32 r rd4" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Cómo defenderlo con respeto</span>
+      <p class="body mt12" style="color:rgba(255,255,255,0.75);">Aclara el malentendido más común: no decimos que las obras no importan — Santiago 2:17 también es bíblico. Decimos que no son el cimiento, sino el fruto que crece después.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 6: LA EUCARISTÍA ═══════════════════════════ -->
+<section class="scene" id="eucaristia">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">06</div>
+      <span class="eyebrow">Episodio 6</span>
+      <h2 class="h1 mt16">Un sacrificio,<br>no repetido</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Hebreos 10:14 — con una sola ofrenda, perfectos para siempre.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/ep06-eucaristia.png" alt="Ilustración: copa y pan partido sobre una mesa, con una cruz radiante rodeada de un laurel al fondo">
+    </div>
+
+    <div class="term-box r rd2">
+      <span class="term-badge">Comparación</span>
+      <div class="term-grid">
+        <div class="term-cell q">
+          <span class="term-cell-label" style="color:#ff9dc0;">Enseñanza católica</span>
+          <ul>
+            <li>Transubstanciación: pan y vino reales</li>
+            <li>La misa re-presenta el sacrificio</li>
+            <li>Solo el sacerdote puede consagrar</li>
+            <li>Necesaria para la gracia salvadora</li>
+          </ul>
+        </div>
+        <div class="term-cell a">
+          <span class="term-cell-label" style="color:#6de3a0;">Respuesta evangélica</span>
+          <ul>
+            <li>"Haced esto en memoria de mí" (Lc. 22:19)</li>
+            <li>Anuncia una muerte ya consumada</li>
+            <li>Cristo murió una vez, para siempre</li>
+            <li>Abierta a todo creyente, sin jerarquía</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="verse-block r rd3" style="background:rgba(83,58,253,0.06);border-color:rgba(83,58,253,0.2);">
+      <p style="color:var(--navy);">"Con una sola ofrenda hizo perfectos para siempre."</p>
+      <span class="verse-ref" style="color:var(--purple);">Hebreos 10:14</span>
+    </div>
+
+    <div class="card mt32 r rd4" style="border-left:3px solid var(--purple);background:rgba(83,58,253,0.04);">
+      <span class="eyebrow">Cómo defenderlo con respeto</span>
+      <p class="body mt12">Honra la Cena profundamente — no es "solo simbolismo" sin peso. El punto bíblico central está en Hebreos 9-10: el sacrificio de Cristo no se repite, se recuerda.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BLOQUE 7: EL PURGATORIO ═══════════════════════════ -->
+<section class="scene dark on-dark" id="purgatorio">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">07</div>
+      <span class="eyebrow">Episodio 7</span>
+      <h2 class="h1 mt16">Hoy,<br>no después</h2>
+      <p class="body-lg mt24" style="max-width:70ch;">Lucas 23:43 — hoy estarás conmigo en el paraíso.</p>
+    </div>
+
+    <div class="immersive r rd1">
+      <img src="assets/ep07-purgatorio.png" alt="Ilustración: tres cruces en una colina al amanecer, con un camino de luz directo desde la cruz central hasta el sol radiante">
+    </div>
+
+    <div class="term-box r rd2">
+      <span class="term-badge">Comparación</span>
+      <div class="term-grid">
+        <div class="term-cell q">
+          <span class="term-cell-label" style="color:#ff9dc0;">Enseñanza católica</span>
+          <ul>
+            <li>Purificación tras la muerte</li>
+            <li>Prepara el alma antes del cielo</li>
+            <li>Las oraciones de los vivos ayudan</li>
+            <li>Apoyado en 2 Macabeos 12:46</li>
+          </ul>
+        </div>
+        <div class="term-cell a">
+          <span class="term-cell-label" style="color:#6de3a0;">Respuesta evangélica</span>
+          <ul>
+            <li>El ladrón en la cruz no tuvo tiempo</li>
+            <li>Cristo lo recibió ese mismo día</li>
+            <li>"Perfectos para siempre" (Heb. 10:14)</li>
+            <li>Ausentes del cuerpo, presentes al Señor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="verse-block r rd3">
+      <p>"Hoy estarás conmigo en el paraíso."</p>
+      <span class="verse-ref">Lucas 23:43</span>
+    </div>
+
+    <div class="card-dark mt32 r rd4" style="border-left:3px solid var(--purple-light);">
+      <span class="eyebrow">Cómo defenderlo con respeto</span>
+      <p class="body mt12" style="color:rgba(255,255,255,0.75);">No niegues que anhelamos ser más santos — niega que haga falta un proceso para ser aceptados. El ladrón no tuvo obras ni tiempo: solo fe, y fue suficiente.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════ RESUMEN ═══════════════════════════ -->
+<section class="scene mid" id="resumen">
+  <div class="wrap">
+    <div class="sec-header r">
+      <div class="sec-num" aria-hidden="true">08</div>
+      <span class="eyebrow">Resumen</span>
+      <h2 class="h1 mt16">Siete diferencias,<br>un vistazo</h2>
+    </div>
+
+    <div class="r rd1" style="overflow-x:auto;">
+      <table class="summary">
+        <thead>
+          <tr>
+            <th style="width:18%;">Tema</th>
+            <th style="width:41%;">Enseñanza católica</th>
+            <th>Respuesta evangélica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="lbl">Canon</td><td>73 libros</td><td>66 libros</td></tr>
+          <tr><td class="lbl">La Virgen</td><td>Mediadora, sin pecado</td><td>Ejemplo de fe, señala a Cristo</td></tr>
+          <tr><td class="lbl">Los santos</td><td>Interceden ante Dios</td><td>Ejemplo; un solo intercesor</td></tr>
+          <tr><td class="lbl">Autoridad</td><td>Biblia + Tradición + Magisterio</td><td>Solo la Biblia</td></tr>
+          <tr><td class="lbl">Salvación</td><td>Gracia + obras</td><td>Gracia mediante fe</td></tr>
+          <tr><td class="lbl">Eucaristía</td><td>Transubstanciación</td><td>Memorial</td></tr>
+          <tr><td class="lbl">Purgatorio</td><td>Purificación post-mortem</td><td>Presencia inmediata con Dios</td></tr>
+        </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<section class="scene dark" style="padding-bottom:0;">
-  <div class="wrap reveal">
-    <div class="eyebrow-whisper">Cierre</div>
-    <h2 class="display-section" style="margin-top:var(--s16);max-width:20ch;">La verdad, en amor</h2>
-    <p class="body" style="margin-top:var(--s16);max-width:56ch;color:var(--ink-muted);">Conocer estas diferencias no te hace mejor que nadie — te ayuda a explicar lo que crees sin miedo y sin agresividad. Escucha primero. Pregunta con humildad. Responde con la Biblia abierta, no con la voz alzada.</p>
-    <div class="verse" style="margin-top:var(--s48);max-width:50ch;">"Siguiendo la verdad en amor, crezcamos en todo en Cristo."<div class="ref mono-micro">Efesios 4:15</div></div>
-    <div class="verse" style="margin-top:var(--s24);max-width:50ch;">"Estad siempre preparados para presentar defensa... pero hacedlo con mansedumbre y reverencia."<div class="ref mono-micro">1 Pedro 3:15</div></div>
+<!-- ═══════════════════════════ CIERRE ═══════════════════════════ -->
+<section class="scene" id="cierre">
+  <div class="wrap">
+    <div class="sec-header r">
+      <span class="eyebrow">Cierre</span>
+      <h2 class="h1 mt16" style="max-width:20ch;">La verdad,<br>en amor</h2>
+    </div>
+    <p class="body-lg r rd1" style="max-width:70ch;">Conocer estas diferencias no te hace mejor que nadie — te ayuda a explicar lo que crees sin miedo y sin agresividad. Escucha primero. Pregunta con humildad. Responde con la Biblia abierta, no con la voz alzada.</p>
+
+    <div class="verse-block r rd2" style="background:rgba(83,58,253,0.06);border-color:rgba(83,58,253,0.2);">
+      <p style="color:var(--navy);">"Siguiendo la verdad en amor, crezcamos en todo en Cristo."</p>
+      <span class="verse-ref" style="color:var(--purple);">Efesios 4:15</span>
+    </div>
+    <div class="verse-block mt24 r rd3" style="background:rgba(234,34,97,0.06);border-color:rgba(234,34,97,0.2);">
+      <p style="color:var(--navy);">"Estad siempre preparados para presentar defensa... pero hacedlo con mansedumbre y reverencia."</p>
+      <span class="verse-ref" style="color:var(--ruby);">1 Pedro 3:15</span>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap reveal">
-    <h3 class="display-section">¿Preguntas?</h3>
-    <p class="body-sm">¿Hay alguna situación que hayan vivido con esto sobre la que quieran hablar? — Estudio bíblico para jóvenes, presentado con el sistema de diseño de The Verge.</p>
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="scene deeper on-dark" id="preguntas">
+  <div class="wrap">
+    <div class="r">
+      <span class="eyebrow">¿Preguntas?</span>
+      <h3 class="h2 mt16">¿Hay alguna situación<br>que hayan vivido<br>con esto?</h3>
+      <p class="body-lg mt24" style="max-width:60ch;">Estudio bíblico para jóvenes — hablemos de lo que hayan escuchado o vivido sobre estas siete diferencias.</p>
+    </div>
+
+    <div class="info-strip r rd1">
+      <div class="info-item">
+        <div class="info-item-label">Texto base</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Efesios 4:15 · RVR1960</div>
+      </div>
+      <div class="info-item">
+        <div class="info-item-label">Serie</div>
+        <div class="info-item-val" style="color:rgba(255,255,255,0.75);">Estudio bíblico · Apologética Cristiana</div>
+      </div>
+    </div>
   </div>
 </footer>
 
-<script>
-  function onScroll(){
-    const h = document.documentElement;
-    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-    document.getElementById('progress').style.width = pct + '%';
-  }
-  window.addEventListener('scroll', onScroll);
-  onScroll();
+<!-- ══════════ MARCADOR / PIZARRÓN (herramienta de clase) ══════════ -->
+<canvas id="annot-canvas"></canvas>
 
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-  }, {threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+<button id="annot-fab" class="annot-fab" title="Marcador / pizarrón" aria-label="Abrir marcador">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 20l4.5-1 9-9-3.5-3.5-9 9z"/><path d="M13 6.5l3.5 3.5"/>
+  </svg>
+</button>
+
+<div id="annot-bar" class="annot-bar" role="toolbar" aria-label="Herramientas de marcador">
+  <button class="annot-btn" data-tool="none" title="Puntero — interactuar con la página" aria-label="Puntero">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l6 15 2-6 6-2z"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="pen" title="Marcador / lápiz" aria-label="Marcador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4.5-1 9-9-3.5-3.5-9 9z"/><path d="M13 6.5l3.5 3.5"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="hl" title="Resaltador" aria-label="Resaltador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h6"/><path d="M8 17l8-8 3 3-8 8H8z"/><path d="M14 7l3 3"/></svg>
+  </button>
+  <button class="annot-btn" data-tool="eraser" title="Borrador" aria-label="Borrador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21h11"/><path d="M5 15l6-6 7 7-4 4H9z"/></svg>
+  </button>
+  <span id="annot-colors-wrap" style="display:flex;align-items:center;gap:6px;">
+    <span class="annot-sep"></span>
+    <span class="annot-colors" id="annot-pen-colors">
+      <button class="annot-sw active" style="background:#ef4444" data-pen="#ef4444" aria-label="Rojo"></button>
+      <button class="annot-sw" style="background:#533afd" data-pen="#533afd" aria-label="Morado"></button>
+      <button class="annot-sw" style="background:#ffffff" data-pen="#ffffff" aria-label="Blanco"></button>
+      <button class="annot-sw" style="background:#22d3ee" data-pen="#22d3ee" aria-label="Cian"></button>
+    </span>
+    <span class="annot-colors" id="annot-hl-colors" style="display:none">
+      <button class="annot-sw active" style="background:#facc15" data-hl="rgba(250,204,21,0.40)" aria-label="Amarillo"></button>
+      <button class="annot-sw" style="background:#4ade80" data-hl="rgba(74,222,128,0.40)" aria-label="Verde"></button>
+      <button class="annot-sw" style="background:#f472b6" data-hl="rgba(244,114,182,0.45)" aria-label="Rosa"></button>
+    </span>
+  </span>
+  <span class="annot-sep"></span>
+  <button class="annot-btn" id="annot-clear" title="Borrar todo" aria-label="Borrar todo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"/><path d="M9 7V5h6v2"/><path d="M7 7l1 12h8l1-12"/></svg>
+  </button>
+  <button class="annot-btn" id="annot-close" title="Cerrar marcador" aria-label="Cerrar marcador">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+
+<script>
+// Progress bar
+function onScroll(){
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('bar').style.width=Math.min(pct,100)+'%';
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// ── MARCADOR / PIZARRÓN (herramienta de clase) ──
+(function(){
+  const canvas=document.getElementById('annot-canvas');
+  const ctx=canvas.getContext('2d');
+  const bar=document.getElementById('annot-bar');
+  const fab=document.getElementById('annot-fab');
+  const colorsWrap=document.getElementById('annot-colors-wrap');
+  const penRow=document.getElementById('annot-pen-colors');
+  const hlRow=document.getElementById('annot-hl-colors');
+
+  let strokes=[], current=null, tool=null;
+  let penColor='#ef4444', hlColor='rgba(250,204,21,0.40)';
+
+  function resize(){
+    const dpr=Math.max(1,Math.min(window.devicePixelRatio||1,2));
+    canvas.width=innerWidth*dpr; canvas.height=innerHeight*dpr;
+    canvas.style.width=innerWidth+'px'; canvas.style.height=innerHeight+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    redraw();
+  }
+  function drawStroke(s){
+    const oy=scrollY, p=s.points; if(!p.length)return;
+    ctx.lineCap='round'; ctx.lineJoin='round';
+    ctx.strokeStyle=s.color; ctx.lineWidth=s.size;
+    ctx.beginPath(); ctx.moveTo(p[0].x, p[0].y-oy);
+    for(let i=1;i<p.length;i++) ctx.lineTo(p[i].x, p[i].y-oy);
+    if(p.length===1) ctx.lineTo(p[0].x+0.1, p[0].y-oy);
+    ctx.stroke();
+  }
+  function redraw(){
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    for(const s of strokes) drawStroke(s);
+    if(current) drawStroke(current);
+  }
+  let raf=null;
+  addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(()=>{raf=null;redraw();}); },{passive:true});
+  addEventListener('resize',resize);
+
+  const pt=e=>({x:e.clientX, y:e.clientY+scrollY});
+  function eraseAt(p){
+    const r=16, r2=r*r; let changed=false;
+    strokes=strokes.filter(s=>{
+      for(const q of s.points){const dx=q.x-p.x,dy=q.y-p.y; if(dx*dx+dy*dy<=r2){changed=true;return false;}}
+      return true;
+    });
+    if(changed) redraw();
+  }
+  canvas.addEventListener('pointerdown',e=>{
+    if(!tool)return;
+    canvas.setPointerCapture(e.pointerId);
+    if(tool==='eraser'){ eraseAt(pt(e)); return; }
+    current={tool, color: tool==='hl'?hlColor:penColor, size: tool==='hl'?18:3.5, points:[pt(e)]};
+    redraw();
+  });
+  canvas.addEventListener('pointermove',e=>{
+    if(!tool)return;
+    if(tool==='eraser'){ if(e.buttons) eraseAt(pt(e)); return; }
+    if(!current)return;
+    current.points.push(pt(e)); redraw();
+  });
+  function end(){ if(current){strokes.push(current);current=null;} }
+  canvas.addEventListener('pointerup',end);
+  canvas.addEventListener('pointercancel',end);
+
+  function refresh(){
+    canvas.classList.toggle('active', !!tool);
+    canvas.style.touchAction = tool ? 'none' : 'auto';
+    document.querySelectorAll('[data-tool]').forEach(b=>b.classList.toggle('active', b.dataset.tool===(tool||'none')));
+    const showColors=(tool==='pen'||tool==='hl');
+    colorsWrap.style.display=showColors?'flex':'none';
+    penRow.style.display=tool==='pen'?'flex':'none';
+    hlRow.style.display=tool==='hl'?'flex':'none';
+  }
+  function setTool(t){ tool=t; refresh(); }
+  function markActive(sel,btn){ document.querySelectorAll(sel).forEach(x=>x.classList.toggle('active',x===btn)); }
+
+  document.querySelectorAll('[data-tool]').forEach(b=>b.onclick=()=>setTool(b.dataset.tool==='none'?null:b.dataset.tool));
+  document.querySelectorAll('[data-pen]').forEach(b=>b.onclick=()=>{penColor=b.dataset.pen; markActive('[data-pen]',b);});
+  document.querySelectorAll('[data-hl]').forEach(b=>b.onclick=()=>{hlColor=b.dataset.hl; markActive('[data-hl]',b);});
+  document.getElementById('annot-clear').onclick=()=>{ strokes=[]; current=null; redraw(); };
+  document.getElementById('annot-close').onclick=()=>{ bar.style.display='none'; fab.style.display='flex'; setTool(null); };
+  fab.onclick=()=>{ bar.style.display='flex'; fab.style.display='none'; setTool('pen'); };
+  addEventListener('keydown',e=>{ if(e.key==='Escape' && bar.style.display!=='none') setTool(null); });
+
+  resize();
+})();
 </script>
 </body>
 </html>

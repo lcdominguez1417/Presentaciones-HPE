@@ -43,6 +43,23 @@ Jóvenes evangélicos que quieren entender su fe y poder explicarla con humildad
 - Cada respuesta evangélica debe ser bíblica (cita textual + referencia) y formulada en tono respetuoso — nunca despectivo hacia personas católicas, siempre hacia ideas/doctrinas.
 - Incluir un bloque explícito de "cómo defenderlo con respeto" por tema: una frase de actitud (ej. "pregunta antes de afirmar", "honra la persona, cuestiona la doctrina") + el argumento bíblico central.
 
+## Ilustraciones y animaciones (edición 2026-07-15)
+- Cada episodio del StoryStream lleva ahora una ilustración generada vía Kie.ai (nano-banana-2, `lib/generate-illustration.sh`), 16:9, estilo flat editorial The Verge, con el fondo en el color del tile para integrarse (el tono generado varía levemente → se enmarca en `.tile-illo` con borde hairline y esquinas 16px, igual que la `.illo` del deep-dive):
+  - `assets/ep01-canon.png` — libros sellados (canon) vs. pila fantasma en contorno (añadidos) — mint
+  - `assets/ep02-maria.png` — María en perfil señalando a la cruz radiante (Jn. 2:5) — ultravioleta
+  - `assets/ep03-santos.png` — creyentes con halo y camino directo al trono (Heb. 4:16) — amarillo
+  - `assets/ep04-autoridad.png` — libro abierto con plomada midiendo rollos (Sola Scriptura) — rosa
+  - `assets/ep05-salvacion.png` — manos recibiendo un regalo; escalera en contorno que no llega (Ef. 2:8-9) — naranja
+  - `assets/ep06-eucaristia.png` — copa, pan partido, cruz con laurel (sacrificio consumado) — mint
+  - `assets/ep07-purgatorio.png` — tres cruces al amanecer con camino de luz directo al sol (Lc. 23:43) — ultravioleta
+  - Nota técnica: Kie.ai a veces devuelve JPEG con extensión .png → se normalizan a PNG real y se reescalan a 1600px con `sips`.
+- Animaciones de scroll (todas dentro de `@media (prefers-reduced-motion: no-preference)`; sin ella la página es estática):
+  - Cada `.story-item` es ahora su propio `.reveal` (antes el StoryStream entero era uno solo).
+  - Cascada interna del tile: label → título → intro → ilustración → comparación → cita → defensa (delays 90–630ms).
+  - Columnas de comparación: la católica entra desde la izquierda, la evangélica desde la derecha.
+  - La ilustración hace fade con zoom-out sutil (scale 1.04 → 1).
+  - El dot del riel se enciende con un ping (box-shadow expandiéndose) al entrar el ítem.
+
 ## Notes
 - Tipografía: Manuka y PolySans son propietarias (Klim Type Foundry / PanGram Pangram) → fallbacks vía Google Fonts: Anton (display, +0.15 line-height vs el 0.80 nativo para evitar colisión de ascendentes/descendentes), Space Grotesk (UI/cuerpo), Space Mono (labels mono uppercase).
 - Contraste: todo el texto de cuerpo sobre `#131313` usa blanco puro o `#e9e9e9`; los tiles de color usan texto negro (`#000000`) cuando el fondo es mint/amarillo/blanco, y blanco cuando el fondo es ultravioleta/naranja oscuro — verificado ≥4.5:1 en todos los casos, apuntando a AAA donde es posible.
